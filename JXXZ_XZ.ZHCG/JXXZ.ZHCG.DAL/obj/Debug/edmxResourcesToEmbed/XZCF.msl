@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="EntitiesORCL">
+    <EntitySetMapping Name="AUDIT_PROJECT_W">
+      <EntityTypeMapping TypeName="Model1.AUDIT_PROJECT_W">
+        <MappingFragment StoreEntitySet="AUDIT_PROJECT_W">
+          <ScalarProperty Name="BELONGXIAQUCODE" ColumnName="BELONGXIAQUCODE" />
+          <ScalarProperty Name="OPERATEUSERNAME" ColumnName="OPERATEUSERNAME" />
+          <ScalarProperty Name="OPERATEDATE" ColumnName="OPERATEDATE" />
+          <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+          <ScalarProperty Name="YEARFLAG" ColumnName="YEARFLAG" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+          <ScalarProperty Name="HF_DATE" ColumnName="HF_DATE" />
+          <ScalarProperty Name="WEBAPPLY_NOTE" ColumnName="WEBAPPLY_NOTE" />
+          <ScalarProperty Name="IS_SENDSMS" ColumnName="IS_SENDSMS" />
+          <ScalarProperty Name="PROJECT_MYD" ColumnName="PROJECT_MYD" />
+          <ScalarProperty Name="FWYZM" ColumnName="FWYZM" />
+          <ScalarProperty Name="SHOUFEISUM" ColumnName="SHOUFEISUM" />
+          <ScalarProperty Name="RECEIVEUSERNAME" ColumnName="RECEIVEUSERNAME" />
+          <ScalarProperty Name="RECEIVEDATE" ColumnName="RECEIVEDATE" />
+          <ScalarProperty Name="ACCEPTUSERGUID" ColumnName="ACCEPTUSERGUID" />
+          <ScalarProperty Name="BANWANDATE" ColumnName="BANWANDATE" />
+          <ScalarProperty Name="ACCEPTUSERNAME" ColumnName="ACCEPTUSERNAME" />
+          <ScalarProperty Name="ACCEPTUSERDATE" ColumnName="ACCEPTUSERDATE" />
+          <ScalarProperty Name="PROMISEENDDATE" ColumnName="PROMISEENDDATE" />
+          <ScalarProperty Name="TASKTYPE" ColumnName="TASKTYPE" />
+          <ScalarProperty Name="BANJIEUSERGUID" ColumnName="BANJIEUSERGUID" />
+          <ScalarProperty Name="BANJIEUSERNAME" ColumnName="BANJIEUSERNAME" />
+          <ScalarProperty Name="BANJIERESULT" ColumnName="BANJIERESULT" />
+          <ScalarProperty Name="BANJIEDATE" ColumnName="BANJIEDATE" />
+          <ScalarProperty Name="IS_CHARGE" ColumnName="IS_CHARGE" />
+          <ScalarProperty Name="LEGAL" ColumnName="LEGAL" />
+          <ScalarProperty Name="HEBINGSHOULISHULIANG" ColumnName="HEBINGSHOULISHULIANG" />
+          <ScalarProperty Name="FEEDATE" ColumnName="FEEDATE" />
+          <ScalarProperty Name="CERTIFICATEUSERGUID" ColumnName="CERTIFICATEUSERGUID" />
+          <ScalarProperty Name="CERTIFICATEUSERNAME" ColumnName="CERTIFICATEUSERNAME" />
+          <ScalarProperty Name="CERTIFICATEDATE" ColumnName="CERTIFICATEDATE" />
+          <ScalarProperty Name="CERTAWARDEGUID" ColumnName="CERTAWARDEGUID" />
+          <ScalarProperty Name="GUIDANGUSERGUID" ColumnName="GUIDANGUSERGUID" />
+          <ScalarProperty Name="GUIDANGUSERNAME" ColumnName="GUIDANGUSERNAME" />
+          <ScalarProperty Name="GUIDANGDATE" ColumnName="GUIDANGDATE" />
+          <ScalarProperty Name="ORGWN" ColumnName="ORGWN" />
+          <ScalarProperty Name="BILLNO" ColumnName="BILLNO" />
+          <ScalarProperty Name="SPENDTIME" ColumnName="SPENDTIME" />
+          <ScalarProperty Name="SPARETIME" ColumnName="SPARETIME" />
+          <ScalarProperty Name="APPLYERGUID" ColumnName="APPLYERGUID" />
+          <ScalarProperty Name="APPLYWAY" ColumnName="APPLYWAY" />
+          <ScalarProperty Name="IS_PAUSE" ColumnName="IS_PAUSE" />
+          <ScalarProperty Name="APPLYERTYPE" ColumnName="APPLYERTYPE" />
+          <ScalarProperty Name="CHARGE_WHEN" ColumnName="CHARGE_WHEN" />
+          <ScalarProperty Name="IS_CHECK" ColumnName="IS_CHECK" />
+          <ScalarProperty Name="IS_FEE" ColumnName="IS_FEE" />
+          <ScalarProperty Name="IS_GUIDANG" ColumnName="IS_GUIDANG" />
+          <ScalarProperty Name="IS_DELAY" ColumnName="IS_DELAY" />
+          <ScalarProperty Name="IS_GREEN" ColumnName="IS_GREEN" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="INSERTDATE" ColumnName="INSERTDATE" />
+          <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+          <ScalarProperty Name="TASKGUID" ColumnName="TASKGUID" />
+          <ScalarProperty Name="TASKCASEGUID" ColumnName="TASKCASEGUID" />
+          <ScalarProperty Name="OUGUID" ColumnName="OUGUID" />
+          <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+          <ScalarProperty Name="WINDOWGUID" ColumnName="WINDOWGUID" />
+          <ScalarProperty Name="WINDOWNAME" ColumnName="WINDOWNAME" />
+          <ScalarProperty Name="CERTTYPE" ColumnName="CERTTYPE" />
+          <ScalarProperty Name="FLOWSN" ColumnName="FLOWSN" />
+          <ScalarProperty Name="PVIGUID" ColumnName="PVIGUID" />
+          <ScalarProperty Name="CONTACTPHONE" ColumnName="CONTACTPHONE" />
+          <ScalarProperty Name="XIANGMUBH" ColumnName="XIANGMUBH" />
+          <ScalarProperty Name="CONTACTPERSON" ColumnName="CONTACTPERSON" />
+          <ScalarProperty Name="APPLYERNAME" ColumnName="APPLYERNAME" />
+          <ScalarProperty Name="APPLYERUSERGUID" ColumnName="APPLYERUSERGUID" />
+          <ScalarProperty Name="CERTNUM" ColumnName="CERTNUM" />
+          <ScalarProperty Name="APPLYDATE" ColumnName="APPLYDATE" />
+          <ScalarProperty Name="CONTACTMOBILE" ColumnName="CONTACTMOBILE" />
+          <ScalarProperty Name="CONTACTPOSTCODE" ColumnName="CONTACTPOSTCODE" />
+          <ScalarProperty Name="CONTACTEMAIL" ColumnName="CONTACTEMAIL" />
+          <ScalarProperty Name="CONTACTFAX" ColumnName="CONTACTFAX" />
+          <ScalarProperty Name="RECEIVEUSERGUID" ColumnName="RECEIVEUSERGUID" />
+          <ScalarProperty Name="IS_CERT" ColumnName="IS_CERT" />
+          <ScalarProperty Name="CHECKUSERGUID" ColumnName="CHECKUSERGUID" />
+          <ScalarProperty Name="PROMISE_DAY" ColumnName="PROMISE_DAY" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CHECKDATE" ColumnName="CHECKDATE" />
+          <ScalarProperty Name="CHECKUSERNAME" ColumnName="CHECKUSERNAME" />
+          <ScalarProperty Name="ORGWORD" ColumnName="ORGWORD" />
+          <ScalarProperty Name="ORGNUMBER" ColumnName="ORGNUMBER" />
+          <ScalarProperty Name="TABLEID" ColumnName="TABLEID" />
+          <ScalarProperty Name="BUBANDATE" ColumnName="BUBANDATE" />
+          <ScalarProperty Name="YUSHENDATE" ColumnName="YUSHENDATE" />
+          <ScalarProperty Name="ZIJIANXITONG_NUMBER" ColumnName="ZIJIANXITONG_NUMBER" />
+          <ScalarProperty Name="APPLY_ATTACH_SIGN" ColumnName="APPLY_ATTACH_SIGN" />
+          <ScalarProperty Name="ATTACH_SIGN" ColumnName="ATTACH_SIGN" />
+          <ScalarProperty Name="XIANGMUGUID" ColumnName="XIANGMUGUID" />
+          <ScalarProperty Name="XMADDRESS" ColumnName="XMADDRESS" />
+          <ScalarProperty Name="XMNAME" ColumnName="XMNAME" />
+          <ScalarProperty Name="IS_TEST" ColumnName="IS_TEST" />
+          <ScalarProperty Name="ONLINEPAYORDERNO" ColumnName="ONLINEPAYORDERNO" />
+          <ScalarProperty Name="SUBAPPGUID" ColumnName="SUBAPPGUID" />
+          <ScalarProperty Name="WENSHUPDFGUID" ColumnName="WENSHUPDFGUID" />
+          <ScalarProperty Name="OFFICALPDFGUID" ColumnName="OFFICALPDFGUID" />
+          <ScalarProperty Name="CERTPDFGUID" ColumnName="CERTPDFGUID" />
+          <ScalarProperty Name="OFFICALDOCGUID" ColumnName="OFFICALDOCGUID" />
+          <ScalarProperty Name="BIGUID" ColumnName="BIGUID" />
+          <ScalarProperty Name="BUSINESSGUID" ColumnName="BUSINESSGUID" />
+          <ScalarProperty Name="RELATIONWORKITEMGUID" ColumnName="RELATIONWORKITEMGUID" />
+          <ScalarProperty Name="PJ_OPNION" ColumnName="PJ_OPNION" />
+          <ScalarProperty Name="PAYMENTNO" ColumnName="PAYMENTNO" />
+          <ScalarProperty Name="ORDERNO" ColumnName="ORDERNO" />
+          <ScalarProperty Name="PROJPWD" ColumnName="PROJPWD" />
+          <ScalarProperty Name="PROJID" ColumnName="PROJID" />
+          <ScalarProperty Name="DATA_TIMESTAMP" ColumnName="DATA_TIMESTAMP" />
+          <ScalarProperty Name="ZJSYNC" ColumnName="ZJSYNC" />
+          <ScalarProperty Name="SYNCROWGUID" ColumnName="SYNCROWGUID" />
+          <ScalarProperty Name="RESULT_CODE" ColumnName="RESULT_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FDS_LAW">
+      <EntityTypeMapping TypeName="Model1.FDS_LAW">
+        <MappingFragment StoreEntitySet="FDS_LAW">
+          <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+          <ScalarProperty Name="POWERID" ColumnName="POWERID" />
+          <ScalarProperty Name="POWERVERVISON" ColumnName="POWERVERVISON" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+          <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+          <ScalarProperty Name="DATAVERVISON" ColumnName="DATAVERVISON" />
+          <ScalarProperty Name="EXTEND_1" ColumnName="EXTEND_1" />
+          <ScalarProperty Name="EXTEND_2" ColumnName="EXTEND_2" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FDS_LAW_EXECUTOR">
+      <EntityTypeMapping TypeName="Model1.FDS_LAW_EXECUTOR">
+        <MappingFragment StoreEntitySet="FDS_LAW_EXECUTOR">
+          <ScalarProperty Name="SOURCEKEY" ColumnName="SOURCEKEY" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+          <ScalarProperty Name="DEPTNAME" ColumnName="DEPTNAME" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="SEX" ColumnName="SEX" />
+          <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="USEABLE" ColumnName="USEABLE" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="EXECUTORID" ColumnName="EXECUTORID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="CREDENTIAL" ColumnName="CREDENTIAL" />
+          <ScalarProperty Name="SDATE" ColumnName="SDATE" />
+          <ScalarProperty Name="EDATE" ColumnName="EDATE" />
+          <ScalarProperty Name="SORTID" ColumnName="SORTID" />
+          <ScalarProperty Name="SYNCPAGENO" ColumnName="SYNCPAGENO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FDS_POWER">
+      <EntityTypeMapping TypeName="Model1.FDS_POWER">
+        <MappingFragment StoreEntitySet="FDS_POWER">
+          <ScalarProperty Name="POWERID" ColumnName="POWERID" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="POWERVERVISON" ColumnName="POWERVERVISON" />
+          <ScalarProperty Name="POWERNAME" ColumnName="POWERNAME" />
+          <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+          <ScalarProperty Name="PUNISHTYPECODE" ColumnName="PUNISHTYPECODE" />
+          <ScalarProperty Name="JOIN_MODE" ColumnName="JOIN_MODE" />
+          <ScalarProperty Name="OFFICEADDR" ColumnName="OFFICEADDR" />
+          <ScalarProperty Name="PROMISE_DAY" ColumnName="PROMISE_DAY" />
+          <ScalarProperty Name="LAWLIMIT_DAY" ColumnName="LAWLIMIT_DAY" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="DUTYLEADER" ColumnName="DUTYLEADER" />
+          <ScalarProperty Name="DUTYEOFFICE" ColumnName="DUTYEOFFICE" />
+          <ScalarProperty Name="BODYIMPLEMENT" ColumnName="BODYIMPLEMENT" />
+          <ScalarProperty Name="BODYADDR" ColumnName="BODYADDR" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="SENDTIME" ColumnName="SENDTIME" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+          <ScalarProperty Name="DATAVERVISON" ColumnName="DATAVERVISON" />
+          <ScalarProperty Name="EXTEND_1" ColumnName="EXTEND_1" />
+          <ScalarProperty Name="EXTEND_2" ColumnName="EXTEND_2" />
+          <ScalarProperty Name="GETTIME" ColumnName="GETTIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FDS_STANDARD">
+      <EntityTypeMapping TypeName="Model1.FDS_STANDARD">
+        <MappingFragment StoreEntitySet="FDS_STANDARD">
+          <ScalarProperty Name="STANDARDID" ColumnName="STANDARDID" />
+          <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+          <ScalarProperty Name="POWERID" ColumnName="POWERID" />
+          <ScalarProperty Name="POWERVERSION" ColumnName="POWERVERSION" />
+          <ScalarProperty Name="WFQX" ColumnName="WFQX" />
+          <ScalarProperty Name="BREACHDERGEE" ColumnName="BREACHDERGEE" />
+          <ScalarProperty Name="BREACHGRADE" ColumnName="BREACHGRADE" />
+          <ScalarProperty Name="SORTID" ColumnName="SORTID" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+          <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+          <ScalarProperty Name="DATAVERVISON" ColumnName="DATAVERVISON" />
+          <ScalarProperty Name="EXTEND_1" ColumnName="EXTEND_1" />
+          <ScalarProperty Name="EXTEND_2" ColumnName="EXTEND_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FDS_STANDARD_PUNISH">
+      <EntityTypeMapping TypeName="Model1.FDS_STANDARD_PUNISH">
+        <MappingFragment StoreEntitySet="FDS_STANDARD_PUNISH">
+          <ScalarProperty Name="SOURCEKEY" ColumnName="SOURCEKEY" />
+          <ScalarProperty Name="STANDARDID" ColumnName="STANDARDID" />
+          <ScalarProperty Name="POWERVERSION" ColumnName="POWERVERSION" />
+          <ScalarProperty Name="BCFDXTYPE" ColumnName="BCFDXTYPE" />
+          <ScalarProperty Name="MINPUNISHTYPE" ColumnName="MINPUNISHTYPE" />
+          <ScalarProperty Name="MAXPUNISHTYPE" ColumnName="MAXPUNISHTYPE" />
+          <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+          <ScalarProperty Name="MAX" ColumnName="MAX" />
+          <ScalarProperty Name="MIN" ColumnName="MIN" />
+          <ScalarProperty Name="MAXFACTOR" ColumnName="MAXFACTOR" />
+          <ScalarProperty Name="MINFACTOR" ColumnName="MINFACTOR" />
+          <ScalarProperty Name="MAXLIMIT" ColumnName="MAXLIMIT" />
+          <ScalarProperty Name="MINLIMIT" ColumnName="MINLIMIT" />
+          <ScalarProperty Name="EXPRESS" ColumnName="EXPRESS" />
+          <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+          <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+          <ScalarProperty Name="DATAVERVISON" ColumnName="DATAVERVISON" />
+          <ScalarProperty Name="EXTEND_1" ColumnName="EXTEND_1" />
+          <ScalarProperty Name="EXTEND_2" ColumnName="EXTEND_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORKFLOW_WORKITEM_HISTORY_W">
+      <EntityTypeMapping TypeName="Model1.WORKFLOW_WORKITEM_HISTORY_W">
+        <MappingFragment StoreEntitySet="WORKFLOW_WORKITEM_HISTORY_W">
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+          <ScalarProperty Name="DATA_TIMESTAMP" ColumnName="DATA_TIMESTAMP" />
+          <ScalarProperty Name="AGENTFORWORKITEMGUID" ColumnName="AGENTFORWORKITEMGUID" />
+          <ScalarProperty Name="TERMINATEDATE" ColumnName="TERMINATEDATE" />
+          <ScalarProperty Name="OPERATORFORDISPLAYGUID" ColumnName="OPERATORFORDISPLAYGUID" />
+          <ScalarProperty Name="OPERATORFORDISPLAYNAME" ColumnName="OPERATORFORDISPLAYNAME" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="SYNC" ColumnName="SYNC" />
+          <ScalarProperty Name="WORKITEMGUID" ColumnName="WORKITEMGUID" />
+          <ScalarProperty Name="ACTIVITYGUID" ColumnName="ACTIVITYGUID" />
+          <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+          <ScalarProperty Name="ACTIVITYINSTANCEGUID" ColumnName="ACTIVITYINSTANCEGUID" />
+          <ScalarProperty Name="WORKITEMNAME" ColumnName="WORKITEMNAME" />
+          <ScalarProperty Name="WORKITEMTYPE" ColumnName="WORKITEMTYPE" />
+          <ScalarProperty Name="WORKITEMMODENAME" ColumnName="WORKITEMMODENAME" />
+          <ScalarProperty Name="HANDLEURL" ColumnName="HANDLEURL" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="SENDERGUID" ColumnName="SENDERGUID" />
+          <ScalarProperty Name="SENDERNAME" ColumnName="SENDERNAME" />
+          <ScalarProperty Name="TRANSACTOR" ColumnName="TRANSACTOR" />
+          <ScalarProperty Name="TRANSACTORNAME" ColumnName="TRANSACTORNAME" />
+          <ScalarProperty Name="JOBGUID" ColumnName="JOBGUID" />
+          <ScalarProperty Name="OPERATIONGUID" ColumnName="OPERATIONGUID" />
+          <ScalarProperty Name="READDATE" ColumnName="READDATE" />
+          <ScalarProperty Name="OPERATIONDATE" ColumnName="OPERATIONDATE" />
+          <ScalarProperty Name="OPERATORGUID" ColumnName="OPERATORGUID" />
+          <ScalarProperty Name="OPERATORNAME" ColumnName="OPERATORNAME" />
+          <ScalarProperty Name="OPINION" ColumnName="OPINION" />
+          <ScalarProperty Name="WAITHANDLEGUID" ColumnName="WAITHANDLEGUID" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="TERMINATEDATA" ColumnName="TERMINATEDATA" />
+          <ScalarProperty Name="STATUSBEFORETERMINATE" ColumnName="STATUSBEFORETERMINATE" />
+          <ScalarProperty Name="LIMITMINUTES" ColumnName="LIMITMINUTES" />
+          <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+          <ScalarProperty Name="PROCESSVERSIONGUID" ColumnName="PROCESSVERSIONGUID" />
+          <ScalarProperty Name="PROCESSVERSIONNAME" ColumnName="PROCESSVERSIONNAME" />
+          <ScalarProperty Name="PROCESSVERSIONINSTANCEGUID" ColumnName="PROCESSVERSIONINSTANCEGUID" />
+          <ScalarProperty Name="PROCESSVERSIONINSTANCENAME" ColumnName="PROCESSVERSIONINSTANCENAME" />
+          <ScalarProperty Name="GROUPGUID" ColumnName="GROUPGUID" />
+          <ScalarProperty Name="IS_LOCKED" ColumnName="IS_LOCKED" />
+          <ScalarProperty Name="LOCKERUSERGUID" ColumnName="LOCKERUSERGUID" />
+          <ScalarProperty Name="LOCKERDISPNAME" ColumnName="LOCKERDISPNAME" />
+          <ScalarProperty Name="LOCKDATE" ColumnName="LOCKDATE" />
+          <ScalarProperty Name="AGENTFORUSERGUID" ColumnName="AGENTFORUSERGUID" />
+          <ScalarProperty Name="OPERATIONTYPE" ColumnName="OPERATIONTYPE" />
+          <ScalarProperty Name="LOCKERWINDOWGUID" ColumnName="LOCKERWINDOWGUID" />
+          <ScalarProperty Name="ABAUDITOPINION" ColumnName="ABAUDITOPINION" />
+          <ScalarProperty Name="TIMELIMIT" ColumnName="TIMELIMIT" />
+          <ScalarProperty Name="TIMELIMITUNIT" ColumnName="TIMELIMITUNIT" />
+          <ScalarProperty Name="OVERTIMEPOINT" ColumnName="OVERTIMEPOINT" />
+          <ScalarProperty Name="EARLYWARNINGPOINT" ColumnName="EARLYWARNINGPOINT" />
+          <ScalarProperty Name="IS_NEEDSENDEARLYWARNING" ColumnName="IS_NEEDSENDEARLYWARNING" />
+          <ScalarProperty Name="IS_NEEDSENDOVERTIMENOTIFY" ColumnName="IS_NEEDSENDOVERTIMENOTIFY" />
+          <ScalarProperty Name="SYNCROWGUID" ColumnName="SYNCROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORKFLOW_WORKITEM_W">
+      <EntityTypeMapping TypeName="Model1.WORKFLOW_WORKITEM_W">
+        <MappingFragment StoreEntitySet="WORKFLOW_WORKITEM_W">
+          <ScalarProperty Name="DATA_TIMESTAMP" ColumnName="DATA_TIMESTAMP" />
+          <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="TERMINATEDATA" ColumnName="TERMINATEDATA" />
+          <ScalarProperty Name="STATUSBEFORETERMINATE" ColumnName="STATUSBEFORETERMINATE" />
+          <ScalarProperty Name="WORKITEMGUID" ColumnName="WORKITEMGUID" />
+          <ScalarProperty Name="ACTIVITYGUID" ColumnName="ACTIVITYGUID" />
+          <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+          <ScalarProperty Name="ACTIVITYINSTANCEGUID" ColumnName="ACTIVITYINSTANCEGUID" />
+          <ScalarProperty Name="WORKITEMNAME" ColumnName="WORKITEMNAME" />
+          <ScalarProperty Name="WORKITEMTYPE" ColumnName="WORKITEMTYPE" />
+          <ScalarProperty Name="WORKITEMMODENAME" ColumnName="WORKITEMMODENAME" />
+          <ScalarProperty Name="HANDLEURL" ColumnName="HANDLEURL" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="SENDERGUID" ColumnName="SENDERGUID" />
+          <ScalarProperty Name="TRANSACTOR" ColumnName="TRANSACTOR" />
+          <ScalarProperty Name="JOBGUID" ColumnName="JOBGUID" />
+          <ScalarProperty Name="OPERATIONGUID" ColumnName="OPERATIONGUID" />
+          <ScalarProperty Name="READDATE" ColumnName="READDATE" />
+          <ScalarProperty Name="OPERATIONDATE" ColumnName="OPERATIONDATE" />
+          <ScalarProperty Name="OPINION" ColumnName="OPINION" />
+          <ScalarProperty Name="WAITHANDLEGUID" ColumnName="WAITHANDLEGUID" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="TERMINATEDATE" ColumnName="TERMINATEDATE" />
+          <ScalarProperty Name="LIMITMINUTES" ColumnName="LIMITMINUTES" />
+          <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+          <ScalarProperty Name="PROCESSVERSIONGUID" ColumnName="PROCESSVERSIONGUID" />
+          <ScalarProperty Name="PROCESSVERSIONNAME" ColumnName="PROCESSVERSIONNAME" />
+          <ScalarProperty Name="PROCESSVERSIONINSTANCEGUID" ColumnName="PROCESSVERSIONINSTANCEGUID" />
+          <ScalarProperty Name="PROCESSVERSIONINSTANCENAME" ColumnName="PROCESSVERSIONINSTANCENAME" />
+          <ScalarProperty Name="GROUPGUID" ColumnName="GROUPGUID" />
+          <ScalarProperty Name="IS_LOCKED" ColumnName="IS_LOCKED" />
+          <ScalarProperty Name="LOCKERUSERGUID" ColumnName="LOCKERUSERGUID" />
+          <ScalarProperty Name="LOCKERDISPNAME" ColumnName="LOCKERDISPNAME" />
+          <ScalarProperty Name="LOCKDATE" ColumnName="LOCKDATE" />
+          <ScalarProperty Name="AGENTFORUSERGUID" ColumnName="AGENTFORUSERGUID" />
+          <ScalarProperty Name="OPERATIONTYPE" ColumnName="OPERATIONTYPE" />
+          <ScalarProperty Name="LOCKERWINDOWGUID" ColumnName="LOCKERWINDOWGUID" />
+          <ScalarProperty Name="ABAUDITOPINION" ColumnName="ABAUDITOPINION" />
+          <ScalarProperty Name="TIMELIMIT" ColumnName="TIMELIMIT" />
+          <ScalarProperty Name="TIMELIMITUNIT" ColumnName="TIMELIMITUNIT" />
+          <ScalarProperty Name="OVERTIMEPOINT" ColumnName="OVERTIMEPOINT" />
+          <ScalarProperty Name="EARLYWARNINGPOINT" ColumnName="EARLYWARNINGPOINT" />
+          <ScalarProperty Name="IS_NEEDSENDEARLYWARNING" ColumnName="IS_NEEDSENDEARLYWARNING" />
+          <ScalarProperty Name="IS_NEEDSENDOVERTIMENOTIFY" ColumnName="IS_NEEDSENDOVERTIMENOTIFY" />
+          <ScalarProperty Name="AGENTFORWORKITEMGUID" ColumnName="AGENTFORWORKITEMGUID" />
+          <ScalarProperty Name="TRANSACTORNAME" ColumnName="TRANSACTORNAME" />
+          <ScalarProperty Name="OPERATORGUID" ColumnName="OPERATORGUID" />
+          <ScalarProperty Name="OPERATORNAME" ColumnName="OPERATORNAME" />
+          <ScalarProperty Name="OPERATORFORDISPLAYGUID" ColumnName="OPERATORFORDISPLAYGUID" />
+          <ScalarProperty Name="OPERATORFORDISPLAYNAME" ColumnName="OPERATORFORDISPLAYNAME" />
+          <ScalarProperty Name="SENDERNAME" ColumnName="SENDERNAME" />
+          <ScalarProperty Name="SYNCROWGUID" ColumnName="SYNCROWGUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

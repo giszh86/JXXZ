@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>统计分析--执法案件</title>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<style>
+			.chart {
+				height: 200px;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.bluebtn {
+				background: #005A8D;
+				color: #ffffff;
+				border: none;
+			}
+			
+			.nyrstyle {
+				overflow: auto;
+				padding-bottom: 6px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">统计分析--执法案件</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card" style="padding: 4px;">
+				<div class="border-bottomstyle nyrstyle">
+					<span class="r-float">
+						<button type="button" class="mui-btn bluebtn">日</button>
+						<button type="button" class="mui-btn bluebtn">月</button>
+						<button type="button" class="mui-btn bluebtn">年</button>
+					</span>
+				</div>
+				<div class="chart nyrstyle border-bottomstyle" id="barChart"></div>
+				<div class="margin-top14px">
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-collapse">
+							<a class="mui-navigate-right" href="#">
+								一般案件
+							</a>
+							<ul class="mui-table-view mui-table-view-chevron">
+								<li class="mui-table-view-cell cell">
+									<span class="name">立案数</span>
+									<span class="r-float">23</span>
+								</li>
+								<li class="mui-table-view-cell cell">
+									<span class="name">结案数</span>
+									<span class="r-float">45</span>
+								</li>
+								<li class="mui-table-view-cell cell">
+									<span class="name">超期案件</span>
+									<span class="r-float">24</span>
+								</li>
+								<li class="mui-table-view-cell cell">
+									<span class="name">超期率</span>
+									<span class="r-float">45%</span>
+								</li>
+								<li class="mui-table-view-cell cell">
+									<span class="name">完结率</span>
+									<span class="r-float">0%</span>
+								</li>
+							</ul>
+						</li>
+						<li class="mui-table-view-cell mui-collapse">
+							<a class="mui-navigate-right" href="#">
+								简易案件
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-collapse">
+							<a class="mui-navigate-right" href="#">
+								违法案件
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/echarts-all.js"></script>
+		<script>
+			var getOption = function(chartType) {
+				var chartOption = {
+					legend: {
+						show: false,
+						data: ['蒸发量', '降水量']
+					},
+					grid: {
+						x: 35,
+						x2: 10,
+						y: 30,
+						y2: 25
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: false,
+					xAxis: [{
+						type: 'category',
+						data: ['简易案件', '一般案件', '违停案件']
+					}],
+					yAxis: [{
+						type: 'value',
+						splitArea: {
+							show: true
+						}
+					}],
+					series: [{
+						name: '蒸发量',
+						type: chartType,
+						data: [20, 49, 99]
+					}]
+				};
+				return chartOption;
+			};
+			var byId = function(id) {
+				return document.getElementById(id);
+			};
+			var barChart = echarts.init(byId('barChart'));
+			barChart.setOption(getOption('bar'));
+		</script>
+	</body>
+
+</html>

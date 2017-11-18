@@ -1,0 +1,10 @@
+D:\AllProjects\NowProjects\JXXZ\JXXZ.ZHCG\JXXZ.ZHCG\JXXZ.ZHCG.Model\bin\Release\JXXZ.ZHCG.Model.dll
+D:\AllProjects\NowProjects\JXXZ\JXXZ.ZHCG\JXXZ.ZHCG\JXXZ.ZHCG.Model\bin\Release\JXXZ.ZHCG.Model.pdb
+D:\AllProjects\NowProjects\JXXZ\JXXZ.ZHCG\JXXZ.ZHCG\JXXZ.ZHCG.Model\obj\Release\JXXZ.ZHCG.Model.dll
+D:\AllProjects\NowProjects\JXXZ\JXXZ.ZHCG\JXXZ.ZHCG\JXXZ.ZHCG.Model\obj\Release\JXXZ.ZHCG.Model.pdb
+D:\AllProjects\NowProjects\JXXZ\JXXZ.ZHCG\JXXZ.ZHCG\JXXZ.ZHCG.Model\obj\Release\JXXZ.ZHCG.Model.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\JXXZ.ZHCG\JXXZ.ZHCG.Model\bin\Release\JXXZ.ZHCG.Model.dll
+C:\Users\Administrator\Desktop\JXXZ.ZHCG\JXXZ.ZHCG.Model\bin\Release\JXXZ.ZHCG.Model.pdb
+C:\Users\Administrator\Desktop\JXXZ.ZHCG\JXXZ.ZHCG.Model\obj\Release\JXXZ.ZHCG.Model.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\JXXZ.ZHCG\JXXZ.ZHCG.Model\obj\Release\JXXZ.ZHCG.Model.dll
+C:\Users\Administrator\Desktop\JXXZ.ZHCG\JXXZ.ZHCG.Model\obj\Release\JXXZ.ZHCG.Model.pdb

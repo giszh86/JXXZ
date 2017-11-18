@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/app.css" />
+		<link rel="stylesheet" href="home.css" />
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a id='reload' class="mui-icon mui-icon-loop mui-pull-left "></a>
+			<h1 class="mui-title">首页</h1>
+		</header>
+
+		<div class="mui-content">
+			<div id="sliderone" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a  href="#">
+							<img src="image/scrollimage/333.png">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a  href="#">
+							<img src="image/scrollimage/111.png">
+						</a>
+					</div>
+
+					<div class="mui-slider-item">
+						<a  href="#">
+							<img src="image/scrollimage/222.png">
+						</a>
+					</div>
+
+					<div class="mui-slider-item">
+						<a  href="#">
+							<img src="image/scrollimage/333.png">
+						</a>
+					</div>
+
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a  href="#">
+							<img id="Lastdup" src="image/scrollimage/111.png">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<div id='vue-list'>
+				<ul id="myGrid" class="mui-table-view mui-grid-view mui-grid-9">
+					<template v-for='(menu,index) in menus'>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" @tap='openWindow(menu)'>
+							<a href="javascript:;">
+								<span v-show='menu.count' class="mui-badge mui-badge-danger mui-badge-app" style="display: none;">{{menu.count}}</span>
+								<img :src="menu.icon" />
+								<div class="mui-media-body">{{menu.Name}}</div>
+							</a>
+						</li>
+					</template>
+
+				</ul>
+				<div id="GView">
+					<ul v-if='data.Name' class="mui-table-view">
+						<li class="mui-table-view-cell" style="padding: 4px 8px 8px 8px;" @tap='openWindow(data)'>
+							<div style="float: left;background: #005a8d;width: 5px;height: 25px;margin-top: 4px;"></div>
+							<span style="float: left;padding-top: 6px;color: #000000;">&nbsp;{{data.Name}}</span>
+							<span style="float: right;padding-top: 6px;padding-right: 5px;color: #A0A0A0;">更多></span>
+						</li>
+					</ul>
+					<div id='scroll-list' style="overflow: auto;">
+						<ul class="mui-table-view">
+							<template v-if='data.icon == "list1"'>
+								<li v-for='(item,index) in list' class="mui-table-view-cell" @tap='openEvent(item)'>
+									<img class="list-li-img" :src="item.imgSrc" />
+									<div class="left">
+										<div class="dt">{{item.eventtitle}}</div>
+										<div class="address">{{item.eventaddress}}</div>
+									</div>
+									<span class="right">{{item.limittime.replace(/\s\d+:\d+:\d+$/,"")}}</span>
+								</li>
+							</template>
+							<template v-else-if='data.icon == "list2"'>
+								<li v-for='(item,index) in list' class="mui-table-view-cell" @tap='openCase(item)'>
+									<div class="dshaj-row">
+										<span class="dshaj-title">案件名称</span>
+										<span class="dshaj-content">{{item.title}}</span>
+									</div>
+									<div class="dshaj-row">
+										<span class="dshaj-title">当前环节</span>
+										<span class="dshaj-content">{{item.segmentValue}}</span>
+									</div>
+									<div class="dshaj-row">
+										<span class="dshaj-title">当事人</span>
+										<span class="dshaj-content">{{item.disposePerson}}</span>
+									</div>
+									<div class="dshaj-row">
+										<span class="dshaj-title">超期时间</span>
+										<!--<span class="dshaj-overtime">{{item.extendedDate.replace(/\s\d+:\d+:\d+$/,"")}}</span>-->
+										<span class="dshaj-overtime">{{item.extendedDate}}</span>
+										<span class="dshaj-deal">处 理</span>
+									</div>
+
+								</li>
+							</template>
+							<template v-else-if='data.icon == "list3"'>
+								<!--<li class="mui-table-view-cell">
+								<img class="list-li-img" src="../../image/home/yanghudaiban.png" />
+								<div class="left">
+									<div class="dt">2017年秀洲区源公司满年合同</div>
+									<div class="address">秀洲区洪兴路2323号</div>
+								</div>
+								<span class="right">2016-08-26</span>
+							</li>-->
+								<li v-for='(item,index) in list' class="mui-table-view-cell" @tap='openMaintainList(item)'>
+									<img class="list-li-img" src="image/home/yanghudaiban.png" />
+									<div class="left">
+										<div class="dt">{{item.title}}</div>
+										<div class="address">{{item.address}}</div>
+									</div>
+									<span class="right">{{item.date}}</span>
+								</li>
+							</template>
+
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script type="text/javascript " src="js/require.min.js " data-main='home.js'></script>
+
+</html>

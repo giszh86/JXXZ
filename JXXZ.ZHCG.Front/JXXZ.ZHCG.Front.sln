@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.Front", "JXXZ.ZHCG.Front\JXXZ.ZHCG.Front.csproj", "{61BF904F-662E-4ADE-AA1C-3026D6845E78}"
+	ProjectSection(ProjectDependencies) = postProject
+		{583BDB33-0446-47CF-A968-B841839CEB7E} = {583BDB33-0446-47CF-A968-B841839CEB7E}
+		{BC562FCA-DF22-4E8A-8FA3-CCB45914FD0B} = {BC562FCA-DF22-4E8A-8FA3-CCB45914FD0B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.Front.Web", "JXXZ.ZHCG.Front.Web\JXXZ.ZHCG.Front.Web.csproj", "{4CEF6EF2-9AA7-4299-8B96-21DC0B7A4892}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLLS", "DLLS", "{F37C3CE4-D6A2-4D0A-BE07-4430D469F792}"
+	ProjectSection(SolutionItems) = preProject
+		DLLS\ESRI.ArcGIS.Client.Behaviors.dll = DLLS\ESRI.ArcGIS.Client.Behaviors.dll
+		DLLS\ESRI.ArcGIS.Client.dll = DLLS\ESRI.ArcGIS.Client.dll
+		DLLS\Microsoft.Expression.Drawing.dll = DLLS\Microsoft.Expression.Drawing.dll
+		DLLS\Microsoft.Expression.Interactions.dll = DLLS\Microsoft.Expression.Interactions.dll
+		DLLS\Newtonsoft.Json.dll = DLLS\Newtonsoft.Json.dll
+		DLLS\System.Windows.Controls.Toolkit.dll = DLLS\System.Windows.Controls.Toolkit.dll
+		DLLS\System.Windows.Controls.Toolkit.Internals.dll = DLLS\System.Windows.Controls.Toolkit.Internals.dll
+		DLLS\System.Windows.Interactivity.dll = DLLS\System.Windows.Interactivity.dll
+		DLLS\Techzen.ArcGIS.dll = DLLS\Techzen.ArcGIS.dll
+		DLLS\Telerik.Windows.Controls.Chart.dll = DLLS\Telerik.Windows.Controls.Chart.dll
+		DLLS\Telerik.Windows.Controls.Charting.dll = DLLS\Telerik.Windows.Controls.Charting.dll
+		DLLS\Telerik.Windows.Controls.Data.dll = DLLS\Telerik.Windows.Controls.Data.dll
+		DLLS\Telerik.Windows.Controls.DataVisualization.dll = DLLS\Telerik.Windows.Controls.DataVisualization.dll
+		DLLS\Telerik.Windows.Controls.dll = DLLS\Telerik.Windows.Controls.dll
+		DLLS\Telerik.Windows.Controls.Docking.dll = DLLS\Telerik.Windows.Controls.Docking.dll
+		DLLS\Telerik.Windows.Controls.GridView.dll = DLLS\Telerik.Windows.Controls.GridView.dll
+		DLLS\Telerik.Windows.Controls.Input.dll = DLLS\Telerik.Windows.Controls.Input.dll
+		DLLS\Telerik.Windows.Controls.Navigation.dll = DLLS\Telerik.Windows.Controls.Navigation.dll
+		DLLS\Telerik.Windows.Controls.RibbonView.dll = DLLS\Telerik.Windows.Controls.RibbonView.dll
+		DLLS\Telerik.Windows.Data.dll = DLLS\Telerik.Windows.Data.dll
+		DLLS\Telerik.Windows.Themes.Expression_Dark.dll = DLLS\Telerik.Windows.Themes.Expression_Dark.dll
+		DLLS\Telerik.Windows.Themes.Windows7.dll = DLLS\Telerik.Windows.Themes.Windows7.dll
+		DLLS\TransCoords.dll = DLLS\TransCoords.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techzen.ICS.CS.Controls", "Techzen.ICS.CS.Controls\Techzen.ICS.CS.Controls.csproj", "{BC562FCA-DF22-4E8A-8FA3-CCB45914FD0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techzen.ICS.PublicModel", "Techzen.ICS.PublicModel\Techzen.ICS.PublicModel.csproj", "{583BDB33-0446-47CF-A968-B841839CEB7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.ICSAPI", "JXXZ.ZHCG.ICSAPI\JXXZ.ZHCG.ICSAPI.csproj", "{2073F32F-ECA8-4BA4-AA83-EB240A253C76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61BF904F-662E-4ADE-AA1C-3026D6845E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BF904F-662E-4ADE-AA1C-3026D6845E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BF904F-662E-4ADE-AA1C-3026D6845E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BF904F-662E-4ADE-AA1C-3026D6845E78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CEF6EF2-9AA7-4299-8B96-21DC0B7A4892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CEF6EF2-9AA7-4299-8B96-21DC0B7A4892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CEF6EF2-9AA7-4299-8B96-21DC0B7A4892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CEF6EF2-9AA7-4299-8B96-21DC0B7A4892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC562FCA-DF22-4E8A-8FA3-CCB45914FD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC562FCA-DF22-4E8A-8FA3-CCB45914FD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC562FCA-DF22-4E8A-8FA3-CCB45914FD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC562FCA-DF22-4E8A-8FA3-CCB45914FD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583BDB33-0446-47CF-A968-B841839CEB7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583BDB33-0446-47CF-A968-B841839CEB7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583BDB33-0446-47CF-A968-B841839CEB7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583BDB33-0446-47CF-A968-B841839CEB7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2073F32F-ECA8-4BA4-AA83-EB240A253C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2073F32F-ECA8-4BA4-AA83-EB240A253C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2073F32F-ECA8-4BA4-AA83-EB240A253C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2073F32F-ECA8-4BA4-AA83-EB240A253C76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://218.108.93.243:8080/tfs/year2017
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = JXXZ.ZHCG.Front.Web\\JXXZ.ZHCG.Front.Web.csproj
+		SccProjectName1 = JXXZ.ZHCG.Front.Web
+		SccLocalPath1 = JXXZ.ZHCG.Front.Web
+		SccProjectUniqueName2 = JXXZ.ZHCG.Front\\JXXZ.ZHCG.Front.csproj
+		SccProjectName2 = JXXZ.ZHCG.Front
+		SccLocalPath2 = JXXZ.ZHCG.Front
+		SccProjectUniqueName3 = Techzen.ICS.CS.Controls\\Techzen.ICS.CS.Controls.csproj
+		SccProjectName3 = Techzen.ICS.CS.Controls
+		SccLocalPath3 = Techzen.ICS.CS.Controls
+		SccProjectUniqueName4 = Techzen.ICS.PublicModel\\Techzen.ICS.PublicModel.csproj
+		SccProjectName4 = Techzen.ICS.PublicModel
+		SccLocalPath4 = Techzen.ICS.PublicModel
+		SccProjectUniqueName5 = JXXZ.ZHCG.ICSAPI\\JXXZ.ZHCG.ICSAPI.csproj
+		SccProjectName5 = JXXZ.ZHCG.ICSAPI
+		SccLocalPath5 = JXXZ.ZHCG.ICSAPI
+	EndGlobalSection
+EndGlobal

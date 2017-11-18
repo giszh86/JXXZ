@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{118D6B1D-EF25-40E0-99F1-18C54224BFFD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JXXZ.ZHCG.Web</RootNamespace>
+    <AssemblyName>JXXZ.ZHCG.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Camera\Camera.html" />
+    <Content Include="Camera\dahuaCamera\ocxfun.js" />
+    <Content Include="Camera\images\ajax-loader.gif" />
+    <Content Include="Camera\images\file.gif" />
+    <Content Include="Camera\images\folder-closed.gif" />
+    <Content Include="Camera\images\folder.gif" />
+    <Content Include="Camera\images\minus.gif" />
+    <Content Include="Camera\images\plus.gif" />
+    <Content Include="Camera\images\treeview-black-line.gif" />
+    <Content Include="Camera\images\treeview-black.gif" />
+    <Content Include="Camera\images\treeview-default-line.gif" />
+    <Content Include="Camera\images\treeview-default.gif" />
+    <Content Include="Camera\images\treeview-famfamfam-line.gif" />
+    <Content Include="Camera\images\treeview-famfamfam.gif" />
+    <Content Include="Camera\images\treeview-gray-line.gif" />
+    <Content Include="Camera\images\treeview-gray.gif" />
+    <Content Include="Camera\images\treeview-red-line.gif" />
+    <Content Include="Camera\images\treeview-red.gif" />
+    <Content Include="Camera\jquery.treeview.css" />
+    <Content Include="Camera\jquery.treeview.js" />
+    <Content Include="Camera\PlayViewDemo.js" />
+    <Content Include="Camera\recorder.html" />
+    <Content Include="Camera\uav.html" />
+    <Content Include="ClientBin\Techzen.Silverlight.PlugIns.xap" />
+    <Content Include="Css\bootstrap.css" />
+    <Content Include="Css\btnController.css" />
+    <Content Include="Css\locationPointAnimate.css" />
+    <Content Include="Css\Main.css" />
+    <Content Include="Css\pager\goodPager.css" />
+    <Content Include="Css\Panel.css" />
+    <Content Include="Css\panleBtn\minBtn.css" />
+    <Content Include="Css\progressbar.css" />
+    <Content Include="Css\remarksPanel.css" />
+    <Content Include="Css\ReportCenter.css" />
+    <Content Include="Css\slashform.css" />
+    <Content Include="Css\timerCheckTool.css" />
+    <Content Include="Css\Toolbar.css" />
+    <Content Include="Css\TreeClass.css" />
+    <Content Include="2dMap.html" />
+    <Content Include="Css\video-js.css" />
+    <Content Include="Images\skybox\00_BK.jpg" />
+    <Content Include="Images\skybox\00_DN.jpg" />
+    <Content Include="Images\skybox\00_FR%28128%29.bmp" />
+    <Content Include="Images\skybox\00_FR.jpg" />
+    <Content Include="Images\skybox\00_LF.jpg" />
+    <Content Include="Images\skybox\00_RT.jpg" />
+    <Content Include="Images\skybox\00_UP.jpg" />
+    <Content Include="Images\skybox\04_BK.jpg" />
+    <Content Include="Images\skybox\04_DN.jpg" />
+    <Content Include="Images\skybox\04_FR.jpg" />
+    <Content Include="Images\skybox\04_LF.jpg" />
+    <Content Include="Images\skybox\04_RT%28128%29.bmp" />
+    <Content Include="Images\skybox\04_RT.jpg" />
+    <Content Include="Images\skybox\04_UP.jpg" />
+    <Content Include="Images\skybox\100_BK.jpg" />
+    <Content Include="Images\skybox\100_DN.jpg" />
+    <Content Include="Images\skybox\100_FR%28128%29.bmp" />
+    <Content Include="Images\skybox\100_FR.jpg" />
+    <Content Include="Images\skybox\100_LF.jpg" />
+    <Content Include="Images\skybox\100_RT.jpg" />
+    <Content Include="Images\skybox\100_UP.jpg" />
+    <Content Include="Images\skybox\10_BK%28128%29.bmp" />
+    <Content Include="Images\skybox\10_BK.jpg" />
+    <Content Include="Images\skybox\10_DN.jpg" />
+    <Content Include="Images\skybox\10_FR.jpg" />
+    <Content Include="Images\skybox\10_LF.jpg" />
+    <Content Include="Images\skybox\10_RT.jpg" />
+    <Content Include="Images\skybox\10_UP.jpg" />
+    <Content Include="Images\skybox\11_BK.jpg" />
+    <Content Include="Images\skybox\11_DN.jpg" />
+    <Content Include="Images\skybox\11_FR.jpg" />
+    <Content Include="Images\skybox\11_LF.jpg" />
+    <Content Include="Images\skybox\11_RT%28128%29.bmp" />
+    <Content Include="Images\skybox\11_RT.jpg" />
+    <Content Include="Images\skybox\11_UP.jpg" />
+    <Content Include="Images\skybox\120_BK.jpg" />
+    <Content Include="Images\skybox\120_DN.jpg" />
+    <Content Include="Images\skybox\120_FR.jpg" />
+    <Content Include="Images\skybox\120_LF.jpg" />
+    <Content Include="Images\skybox\120_RT.jpg" />
+    <Content Include="Images\skybox\120_UP%28128%29.bmp" />
+    <Content Include="Images\skybox\120_UP.jpg" />
+    <Content Include="Images\skybox\12_BK.jpg" />
+    <Content Include="Images\skybox\12_DN.jpg" />
+    <Content Include="Images\skybox\12_FR.jpg" />
+    <Content Include="Images\skybox\12_LF.jpg" />
+    <Content Include="Images\skybox\12_RT%28128%29.bmp" />
+    <Content Include="Images\skybox\12_RT.jpg" />
+    <Content Include="Images\skybox\12_UP.jpg" />
+    <Content Include="Images\skybox\130_BK.jpg" />
+    <Content Include="Images\skybox\130_DN.jpg" />
+    <Content Include="Images\skybox\130_FR.jpg" />
+    <Content Include="Images\skybox\130_LF.jpg" />
+    <Content Include="Images\skybox\130_RT.jpg" />
+    <Content Include="Images\skybox\130_UP%28128%29.bmp" />
+    <Content Include="Images\skybox\130_UP.jpg" />
+    <Content Include="Images\skybox\13_BK.jpg" />
+    <Content Include="Images\skybox\13_DN.jpg" />
+    <Content Include="Images\skybox\13_FR.jpg" />
+    <Content Include="Images\skybox\13_LF.jpg" />
+    <Content Include="Images\skybox\13_RT.jpg" />
+    <Content Include="Images\skybox\13_UP%28128%29.bmp" />
+    <Content Include="Images\skybox\13_UP.jpg" />
+    <Content Include="Images\skybox\1_BK.jpg" />
+    <Content Include="Images\skybox\1_DN.jpg" />
+    <Content Include="Images\skybox\1_FR%28128%29.bmp" />
+    <Content Include="Images\skybox\1_FR.jpg" />
+    <Content Include="Images\skybox\1_LF.jpg" />
+    <Content Include="Images\skybox\1_RT.jpg" />
+    <Content Include="Images\skybox\1_UP.jpg" />
+    <Content Include="Images\skybox\22_BK.jpg" />
+    <Content Include="Images\skybox\22_DN.jpg" />
+    <Content Include="Images\skybox\22_FR.jpg" />
+    <Content Include="Images\skybox\22_LF.jpg" />
+    <Content Include="Images\skybox\22_RT.jpg" />
+    <Content Include="Images\skybox\22_UP%28128%29.bmp" />
+    <Content Include="Images\skybox\22_UP.jpg" />
+    <Content Include="Images\skybox\2_BK.jpg" />
+    <Content Include="Images\skybox\2_DN.jpg" />
+    <Content Include="Images\skybox\2_FR%28128%29.bmp" />
+    <Content Include="Images\skybox\2_FR.jpg" />
+    <Content Include="Images\skybox\2_LF.jpg" />
+    <Content Include="Images\skybox\2_RT.jpg" />
+    <Content Include="Images\skybox\2_UP.jpg" />
+    <Content Include="Images\skybox\44_BK%28128%29.bmp" />
+    <Content Include="Images\skybox\44_BK.jpg" />
+    <Content Include="Images\skybox\44_DN.jpg" />
+    <Content Include="Images\skybox\44_FR.jpg" />
+    <Content Include="Images\skybox\44_LF.jpg" />
+    <Content Include="Images\skybox\44_RT.jpg" />
+    <Content Include="Images\skybox\44_UP.jpg" />
+    <Content Include="Images\skybox\7_BK.jpg" />
+    <Content Include="Images\skybox\7_DN.jpg" />
+    <Content Include="Images\skybox\7_FR%28128%29.bmp" />
+    <Content Include="Images\skybox\7_FR.jpg" />
+    <Content Include="Images\skybox\7_LF.jpg" />
+    <Content Include="Images\skybox\7_RT.jpg" />
+    <Content Include="Images\skybox\7_UP.jpg" />
+    <Content Include="Images\skybox\99_BK%28128%29.bmp" />
+    <Content Include="Images\skybox\99_BK.jpg" />
+    <Content Include="Images\skybox\99_DN.jpg" />
+    <Content Include="Images\skybox\99_FR.jpg" />
+    <Content Include="Images\skybox\99_LF.jpg" />
+    <Content Include="Images\skybox\99_RT.jpg" />
+    <Content Include="Images\skybox\99_UP.jpg" />
+    <Content Include="Images\skybox\9_BK.jpg" />
+    <Content Include="Images\skybox\9_DN.jpg" />
+    <Content Include="Images\skybox\9_FR%28128%29.bmp" />
+    <Content Include="Images\skybox\9_FR.jpg" />
+    <Content Include="Images\skybox\9_LF.jpg" />
+    <Content Include="Images\skybox\9_RT.jpg" />
+    <Content Include="Images\skybox\9_UP.jpg" />
+    <Content Include="Images\skybox\SkyBox.xml" />
+    <Content Include="Image\bj\井盖.png" />
+    <Content Include="Image\bj\停车咪表.png" />
+    <Content Include="Image\bj\停车场.png" />
+    <Content Include="Image\bj\公交停场.png" />
+    <Content Include="Image\bj\公共厕所.png" />
+    <Content Include="Image\bj\公厕指示牌.png" />
+    <Content Include="Image\bj\垃圾箱.png" />
+    <Content Include="Image\bj\垃圾间楼.png" />
+    <Content Include="Image\bj\存车支架.png" />
+    <Content Include="Image\bj\岗亭.png" />
+    <Content Include="Image\bj\广告牌匾.png" />
+    <Content Include="Image\bj\护树设施.png" />
+    <Content Include="Image\bj\指示牌.png" />
+    <Content Include="Image\bj\景观灯.png" />
+    <Content Include="Image\bj\杆线.png" />
+    <Content Include="Image\bj\桥梁.png" />
+    <Content Include="Image\bj\民用水井.png" />
+    <Content Include="Image\bj\灯箱霓虹灯.png" />
+    <Content Include="Image\bj\监控电子眼.png" />
+    <Content Include="Image\bj\绿地.png" />
+    <Content Include="Image\bj\绿地护栏.png" />
+    <Content Include="Image\bj\绿地维护设施.png" />
+    <Content Include="Image\bj\花架花钵.png" />
+    <Content Include="Image\bj\行道树.png" />
+    <Content Include="Image\bj\街头坐椅.png" />
+    <Content Include="Image\bj\路灯.png" />
+    <Content Include="Image\bj\部件.png" />
+    <Content Include="Image\bj\重大危险源.png" />
+    <Content Include="Image\bj\雨水井盖.png" />
+    <Content Include="Image\callPolice\off.png" />
+    <Content Include="Image\callPolice\onTrun.png" />
+    <Content Include="Image\callPolice\open.png" />
+    <Content Include="Image\cameraiconwhilte\停止.png" />
+    <Content Include="Image\cameraiconwhilte\光圈.png" />
+    <Content Include="Image\cameraiconwhilte\全屏.png" />
+    <Content Include="Image\cameraiconwhilte\减号.png" />
+    <Content Include="Image\cameraiconwhilte\刷新.png" />
+    <Content Include="Image\cameraiconwhilte\加号.png" />
+    <Content Include="Image\cameraiconwhilte\右.png" />
+    <Content Include="Image\cameraiconwhilte\右上.png" />
+    <Content Include="Image\cameraiconwhilte\右下.png" />
+    <Content Include="Image\cameraiconwhilte\向上.png" />
+    <Content Include="Image\cameraiconwhilte\向下.png" />
+    <Content Include="Image\cameraiconwhilte\向右.png" />
+    <Content Include="Image\cameraiconwhilte\向左.png" />
+    <Content Include="Image\cameraiconwhilte\回放.png" />
+    <Content Include="Image\cameraiconwhilte\左.png" />
+    <Content Include="Image\cameraiconwhilte\左上.png" />
+    <Content Include="Image\cameraiconwhilte\左下.png" />
+    <Content Include="Image\cameraiconwhilte\焦点.png" />
+    <Content Include="Image\cameraiconwhilte\焦距调节.png" />
+    <Content Include="Image\curringcontractStatus\stopwork.png" />
+    <Content Include="Image\curringcontractStatus\worked.png" />
+    <Content Include="Image\curringcontractStatus\working.png" />
+    <Content Include="Image\event\视.png" />
+    <Content Include="Image\faviconico.ico" />
+    <Content Include="Image\imgswitch\1.jpg" />
+    <Content Include="Image\imgswitch\2.jpg" />
+    <Content Include="Image\imgswitch\3.jpg" />
+    <Content Include="Image\imgswitch\chacha3.png" />
+    <Content Include="Image\imgswitch\feel3.png" />
+    <Content Include="Image\imgswitch\feel4.png" />
+    <Content Include="Image\imgswitch\index_tab_l.png" />
+    <Content Include="Image\imgswitch\index_tab_r.png" />
+    <Content Include="Image\loading.gif" />
+    <Content Include="Image\case\eventthemb\24hour.png" />
+    <Content Include="Image\case\eventthemb\96310.png" />
+    <Content Include="Image\case\eventthemb\maill.png" />
+    <Content Include="Image\case\eventthemb\other.png" />
+    <Content Include="Image\case\eventthemb\lightwork.png" />
+    <Content Include="Image\case\eventthemb\numbercity.png" />
+    <Content Include="Image\case\eventthemb\exposuretable.png" />
+    <Content Include="Image\case\eventthemb\phone.png" />
+    <Content Include="Image\case\generalcase.png" />
+    <Content Include="Image\case\easycase.png" />
+    <Content Include="Image\case\volationcase.png" />
+    <Content Include="Image\case\majorcases.png" />
+    <Content Include="Image\event\9.png" />
+    <Content Include="Image\event\信.png" />
+    <Content Include="Image\event\值.png" />
+    <Content Include="Image\event\其.png" />
+    <Content Include="Image\event\区.png" />
+    <Content Include="Image\event\夜.png" />
+    <Content Include="Image\event\局.png" />
+    <Content Include="Image\event\巡.png" />
+    <Content Include="Image\event\市.png" />
+    <Content Include="Image\event\应.png" />
+    <Content Include="Image\event\建.png" />
+    <Content Include="Image\event\数.png" />
+    <Content Include="Image\event\环.png" />
+    <Content Include="Image\event\电.png" />
+    <Content Include="Image\event\督.png" />
+    <Content Include="Image\event\筑.png" />
+    <Content Include="Image\event\舆.png" />
+    <Content Include="Image\event\行.png" />
+    <Content Include="Image\hexagon.png" />
+    <Content Include="Image\localtion\approval.png" />
+    <Content Include="Image\localtion\blacklist.png" />
+    <Content Include="Image\localtion\camera.png" />
+    <Content Include="Image\localtion\car.png" />
+    <Content Include="Image\localtion\case.png" />
+    <Content Include="Image\localtion\curring.png" />
+    <Content Include="Image\localtion\demolition.png" />
+    <Content Include="Image\localtion\endpoint.png" />
+    <Content Include="Image\localtion\event.png" />
+    <Content Include="Image\localtion\hawker.png" />
+    <Content Include="Image\localtion\nobuilder.png" />
+    <Content Include="Image\localtion\part.png" />
+    <Content Include="Image\localtion\parts.png" />
+    <Content Include="Image\localtion\people.png" />
+    <Content Include="Image\localtion\politics.png" />
+    <Content Include="Image\localtion\startingPoint.png" />
+    <Content Include="Image\localtion\street.png" />
+    <Content Include="Image\localtion\wtaj.png" />
+    <Content Include="Image\localtion\Iconlocation.png" />
+    <Content Include="Image\lowLyingArea\red.png" />
+    <Content Include="Image\lowLyingArea\gray.png" />
+    <Content Include="Image\lowLyingArea\green.png" />
+    <Content Include="Image\minMaxPicture\maxgreen.png" />
+    <Content Include="Image\minMaxPicture\maxwhilte.png" />
+    <Content Include="Image\minMaxPicture\mingreen.png" />
+    <Content Include="Image\minMaxPicture\minwhilte.png" />
+    <Content Include="Image\nobuild\nobuild.png" />
+    <Content Include="Image\outline\add.png" />
+    <Content Include="Image\outline\chat.png" />
+    <Content Include="Image\outline\clearbuild.png" />
+    <Content Include="Image\outline\current.png" />
+    <Content Include="Image\outline\location.png" />
+    <Content Include="Image\outline\locationtime.png" />
+    <Content Include="Image\outline\paly.png" />
+    <Content Include="Image\outline\task.png" />
+    <Content Include="Image\outline\trackplay.png" />
+    <Content Include="Image\peopleStatus\down.png" />
+    <Content Include="Image\peopleStatus\online.png" />
+    <Content Include="Image\reportCenter\back.png" />
+    <Content Include="Image\reportCenter\change.png" />
+    <Content Include="Image\rightIcon.png" />
+    <Content Include="Image\firstpage.png" />
+    <Content Include="Image\icon\事件.png" />
+    <Content Include="Image\icon\人员.png" />
+    <Content Include="Image\icon\养护.png" />
+    <Content Include="Image\icon\审批.png" />
+    <Content Include="Image\icon\拆迁.png" />
+    <Content Include="Image\icon\整治.png" />
+    <Content Include="Image\icon\案件.png" />
+    <Content Include="Image\icon\监控.png" />
+    <Content Include="Image\icon\车辆.png" />
+    <Content Include="Image\icon\违建.png" />
+    <Content Include="Image\icon\部件.png" />
+    <Content Include="Image\LOGO.png" />
+    <Content Include="Image\Pager\firstPage.png" />
+    <Content Include="Image\Pager\lastPage.png" />
+    <Content Include="Image\Pager\nextPage.png" />
+    <Content Include="Image\Pager\Shadowe.png" />
+    <Content Include="Image\selfCheckbox\nocheck.png" />
+    <Content Include="Image\selfCheckbox\checked.png" />
+    <Content Include="Image\toolbar\2DRight\grid.png" />
+    <Content Include="Image\toolbar\2DRight\pointshistory.png" />
+    <Content Include="Image\toolbar\2DRight\pointsIcon.png" />
+    <Content Include="Image\toolbar\2DRight\rightToolTipbg.png" />
+    <Content Include="Image\toolbar\2DRight\surface.png" />
+    <Content Include="Image\toolbar\2DRight\delete.png" />
+    <Content Include="Image\toolbar\2DRight\points.png" />
+    <Content Include="Image\toolbar\2DRight\selection.png" />
+    <Content Include="Image\toolbar\2DRight\horizontalranging.png" />
+    <Content Include="Image\toolbar\2DRight\ranging.png" />
+    <Content Include="Image\toolbar\2DRight\line.png" />
+    <Content Include="Image\toolbar\2DRight\frame.png" />
+    <Content Include="Image\toolbar\2DRight\addPoints.png" />
+    <Content Include="Image\toolbar\right\1.png" />
+    <Content Include="Image\toolbar\right\circular.png" />
+    <Content Include="Image\toolbar\right\drawpolygon.png" />
+    <Content Include="Image\toolbar\right\frame.png" />
+    <Content Include="Image\toolbar\right\level.png" />
+    <Content Include="Image\toolbar\right\model.png" />
+    <Content Include="Image\toolbar\right\surface.png" />
+    <Content Include="Image\toolbar\right\delete.png" />
+    <Content Include="Image\toolbar\right\reload.png" />
+    <Content Include="Image\toolbar\right\Ruler.png" />
+    <Content Include="Image\toolbar\right\pen.png" />
+    <Content Include="Image\toolbar\right\testsurface.png" />
+    <Content Include="Image\toolbar\right\vertical.png" />
+    <Content Include="Image\toolbar\right\tolocal.png" />
+    <Content Include="Image\toolbar\right\pipeline.png" />
+    <Content Include="Image\toolbar\topright\mapchange.png" />
+    <Content Include="Image\toolbar\topright\eventtab.png" />
+    <Content Include="Image\toolbar\topright\map.png" />
+    <Content Include="Image\toolbar\topright\computer.png" />
+    <Content Include="Image\tools\closed.png" />
+    <Content Include="Image\tools\people.png" />
+    <Content Include="Image\tools\car.png" />
+    <Content Include="Image\tools\details.png" />
+    <Content Include="Image\tools\close.png" />
+    <Content Include="Image\tools\search.png" />
+    <Content Include="Image\tools\seniorsearch.png" />
+    <Content Include="Image\tools\orangebulb.png" />
+    <Content Include="Image\tools\redbulb.png" />
+    <Content Include="Image\TrackIcon\paly.png" />
+    <Content Include="Image\TrackIcon\palywhite.png" />
+    <Content Include="Image\TrackIcon\stop.png" />
+    <Content Include="Image\TrackIcon\stopwhite.png" />
+    <Content Include="Image\TrackIcon\suspend.png" />
+    <Content Include="Image\TrackIcon\suspendwhite.png" />
+    <Content Include="Image\Tree\camera.png" />
+    <Content Include="Image\Tree\down.png" />
+    <Content Include="Image\Tree\right.png" />
+    <Content Include="Image\userphoto\defaultphoto.png" />
+    <Content Include="Image\localtion\ry\peoplelocation.png" />
+    <Content Include="Image\人员选中_u1007.png" />
+    <Content Include="Image\头部切图.png" />
+    <Content Include="Image\底部.png" />
+    <Content Include="Image\标题.png" />
+    <Content Include="index.html" />
+    <Content Include="kl-tip\departTip.html" />
+    <Content Include="Scripts\Buttom\case\caseall.js" />
+    <Content Include="Scripts\Buttom\curring\curringall.js" />
+    <Content Include="Scripts\Buttom\event\eventall.js" />
+    <Content Include="Scripts\Buttom\index\indexall.js" />
+    <Content Include="Scripts\Buttom\lowLyingArea\callPolice.js" />
+    <Content Include="Scripts\Buttom\menuNuber\menuNuber.js" />
+    <Content Include="Scripts\Buttom\monitor\monitorall.js" />
+    <Content Include="Scripts\Buttom\part\buttomParts.js" />
+    <Content Include="Scripts\Buttom\part\buttonPartList.js" />
+    <Content Include="Scripts\Buttom\personnel\personall.js" />
+    <Content Include="Scripts\Buttom\reportform\casereportall.js" />
+    <Content Include="Scripts\Buttom\reportform\eventreportall.js" />
+    <Content Include="Scripts\CheckBox\checkBoxList.js" />
+    <Content Include="Css\checkbox.css" />
+    <Content Include="Scripts\ColorChange\zxx.color_exchange.js" />
+    <Content Include="Scripts\datetimepic\css\datetime.css" />
+    <Content Include="Scripts\datetimepic\datatime.js" />
+    <Content Include="Scripts\echarts\echarts.min.js" />
+    <Content Include="Scripts\echarts\index\histogramindex.js" />
+    <Content Include="Scripts\echarts\personnel\personnelOnline.js" />
+    <Content Include="Scripts\iconConfig.js" />
+    <Content Include="Scripts\imgswitch\css\imgswitch.css" />
+    <Content Include="Scripts\imgswitch\iepng.js" />
+    <Content Include="Scripts\imgswitch\initImgSwitch.js" />
+    <Content Include="Scripts\imgswitch\pic_tab.js" />
+    <Content Include="Scripts\init.js" />
+    <Content Include="Scripts\btnController\btnController.js" />
+    <Content Include="Scripts\config.js" />
+    <Content Include="Scripts\css3-mediaqueries.js" />
+    <Content Include="Scripts\echarts\case\cakecase.js" />
+    <Content Include="Scripts\echarts\case\columnecaseleft.js" />
+    <Content Include="Scripts\echarts\case\columnecaseright.js" />
+    <Content Include="Scripts\echarts\curing\centerhistogram.js" />
+    <Content Include="Scripts\echarts\curing\curingleftpie.js" />
+    <Content Include="Scripts\echarts\curing\curingrightpie.js" />
+    <Content Include="Scripts\echarts\echarts.js" />
+    <Content Include="Scripts\echarts\event\columnevent.js" />
+    <Content Include="Scripts\echarts\event\lineevent.js" />
+    <Content Include="Scripts\echarts\event\radarevent.js" />
+    <Content Include="Scripts\echarts\firstPage\pie.js" />
+    <Content Include="Scripts\echarts\monitor\cakemonitor.js" />
+    <Content Include="Scripts\echarts\monitor\columnmonitor.js" />
+    <Content Include="Scripts\echarts\monitor\monitorhight.js" />
+    <Content Include="Scripts\echarts\monitor\monitorpieNewCity.js" />
+    <Content Include="Scripts\echarts\parts\leftcenterpie.js" />
+    <Content Include="Scripts\echarts\parts\lefthistogram.js" />
+    <Content Include="Scripts\echarts\parts\rightcenterpie.js" />
+    <Content Include="Scripts\echarts\personnel\cakepersonnel.js" />
+    <Content Include="Scripts\echarts\personnel\columnpersonnel.js" />
+    <Content Include="Scripts\echarts\personnel\linepersonnel.js" />
+    <Content Include="Scripts\echarts\reportCenter\eventoverviewofeachsquadron.js" />
+    <Content Include="Scripts\echarts\reportCenter\statisticalAnalysisOfCaseType.js" />
+    <Content Include="Scripts\echarts\reportCenter\statisticalSnalysisOfCaseStatus.js" />
+    <Content Include="Scripts\echarts\reportCenter\weekevent.js" />
+    <Content Include="Scripts\echarts\vehicle\cakevehicle.js" />
+    <Content Include="Scripts\echarts\vehicle\columnvehicle.js" />
+    <Content Include="Scripts\echarts\vehicle\linevehicle.js" />
+    <Content Include="Scripts\html5.js" />
+    <Content Include="Scripts\Iconswitch\IconSwitch.js" />
+    <Content Include="Scripts\index\getTimes.js" />
+    <Content Include="Scripts\inputClear\addclear.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery.rotate.min.js" />
+    <Content Include="Scripts\jsScrool\jquery.nicescroll.js" />
+    <Content Include="Scripts\jsScrool\showScrool.js" />
+    <Content Include="Scripts\KL-Maps\loadMap.js" />
+    <Content Include="Scripts\Map\cm7.js" />
+    <Content Include="Scripts\Map\cm7_sample_util.js" />
+    <Content Include="Scripts\Map\initMap.js" />
+    <Content Include="Scripts\My97DatePicker\calendar.js" />
+    <Content Include="Scripts\My97DatePicker\config.js" />
+    <Content Include="Scripts\My97DatePicker\lang\en.js" />
+    <Content Include="Scripts\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Scripts\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Scripts\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Scripts\My97DatePicker\readme.txt" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\bg.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\btnbg.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\down.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\left.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\navLeft.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\navRight.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\qs.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\right.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\blue\up.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\My97DatePicker\WdatePicker.js" />
+    <Content Include="Scripts\myDrag\dragdiv.js" />
+    <Content Include="Scripts\number\jquery.animateNumber.min.js" />
+    <Content Include="Scripts\Ol2DMap\css\bootstrap.min.css" />
+    <Content Include="Scripts\Ol2DMap\css\ol.css" />
+    <Content Include="Scripts\Ol2DMap\css\popup.css" />
+    <Content Include="Scripts\Ol2DMap\initOl.js" />
+    <Content Include="Scripts\Ol2DMap\plug-in-js\bootstrap.min.js" />
+    <Content Include="Scripts\Ol2DMap\plug-in-js\ol.js" />
+    <Content Include="Scripts\Pager\goodPage.js" />
+    <Content Include="Scripts\Panel\alllocation\aj\caselocation.js" />
+    <Content Include="Scripts\Panel\alllocation\cl\carslocation.js" />
+    <Content Include="Scripts\Panel\alllocation\kx\select.js" />
+    <Content Include="Scripts\Panel\alllocation\ry\peoplelocation.js" />
+    <Content Include="Scripts\Panel\alllocation\sj\eventalllocation.js" />
+    <Content Include="Scripts\Panel\detailPanel\aj\casedetail.js" />
+    <Content Include="Scripts\Panel\detailPanel\aj\wtcasedetail.js" />
+    <Content Include="Scripts\Panel\detailPanel\bj\partdetail.js" />
+    <Content Include="Scripts\Panel\detailPanel\bj\partStoredetail.js" />
+    <Content Include="Scripts\Panel\detailPanel\bj\partStallsdetail.js" />
+    <Content Include="Scripts\Panel\detailPanel\cl\cardetails.js" />
+    <Content Include="Scripts\Panel\detailPanel\dwdd\lowLyingDetails.js" />
+    <Content Include="Scripts\Panel\detailPanel\ry\peopledetails.js" />
+    <Content Include="Scripts\Panel\detailPanel\sj\eventdetail.js" />
+    <Content Include="Scripts\Panel\detailPanel\sp\toExamineDetails.js" />
+    <Content Include="Scripts\Panel\detailPanel\wc\demolitiondetails.js" />
+    <Content Include="Scripts\Panel\detailPanel\wc\nobuilddetails.js" />
+    <Content Include="Scripts\Panel\detailPanel\yh\curingcontractdetail.js" />
+    <Content Include="Scripts\Panel\detailPanel\zz\renovationDetails.js" />
+    <Content Include="Scripts\Panel\listPanel\aj\caselist.js" />
+    <Content Include="Scripts\Panel\listPanel\aj\wtcaselist.js" />
+    <Content Include="Scripts\Panel\listPanel\bj\partlist.js" />
+    <Content Include="Scripts\Panel\listPanel\cl\carlist.js" />
+    <Content Include="Scripts\Panel\listPanel\dwdd\lowLyingAreaList.js" />
+    <Content Include="Scripts\Panel\listPanel\jk\cameralist.js" />
+    <Content Include="Scripts\Panel\listPanel\jk\highaltitude.js" />
+    <Content Include="Scripts\Panel\listPanel\jk\selfBuildVideo.js" />
+    <Content Include="Scripts\Panel\listPanel\ry\peoplelist.js" />
+    <Content Include="Scripts\Panel\listPanel\sj\eventlist.js" />
+    <Content Include="Scripts\Panel\listPanel\sp\toExamineList.js" />
+    <Content Include="Scripts\Panel\listPanel\wc\demolitionllist.js" />
+    <Content Include="Scripts\Panel\listPanel\wc\nobuildlist.js" />
+    <Content Include="Scripts\Panel\listPanel\wrj\wrjlist.js" />
+    <Content Include="Scripts\Panel\listPanel\yh\curingcontractlist.js" />
+    <Content Include="Scripts\Panel\listPanel\zz\renovationlist.js" />
+    <Content Include="Scripts\Panel\outlinePanel\aj\caseoutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\aj\wtcaseoutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\cl\caroutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\dwdd\lowLyingOutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\ry\peopleoutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\sj\eventoutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\sp\toExamineOutLine.js" />
+    <Content Include="Scripts\Panel\outlinePanel\wc\demolitionoutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\wc\nobuildoutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\yh\curingcontractoutline.js" />
+    <Content Include="Scripts\Panel\outlinePanel\zz\renovationOutline.js" />
+    <Content Include="Scripts\Panel\palyTrack\palyTrack.js" />
+    <Content Include="Scripts\Panel\periphery\peoplePeriphery.js" />
+    <Content Include="Scripts\Panel\public.js" />
+    <Content Include="Scripts\Panel\remarkPanel\remarkInfo.js" />
+    <Content Include="Scripts\Panel\screenPanel\aj\caseScreen.js" />
+    <Content Include="Scripts\Panel\screenPanel\bj\partScreen.js" />
+    <Content Include="Scripts\Panel\screenPanel\bj\partStoreScreen.js" />
+    <Content Include="Scripts\Panel\screenPanel\cl\carscreen.js" />
+    <Content Include="Scripts\Panel\screenPanel\dwdd\lowLyingSeach.js" />
+    <Content Include="Scripts\Panel\screenPanel\ry\popleSeniorSearch.js" />
+    <Content Include="Scripts\Panel\screenPanel\sj\eventScreen.js" />
+    <Content Include="Scripts\Panel\screenPanel\sp\toExamineListSearch.js" />
+    <Content Include="Scripts\Panel\screenPanel\wc\illegalScreen.js" />
+    <Content Include="Scripts\Panel\screenPanel\wc\demolitionScreen.js" />
+    <Content Include="Scripts\Panel\screenPanel\yh\conservationScreen.js" />
+    <Content Include="Scripts\Panel\screenPanel\zz\renovationSearch.js" />
+    <Content Include="Scripts\PlugIn\heapChat1.1.js" />
+    <Content Include="Scripts\PlugIn\jstableTemplate\handlebars-1.0.0.js" />
+    <Content Include="Scripts\postionConvert\position.js" />
+    <Content Include="Scripts\Sea.js" />
+    <Content Include="Scripts\silder\jquery.range.css" />
+    <Content Include="Scripts\silder\jquery.range.js" />
+    <Content Include="Scripts\tabScroll\jquery.vticker.js" />
+    <Content Include="Scripts\tabScroll\jquery.vticker.min.js" />
+    <Content Include="Scripts\tabswitch\tab.js" />
+    <Content Include="Scripts\toolBar\twoMap.js" />
+    <Content Include="Scripts\Tree\bootstrap-treeview.js" />
+    <Content Include="Scripts\Tree\css\bootstrap-treeview.css" />
+    <Content Include="Scripts\Tree\css\bootstrap.css" />
+    <Content Include="Scripts\video.min.js" />
+    <Content Include="Scripts\weather\baduweather.js" />
+    <Content Include="bootstrap-tree.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\font\longzhoufeng.eot" />
+    <Content Include="Css\font\longzhoufeng.ttf" />
+    <Content Include="Images\skybox\skybox.lnk" />
+    <None Include="Properties\PublishProfiles\jxxz.web发布.pubxml" />
+    <Content Include="Scripts\My97DatePicker\skin\default\Thumbs.db" />
+    <Content Include="Scripts\My97DatePicker\skin\Thumbs.db" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\Thumbs.db" />
+    <Content Include="Scripts\Panel\screenPanel\bj\partStallsScreen.js" />
+    <None Include="Properties\PublishProfiles\JXXZWEBAPI.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7041/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

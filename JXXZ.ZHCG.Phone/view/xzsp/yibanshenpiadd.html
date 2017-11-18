@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>一般审批添加</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link href="../../css/report.all.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<style type="text/css">
+			.photodiv{
+				padding-top: 10px;
+				width: 85%;
+				float: right;
+			}
+			.fujianimg{
+				height: 66px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">行政许可添加</h1>
+		</header>
+		<div class="mui-content">
+			<p class="font-bigsize16px margin-topbottom10px">基本信息</p>
+			<form class="mui-input-group">
+				<!--<div class="mui-input-row">
+					<label>审批号</label>
+					<input type="text" placeholder="审批号">
+				</div>-->
+				<div class="mui-input-row">
+					<label>审批事项</label>
+					<input ctype='xksx' type="text" placeholder="审批事项" data-val-required='审批事项不可为空'>
+				</div>
+				<div class="mui-input-row" id='splxlist'>
+					<label>审批类型</label>
+					<input id='splxtext' readonly="readonly" type="text" placeholder="请选择">
+					<input id='splx' ctype='splx' type="hidden" data-val-required='审批类型不可为空' />
+				</div>
+				<div class="mui-input-row">
+					<label>地址</label>
+					<input ctype='b_address' type="text" placeholder="地址" data-val-required='地址不可为空'>
+				</div>
+				<div class="mui-input-row">
+					<label>事项描述</label>
+					<input ctype='sxmx' type="text" placeholder="事项描述" >
+				</div>
+			</form>
+			<p class="font-bigsize16px margin-topbottom10px">申请者</p>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>申请人</label>
+					<input ctype='sqr' type="text" placeholder="申请人" data-val-required='申请人不可为空'>
+				</div>
+				<div class="mui-input-row" id='cardtypelist'>
+					<label>证件类型</label>
+					<input readonly="readonly" id='cardtypename' type="text" placeholder="请选择">
+					<input type="hidden" id='cardtype' ctype='cardtype' data-val-required='证件类型不可为空' />
+				</div>
+				<div class="mui-input-row">
+					<label>证件号</label>
+					<input ctype='card' id="card" type="text" placeholder="证件号" data-val-required='证件号不可为空'>
+				</div>
+				<div class="mui-input-row">
+					<label>联系电话</label>
+					<input ctype='contactphone' type="text" placeholder="联系电话" data-val-required='联系电话不可为空'>
+				</div>
+				<div class="mui-input-row">
+					<label>联系地址</label>
+					<input ctype='s_address' type="text" placeholder="联系地址">
+				</div>
+			</form>		
+			<p class="font-bigsize16px margin-topbottom10px">审批信息</p>
+			<form class="mui-input-group" id='spxxdiv'>
+				<div class="mui-input-row" class="datechoose">
+					<label>处理起始时间</label>
+					<input readonly="readonly" ctype='processtime_start' id='processtime_start' type="text" placeholder="请选择" data-val-required='起始时间不可为空'>
+				</div>
+				<div class="mui-input-row" class="datechoose">
+					<label>结束时间</label>
+					<input readonly="readonly" ctype='processtime_end' id='processtime_end' type="text" placeholder="请选择" data-val-required='结束时间不可为空'>
+				</div>
+				<div class="form-textereadiv">
+					<label>处理描述</label>
+					<textarea ctype='processcontent' rows="3" placeholder="处理描述"></textarea>
+				</div>
+				<div class="mui-input-row" id='choosemap'>
+					<label>处理地点</label>
+					<input id='geography' class="geography" ctype='geography' readonly="readonly" type="text" placeholder="处理地点">
+				</div>
+				
+			</form>	
+			<div class="mui-card">
+				<div style="float: left; margin: 10px 0 0 15px;">附件</div>
+				<div class="photodiv">					
+					<a class="navigateright">
+						<img id="head-img1" src="../../image/detailimages/addphoto.png" class="fujianimg" style="margin-left: 9%;" />
+					</a>
+					<a class="navigateright">
+						<img id="head-img2" src="../../image/detailimages/addphoto.png" class="fujianimg" style="margin-left: 5%;margin-right: 5%;" />
+					</a>
+					<a class="navigateright">
+						<img id="head-img3" src="../../image/detailimages/addphoto.png" class="fujianimg" />
+					</a>
+				</div>
+			</div>
+			<input id="head-img1Name" type="hidden" value="" />
+			<input id="head-img2Name" type="hidden" value="" />
+			<input id="head-img3Name" type="hidden" value="" />
+			<input id="img-head-img1Name" type="hidden" value="" />
+			<input id="img-head-img2Name" type="hidden" value="" />
+			<input id="img-head-img3Name" type="hidden" value="" />
+			<button id='submit' type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>			
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="yibanshenpiadd.js"></script>
+
+</html>

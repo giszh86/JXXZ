@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>问题上报</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/app.css">
+
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+
+		<style type="text/css">
+			.mui-input-row label {
+				width: 24%;
+			}
+			
+			.mui-input-row label~input {
+				width: 73%;
+			}
+			
+			.addphoto {
+				width: 18%;
+				margin: 6px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-card">
+					<div class="mui-input-row" id='yhrw_yhlx'>
+						<label>养护类型</label>
+						<input id='yhtypename' readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+						<input ctype='yhtype' type="hidden" id='yhtype' data-val-required='请选择养护类型' />
+					</div>
+					<div class="mui-input-row" id='yhcompanylist'>
+						<label>养护公司</label>
+						<input id='yhcompanyname' readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+						<input ctype='yhcompany' id='yhcompany' type="hidden" />
+					</div>
+					<div class="mui-input-row" id='wtsourcelist'>
+						<label>问题来源</label>
+						<input id='wtsourcename' readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+						<input ctype='wtsource' id='wtsource' type="hidden" />
+					</div>
+					
+					<div class="mui-input-row" id='wtdllist'>
+						<label>问题大类</label>
+						<input id='wtbigclassname' readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+						<input ctype='wtbigclass' type="hidden" id='wtbigclass' data-val-required='请选择问题大类' />
+					</div>
+					<div class="mui-input-row" id='wtlxlist'>
+						<label>问题小类</label>
+						<input id='wtsmallclassname' readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+						<input id='wtsmallclass' type="hidden" ctype='wtsmallclass' data-val-required='请选择问题小类' />
+					</div>
+
+					<div class="mui-input-row" id='yhobjectlist'>
+						<label>养护对象</label>
+						<input id='yhobjectname' readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+						<input ctype='yhobject' id='yhobject' type="hidden" />
+					</div>
+					<div class="mui-input-row">
+						<label>当日天气</label>
+						<input ctype='weather' type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label style="width: 31%;">处理期限(天)</label>
+						<input ctype='duetime' id="duetime" style="width: 66%;" type="number" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label style="width: 31%;">维修经费(元)</label>
+						<input ctype='outlay' id="outlay" style="width: 66%;" type="number" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label style="width: 40%;">工作量估算(人/天)</label>
+						<input ctype='workload' style="width: 57%;" type="number" value=''>
+					</div>
+					<div class="mui-input-row" id='yhcontractlist'>
+						<label>养护合同</label>
+						<input id='yhcontractname' readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+						<input ctype='yhcontract' type="hidden" id='yhcontract' data-val-required='请选择养护合同' />
+					</div>
+					<div class="mui-input-row">
+						<label>问题地址</label>
+						<input id='wtaddress' ctype='wtaddress' type="text" value=''>
+					</div>
+					<div class="mui-input-row" id='choosemap'>
+						<label>地理位置</label>
+						<input class='location-red' id='geography84' ctype='geography84' readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row" style="height: 80px;">
+						<label>问题描述</label>
+						<textarea id='wtdescribe' rows="3"></textarea>
+					</div>
+					<div class="mui-input-row" style="height: 80px;">
+						<label>照片说明</label>
+						<div class="addphoto">
+							<img id='head-img1' src="../../image/addphoto.png" />
+						</div>
+						<div class="addphoto" style="margin: 6px 28px;">
+							<img id='head-img2' src="../../image/addphoto.png" />
+						</div>
+						<div class="addphoto">
+							<img id='head-img3' src="../../image/addphoto.png" />
+						</div>
+						<input id="head-img1Name" type="hidden" value="" />
+						<input id="head-img2Name" type="hidden" value="" />
+						<input id="head-img3Name" type="hidden" value="" />
+						<input id="img-head-img1Name" type="hidden" value="" />
+						<input id="img-head-img2Name" type="hidden" value="" />
+						<input id="img-head-img3Name" type="hidden" value="" />
+					</div>
+
+				</div>
+			</form>
+
+			<button type="button" id='submit' class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='wtsb.js'></script>
+
+</html>

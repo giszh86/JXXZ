@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42D02095-B2DD-4299-BD1D-395E9B620520}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JXXZ.ZHCG.BLL</RootNamespace>
+    <AssemblyName>JXXZ.ZHCG.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NPOI\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountBLL\AccountImageBLL.cs" />
+    <Compile Include="AccountBLL\AccountRegisterBLL.cs" />
+    <Compile Include="AccountBLL\AccountTaskBLL.cs" />
+    <Compile Include="AdministrativeapprovalBLL\ApprovalBLL.cs" />
+    <Compile Include="AdministrativeapprovalBLL\Approve_FileBLL.cs" />
+    <Compile Include="AdministrativeapprovalBLL\LicenseBLL.cs" />
+    <Compile Include="AdministrativeapprovalBLL\ThreeBagsBLL.cs" />
+    <Compile Include="AlarmDetail\AlarmDetailBLL.cs" />
+    <Compile Include="BulletinBoardBLL\BulletinBoardBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\CaseStatisticalReportBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_CasesBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_CaseSourcesBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_LeadersuperviseBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_PrescripTionsBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_SimpleCasesBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_SourcesBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_WorkFlowDetailsBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_WorkFlowManagerBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_WtajsBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Case_ZdBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\DocumentReplaceHandleBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Doc_DefinitionsBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\Doc_WfdddrsBLL.cs" />
+    <Compile Include="CaseWorkFlowManagerBLL\receptionCasesBLL.cs" />
+    <Compile Include="CitizenServiceBLL\SM_CitizenServicesBLL.cs" />
+    <Compile Include="CitizenServiceBLL\SM_ClassesBLL.cs" />
+    <Compile Include="CitizenServiceBLL\SM_ConsulTationsBLL.cs" />
+    <Compile Include="CitizenServiceBLL\SM_SourcesBLL.cs" />
+    <Compile Include="CitizenServiceBLL\SM_VisitsBLL.cs" />
+    <Compile Include="CitizenServiceBLL\StatisticalReportBLL.cs" />
+    <Compile Include="ConservationBLL\YH_CompanyBLL.cs" />
+    <Compile Include="ConservationBLL\YH_ContractBLL.cs" />
+    <Compile Include="ConservationBLL\YH_FileBLL.cs" />
+    <Compile Include="ConservationBLL\YH_YhLogBLL.cs" />
+    <Compile Include="ConservationBLL\YH_YhTaskBLL.cs" />
+    <Compile Include="CustomsBLL\CustomsBLL.cs" />
+    <Compile Include="DataDictionaryBLL\DataDictionaryBLL.cs" />
+    <Compile Include="FrontDeskBLL\FrontDeskBLL.cs" />
+    <Compile Include="IllegalConstructionBLL\WJ_CqxmsBLL.cs" />
+    <Compile Include="IllegalConstructionBLL\WJ_FilesBLL.cs" />
+    <Compile Include="IllegalConstructionBLL\WJ_WzjzsBLL.cs" />
+    <Compile Include="LawEnforcementSupervisionBLL\Zfdx_DevicesBLL.cs" />
+    <Compile Include="LawEnforcementSupervisionBLL\Zfdx_InstocksBLL.cs" />
+    <Compile Include="LawEnforcementSupervisionBLL\Zfdx_OutstocksBLL.cs" />
+    <Compile Include="LawEnforcementSupervisionBLL\Zfdx_StocksBLL.cs" />
+    <Compile Include="LawEnforcementSupervisionBLL\zfdx_LawObjectBLL.cs" />
+    <Compile Include="LawEnforcementSupervisionBLL\Zxzz_SpecialTaskBLL.cs" />
+    <Compile Include="LegalCaseBLL\FreeDiscretionBLL.cs" />
+    <Compile Include="LowLyingBLL\LowLyingBLL.cs" />
+    <Compile Include="MechanicalExamBLL\kh_examinesBLL.cs" />
+    <Compile Include="MechanicalExamBLL\receptionExamineBLL.cs" />
+    <Compile Include="MonitorBLL\FI_CamerasBLL.cs" />
+    <Compile Include="MonitorBLL\FI_Camera_UnitsBLL.cs" />
+    <Compile Include="MonitorBLL\receptionMonitorBLL.cs" />
+    <Compile Include="monitorProjectBLL\MonitorProjectBLL.cs" />
+    <Compile Include="PartBLL\PartBLL.cs" />
+    <Compile Include="PeripheryBLL\PeripheryBLL.cs" />
+    <Compile Include="receptionFirstPage\receptionFirstPageBLL.cs" />
+    <Compile Include="ReportBLL\ReportBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_CarsBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_CarTasksBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_CheckinBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_PatrolAreasBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_PatrolLogsBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_SigninAreasBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_UserHistoryPositionsBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_UserLastPositionsBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_UserSigninsBLL.cs" />
+    <Compile Include="ServiceManagementBLL\QW_UserTasksBLL.cs" />
+    <Compile Include="SMSMessagesBLL\SMSMessagesBLL.cs" />
+    <Compile Include="SystemBLL\Base_ZdsBLL.cs" />
+    <Compile Include="SystemBLL\ChooseBLL.cs" />
+    <Compile Include="SystemBLL\MenuBLL.cs" />
+    <Compile Include="SystemBLL\PermissionBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemBLL\SysRolesBLL.cs" />
+    <Compile Include="SystemBLL\SystemLogBLL.cs" />
+    <Compile Include="SystemBLL\UnitBLL.cs" />
+    <Compile Include="SystemBLL\UnitTypeBLL.cs" />
+    <Compile Include="SystemBLL\UserBLL.cs" />
+    <Compile Include="SystemBLL\UserTypeBLL.cs" />
+    <Compile Include="UnitGridBLL\UnitGridBLL.cs" />
+    <Compile Include="uvasBLL\basicinfoBLL.cs" />
+    <Compile Include="WorkFlowManagerBLL\WorkFlowManagerBLL.cs" />
+    <Compile Include="ZXZZBLL\ZXZZBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JXXZ.ZHCG.DAL\JXXZ.ZHCG.DAL.csproj">
+      <Project>{d7d57133-1ec9-455e-862c-d3db46784327}</Project>
+      <Name>JXXZ.ZHCG.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JXXZ.ZHCG.Model\JXXZ.ZHCG.Model.csproj">
+      <Project>{d4ab5832-abe5-4795-8268-a0a47a92abb3}</Project>
+      <Name>JXXZ.ZHCG.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JXXZ.ZHCG.Utility\JXXZ.ZHCG.Utility.csproj">
+      <Project>{299b6946-06f8-48b3-b65a-698c72e099de}</Project>
+      <Name>JXXZ.ZHCG.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

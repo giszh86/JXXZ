@@ -1,0 +1,33 @@
+﻿.monthbg {
+    width: 220px;
+    height: 20px;
+    background: #2E6195;
+    color: white;
+    font-size: 12px;
+    float:left;
+}
+
+.btn-add {
+    color: white;
+    border: 0px;
+    background: #2E6195;
+}
+
+    .btn-add:hover {
+        cursor: pointer;
+    }
+
+.btn-reduce {
+    color: white;
+    border: 0px;
+    background: #2E6195;
+}
+
+.monthbg input {
+    width: 20px;
+    height: 19px;
+}
+
+.btn-reduce:hover {
+    cursor: pointer;
+}

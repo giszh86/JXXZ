@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>简易案件详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.xgws{
+				background-color: #3BAEDA;
+				color: white;
+				width: 100%;
+				padding: 8px 0;
+				border: none;
+				margin-bottom: 8px;
+			}
+			
+			.last:after{
+				height: 0 !important;
+			}
+			
+			.radio-group {
+			    display: inline-block;
+			    padding: 0;
+			    float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">简易案件详情</h1>
+		</header>
+		
+		<div class="mui-content">
+			<template v-if='ready'>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						处罚决定书编号<label class="r-float font-color">{{model.cfjdsbh}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						案由<label class="r-float font-color">{{model.casereason}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						案发地址<label class="r-float font-color miaoshu">{{model.caseaddress}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						案发时间<label class="r-float font-color">{{model.sitedatetime}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						当事人类型
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="persontype" value="type_zrr" disabled v-model="model.persontype">
+							<span class="radio-name">自然人</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" value="type_dw" name="persontype" v-model="model.persontype" disabled>
+							<span class="radio-name">法人</span>
+						</div>
+					</li>
+					<template v-if='model.persontype=="type_zrr"'>
+						<li class="mui-table-view-cell">
+							姓名<label class="r-float font-color">{{model.p_name}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							性别
+							<div class="radio-group">
+								<input class="radio-input" type="radio" name="sex" value="男" disabled v-model="model.p_sex">
+								<span class="radio-name">男</span>
+								<input class="radio-input" style="margin-left: 20px;" type="radio" value="女" name="sex" v-model="model.p_sex" disabled>
+								<span class="radio-name">女</span>
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							证件类型<label class="r-float font-color">{{model.cardName}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							证件号<label class="r-float font-color">{{model.p_cardnum}}</label>
+						</li>
+					</template>
+					<template v-else='model.type=="type_dw"'>
+						<li class="mui-table-view-cell">
+							单位名称<label class="r-float font-color">{{model.f_name}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							法定代表人<label class="r-float font-color">{{model.f_dbr}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							证件类型<label class="r-float font-color">{{model.fcardName}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							证件号<label class="r-float font-color">{{model.f_cardnum}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							受委托人<label class="r-float font-color">{{model.f_wtr}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							身份证号<label class="r-float font-color">{{model.f_card}}</label>
+						</li>
+					</template>	
+					<li class="mui-table-view-cell">
+						联系电话<label class="r-float font-color">{{model.contactphone}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						联系地址<label class="r-float font-color">{{model.contactaddress}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						适用的违则<label class="r-float font-color">{{model.flfg}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						适用的处罚<label class="r-float font-color"></label>
+					</li>
+					<!--<li class="mui-table-view-cell">
+						<label class="r-float font-color"></label>
+					</li>-->
+					<li class="mui-table-view-cell">
+						缴款方式
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="payment" value="当场缴费" disabled v-model="model.jktype">
+							<span class="radio-name">当场缴费</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="payment" value="银行代缴" v-model="model.jktype" disabled>
+							<span class="radio-name">银行代缴</span>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						罚款金额<label class="r-float font-color">{{model.fk_money}}</label>
+					</li>
+					<template v-if='model.jktype=="银行代缴"'>
+						<li class="mui-table-view-cell">
+							缴款银行<label class="r-float font-color">{{model.bankname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							银行户名<label class="r-float font-color">{{model.bankaccount}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							银行账号<label class="r-float font-color">{{model.bankaccountname}}</label>
+						</li>
+					</template>	
+					<li class="mui-table-view-cell">
+						执法人姓名<label class="r-float font-color">{{model.zfr_name}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						执法证号<label class="r-float font-color">{{model.zf_card}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						执法时间<label class="r-float font-color">{{model.zf_time}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						执法地点<label class="r-float font-color miaoshu">{{model.zf_address}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						地点坐标<label class="r-float font-color location-red zb"  @tap="location">{{model.geographical84}}</label>
+					</li>
+				</ul>
+			</div>
+
+			<template v-if='items.length'>
+				<div style="margin-left: 20px;margin-top: 10px; font-size: 15px;">相关文书</div>
+				<div  class="card" style="padding: 10px 10px 2px 10px;" id="wenshu">
+					<template v-for='item in items'>
+						<button :name="item.lastpdfpath" @tap='openTheInstrument' type="button" class="xgws">{{item.filename==null?'此文书暂时没有名称':item.filename}}</button>
+					</template>
+				</div>
+			</template>
+			
+			<button type="button" class="mui-btn buttoncenter mui-action-back">关&nbsp;&nbsp;闭</button>
+			</template>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='jyajxq.js'></script>
+
+</html>

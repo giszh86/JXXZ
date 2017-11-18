@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加门前三包</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link href="../../css/report.all.css" rel="stylesheet" />
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">门前三包添加</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>店家名称</label>
+					<input ctype='storename' type="text" placeholder="店家名称" data-val-required='店家名称不可为空'>
+				</div>
+				<div class="mui-input-row" id='storetypelist'>
+					<a class="mui-navigate-right">
+						<label>店家类型</label>
+						<span id='storename'>请选择</span>
+					</a>
+					<input type="hidden" id='storetype' ctype='storetype' data-val-required='店家类型不可为空' />
+				</div>
+				<div class="mui-input-row">
+					<label>负责人</label>
+					<input ctype='person' type="text" placeholder="负责人" data-val-required='负责人不可为空'>
+				</div>
+				<div class="mui-input-row">
+					<label>证件号</label>
+					<input ctype='card' id="card" type="text" placeholder="证件号">
+				</div>
+				<div class="mui-input-row">
+					<label>负责电话</label>
+					<input ctype='contactphone' type="number" placeholder="负责电话">
+				</div>
+				<div class="mui-input-row">
+					<label>地址</label>
+					<input id='address' ctype='address' type="text" placeholder="地址" data-val-required='地址不可为空'>
+				</div>
+				
+				<div class="mui-input-row" id='mapaddress'>
+					<label>地点坐标</label>
+					<input ctype='geography' readonly="readonly" type="text" id="geography" class="geography">
+				</div>
+				<div class="form-textereadiv">
+					<label>备注</label>
+					<textarea ctype='remark' rows="3" placeholder="备注"></textarea>
+				</div>
+			</form>
+			<p class="font-bigsize16px margin-topbottom10px">附件</p>
+			<div class="mui-card">
+				<div class="person-photodiv padding-top10px">					
+					<a class="navigateright">
+						<img id="head-img1" src="../../image/detailimages/addphoto.png" class="fujianimg" style="margin-left: 9%;" />
+					</a>
+					<a class="navigateright">
+						<img id="head-img2" src="../../image/detailimages/addphoto.png" class="fujianimg" style="margin-left: 5%;margin-right: 5%;" />
+					</a>
+					<a class="navigateright">
+						<img id="head-img3" src="../../image/detailimages/addphoto.png" class="fujianimg" />
+					</a>
+				</div>
+			</div>
+			<input id="head-img1Name" type="hidden" value="" />
+			<input id="head-img2Name" type="hidden" value="" />
+			<input id="head-img3Name" type="hidden" value="" />
+			<input id="img-head-img1Name" type="hidden" value="" />
+			<input id="img-head-img2Name" type="hidden" value="" />
+			<input id="img-head-img3Name" type="hidden" value="" />
+			<button id='submit' type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="menqiansaobaoadd.js"></script>
+
+</html>

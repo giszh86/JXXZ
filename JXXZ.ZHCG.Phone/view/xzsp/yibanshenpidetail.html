@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>行政许可详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.all.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/imageviewer.css"/>
+		<style type="text/css">
+		.miaoshu{
+			height: auto;
+			overflow: auto;
+			width: 73%;
+			word-wrap: break-word;
+			text-align: right;
+		}
+		
+		.addphoto{
+			float: right;
+			width: 80%;
+		}
+		
+		.image{
+			width: 27%;
+			height: 67px;
+			margin-right: 5%;
+		}
+		
+		.zb{
+			width: 80%;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			-o-text-overflow: ellipsis;
+			overflow: hidden;
+			text-align: right;
+		}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">行政许可详情</h1>
+		</header>
+		<div class="mui-content">
+			<p class="font-bigsize16px margin-topbottom10px">基本信息</p>
+			<div class="mui-card">
+				<ul class="mui-table-view ulimg">
+					<li class="mui-table-view-cell">
+						审批号<label id="sph" class="r-float font-color" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						审批事项<label id="xksx" class="r-float font-color" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						审批类型<label id="splxname" class="r-float font-color" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						地址<label id="b_address" class="r-float font-color miaoshu" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						事项描述<label id="sxmx" class="r-float font-color miaoshu" ></label>
+					</li>
+				</ul>
+			</div>
+			<p class="font-bigsize16px margin-topbottom10px">申请者</p>
+			<div class="mui-card">
+				<ul class="mui-table-view ulimg">
+					<li class="mui-table-view-cell">
+						申请人<label id="sqr" class="r-float font-color" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						证件类型<label id="cardtypename" class="r-float font-color" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						证件号<label id="card" class="r-float font-color" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						联系电话<label id="contactphone" class="r-float font-color" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						联系地址<label id="s_address" class="r-float font-color" ></label>
+					</li>
+				</ul>
+			</div>		
+			<p class="font-bigsize16px margin-topbottom10px">审批信息</p>
+			<div class="mui-card">
+				<ul class="mui-table-view ulimg">
+					<li class="mui-table-view-cell">
+						处理时间<label id="detailtime" class="r-float font-color miaoshu" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						处理描述<label id="processcontent" class="r-float font-color miaoshu" ></label>
+					</li>
+					<li class="mui-table-view-cell" id='mapaddress'>
+						处理地点<label id="geography" class="r-float font-color geography zb" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						附件
+						<div class="addphoto">
+							<img class="image" src="../../image/nophoto.png"/>
+							<img class="image" src="../../image/nophoto.png"/>
+							<img class="image" src="../../image/nophoto.png"/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						处理结果<label id="issh" class="r-float font-color" ></label>
+					</li>
+					<li class="mui-table-view-cell">
+						处理意见<label id="shopinion" class="r-float font-color" ></label>
+					</li>
+				</ul>
+			</div>
+			<button type="button" class="mui-btn buttoncenter mui-action-back">关&nbsp;&nbsp;闭</button>	
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="yibanshenpidetail.js"></script>
+
+</html>

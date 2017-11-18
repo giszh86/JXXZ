@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>督查事件</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<script type="text/javascript" src="../../js/common.js" ></script>
+		<style type="text/css">
+			.mui-input-row label{
+				width: 24%;
+			}
+			.mui-input-row label~input{
+				width: 73%;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-card">
+					<div class="mui-input-row">
+						<label>联系人</label>
+						<input ctype='complainant' type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>联系电话</label>
+						<input ctype='contactphone' type="number" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>事件标题</label>
+						<input ctype='eventtitle' type="text" value='' data-val-required='事件标题不可为空'>
+					</div>
+					<div class="mui-input-row" style="display: none;">
+						<label>问题来源</label>
+						<input readonly class="triangle" type="text" value='队员巡查发现'>
+						<input type="hidden" name='sourceid' ctype='sourceid' value='16'/>
+					</div>
+					<div class="mui-input-row" id="Class_list">
+						<label>事件大类</label>
+						<input id="Bclass_Name" readonly class="triangle" type="text" value='请选择'>
+						<input type="hidden" id='Bclass_ID' name='Bclass_ID' ctype='bigtypeid' data-val-required='事件大类不可为空'/>
+					</div>
+					<div class="mui-input-row" id="Sclass_list">
+						<label>事件小类</label>
+						<input id="Sclass_Name"  readonly class="triangle" type="text" value='请选择'>
+						<input type="hidden" id='Sclass_ID' name='Sclass_ID' ctype='smalltypeid' data-val-required='事件小类不可为空'/>
+					</div>
+					<div class="mui-input-row">
+						<label>事件地址</label>
+						<input id='eventaddress' ctype='eventaddress' type="text" value=''>
+					</div>
+					<div class="mui-input-row" id='addresschoose'>
+						<label>地点坐标</label>
+						<input id='grometry' readonly="readonly" ctype='grometry' type="text" value=''>
+					</div>
+					<div class="mui-input-row" style="height: 60px;">
+						<label>事件内容</label>
+						<textarea ctype='eventcontent' rows="2" data-val-required='事件内容不可为空'></textarea>	
+					</div>
+				</div>
+			</form>
+			<div style="margin-left: 20px;margin-top: 10px; font-size: 15px;">现场拍照</div>
+			<div class="card">
+				<div class="addphoto">
+					<img id="head-img1" src="../../image/addphoto.png" />
+				</div>
+				<div class="addphoto">
+					<img id="head-img2" src="../../image/addphoto.png" />
+				</div>
+				<div class="addphoto">
+					<img id="head-img3" src="../../image/addphoto.png" />
+				</div>
+				<input id="head-img1Name" type="hidden" value="" />
+				<input id="head-img2Name" type="hidden" value="" />
+				<input id="head-img3Name" type="hidden" value="" />
+				<input id="img-head-img1Name" type="hidden" value="" />
+				<input id="img-head-img2Name" type="hidden" value="" />
+				<input id="img-head-img3Name" type="hidden" value="" />
+			</div>
+			<form class="mui-input-group">
+				<div class="contentTopBlock">
+					<div class="mui-input-row" @tap="chooseDate('foundtime')">
+						<label>上报时间</label>
+						<input id='foundtime' ctype='foundtime' readonly="readonly" type="text" >
+					</div>
+				</div>
+			</form>
+			<button id='submit' type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='dcsj.js'></script>
+
+</html>

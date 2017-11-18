@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../Scripts/jquery-1.7.1.js"></script>
+</head>
+<body>
+	<input id='base64' type='text' value='data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1pBfzTtE5s90RUFCjZGenNWzY6ker2bA9Qymnptjv5gEJeSSNi+OFHy4Fa1AGV5OsgYjms0HYBDVtVvdo3PEWxzj/APVVkfdH0paAK4F1/eT8/wD61Vbme+juYoYjAdwyS4J7+wrRHT8apXUcrXsLR4wo+bLEcZoArKA+qzZYBk8sqvcjjOau3l4tmqkoWLHAGcVRiYjWrpd6gMsR2k8nGOlW9Rkt44QbiATDnC4BprcT2K13eSbIzFIYsqrZxnuc1pRMTDGxySVBNZ9zp320QyRsYlCABO3qKdFb3qX6FmP2dVxw/B49PrWjUbaEJyuLBeyS6k8GV8td3GOcg1ab/j6H+7/Wqto1lLeyPDAVmwcuR1yef51bb/j6X/d/rUStcqJiLLfrcNL9kiJfafmnAAIx/s8U+7e9vUVJrG3wORtvcf8AstUv+FieGjGrjVrHawyCZwKYfiT4XDlP7Z0/cOo+0DP8qSutitzXju9TVVjSxtjgYA+15P8A6DUgudYx82nW5Ptc/wD2NYo+I/hliANYsOT/AM/H/wBamf8AC0PB3/Qw6b/4ECkBqW8Oo20zSR6dCCw5H2nj/wBBqyJdTMu99Oi6Y4uf/sawv+FoeDv+hh0z/wACBS/8LO8IYDf2/p5UnqJwabbe4kkj/9k='/> 
+	<!--<button value='test' onclick='xzxk();'>确定</button>-->
+	<button value='test' onclick='xxsp();'>确定</button>
+</body>
+<script>
+    function test(){
+        var base = [];
+        //var img = document.getElementByID("base64").value;
+        var img = $("#base64").val();
+        base.push(img);
+        $.ajax({
+            url:'http://localhost:14195/api/ThreeBags/SmAddThreeBagsInf',
+            type:'post',
+            data:{
+                storename:'a',
+                storetype:1,
+                contactphone: 16514568,
+                person: 'remark',
+                card: 213,
+                address: 890,
+                remark:90,
+                geography:'120.11860936160566,30.293781188355318',
+                base64:base,
+			
+            },
+            success: function (data) {
+                alert(JSON.stringify(data));
+            },
+            error: function (x, t, e) {
+                console.log(x);
+            }
+        });
+    }
+
+    //行政许可
+    function xzxk() {
+        var base = [];
+        //var img = document.getElementByID("base64").value;
+        var img = $("#base64").val();
+        base.push(img);
+        $.ajax({
+            url: 'http://localhost:14195/api/License/SmAddApproveInf',
+            type: 'post',
+            data: {
+                xksx: '许可事项 ',
+                splx: '1',                //   审批类型
+                b_address: 16514568,        
+                sxmx: '事项描述',
+                card: 213,
+                sqr: '张三',         //申请人
+                cardtype: '1',  //证件类型
+                card:'545454',    //证件号
+                contactphone: '2220',
+                s_address:'嘉兴市秀洲区',   //地址s  
+                processtime_start: '2017-03-18 07:18:20',
+                processtime_end: '2017-3-18 7:18:20',
+                processcontent: '同意',  //处理描述 
+                processaddress: '120.11860936160566,30.293781188355318',  //处理地点 
+                geography: '120.11860936160566,30.293781188355318',
+                
+                base64: base,
+            },
+            success: function (data) {
+                alert(JSON.stringify(data));
+            },
+            error: function (x, t, e) {
+                console.log(x);
+            }
+        });
+    }
+
+    //行政审批
+    function xxsp()
+    {
+        var base = [];
+        var img = $("#base64").val();
+        base.push(img);
+        $.ajax({
+            url: 'http://192.168.0.98:8012/api/Approval/SmAssign',
+            type: 'post',
+            data: {
+                //派遣给中队内勤
+                //createuserid: 37,                                        //创建人   
+                //syncrowguid: '3c89dd9e-ed06-49e1-aa2c-f9bf3841703c',    //syncrowguid
+                //middleteam: 12,    
+                //nextuserid: 3,     //内勤id
+                //advice: '【0811-flow1-test3】1新城中队内勤派遣给队员',   //派遣意见
+                //wfdid: 2017070414250001,        ////获取流程信息      http://localhost:14195/api/Approval/GetApprovalDetail?syncrowguid=25a0bddf-3b14-4bc9-89bf-0d7910d093ed&userid=37  参数:syncrowguid,userid
+                //nextwfdid: 2017070414250002,    //返回参数中有【wfdid】及【nextid】返回参数相信信息参照Audit_project_wModel.cs中approvalDetail
+                //xzxkaddress: '行政许可科的地址',                                
+                //xzxkstarttime: '2017-08-11', //开始时间
+                //xzxkendtime: '2017-08-30',   //结束时间
+                //base64: base,
+
+                //派遣给队员
+                //createuserid: 3,
+                //syncrowguid: '3c89dd9e-ed06-49e1-aa2c-f9bf3841703c',
+                //nextuserid: 9,
+                //advice: '【0811-flow2-test2】内勤派遣给队员',
+                //wfdid: 2017070414250002,
+                //nextwfdid: 2017070414250003,
+                
+                //队员上报
+                createuserid: 9,
+                nextuserid: 37,
+                syncrowguid: '1a6bf993-b668-42fa-9f8f-631c2b1f8cde',
+                geography: '120.70418851831381,30.755937919195958',
+                advice: 'ff',
+                wfdid: 2017040610570003,
+                nextwfdid: 2017070414250004,
+                base64: base,
+
+                //行政许可归档
+                //createuserid: 37,
+                //syncrowguid: '3c89dd9e-ed06-49e1-aa2c-f9bf3841703c',
+                //advice: '【0811-flow4-test3】归档',
+                //wfdid: 2017040610570004,
+                //nextwfdid: 2017070414250005,
+            },
+            success: function (data)
+            {
+                alert(JSON.stringify(data));
+            },
+            error: function (x, t, e)
+            {
+                console.log(x);
+            }
+        });
+    }
+
+    //根据id获取名称
+    //行政许可：证件类型 type="type_xzxk_zjlx"  审批类型："type_splx"
+    //门前三包：店家类型 type="type_djlx"
+    function getTypeId() {
+        var base = [];
+        $.ajax({
+            url: 'http://localhost:14195/api/ThreeBags/GetTypeById?id=1&&type=type_djlx',
+            type: 'get',
+            success: function (data) {
+                alert(JSON.stringify(data));
+            },
+            error: function (x, t, e) {
+                console.log(x);
+            }
+        });
+
+        //获取下拉框数据源
+        //行政许可：证件类型:http://localhost:14195/api/Dictionary/GetZdList?zd_type=type_xzxk_zjlx
+        //          审批类型：http://localhost:14195/api/Dictionary/GetZdList?zd_type=type_splx
+        //门前三包：店家类型 http://localhost:14195/api/Dictionary/GetZdList?zd_type=type_djlx
+    }
+
+    //行政审批
+    //获取待审批列表  //http://localhost:14195/api/Approval/GetApprovalList?userid=37&status=1&isxzk=false&start=0&limit=20    //参数：userid=$,status=1,isxzk=true/fasle 是否是行政许可
+    //获取待审批列表  //http://localhost:14195/api/Approval/GetApprovalList?userid=37&status=2&isxzk=false&start=0&limit=20    //参数：userid=$,status=2,isxzk=true/fasle 是否是行政许可
+    //归档列表  //http://localhost:14195/api/Approval/GetApprovalList?userid=37&status=3&isxzk=false&start=0&limit=20    //参数：userid=$,status=3,isxzk=true/fasle 是否是行政许可
+    //获取全部审批列表  http://localhost:14195/api/Approval/GetAllApprovalList?userid=37&status=1&start=0&limit=20
+
+    //获取意见列表      http://localhost:14195/api/Approval/GetAdviceList?pviguid=77ed1c59-a142-41b2-ae18-a39fe5f8504a&start=0&limit=20  参数： pviguid
+    //获取流转日志列表  http://localhost:14195/api/Approval/GetTransformLogList?pviguid=77ed1c59-a142-41b2-ae18-a39fe5f8504a&start=0&limit=20  参数：pviguid
+    //获取办结信息      http://localhost:14195/api/Approval/GetBanjieList?pviguid=77ed1c59-a142-41b2-ae18-a39fe5f8504a  参数：pviguid
+    //获取流程信息      http://localhost:14195/api/Approval/GetApprovalDetail?syncrowguid=25a0bddf-3b14-4bc9-89bf-0d7910d093ed&userid=37  参数:syncrowguid,userid
+    //返回参数中有【wfdid】及【nextid】
+
+    //获取文件信息      http://localhost:14195/api/Approval/GetFileUpload?wfsuid=2017071310544484046655&start=0&limit=25    参数：wfsuid
+
+    //获取中队下拉框    http://localhost:14195/api/Unit/GetUnitsSquadron?unittypeid=2              //参数:unittypeid=2
+    //获取内勤下拉框    http://localhost:14195/api/User/GetUsersPersonnelList?unitid=12&roleid=3   //参数：unitid=$[中队id]
+
+</script>
+</html>

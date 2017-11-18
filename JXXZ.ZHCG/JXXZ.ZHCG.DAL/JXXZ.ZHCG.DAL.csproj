@@ -1,0 +1,795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7D57133-1EC9-455E-862C-D3DB46784327}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JXXZ.ZHCG.DAL</RootNamespace>
+    <AssemblyName>JXXZ.ZHCG.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountDAL\AccountImageDAL.cs" />
+    <Compile Include="AccountDAL\AccountRegisterDAL.cs" />
+    <Compile Include="AccountDAL\TZ_AccountTaskDAL.cs" />
+    <Compile Include="administrativeapprovalDAL\ApprovalDAL.cs" />
+    <Compile Include="administrativeapprovalDAL\Approve_FileDAL.cs" />
+    <Compile Include="administrativeapprovalDAL\LicenseDAL.cs" />
+    <Compile Include="administrativeapprovalDAL\ThreeBagsDAL.cs" />
+    <Compile Include="AlarmDetail\AlarmDetailDAL.cs" />
+    <Compile Include="AlarmDetail\SluggishAlarm.cs" />
+    <Compile Include="AUDIT_PROJECT_W.cs">
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_articles.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_menus.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_permissionmenus.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_permissions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_rolepermissions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_roles.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_systemlogs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_units.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_unittypes.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_userroles.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_users.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_usertypes.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="base_zds.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bj_classes.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bj_part.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bj_zds.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BulletinBoardDAL\BulletinBoardDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\CaseStatisticalReportDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_CasesDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_CaseSourcesDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_LeadersuperviseDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_PhasesDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_PrescripTionsDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_SimpleCasesDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_SourcesDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_WorkFlowDetailsDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_WorkFlowManagerDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_WorkFlowSpecificActivitysDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_WorkFlowSpecificsDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_WorkFlowSpecificUsersDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_WtajsDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_YjdwsDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Case_ZdDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Doc_DefinitionsDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Doc_WfdddrsDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\Doc_WfsasDAL.cs" />
+    <Compile Include="CaseWorkFlowManagerDAL\receptionCasesDAL.cs" />
+    <Compile Include="case_cases.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_casesources.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_leadersupervises.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_phases.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_prescriptions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_simplecases.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_sources.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_workflowdetails.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_workflowspecificactivitys.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_workflowspecifics.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_workflowspecificusers.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_wtajs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_wtfiles.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_yjdws.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="case_zds.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CitizenServiceDAL\MySqlHelper.cs" />
+    <Compile Include="CitizenServiceDAL\SM_CitizenServicesDAL.cs" />
+    <Compile Include="CitizenServiceDAL\SM_ClassesDAL.cs" />
+    <Compile Include="CitizenServiceDAL\SM_ConsulTationsDAL.cs" />
+    <Compile Include="CitizenServiceDAL\SM_SourcesDAL.cs" />
+    <Compile Include="CitizenServiceDAL\SM_VisitsDAL.cs" />
+    <Compile Include="CitizenServiceDAL\StatisticalReportDAL.cs" />
+    <Compile Include="COM_MmsIn_2.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COM_MmsReport_2.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COM_MmsSent_2.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COM_SmsIn_2.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COM_SmsReport_2.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COM_SmsSent_2.cs">
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConservationDAL\YH_CompanyDAL.cs" />
+    <Compile Include="ConservationDAL\YH_ContractDAL.cs" />
+    <Compile Include="ConservationDAL\YH_FileDAL.cs" />
+    <Compile Include="ConservationDAL\YH_YhLogDAL.cs" />
+    <Compile Include="ConservationDAL\YH_YhTaskDAL.cs" />
+    <Compile Include="CustomsDAL\CustomsDAL.cs" />
+    <Compile Include="DataDictionaryDAL\DataDictionaryDAL.cs" />
+    <Compile Include="doc_definitions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doc_wfdddrs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doc_wfsas.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\CaseSourceClass.cs" />
+    <Compile Include="Enum\em_Unit.cs" />
+    <Compile Include="Enum\IsDelete.cs" />
+    <Compile Include="Enum\IsOnline.cs" />
+    <Compile Include="Enum\Judge.cs" />
+    <Compile Include="Enum\NewsColumn.cs" />
+    <Compile Include="Enum\SMClass.cs" />
+    <Compile Include="Enum\UserRole.cs" />
+    <Compile Include="FDS_LAW.cs">
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FDS_LAW_EXECUTOR.cs">
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FDS_POWER.cs">
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FDS_STANDARD.cs">
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FDS_STANDARD_PUNISH.cs">
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fi_cameras.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fi_cameratypes.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fi_camera_units.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fi_specialcameras.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fi_specialunits.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fi_uvafiles.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fi_uvas.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrontDeskDAL\FrontDeskDAL.cs" />
+    <Compile Include="IllegalConstructionDAL\WJ_CqxmsDAL.cs" />
+    <Compile Include="IllegalConstructionDAL\WJ_FilesDAL.cs" />
+    <Compile Include="IllegalConstructionDAL\WJ_WzjzsDAL.cs" />
+    <Compile Include="JXXZ.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JXXZ.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JXXZ.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JXXZ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JXXZ.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="JXXZSQL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JXXZSQL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JXXZSQL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JXXZSQL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JXXZSQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JXXZSQL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="kh_examines.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kh_scores.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LawEnforcementSupervisionDAL\Zfdx_DevicesDAL.cs" />
+    <Compile Include="LawEnforcementSupervisionDAL\Zfdx_InstocksDAL.cs" />
+    <Compile Include="LawEnforcementSupervisionDAL\Zfdx_OutstocksDAL.cs" />
+    <Compile Include="LawEnforcementSupervisionDAL\Zfdx_StocksDAL.cs" />
+    <Compile Include="LawEnforcementSupervisionDAL\zfdx_LawObjectDAL.cs" />
+    <Compile Include="LawEnforcementSupervisionDAL\Zxzz_SpecialTaskDAL.cs" />
+    <Compile Include="LegalCaseDAL\FreeDiscretionDAL.cs" />
+    <Compile Include="LowLyingDAL\LowLyingDAL.cs" />
+    <Compile Include="low_newlying.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="low_oldlying.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mapelementcategory.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="map_customs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MechanicalExamDAL\kh_examinesDAL.cs" />
+    <Compile Include="MechanicalExamDAL\receptionExamineDAL.cs" />
+    <Compile Include="Model\SiginDetail.cs" />
+    <Compile Include="MonitorDAL\FI_CamerasDAL.cs" />
+    <Compile Include="MonitorDAL\FI_CameraTypesDAL.cs" />
+    <Compile Include="MonitorDAL\FI_Camera_UnitsDAL.cs" />
+    <Compile Include="MonitorDAL\receptionMonitorDAL.cs" />
+    <Compile Include="monitorProjectDAL\monitorProjectDAL.cs" />
+    <Compile Include="PartDAL\PartDAL.cs" />
+    <Compile Include="PeripheryDAL\PeripheryDAL.cs" />
+    <Compile Include="phone_version.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_alarmcarmemorylocationdatas.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_alarmmemorylocationdatas.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_carhistorypositions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_carlastpositions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_cars.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_cartasks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_patrolareas.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_patrollogs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_signinareas.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_userhistorypositions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_userlastpositions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_usersignins.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_usertasks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qw_zds.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="receptionFirstPage\receptionFirstPageDAL.cs" />
+    <Compile Include="ReportDAL\ReportDAL.cs" />
+    <Compile Include="report_bureaucenterworks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_h7n7s.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_infos.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_landlaws.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_lawinwaters.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_safetifyinproductions.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_scalefarmscontrols.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_specialperiodenvirprots.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="report_strawandwastecontrols.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceManagementDAL\QW_CarsDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_CarTasksDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_CheckinDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_PatrolLogsDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_PatrolAreasDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_SigninAreasDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_UserHistoryPositionsDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_UserLastPositionsDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_UserSigninsDAL.cs" />
+    <Compile Include="ServiceManagementDAL\QW_UserTasksDAL.cs" />
+    <Compile Include="SMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SMSMessagesDAL\SMSMessagesDAL.cs" />
+    <Compile Include="sm_citizenservices.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sm_classes.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sm_consultations.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sm_sources.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sm_specialrectifications.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sm_visits.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="systemconfig.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemDAL\Base_ZdsDAL.cs" />
+    <Compile Include="SystemDAL\ChooseDAL.cs" />
+    <Compile Include="SystemDAL\MenuDAL.cs" />
+    <Compile Include="SystemDAL\PermissionDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemDAL\SysRolesDAL.cs" />
+    <Compile Include="SystemDAL\SystemLogDAL.cs" />
+    <Compile Include="SystemDAL\SystemLogModel.cs" />
+    <Compile Include="SystemDAL\UnitDAL.cs" />
+    <Compile Include="SystemDAL\UnitTypeDAL.cs" />
+    <Compile Include="SystemDAL\UserDAL.cs" />
+    <Compile Include="SystemDAL\UserTypeDAL.cs" />
+    <Compile Include="temp_ajysh.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_cgd.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_cgs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_cssbbl.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_cyqztzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_cyqzwpcltzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_dcqzlxh.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_dcxwbl.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_ffcwyjs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_files.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_fkcjtzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_fksjpz.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_goods.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_hgs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_tzbg.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_tzbl.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_tztzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_xcjckybl.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_xwdctzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_xzcfjds.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_xzcfjttljl.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_xzcfsxgzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_ysajsawpqd.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_zfwssdhz.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_zltzwfxwtzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_zlxqgztzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_zlxqzgzls.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_zpzj.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tj_persononlines.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tj_unitreportcounts.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tz_files.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tz_registers.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tz_taskclasses.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tz_tztasks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnitGridDAL\UnitGridDAL.cs" />
+    <Compile Include="uvasDAL\basicinfoDAL.cs" />
+    <Compile Include="view_casestatistical.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wf_workflowdetails.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wf_workflows.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wf_workflowspecificactivitys.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wf_workflowspecifics.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wf_workflowspecificuserfiles.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wf_workflowspecificusers.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wg_type.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wg_unitgrid.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wj_cqxms.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wj_files.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wj_wzjzs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkFlowManagerDAL\WF_WorkFlowDetailDAL.cs" />
+    <Compile Include="WorkFlowManagerDAL\WF_WorkFlowsDAL.cs" />
+    <Compile Include="WorkFlowManagerDAL\WF_WorkFlowSpecificActivitysDAL.cs" />
+    <Compile Include="WorkFlowManagerDAL\WF_WorkFlowSpecificDAL.cs" />
+    <Compile Include="WorkFlowManagerDAL\WF_WorkFlowSpecificUsersDAL.cs" />
+    <Compile Include="WorkFlowManagerDAL\WF_WorkFlowSpecificUsersFilesDAL.cs" />
+    <Compile Include="WorkFlowManagerDAL\WorkFlowManagerDAL.cs" />
+    <Compile Include="WORKFLOW_WORKITEM_HISTORY_W.cs">
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WORKFLOW_WORKITEM_W.cs">
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XZCF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XZCF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XZCF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XZCF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XZCF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XZCF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="xzj_files.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xzsp_disposes.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xzsp_files.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xzsp_locate.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xz_licensings.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="xz_threebags.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yh_companys.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yh_contracts.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yh_files.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yh_yhlogs.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yh_yhtasks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zfdx_devices.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zfdx_instocks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zfdx_outstocks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zfdx_shopblacks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zfdx_stocks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zfdx_streetshops.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZXZZDAL\ZXZZDAL.cs" />
+    <Compile Include="zxzz_files.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zxzz_tasks.cs">
+      <DependentUpon>JXXZ.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="JXXZ.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JXXZ.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JXXZ.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JXXZ.edmx</DependentUpon>
+      <LastGenOutput>JXXZ.Context.cs</LastGenOutput>
+    </None>
+    <None Include="JXXZ.edmx.diagram">
+      <DependentUpon>JXXZ.edmx</DependentUpon>
+    </None>
+    <None Include="JXXZ.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JXXZ.edmx</DependentUpon>
+      <LastGenOutput>JXXZ.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="JXXZSQL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JXXZSQL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="JXXZSQL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JXXZSQL.edmx</DependentUpon>
+      <LastGenOutput>JXXZSQL.Context.cs</LastGenOutput>
+    </None>
+    <None Include="JXXZSQL.edmx.diagram">
+      <DependentUpon>JXXZSQL.edmx</DependentUpon>
+    </None>
+    <None Include="JXXZSQL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JXXZSQL.edmx</DependentUpon>
+      <LastGenOutput>JXXZSQL.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="XZCF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>XZCF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="SMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMS.edmx</DependentUpon>
+      <LastGenOutput>SMS.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SMS.edmx.diagram">
+      <DependentUpon>SMS.edmx</DependentUpon>
+    </None>
+    <None Include="SMS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMS.edmx</DependentUpon>
+      <LastGenOutput>SMS.cs</LastGenOutput>
+    </None>
+    <None Include="XZCF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XZCF.edmx</DependentUpon>
+      <LastGenOutput>XZCF.Context.cs</LastGenOutput>
+    </None>
+    <None Include="XZCF.edmx.diagram">
+      <DependentUpon>XZCF.edmx</DependentUpon>
+    </None>
+    <None Include="XZCF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XZCF.edmx</DependentUpon>
+      <LastGenOutput>XZCF.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JXXZ.ZHCG.Model\JXXZ.ZHCG.Model.csproj">
+      <Project>{d4ab5832-abe5-4795-8268-a0a47a92abb3}</Project>
+      <Name>JXXZ.ZHCG.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

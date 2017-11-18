@@ -1,0 +1,175 @@
+.slider-container {
+    width: 300px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+    .slider-container .back-bar {
+        height: 10px;
+        position: relative;
+    }
+
+        .slider-container .back-bar .selected-bar {
+            height: 100%;
+            position: absolute;
+        }
+
+        .slider-container .back-bar .pointer {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            z-index: 2;
+            cursor: col-resize;
+            opacity: 1;
+            background-color: red;
+        }
+
+            .slider-container .back-bar .pointer.last-active {
+                z-index: 3;
+            }
+
+        .slider-container .back-bar .pointer-label {
+            top: -17px;
+            line-height: 1;
+            font-size: 8px;
+            white-space: nowrap;
+            position: absolute;
+        }
+
+        .slider-container .back-bar .focused {
+            z-index: 10;
+        }
+
+    .slider-container .clickable-dummy {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .slider-container .scale {
+        top: 2px;
+        position: relative;
+    }
+
+        .slider-container .scale span {
+            height: 5px;
+            font-size: 0px;
+            border-left-color: rgb(153, 153, 153);
+            border-left-width: 1px;
+            border-left-style: solid;
+            position: absolute;
+        }
+
+        .slider-container .scale ins {
+            left: 0px;
+            top: 5px;
+            color: rgb(153, 153, 153);
+            line-height: 1;
+            font-size: 9px;
+            text-decoration: none;
+            position: absolute;
+        }
+
+    .slider-container.slider-readonly .clickable-dummy {
+        cursor: auto;
+    }
+
+    .slider-container.slider-readonly .pointer {
+        cursor: auto;
+    }
+
+.theme-green .back-bar {
+    border-radius: 2px;
+    height: 5px;
+    background-image: linear-gradient(rgb(232, 232, 232), rgb(232, 232, 232));
+    background-repeat: repeat-x;
+    background-color: rgb(232, 232, 232);
+}
+
+    .theme-green .back-bar .selected-bar {
+        border-radius: 2px;
+        background-image: linear-gradient(rgb(232, 232, 232), rgb(232, 232, 232));
+        background-repeat: repeat-x;
+        background-color: rgb(232, 232, 232);
+    }
+
+    .theme-green .back-bar .pointer {
+        border: 1px solid rgb(53, 131, 214);
+        border-image: none;
+        top: -5px;
+        width: 5px;
+        height: 14px;
+        box-sizing: border-box;
+        background-image: linear-gradient(rgb(53, 131, 214), rgb(53, 131, 214));
+        background-repeat: repeat-x;
+        background-color: rgb(53, 131, 214);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .theme-green .back-bar .pointer-label {
+        color: rgb(232, 232, 232);
+    }
+
+    .theme-green .back-bar .focused {
+        color: rgb(232, 232, 232);
+    }
+
+.theme-green .scale span {
+    border-left-color: rgb(232, 232, 232);
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+.theme-green .scale ins {
+    color: rgb(232, 232, 232);
+}
+
+.theme-blue .back-bar {
+    border-radius: 2px;
+    height: 5px;
+    background-image: linear-gradient(rgb(238, 238, 238), rgb(221, 221, 221));
+    background-repeat: repeat-x;
+    background-color: rgb(231, 231, 231);
+}
+
+    .theme-blue .back-bar .selected-bar {
+        border-radius: 2px;
+        background-image: linear-gradient(rgb(177, 209, 249), rgb(100, 168, 249));
+        background-repeat: repeat-x;
+        background-color: rgb(146, 193, 249);
+    }
+
+    .theme-blue .back-bar .pointer {
+        border-radius: 10px;
+        border: 1px solid rgb(170, 170, 170);
+        border-image: none;
+        top: -5px;
+        width: 14px;
+        height: 14px;
+        box-sizing: border-box;
+        background-image: linear-gradient(rgb(238, 238, 238), rgb(221, 221, 221));
+        background-repeat: repeat-x;
+        background-color: rgb(231, 231, 231);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+
+    .theme-blue .back-bar .pointer-label {
+        color: rgb(153, 153, 153);
+    }
+
+    .theme-blue .back-bar .focused {
+        color: rgb(51, 51, 51);
+    }
+
+.theme-blue .scale span {
+    border-left-color: rgb(229, 229, 229);
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+.theme-blue .scale ins {
+    color: rgb(153, 153, 153);
+}

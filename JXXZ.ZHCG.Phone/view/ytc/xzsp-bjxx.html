@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>行政审批-办结信息 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<style type="text/css">
+			.title{
+				margin: 10px 0 0 15px;
+				font-size: 15px;
+			}
+			
+			.mui-card{
+				margin-top: 3px;
+			}
+			
+			li.mui-table-view-cell input{
+				float: right;
+				width: 75%;
+				margin-bottom: 0;
+				height: 26px;
+				background: url(../../image/report/triangle.png) no-repeat 98% center;
+				font-size: 14px;
+				padding: 10px;
+				text-align: right;
+				padding-right: 18px;
+				border: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="title">办结信息</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						审批结果<label class="r-float font-color" >办结</label>
+					</li>
+					<li class="mui-table-view-cell">
+						编号<label class="r-float font-color" >551611040002</label>
+					</li>
+					<li class="mui-table-view-cell">
+						办结批文<label class="r-float font-color" >准予许可</label>
+					</li>
+				</ul>
+			</div>
+			<div class="title">执法中队派遣</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						大队中队<input readonly type="text" placeholder="请选择大队中队">
+					</li>
+					<li class="mui-table-view-cell">
+						派遣意见
+						<textarea style="float: right;width: 75%;" rows="3"placeholder="请输入派遣意见"></textarea>
+					</li>
+				</ul>
+			</div>
+			
+			<button type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>		
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="xzsp-bjxx.js"></script>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>违停案件</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.mui-input-row label {
+				width: 24%;
+			}
+			
+			.mui-input-row label~input {
+				width: 73%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-card">
+					<div class="mui-input-row" id='carlist'>
+						<span class="redbiaoji">*</span>
+						<label>号牌种类</label>
+						<input readonly="readonly" type="text" id='carname' class="triangle" value=''>
+						<input ctype='car_type' type="hidden" id='carid' data-val-required='号牌种类不可为空' />
+					</div>
+					<div class="mui-input-row" id='wflist'>
+						<span class="redbiaoji">*</span>
+						<label>违法时间</label>
+						<input id='wttime' ctype='wt_time' readonly="readonly" type="text" value='' data-val-required='违法时间不可为空'>
+					</div>
+					<div class="mui-input-row">
+						<span class="redbiaoji">*</span>
+						<label>车辆号牌</label>
+						<input id="cphm" style="text-align: left;" ctype='car_num' type="text" value='浙F' data-val-required='车辆号牌不可为空'>
+					</div>
+
+					<div class="mui-input-row" id='pos'>
+						<label>查询地点</label>
+						<input readonly class="location-green" id='posaddress' type="text" value=''>
+						<input id='latitude' type='hidden' ctype='y84' />
+						<input id='longitude' type='hidden' ctype='x84' />
+					</div>
+					<div class="mui-input-row">
+						<span class="redbiaoji">*</span>
+						<label>地址描述</label>
+						<input ctype='wt_address' id='caseaddress'  type="text" data-val-required='地址描述不可为空'>
+						<!--<div id='caseaddress-update' class="right-click"></div>-->
+					</div>
+					
+					<div class="mui-input-row">
+						<label>违法行为</label>
+						<input ctype='wfxw' type="text" value='不按规定停放机动车，影响其他车辆和行人通行的'>
+					</div>
+				</div>
+			</form>
+			<div style="margin-left: 20px;margin-top: 10px; font-size: 15px;"><span style="color:red;">* </span>现场拍照</div>
+			<div class="card">
+				<div class="addphoto">
+					<img id="head-img1" src="../../image/addphoto.png" />
+				</div>
+				<div class="addphoto">
+					<img id="head-img2" src="../../image/addphoto.png" />
+				</div>
+				<div class="addphoto">
+					<img id="head-img3" src="../../image/addphoto.png" />
+				</div>
+				<input id="head-img1Name" type="hidden" value="" />
+				<input id="head-img2Name" type="hidden" value="" />
+				<input id="head-img3Name" type="hidden" value="" />
+				<input id="img-head-img1Name" type="hidden" value="" />
+				<input id="img-head-img2Name" type="hidden" value="" />
+				<input id="img-head-img3Name" type="hidden" value="" />
+			</div>
+			<input ctype='processstatus' type="hidden" value='0' bz='处理状态' />
+			<input ctype='cjdw' type="hidden" value='秀洲区综合行政执法局' bz='采集单位' />
+			<!--<input ctype='wfxw' type="hidden" value='不按规定停放机动车，影响其他车辆和行人通行的' />-->
+			<input ctype='isphone' type="hidden" value='1' />
+			<input ctype='fkje' type="hidden" value='150'>
+			<button id='submit' type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='wtaj.js'></script>
+
+</html>

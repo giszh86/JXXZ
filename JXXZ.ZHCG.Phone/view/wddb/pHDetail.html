@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>巡查任务详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.title{
+				margin: 10px 10px 0 20px;
+			}
+			
+			.time{
+				display: inline-block;
+				margin-top: 3px;
+				background: url(../../image/wddb/time.png) no-repeat left center;
+				height: 20px;
+				padding-left: 28px;
+				color: #005a8d;
+			}
+			
+			.qiandao{
+				float: right;
+				background-color: #005a8d;
+				color: white;
+				padding: 3px 12px;
+				border-radius: 3px;
+			}
+			
+			.mui-card{
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">巡查任务详情</h1>
+		</header>
+		<div class="mui-content">
+			<div class="title">
+				<div class="time" id="date"></div>
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">巡查时间</span>
+							<input id="xcsj" readonly type="text" value='07 : 30 - 18 : 00'/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">签到时间</span>
+							<input id="qdsj" readonly type="text" value='17 : 30 - 18 : 00'/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">签退时间</span>
+							<input id="qtsj" readonly type="text" value='08 : 30 - 09 : 00'/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">巡查区域</span>
+							<input class="location-red" readonly type="text" id="patrolname"/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">签到区域</span>
+							<input class="location-green" readonly type="text" id="signinareaname"/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">任务说明</span>
+							<input id="rwsm" readonly type="text" value='进行日常巡查工作'/>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='pHDetail.js'></script>
+</html>

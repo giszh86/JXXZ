@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="JXXZ.ZHCG.Front.Window.RoundList" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ticc="clr-namespace:Techzen.ICS.CS.Controls;assembly=Techzen.ICS.CS.Controls" mc:Ignorable="d" d:DesignHeight="400" d:DesignWidth="230" Unloaded="UserControl_Unloaded">
+
+    <UserControl.Resources>
+        <DataTemplate x:Name="listDataTemplate" x:Key="DataTemplate">
+            <Grid DataContext="{Binding}" Height="20" Background="Transparent" MouseLeftButtonUp="Grid_MouseLeftButtonUp">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="135" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource DefaultTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding ReservedField1}" />
+                <TextBlock Style="{StaticResource DefaultTextBlockStyle}" Grid.Column="1" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding MapElementBizTypeName}" />
+
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <ticc:TZElementListWindow x:Name="listWindow" PositionAllButtonClick="listWindow_PositionAllButtonClick" ELWSearcherButtonClick="listWindow_ELWSearcherButtonClick" PagerIndexChanged="listWindow_PagerIndexChanged" />
+    </Grid>
+</UserControl>

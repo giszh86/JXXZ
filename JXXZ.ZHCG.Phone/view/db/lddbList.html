@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<title>领导督办列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.card{
+				margin: 10px;
+				padding: 10px 15px;
+			}
+			
+			.title{
+				display: inline-block;
+				width: 21%;
+				float: left;
+				line-height: 180%;
+			}
+			
+			.content{
+				display: inline-block;
+				color: #005a8d;
+				line-height: 180%;
+			}
+			
+			.row{
+				height: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">领导督办</h1>
+			<span id="adddb" class="r-float margin-top14px" >添加</span>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll" id="menuList">
+				<template v-for='(item,index) in items'>
+					<div class="card">
+						<div class="row">
+							<div class="title">督办人</div>
+							<div class="content">{{item.dbrname}}</div>
+						</div>
+						<div class="row">
+							<div class="title">督办意见</div>
+							<div class="content">{{item.content}}</div>
+						</div>
+						<div class="row">
+							<div class="title">紧急程序</div>
+							<div class="content" style="color: red;">{{item.urgencyLevel}}</div>
+						</div>
+						<div class="row">
+							<div class="title">短信提醒</div>
+							<div class="content">{{item.phoneName}}（{{item.phone}}）</div>
+						</div>
+						<div class="row">
+							<div class="title">督办时间</div>
+							<div class="content">{{item.time}}</div>
+						</div>
+					</div>
+				</template>	
+			</div>		
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='lddbList.js'></script>
+</html>

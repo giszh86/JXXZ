@@ -1,0 +1,66 @@
+﻿<UserControl xmlns:tsc="clr-namespace:Techzen.ICS.CS.Controls;assembly=Techzen.ICS.CS.Controls" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             x:Class="JXXZ.ZHCG.Front.Window.MapInfoPanel" 
+             
+             mc:Ignorable="d" 
+             d:DesignWidth="275" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <Border Width="275" x:Name="DetailParent" Canvas.Left="20" Canvas.Top="-35" CornerRadius="5">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border x:Name="titleBar"  Grid.Row="0" BorderThickness="0,0,0,0" Cursor="Arrow">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,0" MappingMode="RelativeToBoundingBox" StartPoint="0.5,1">
+                        <GradientStop Color="#011e2f" />
+                        <GradientStop Color="#203e5d" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+                    <Border Width="4" Grid.Column="0" HorizontalAlignment="Left" Background="#01aa8b" UseLayoutRounding="False">
+                        <Border.RenderTransform>
+                            <CompositeTransform Rotation="0.419" />
+                        </Border.RenderTransform>
+                    </Border>
+                    <TextBlock  Grid.Column="1" x:Name="detailTitle" Margin="6,6,0,5" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="Microsoft YaHei" TextOptions.TextHintingMode="Animated" Foreground="White" />
+                    <Image x:Name="closeBtn" Source="/Techzen.ICS.CS.Controls;component/Images/win-title-close.png" Width="22" Height="22" Stretch="None" Grid.Column="2" Margin="0" Cursor="Hand" />
+                </Grid>
+            </Border>
+
+            <Grid x:Name="Detail" Grid.Row="1" Background="#1C4B67" Opacity="0.95">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid Background="#d6d4d4" Grid.Row="1" />
+                <!-- 信息展示 -->
+                <StackPanel x:Name="infoPanel" Margin="10 6 10 6">
+                    
+                </StackPanel>
+                <!-- 工具栏 -->
+                <Grid VerticalAlignment="Center" Grid.Row="2" Height="30" Background="#1C4B67">
+                    <StackPanel x:Name="buttonItems" Margin="5 0 0 0" Orientation="Horizontal">
+                        <Image x:Name="imgDetails" Height="18" Width="18" Stretch="Uniform" Source="/JXXZ.ZHCG.Front;component/Images/datails.png" Cursor="Hand" MouseLeftButtonUp="imgDetails_MouseLeftButtonUp" />
+                        <Image x:Name="imgTrajectory" Height="18" Width="18" Stretch="Uniform" Source="/JXXZ.ZHCG.Front;component/Images/datails.png" Cursor="Hand" Margin="10,0,0,0" MouseLeftButtonUp="imgTrajectory_MouseLeftButtonUp" />
+                        <Image x:Name="imgRound" Height="18" Width="18" Stretch="Uniform" Source="/JXXZ.ZHCG.Front;component/Images/datails.png" Cursor="Hand" Margin="10,0,0,0" MouseLeftButtonUp="imgRound_MouseLeftButtonUp" />
+                    </StackPanel>
+                    <StackPanel x:Name="tbLastLocationPanel" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 5 0" >
+                        <Image Height="18" Width="18" Stretch="Uniform" Source="/JXXZ.ZHCG.Front;component/Images/datails.png" Cursor="Hand" />
+                        <TextBlock x:Name="tbLastLocation" Text="0分钟前" VerticalAlignment="Center" FontSize="13" Foreground="#FF88CF67" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

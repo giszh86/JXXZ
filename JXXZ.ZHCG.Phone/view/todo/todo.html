@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>事件详情</title>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link href="../../css/app.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a href="javascript:;" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"></h1>
+			<span id='history' class="r-float margin-top14px">历史</span>
+		</header>
+		<div class="mui-content">
+
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/app.js"></script>
+	<script>
+		mui.plusReady(function() {
+			var self = plus.webview.currentWebview();
+			var model = self.model;
+			var wfdid = model.wfdid;
+		    var userInfo=app.getUserInfo();
+		    var Roles=userInfo.Roles;
+			var url = null;
+			var title = null;
+			if(model.workflowtype=='2017021410240003') { //快速上报
+				if(wfdid == '2017021410240003'&&Roles.indexOf('3')>-1){
+					url='detail6.html';    //内勤处理
+					title='待处理市民事件';
+				}else if(wfdid == '2017021410240003'&&Roles.indexOf('18')>-1){
+					url='detail7.html';   //组长处理
+					title='待处理市民事件';
+				}else if(wfdid == '2017021410240004'&&Roles.indexOf('3')>-1){
+					url='detail8.html';   //内勤审核
+					title='待审核市民事件'
+				}
+			}else{
+				if(wfdid == '2017021410240002') {
+				    url = 'detail4.html'; //中队派遣
+				    title = '待派遣市民事件';
+			     } else if(wfdid == '2017021410240003'){
+				    url = 'detail3.html'; //队员处理
+				    title = '待处理市民事件';
+			     } else if(wfdid == '2017021410240004'){
+				    url = 'detail1.html'; //中队审核
+				    title = '待处理市民事件'; 
+			    } else if(wfdid == '2017021410240008'){
+				    url = 'detail2.html'; //领导审核
+				    title = '待审核市民事件';
+			    } else if(wfdid == '2017021410240007') {
+				    url = 'detail5.html' //协同单位处理
+				    title = '待处理市民事件';
+			    }
+			}
+			console.log('wfdid:' + wfdid);
+			if(url == null) {
+				url = 'error.html';
+				title = '错误';
+			}
+			document.querySelector('.mui-title').innerText = title;
+			var page = mui.preload({
+				url: url,
+				id: url,
+				styles: {
+					top: '46px',
+					bottom: '0px'
+				},
+				extras: {
+					wfdid: wfdid,
+					model: model
+				}
+			});
+			self.append(page);
+			//页面显示.
+			window.setTimeout(function() {
+				plus.webview.show(self, "slide-in-right", 300, function() {
+					//plus.nativeUI.closeWaiting();
+				});
+			}, 500);
+
+			window.addEventListener('back', function() {
+				var f_self = self.opener();
+				mui.fire(f_self,'back');
+				mui.back();
+			});
+			document.getElementById("history").addEventListener('tap',function(data){
+				mui.openWindow({
+					url: 'history.html',
+					id: 'history.html',
+					extras: {
+						wfdid: wfdid,
+						model: model
+					}
+				});
+			})
+		});
+	</script>
+
+</html>

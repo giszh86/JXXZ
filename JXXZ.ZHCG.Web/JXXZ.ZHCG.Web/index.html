@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>嘉兴秀州智慧城管平台</title>
+    <style type="text/css">
+        @import url(../Css/Main.css);
+        @import url(../Css/Panel.css);
+        @import url(../Css/Pager/goodPager.css);
+    </style>
+    <style type="text/css">
+        .tree_arrows_down:before {
+            content: url("../Image/Tree/down.png");
+        }
+
+        .tree_arrows_right:before {
+            content: url("../Image/Tree/right.png");
+        }
+
+        .tree_arrows_camera:before {
+            content: url("../Image/Tree/camera.png");
+        }
+        .tree {
+            width:240px;
+            height:304px;
+            display:none;
+        }
+            .tree ul {
+                width:100%;
+                height:100%;
+                margin:0px;
+                padding:0px;
+                list-style:none;
+            }
+            .tree ul li {
+                width:100%;
+                float:left;
+                white-space: nowrap;
+                color:white;
+            }
+    </style>
+    <link href="Scripts/Tree/css/bootstrap-treeview.css" rel="stylesheet" />
+    <script src="Scripts/css3-mediaqueries.js"></script>
+    <script src="Scripts/html5.js"></script>
+    <script src="Scripts/echarts/echarts.js"></script>
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/jquery.rotate.min.js"></script>
+    <script src="Scripts/index/getTimes.js"></script>
+    <script src="Scripts/tabswitch/tab.js"></script>
+    <script src="Scripts/Pager/goodPage.js"></script>
+    <script src="Scripts/Map/cm7.js"></script>
+    <script src="Scripts/Map/cm7_sample_util.js"></script>
+    <script src="Scripts/Tree/bootstrap-treeview.js"></script>
+    <script src="Scripts/jsScrool/jquery.nicescroll.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //初始化三维控件
+            initAxControl();
+            loadFdb("", "", "");
+
+            var scale = __g.new_Vector3;
+            var ang = __g.new_EulerAngle;
+            ang.heading = 30;
+            ang.tilt = -45;
+            __g.camera.flyTime = 0;
+            __g.camera.lookAt(scale, 200, ang);
+            hideAllBottom();
+            hidelist();
+            $("#personnel").show();
+            var tabs = document.getElementById("hexagonMenu").getElementsByTagName("li");
+            hexagonMenuChange(tabs);
+            var tabsone = document.getElementById("tab1").getElementsByTagName("li");
+            tabswitch(tabsone);
+        });
+        //菜单切换
+        function hexagonMenuChange(tabs) {
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].onclick = function () { tabChanges(this); }
+            }
+            function tabChanges(any) {
+                for (var i = 0; i < tabs.length; i++) {
+                    if (tabs[i] == any) {
+                        $(tabs[i]).addClass("bottomImgUp_selected");
+                        hideAllBottom();
+                        if (tabs[i].tabIndex == 1) {
+                            $("#personnel").show();
+                        }
+                        if (tabs[i].tabIndex == 2) {
+                            $("#vehicle").show();
+                        }
+                        if (tabs[i].tabIndex == 3) {
+                            $("#monitor").show();
+                            initPager($(".page"), 10);
+                            $("#list").show();
+                        }
+                        if (tabs[i].tabIndex == 4) {
+                            $("#event").show();
+                        }
+                        if (tabs[i].tabIndex == 5) {
+                            $("#case").show();
+                        }
+                        if (tabs[i].tabIndex == 6) {
+                            alert("部件");
+                        }
+                        if (tabs[i].tabIndex == 7) {
+                            alert("养护");
+                        }
+                        if (tabs[i].tabIndex == 8) {
+                            alert("整治");
+                        }
+                        if (tabs[i].tabIndex == 9) {
+                            alert("审批");
+                        }
+                        if (tabs[i].tabIndex == 10) {
+                            alert("违拆");
+                        }
+                        if (tabs[i].tabIndex == 11) {
+                            alert("其他");
+                        }
+                    } else if (i % 2 == 0) {
+                        tabs[i].className = "bottomImgUp";
+                    } else {
+                        tabs[i].className = "bottomImgUp bottomImgDown";
+                    }
+                }
+            }
+        }
+
+        //隐藏所有底部内容
+        function hideAllBottom() {
+            $("#first").hide();
+            $("#personnel").hide();
+            $("#vehicle").hide();
+            $("#monitor").hide();
+            $("#event").hide();
+            $("#case").hide();
+        }
+
+        function hidelist() {
+            $("#list").hide();
+        }
+    </script>
+</head>
+<body>
+    <!--顶部-->
+    <div class="Mainhead">
+        <div class="MainheadFloat" id="Particles">
+            <!--头部画点样式-->
+            <div class="MainheadTitle">
+                <div class="topleftTitleImg">
+                    <div style="width: 20%; height: 65px; float: left;">
+                        <img style="width: 60px; height: 60px; margin-left: 10px;" src="Image/LOGO.png" />
+                    </div>
+                    <div style="width: 80%; height: 65px; float: left;">
+                        <img src="Image/标题.png" style="padding-top: 10px;" />
+                    </div>
+                </div>
+            </div>
+            <div class="MainheadCenterTime" id="time">
+            </div>
+
+            <div class="MainheadRight">
+                <label>您好,管理员</label>&nbsp;<a href="#" id="element">注销</a>&nbsp;<a href="#">修改密码</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 三维地图-->
+    <object id="__g" style="width: 100%; height: 100%; position: absolute; top: 80px;" type="application/x-cm-3d">
+        <param name="wmode" value="opaque" />
+    </object>
+
+    <!-- 列表面板-->
+    <div style="width: 240px; height: 370px;" class="list" id="list">
+        <div class="listhead">
+            <div class="panelheadhr"></div>
+            <div class="panletitle"><span>监控列表</span></div>
+            <div class="panelClose" onclick="hidelist()"></div>
+        </div>
+        <div id="tab1" class="tabswitch">
+            <ul>
+                <li class="tabswitch_select" tabindex="1"><span>监控</span></li>
+                <li tabindex="2"><span>专题</span></li>
+            </ul>
+        </div>
+        <div id="tab1Content">
+            <div class="searchline">
+                <input type="search" class="searchtext" />
+                <img src="Image/tools/search.png" />
+                <img src="Image/tools/seniorsearch.png" />
+            </div>
+            <div class="listdatacontent">
+                <table cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>监控名称</td>
+                            <td>监控</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                        <tr>
+                            <td>创新路嵩江东路</td>
+                            <td>球机</td>
+                            <td>
+                                <img src="Image/tools/details.png" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="listbottom">
+                <div id="Page" class="page"></div>
+            </div>
+        </div>
+            <div id="tree" class="tree">
+             </div>
+
+    </div>
+
+    <!--底部-->
+    <div class="bottom_footer" id="bottomContent">
+        <div style="width: 30px; height: 30px; margin: 5px 0px 0px 5px; float: left;">
+            <img src="Image/firstpage.png" />
+        </div>
+        <!-- 底部菜单栏-->
+        <div class="centerMenu" id="hexagonMenu">
+            <ul>
+                <li class="bottomImgUp" tabindex="1">
+                    <div>
+                        <img src="Image/icon/人员.png" />
+                        <span>人员</span>
+                        <label class="lable green">079</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="2">
+                    <div>
+                        <img src="Image/icon/车辆.png" />
+                        <span>车辆</span>
+                        <label class="lable green">054</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="3">
+                    <div>
+                        <img src="Image/icon/监控.png" />
+                        <span>监控</span>
+                        <label class="lable green">107</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="4">
+                    <div>
+                        <img src="Image/icon/事件.png" /><span>事件</span><label class="lable green">021</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="5">
+                    <div>
+                        <img src="Image/icon/案件.png" /><span>案件</span><label class="lable Paleblue">014</label>
+                    </div>
+
+                </li>
+                <li class="bottomImgUp" tabindex="6">
+                    <div>
+                        <img src="Image/icon/部件.png" /><span>部件</span><label class="lable Paleblue">079</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="7">
+                    <div>
+                        <img src="Image/icon/养护.png" /><span>养护</span><label class="lable Paleblue">014</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="8">
+                    <div>
+                        <img src="Image/icon/整治.png" /><span>整治</span><label class="lable Paleblue">054</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="9">
+                    <div>
+                        <img src="Image/icon/审批.png" /><span>审批</span><label class="lable Palered">025</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="10">
+                    <div>
+                        <img src="Image/icon/拆迁.png" /><span>违拆</span><label class="lable Palered">014</label>
+                    </div>
+                </li>
+                <li class="bottomImgUp" tabindex="11">
+                    <div>
+                        <img src="Image/icon/违建.png" /><span>其他</span><label class="lable Palered">054</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--首页-->
+        <!-- 案件-->
+        <div class="bottom_three" id="first">
+        </div>
+
+        <!--人员-->
+        <div class="bottom_three" id="personnel">
+            <div class="bottom_Part one">
+                <div class="bottom_Part renyuanpie" id="renyuanpie"></div>
+                <table>
+                    <tr>
+                        <td>环卫人员</td>
+                        <td>
+                            <div class="renyuanstatus green"></div>
+                            <div class="renyuanstatus green"></div>
+                            <div class="renyuanstatus green"></div>
+                            <div class="renyuanstatus green"></div>
+                            <div class="renyuanstatus green"></div>
+                            <div class="renyuanstatus green"></div>
+                            <div class="renyuanstatus green"></div>
+                            <div class="renyuanstatus defaultgreen"></div>
+                            <div class="renyuanstatus defaultgreen"></div>
+                            <div class="renyuanstatus defaultgreen"></div>
+                            <div class="renyuanstatus defaultgreen"></div>
+                            <div class="renyuanstatus defaultgreen"></div>
+                        </td>
+                        <td>14/23</td>
+                    </tr>
+                    <tr>
+                        <td>执法人员</td>
+                        <td>
+                            <div class="renyuanstatus yellow"></div>
+                            <div class="renyuanstatus yellow"></div>
+                            <div class="renyuanstatus yellow"></div>
+                            <div class="renyuanstatus yellow"></div>
+                            <div class="renyuanstatus yellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                            <div class="renyuanstatus defaultyellow"></div>
+                        </td>
+                        <td>14/23</td>
+                    </tr>
+                    <tr>
+                        <td>养护人员</td>
+                        <td>
+                            <div class="renyuanstatus blue"></div>
+                            <div class="renyuanstatus blue"></div>
+                            <div class="renyuanstatus blue"></div>
+                            <div class="renyuanstatus blue"></div>
+                            <div class="renyuanstatus blue"></div>
+                            <div class="renyuanstatus blue"></div>
+                            <div class="renyuanstatus blue"></div>
+                            <div class="renyuanstatus blue"></div>
+                            <div class="renyuanstatus defaultblue"></div>
+                            <div class="renyuanstatus defaultblue"></div>
+                        </td>
+                        <td>14/23</td>
+                    </tr>
+                </table>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part two">
+                <div id="linepersonnel" class="bottom_Part linepersonnel"></div>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part three" id="renyuanlinechart">
+            </div>
+        </div>
+
+        <!--车辆-->
+        <div class="bottom_three" id="vehicle">
+            <div class="bottom_Part one">
+                <div class="bottom_Part renyuanpie" id="vehiclepie"></div>
+                <table>
+                    <tr>
+                        <td>渣土车</td>
+                        <td>
+                            <div class="carstatus defaultred">
+                                <div style="width: 60%;" class="carstatus red"></div>
+                            </div>
+                        </td>
+                        <td>14/23</td>
+                    </tr>
+                    <tr>
+                        <td>环卫车</td>
+                        <td>
+                            <div class="carstatus defaultyellow">
+                                <div style="width: 40%;" class="carstatus yellow"></div>
+                            </div>
+                        </td>
+                        <td>14/23</td>
+                    </tr>
+                    <tr>
+                        <td>执法车</td>
+                        <td>
+                            <div class="carstatus defaultblue">
+                                <div style="width: 80%;" class="carstatus blue"></div>
+                            </div>
+                        </td>
+                        <td>14/23</td>
+                    </tr>
+                </table>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part two">
+                <div id="vehicleline" class="bottom_Part linepersonnel"></div>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part three" id="vehicleColumn">
+            </div>
+        </div>
+
+        <!--监控-->
+        <div class="bottom_three" id="monitor">
+            <div class="bottom_Part four">
+                <div class="bottom_Part content" id="monitorColumn"></div>
+                <div class="bottom_Part contentone">
+                    <table>
+                        <tr>
+                            <td>自建视频</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>车载视频</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>公安视频</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>高空视频</td>
+                            <td>250</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>移动视频</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>无人机</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>单兵</td>
+                            <td>250</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part five">
+                <div class="bottom_Part monitor">
+                    <div class="monitor heightone" id="xiucity">
+                    </div>
+                    <div class="monitor heighttwo"><i>250/145</i><br />
+                        <i>球机/枪机</i></div>
+                </div>
+                <div class="bottom_Part monitor">
+                    <div class="monitor heightone" id="newcity"></div>
+                    <div class="monitor heighttwo"><i>250/145</i><br />
+                        <i>球机/枪机</i></div>
+                </div>
+                <div class="bottom_Part monitor">
+                    <div class="monitor heightone" id="hightcity"></div>
+                    <div class="monitor heighttwo"><i>250/145</i><br />
+                        <i>球机/枪机</i></div>
+                </div>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part five">
+                <table>
+                    <tr>
+                        <td>桥梁</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>高架</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>积水高发</td>
+                        <td>250</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>实时</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>区政府</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>开发区</td>
+                        <td>250</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--事件-->
+        <div class="bottom_three" id="event">
+            <div class="bottom_Part eventone">
+                <div class="bottom_Part six" id="eventRadar"></div>
+                <div class="bottom_Part seven">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="circular red"></div>
+                            </td>
+                            <td>巡查上报</td>
+                            <td>
+                                <div id="xcsb">39</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="circular orange"></div>
+                            </td>
+                            <td>视频发现</td>
+                            <td>
+                                <div id="Div1">22</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="circular Violet"></div>
+                            </td>
+                            <td>物联感知</td>
+                            <td>
+                                <div id="Div2">21</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="circular Lilaccolour"></div>
+                            </td>
+                            <td>部门移交</td>
+                            <td>
+                                <div id="Div3">31</div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="circular green"></div>
+                            </td>
+                            <td>热线受理</td>
+                            <td>
+                                <div id="Div4">39</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="circular yellow"></div>
+                            </td>
+                            <td>公众APP</td>
+                            <td>
+                                <div id="Div5">22</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="circular blue"></div>
+                            </td>
+                            <td>微信</td>
+                            <td>
+                                <div id="Div6">21</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="circular Paleblue"></div>
+                            </td>
+                            <td>微博</td>
+                            <td>
+                                <div id="Div7">31</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part event">
+                <div id="eventLine" class="bottom_Part linepersonnel"></div>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part three" id="eventColumn">
+            </div>
+        </div>
+
+        <!-- 案件-->
+        <div class="bottom_three" id="case">
+            <div class="bottom_Part fourpoints">
+                <div class="bottom_Part six" id="casePie"></div>
+                <div class="bottom_Part seven">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="circular green"></div>
+                            </td>
+                            <td>已立案</td>
+                            <td>
+                                <div id="Div8">39</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="circular orange"></div>
+                            </td>
+                            <td>处理中</td>
+                            <td>
+                                <div id="Div9">22</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="circular Paleblue"></div>
+                            </td>
+                            <td>已结案</td>
+                            <td>
+                                <div id="Div10">21</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part fourpoints">
+                <div class="bottom_Part casewidth" id="caseColumn"></div>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part fourpoints">
+                <table cellpadding="4" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>时间</td>
+                            <td>标题</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15:11:00</td>
+                            <td>兴慈一路无证案件</td>
+                        </tr>
+                        <tr>
+                            <td>15:11:00</td>
+                            <td>兴慈一路无证案件</td>
+                        </tr>
+                        <tr>
+                            <td>15:11:00</td>
+                            <td>兴慈一路无证案件</td>
+                        </tr>
+                        <tr>
+                            <td>15:11:00</td>
+                            <td>兴慈一路无证案件</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="dividingline"></div>
+            </div>
+            <div class="bottom_Part fourpoints" id="caseColumnright">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 人员-->
+    <script src="Scripts/echarts/personnel/linepersonnel.js"></script>
+    <script src="Scripts/echarts/personnel/cakepersonnel.js"></script>
+    <script src="Scripts/echarts/personnel/columnpersonnel.js"></script>
+    <!--车辆-->
+    <script src="Scripts/echarts/vehicle/cakevehicle.js"></script>
+    <script src="Scripts/echarts/vehicle/linevehicle.js"></script>
+    <script src="Scripts/echarts/vehicle/columnvehicle.js"></script>
+    <!-- 监控-->
+    <script src="Scripts/echarts/monitor/columnmonitor.js"></script>
+    <script src="Scripts/echarts/monitor/cakemonitor.js"></script>
+    <script src="Scripts/echarts/monitor/monitorhight.js"></script>
+    <script src="Scripts/echarts/monitor/monitorpieNewCity.js"></script>
+    <!--事件-->
+    <script src="Scripts/echarts/event/columnevent.js"></script>
+    <script src="Scripts/echarts/event/lineevent.js"></script>
+    <script src="Scripts/echarts/event/radarevent.js"></script>
+    <!--案件-->
+    <script src="Scripts/echarts/case/columnecaseright.js"></script>
+    <script src="Scripts/echarts/case/cakecase.js"></script>
+    <script src="Scripts/echarts/case/columnecaseleft.js"></script>
+
+    <!--加载监控-->
+    <script type="text/javascript">
+        $(function () {
+            function getTree() {
+                var data = [
+    {
+        "id": "001005001",
+        "parentid": null,
+        "cameraid": null,
+        "text": "嘉禾城乡天眼",
+        "nodes": [
+            {
+                "id": "001005001008",
+                "parentid": "001005001",
+                "cameraid": null,
+                "text": "秀洲区行政执法局",
+                "nodes": [
+                    {
+                        "id": "1000238",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "中山大厦东北角",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000238",
+                                "cameraid": "1000238$1$0$0",
+                                "text": "中山大厦东北",
+                                "nodes":null,
+                            }]
+
+                    },
+                    {
+                        "id": "1000237",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "置信公寓",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000237",
+                                "cameraid": "1000237$1$0$0",
+                                "text": "置信公寓",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000236",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "江南摩尔西北角",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000236",
+                                "cameraid": "1000236$1$0$0",
+                                "text": "江南摩尔西北角",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000235",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "江南摩尔东南角",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000235",
+                                "cameraid": "1000235$1$0$0",
+                                "text": "江南摩尔东南角",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000234",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "嘉兴嘉北公墓",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000234",
+                                "cameraid": "1000234$1$0$0",
+                                "text": "嘉兴嘉北公墓",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000233",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "高家桥",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000233",
+                                "cameraid": "1000233$1$0$0",
+                                "text": "高家桥",
+                                "nodes": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+                ]
+                return data;
+            }
+            $('#tree').treeview({
+                data: getTree(),
+                expandIcon: "tree_arrows_right",
+                collapseIcon: "tree_arrows_down",
+                emptyIcon: "tree_arrows_camera",
+                levels: 3,
+                onhoverColor: "#F39944",
+                showBorder: false,
+                showTags: true,
+                highlightSelected: true,
+                highlightSearchResults: false,
+                selectedBackColor: "#F39944",
+                onNodeSelected: function (event, data) {
+                    if (data.cameraid != null) {
+                        //处理显示监控
+                        //alert(data.cameraid);
+                        var iframesrc = "/Camera/Camera.html?Channel=" + data.cameraid;
+                        myWindow = window.open(iframesrc, '', 'width=500,height=350');
+                        myWindow.focus();
+                    }
+                }
+
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('#tree').niceScroll({
+            cursorcolor: "#919596",//#CC0071 光标颜色
+            cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+            touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+            cursorwidth: "5px", //像素光标的宽度
+            cursorborder: "0", // 	游标边框css定义
+            cursorborderradius: "5px",//以像素为光标边界半径
+            autohidemode: false //是否隐藏滚动条
+        });
+    </script>
+</body>
+</html>
+

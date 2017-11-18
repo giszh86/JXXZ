@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>秀洲区智慧城管综合管理平台</title>
+    <link rel='icon' href='/Images/faviconico.ico' type='image/x-ico' />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="Scripts/extjs/theme-neptune/resources/theme-neptune-all.css" rel="stylesheet" />
+    <link href="Css/StyleSheet.css" rel="stylesheet" />
+    <link href="Css/Style.css" rel="stylesheet" />
+    <script src="Scripts/extjs/ext-all.js"></script>
+    <script src="Scripts/extjs/ux/TreePicker.js"></script>
+    <script src="Scripts/extjs/locale-zh_CN.js"></script>
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/jquery.cookie.js"></script>
+    <script src="Scripts/configs.js"></script>
+    <script src="Scripts/functions.js"></script>
+    <script src="Scripts/common.js"></script>
+    <script src="Scripts/lodop/LodopFuncs.js"></script>
+    <script src="Scripts/extjs/My97DatePicker/WdatePicker.js"></script>
+    <script src="Scripts/extjs/swfupload/swfupload.js"></script>
+    <script src="Scripts/extjs/uploadPanel/UploadPanel.js"></script>
+    <link href="Scripts/extjs/uploadPanel/UploadPanel.css" rel="stylesheet" />
+    <script src="Scripts/extjs/DateTimePicker/DateTimePicker.js"></script>
+    <script src="Scripts/extjs/DateTimePicker/DeteTimeField.js"></script>
+    <script src="Scripts/html2canvas.min.js"></script>
+    <script src="Scripts/ol.js"></script>
+    <script src="Scripts/openlayerMap_84.js"></script>
+    <link href="Css/video-js.css" rel="stylesheet" />
+    <script src="Scripts/video.min.js"></script>
+    <script src="Scripts/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var username = $.cookie("USER_NAME");
+            if (username == "" || username == null) {
+                location.href = "Login.html";
+            }
+            $("#txt_UserName").text(username);
+            $("#loginout").mouseenter(function () {
+                $(this).find("img").attr("src", "Images/images/LogOut1.png")
+            });
+            $("#loginout").mouseleave(function () {
+                $(this).find("img").attr("src", "Images/images/LogOut.png")
+            });
+           
+        });
+        function logout() {
+            $.removeCookie("USER_NAME");
+            $.removeCookie("USER_ID");
+            $.removeCookie("UNIT_ID");
+            $.removeCookie("UNIT_NAME");
+            $.removeCookie("ROLE_IDS");
+            $.removeCookie("USER_CODE");
+            window.location.href = 'Login.html';
+        }
+
+        function changePassword() {
+            var win = Ext.create('Ext.Window', {
+                title: '修改密码',
+                resizable: false,
+                items: [{
+                    xtype: 'form',
+                    border: false,
+                    bodyPadding: 10,
+                    height: 145,
+                    fieldDefaults: {
+                        labelAlign: 'right',
+                        labelWidth: 75
+                    },
+                    defaults: {
+                        xtype: 'textfield',
+                        width: 255
+                    },
+                    items: [
+                        {
+                            fieldLabel: '当前密码',
+                            name: 'LoginPwd',
+                            inputType: 'password',
+                            allowBlank: false
+                        },
+                        {
+                            fieldLabel: '新密码',
+                            name: 'Password',
+                            inputType: 'password',
+                            regex: /^(?![^a-zA-Z]+$)(?!\D+$).{6,15}$/,
+                            regexText: "密码必须用英文和字母6-15位字符组成！",
+                            allowBlank: false
+                        },
+                        {
+                            fieldLabel: '确认密码',
+                            name: 'newPassword',
+                            inputType: 'password',
+                            allowBlank: false
+                        }
+                    ],
+                    buttons: [{
+                        text: '确定',
+                        handler: function () {
+                            var form = win.down('form');
+
+                            if (!form.isValid()) {
+                                return;
+                            }
+
+                            var formData = form.getValues();
+
+                            var loginPws = $.trim(formData['LoginPwd']);
+                            var password = $.trim(formData['Password']);
+                            var newPassword = $.trim(formData['newPassword']);
+
+                            if (password != newPassword) {
+                                Ext.Msg.alert("提示", "两次输入密码不一致，请重新输入！");
+                                return;
+                            }
+                            win.mask();
+                            PostAjax({
+                                url: 'api/User/ChangePassword',
+                                data: { 'ID': $.cookie('USER_ID'), "LoginPwd": loginPws, 'NewLoginPwd': password },
+                                complete: function (jqXHR, textStatus, errorThrown) {
+                                    win.unmask();
+
+                                    if (textStatus == "success") {
+                                        var result = jqXHR.responseText;
+
+                                        if (result == 1) {
+                                            win.close();
+                                            Ext.MessageBox.show({ title: "提示", msg: "操作成功！" }, setTimeout(function () { Ext.Msg.hide(); }, 1500));
+                                            location.href = "Login.html";
+                                        } else if (result == 2) {
+                                            Ext.Msg.alert("提示", "密码输入不正确！");
+                                        }
+                                    } else {
+                                        store.reload();
+                                        Ext.MessageBox.show({ title: "提示", msg: "操作失败！" });
+                                    }
+                                }
+                            });
+                        },
+                    }, {
+                        text: '关闭',
+                        handler: function () {
+                            win.close();
+                        }
+                    }]
+                }]
+            });
+
+            win.show();
+        }
+
+        function homepage()
+        {
+            window.location.href = 'index.html';
+        }
+
+        Ext.Loader.loadScript({
+            url: "Scripts/arcgisMap.js?" + Math.random(),
+            onLoad: function () {
+                Ext.Loader.loadScript("app/app.js?" + Math.random());
+            }
+        });
+
+        function redirectWeb() {
+            location.href = "http://10.80.2.156:8081/";//跳转前台
+        }
+    </script>
+
+</head>
+<body>
+    <div id="title" style="height: 64px; font-weight: bold; font-size: 30px; color: white; background-color: #3892D4; padding: 10px 10px 0px 12px;">
+        <img src="Images/images/LOGO.png" style="width: 46px; height: 46px; float: left; margin-right: 7px;" />
+        <span style="display: inline-block; margin-top: 15px;">嘉兴市秀洲区智慧城管综合管理平台</span>
+    </div>
+    <div class="IndexSystem">
+        <a href="javascript:homepage()" class="IndexExit" title="首页">
+            <img src="Images/images/主页.png" class="LogOutImage" />首页
+        </a>
+        <span class="IndexFirstSplit">|</span>
+        <span id="txt_UserName">管理员</span>
+          <span class="IndexFirstSplit">|</span>
+        <a href="javascript:redirectWeb()" class="IndexExit" title="可视化管理">可视化管理</a>
+          <span class="IndexFirstSplit">|</span>
+        <a href="javascript:changePassword()" class="IndexExit" title="修改密码">修改密码</a>
+        <span class="IndexFirstSplit">|</span>
+        <a href="javascript:void(0)" class="IndexExit" title="帮助文档">帮助文档</a>
+        <span class="IndexFirstSplit">|</span>
+        <a id="loginout" href="javascript:logout()" class="IndexExit" title="注销">
+            <img src="Images/images/LogOut.png" class="LogOutImage" />注销</a>
+        <span class="IndexFirstSplit"></span>
+    </div>
+</body>
+</html>

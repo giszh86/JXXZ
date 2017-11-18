@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>小摊小贩详情 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.all.css"/>
+		<style type="text/css">
+			.buttoncenter{
+				margin-bottom: 4%;
+			}
+			.location{
+				width: 60%;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">小摊小贩详情</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<template>
+					<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						姓名<label class="r-float font-color" >{{items.person}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						联系电话<label class="r-float font-color" >{{items.contactphone}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						证件号<label class="r-float font-color" >{{items.card}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						类型<label class="r-float font-color" >{{items.hawkertype}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						活动区域<label class="r-float font-color" >{{items.remark}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						所属区域<label class="r-float font-color" >{{items.sourceareaname}}</label>
+					</li>
+					<li class="mui-table-view-cell" id='mapaddress'>
+						地理位置
+						<label id="geography" class="r-float font-color location geography" >{{items.grometry}}</label>
+					</li>
+				</ul>
+				</template>
+			</div>
+			
+			<button id="modify" type="button" class="mui-btn buttoncenter">编&nbsp;&nbsp;辑</button>
+			<button id="deleteCase" type="button" class="mui-btn buttoncenter">删&nbsp;&nbsp;除</button>
+			<button id="setblacklist" type="button" class="mui-btn buttoncenter" style="color: red;">设为黑名单</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="xtxf-detail.js"></script>
+
+</html>

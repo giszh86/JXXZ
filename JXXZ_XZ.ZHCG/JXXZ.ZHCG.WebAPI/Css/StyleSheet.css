@@ -1,0 +1,113 @@
+﻿body {
+}
+
+.IndexTitle {
+    height: 64px;
+    font-weight: bold;
+    font-size: 30px;
+    vertical-align: central;
+    line-height: 40px;
+    /*background: url(../Images/头透.png) no-repeat ;*/
+    background-color: #3892d4; /*#157fcb;*/
+    /*background-size:100% 100%;*/
+}
+
+.IndexImage {
+    position: absolute;
+    top: 15px;
+    margin-left: 25px;
+}
+
+.IndexSystem {
+    position: absolute;
+    top: 40px;
+    right: 8px;
+    color: white;
+}
+
+.IndexFirstSplit {
+    margin-left: 4px;
+    color: white;
+}
+
+.IndexSecondSplit {
+    margin-left: 4px;
+}
+
+.IndexEditPWD {
+    margin-left: 4px;
+    color: white;
+}
+
+.IndexExit {
+    margin-left: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+    .IndexExit img h {
+    }
+
+.IndexColumnsys {
+    display: inline-block;
+    line-height: 30px;
+    width: 150px;
+    text-align: center;
+    font-size: 16px;
+}
+
+    .IndexColumnsys:hover {
+        background: url(../Images/lbg.png);
+        /*background-color:#298BD4;*/
+        cursor: pointer;
+    }
+
+.IndexColumnImage {
+    margin-right: 10px;
+    width: 14px;
+    height: 14px;
+}
+
+.x-panel-header-white {
+    background-image: none;
+    background-color: white;
+}
+
+.Btnsys {
+    border-radius: 2px;
+    width: 40px;
+    color: white;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+}
+
+.BtnLook {
+    background: #3892D4;
+}
+
+.BtnEdit {
+    background: green;
+    margin-left: 20px;
+}
+
+.BtnDelete {
+    background: grey;
+    margin-left: 20px;
+}
+
+.MenuChange {
+    background: #d6e9f6;
+}
+
+.MenuInit {
+    background: #94bdd4;
+}
+
+.LogOutImage {
+    height: 20px;
+    width: 20px;
+    margin-bottom: -6px;
+    margin-left: -6px;
+}

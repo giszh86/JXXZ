@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OpenMasModelStoreContainer" CdmEntityContainer="OpenMasEntities">
+    <EntitySetMapping Name="COM_MmsIn_2">
+      <EntityTypeMapping TypeName="OpenMasModel.COM_MmsIn_2">
+        <MappingFragment StoreEntitySet="COM_MmsIn_2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+          <ScalarProperty Name="ExtendCode" ColumnName="ExtendCode" />
+          <ScalarProperty Name="DestinationAddress" ColumnName="DestinationAddress" />
+          <ScalarProperty Name="SendAddress" ColumnName="SendAddress" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COM_MmsReport_2">
+      <EntityTypeMapping TypeName="OpenMasModel.COM_MmsReport_2">
+        <MappingFragment StoreEntitySet="COM_MmsReport_2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="ExtendCode" ColumnName="ExtendCode" />
+          <ScalarProperty Name="DestinationAddress" ColumnName="DestinationAddress" />
+          <ScalarProperty Name="SendStatus" ColumnName="SendStatus" />
+          <ScalarProperty Name="GatawayStatus" ColumnName="GatawayStatus" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COM_MmsSent_2">
+      <EntityTypeMapping TypeName="OpenMasModel.COM_MmsSent_2">
+        <MappingFragment StoreEntitySet="COM_MmsSent_2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+          <ScalarProperty Name="ExtendCode" ColumnName="ExtendCode" />
+          <ScalarProperty Name="DestinationAddress" ColumnName="DestinationAddress" />
+          <ScalarProperty Name="SendType" ColumnName="SendType" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COM_SmsIn_2">
+      <EntityTypeMapping TypeName="OpenMasModel.COM_SmsIn_2">
+        <MappingFragment StoreEntitySet="COM_SmsIn_2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+          <ScalarProperty Name="ExtendCode" ColumnName="ExtendCode" />
+          <ScalarProperty Name="DestinationAddress" ColumnName="DestinationAddress" />
+          <ScalarProperty Name="SendAddress" ColumnName="SendAddress" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COM_SmsReport_2">
+      <EntityTypeMapping TypeName="OpenMasModel.COM_SmsReport_2">
+        <MappingFragment StoreEntitySet="COM_SmsReport_2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="ExtendCode" ColumnName="ExtendCode" />
+          <ScalarProperty Name="DestinationAddress" ColumnName="DestinationAddress" />
+          <ScalarProperty Name="SendStatus" ColumnName="SendStatus" />
+          <ScalarProperty Name="GatawayStatus" ColumnName="GatawayStatus" />
+          <ScalarProperty Name="SMSCount" ColumnName="SMSCount" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COM_SmsSent_2">
+      <EntityTypeMapping TypeName="OpenMasModel.COM_SmsSent_2">
+        <MappingFragment StoreEntitySet="COM_SmsSent_2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+          <ScalarProperty Name="ExtendCode" ColumnName="ExtendCode" />
+          <ScalarProperty Name="DestinationAddress" ColumnName="DestinationAddress" />
+          <ScalarProperty Name="SendType" ColumnName="SendType" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="IsWapPush" ColumnName="IsWapPush" />
+          <ScalarProperty Name="WapUrl" ColumnName="WapUrl" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

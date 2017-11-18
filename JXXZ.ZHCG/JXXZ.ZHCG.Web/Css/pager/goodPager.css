@@ -1,0 +1,50 @@
+﻿  .pagera {
+            font-size: 15px;
+            font-family: "Microsoft Yahei", "微软雅黑", "宋体", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            cursor: pointer;
+            margin: 0px 0px 0px 3px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+            .pagera:hover {
+                text-decoration: underline;
+            }
+
+            .pagera:link {
+                color: #0026ff;
+            }
+
+        .a:visited {
+            color: #fff;
+        }
+
+        .a:active {
+            color: #0026ff;
+        }
+
+        .btn_img {
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+        }
+
+        .text {
+            width: 30px;
+            height: 15px;
+        }
+
+        .showpagedelite {
+            color: white;
+            font-size: 12px;
+            font-family: "Microsoft Yahei", "微软雅黑", "宋体", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .Go {
+            background-color: #1D3C68;
+            color: white;
+            display: inline;
+            border: 0px;
+            height: 21px;
+            cursor: pointer;
+        }

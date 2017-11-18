@@ -1,0 +1,6 @@
+C:\boring\project\JXXZ.ZHCG\JXXZ.ZHCG.Web\JXXZ.ZHCG.Web\bin\JXXZ.ZHCG.Web.dll.config
+C:\boring\project\JXXZ.ZHCG\JXXZ.ZHCG.Web\JXXZ.ZHCG.Web\bin\JXXZ.ZHCG.Web.dll
+C:\boring\project\JXXZ.ZHCG\JXXZ.ZHCG.Web\JXXZ.ZHCG.Web\bin\JXXZ.ZHCG.Web.pdb
+C:\boring\project\JXXZ.ZHCG\JXXZ.ZHCG.Web\JXXZ.ZHCG.Web\obj\Debug\JXXZ.ZHCG.Web.csproj.CoreCompileInputs.cache
+C:\boring\project\JXXZ.ZHCG\JXXZ.ZHCG.Web\JXXZ.ZHCG.Web\obj\Debug\JXXZ.ZHCG.Web.dll
+C:\boring\project\JXXZ.ZHCG\JXXZ.ZHCG.Web\JXXZ.ZHCG.Web\obj\Debug\JXXZ.ZHCG.Web.pdb

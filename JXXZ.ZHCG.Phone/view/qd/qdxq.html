@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>签到详情 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">签到详情</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<template v-if='model.username'>
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							所属中队<label class="r-float font-color">{{model.ssbzname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							所属班组<label class="r-float font-color">{{model.sszdname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							队员<label class="r-float font-color">{{model.username}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							任务日期<label class="r-float font-color">{{model.rwrq}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							计划签到<label class="r-float font-color">{{model.jhqd}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							计划签退<label class="r-float font-color">{{model.jhqt}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							实际签到时间<label class="r-float font-color">{{model.sjqd ? model.sjqd.replace(/\d{4}-\d{1,2}-\d{1,2}\s/,'') : '无'}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							实际签退时间<label class="r-float font-color">{{model.sjqt ? model.sjqt.replace(/\d{4}-\d{1,2}-\d{1,2}\s/,'') :'无'}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							签到状态<label class="r-float font-color">{{!model.sjqd ? '未签到' : '已签到'}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							签退状态<label class="r-float font-color">{{!model.sjqt ? '未签退' : '已签退'}}</label>
+						</li>
+					</ul>
+				</template>
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="qdxq.js"></script>
+
+</html>

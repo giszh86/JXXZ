@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>巡查日志</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.title {
+				margin: 10px 0 0 20px;
+			}
+			
+			.radio-group {
+				float: right;
+				padding: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">巡查日志</h1>
+			<h2 class="right-allinfo" data-href="xcrzls.html">历史</h2>
+		</header>
+		<div class="mui-content">
+			<template>
+				<div class="title">{{model.day}}&nbsp;&nbsp;&nbsp;&nbsp;{{model.week}}</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell" style="color: #005a8d;">
+							<span>巡查项</span>
+							<span style="float: right;">是否发现问题</span>
+						</li>
+						<template v-for='(item,index) in model.list'>
+							<li class="mui-table-view-cell">
+								<span>{{item.name}}</span>
+								<div class="radio-group">
+									<input class="radio-input" type="radio" value="1" v-model='item.isnot'>
+									<span class="radio-name">是</span>
+									<input class="radio-input" style="margin-left: 42px;" type="radio" value="0" v-model='item.isnot'>
+									<span class="radio-name">否</span>
+								</div>
+							</li>
+						</template>
+						<li class="mui-table-view-cell">
+							<span style="color: #005a8d;">备注</span>
+							<textarea id="remark" rows="4" style="width: 85%;float: right;"></textarea>
+						</li>
+					</ul>
+				</div>
+				<button type="button" class="mui-btn buttoncenter" id="search" @tap='submit'>提&nbsp;&nbsp;交</button>
+			</template>
+
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='xcrz.js'></script>
+
+</html>

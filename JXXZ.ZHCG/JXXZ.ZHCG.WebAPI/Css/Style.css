@@ -1,0 +1,150 @@
+﻿body {
+}
+
+.filebuttonBack {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: top;
+    overflow: hidden;
+    position: relative;
+    /*background-color:#000;*/
+    background-image: url(../Images/images/add.png);
+    background-repeat: no-repeat;
+    background-size: 100px 120px;
+    border: 1px dashed #d4d4d4;
+    /*background-image:url(../Images/login_btn_bg.png) none;*/
+}
+
+.Groupadd {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-image: url(../Images/images/chacha.png)!important;
+}
+
+.AAA {
+    POSITION: absolute;
+    Z-INDEX: 999;
+    LEFT: 90PX;
+    border-top: 1px dashed #bcbcbc;
+    border-right: 1px dashed #bcbcbc;
+}
+
+.Enlarge {
+    POSITION: absolute;
+    Z-INDEX: 999;
+    LEFT: 90PX;
+}
+
+.Groupenlarge {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /*background: #323232;
+    border: 1px solid #252525;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2px;*/
+    background-image: url(../Images/images/enlarge.png)!important;
+}
+
+.pro-fontcolor {
+    color: red;
+}
+
+/* --县市区道路监管系统--开始-- */
+.DataReport {
+    font-size: 14px;
+}
+
+    .DataReport td {
+        border: solid 1px #A7BFD3;
+        height: 25px;
+        text-align: center;
+    }
+
+    .DataReport table {
+        border-collapse: collapse;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        line-height: 25px;
+    }
+
+    .DataReport .typeName {
+        width: 90px;
+        background-color: #D1E2F2;
+    }
+/* --县市区道路监管系统--结束-- */
+
+    /*时间控件样式*/
+    .datetimepicker-right-button {
+        background-image: url(/Scripts/extjs/theme-neptune/resources/images/form/date-trigger.png);
+        display: table-cell;
+        vertical-align: top;
+        cursor: pointer;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        text-align: center;
+        line-height: 0;
+        white-space: nowrap;
+    }
+
+    /*openlayers地图样式*/
+
+    .map-map-base {
+        width:800px;
+        height:480px;
+        float: left;
+    }
+
+    .map-map-base-xzsp {
+        width:940px;
+        height:627px;
+        float: left;
+    }
+
+    .map-map-ul {
+        list-style: none;
+        position: absolute;
+        right:20px;
+    }
+
+    .map-draw-style {
+        background-image:url(/Images/images/笔-蓝.png);
+        width: 32px;
+        height: 32px;
+        border: none;
+        margin-right:5px;
+        cursor:pointer;
+    }
+
+    .map-draw-focus-style{
+        background-image:url(/Images/images/笔.png);
+        width: 32px;
+        height: 32px;
+        border: none;
+        margin-right:5px;
+        cursor:pointer;
+    }
+
+    .map-clearall-style {
+        background-image:url(/Images/images/删除-蓝.png);
+        width: 32px;
+        height: 32px;
+        border: none;
+        margin-right:5px;
+        cursor:pointer;
+    }
+
+    .map-fullscreen-style {
+        background-image:url(/Images/images/放大-蓝.png);
+        width: 32px;
+        height: 32px;
+        border: none;
+        margin-right:5px;
+        cursor:pointer;
+    }

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>一般案件列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.card{
+				padding: 10px 15px;
+			}
+			
+			.title{
+				display: inline-block;
+				width: 21%;
+				float: left;
+				line-height: 180%;
+			}
+			
+			.content{
+				display: inline-block;
+				width: 79%;
+				color: #005a8d;
+				line-height: 180%;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.liinputheight input{
+				text-align: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">一般案件列表</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">选择中队</span>
+							<input  style="background: url(../../image/report/triangle-black.png) no-repeat right top;" readonly type="text" value=''/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">起始时间</span>
+							<input type="text" value=''/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">结束时间</span>
+							<input type="text" value=''/>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div style="color: red;margin: 7px 10px;">温馨提示：请至PC端处理一般案件信息</div>
+			<div class="card">
+				<div>
+					<div class="title">案由</div>
+					<div class="content">任何单位或个人随意倾倒、抛撒或者堆放建筑垃圾的</div>
+				</div>
+				<div>
+					<div class="title">当前环节</div>
+					<div class="content">执法队员提出案件调查终结报告</div>
+				</div>
+				<div>
+					<div class="title">当事人</div>
+					<div class="content">张一林</div>
+				</div>
+				<div>
+					<div class="title">超期时间</div>
+					<div class="content" style="color: green;">2017-02-09 09:20</div>
+				</div>
+			</div>
+			<div class="card">
+				<div>
+					<div class="title">案由</div>
+					<div class="content">任何单位或个人随意倾倒、抛撒或者堆放建筑垃圾的</div>
+				</div>
+				<div>
+					<div class="title">当前环节</div>
+					<div class="content">执法队员提出案件调查终结报告</div>
+				</div>
+				<div>
+					<div class="title">当事人</div>
+					<div class="content">张一林</div>
+				</div>
+				<div>
+					<div class="title">超期时间</div>
+					<div class="content" style="color: red;">2017-02-09 09:20</div>
+				</div>
+			</div>
+			<div class="card">
+				<div>
+					<div class="title">案由</div>
+					<div class="content">任何单位或个人随意倾倒、抛撒或者堆放建筑垃圾的</div>
+				</div>
+				<div>
+					<div class="title">当前环节</div>
+					<div class="content">执法队员提出案件调查终结报告</div>
+				</div>
+				<div>
+					<div class="title">当事人</div>
+					<div class="content">张一林</div>
+				</div>
+				<div>
+					<div class="title">超期时间</div>
+					<div class="content" style="color: red;">2017-02-09 09:20</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='ybaj-list.js'></script>
+</html>

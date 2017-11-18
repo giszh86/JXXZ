@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OpenMasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="OpenMasModelStoreContainer">
+    <EntitySet Name="COM_MmsIn_2" EntityType="OpenMasModel.Store.COM_MmsIn_2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="COM_MmsReport_2" EntityType="OpenMasModel.Store.COM_MmsReport_2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="COM_MmsSent_2" EntityType="OpenMasModel.Store.COM_MmsSent_2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="COM_SmsIn_2" EntityType="OpenMasModel.Store.COM_SmsIn_2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="COM_SmsReport_2" EntityType="OpenMasModel.Store.COM_SmsReport_2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="COM_SmsSent_2" EntityType="OpenMasModel.Store.COM_SmsSent_2" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="COM_MmsIn_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="500" />
+    <Property Name="MessageContent" Type="text" />
+    <Property Name="ExtendCode" Type="varchar" MaxLength="40" />
+    <Property Name="DestinationAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SendAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COM_MmsReport_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="ExtendCode" Type="varchar" MaxLength="40" />
+    <Property Name="DestinationAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SendStatus" Type="int" Nullable="false" />
+    <Property Name="GatawayStatus" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COM_MmsSent_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="500" />
+    <Property Name="MessageContent" Type="text" Nullable="false" />
+    <Property Name="ExtendCode" Type="varchar" MaxLength="40" />
+    <Property Name="DestinationAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SendType" Type="int" Nullable="false" />
+    <Property Name="SendTime" Type="datetime" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COM_SmsIn_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="MessageContent" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ExtendCode" Type="varchar" MaxLength="40" />
+    <Property Name="DestinationAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SendAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COM_SmsReport_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="ExtendCode" Type="varchar" MaxLength="40" />
+    <Property Name="DestinationAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SendStatus" Type="int" Nullable="false" />
+    <Property Name="GatawayStatus" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="SMSCount" Type="int" Nullable="false" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COM_SmsSent_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MessageContent" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="ExtendCode" Type="varchar" MaxLength="40" />
+    <Property Name="DestinationAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SendType" Type="int" Nullable="false" />
+    <Property Name="SendTime" Type="datetime" Nullable="false" />
+    <Property Name="IsWapPush" Type="int" />
+    <Property Name="WapUrl" Type="varchar" MaxLength="200" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+</Schema>

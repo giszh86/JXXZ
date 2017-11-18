@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>报警首页,报警中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<style>
+			.person-photodiv span {
+				width: 18%;
+				margin-left: 2%;
+				height: 35px;
+				line-height: 35px;
+				float: left;
+			}
+			
+			.person-photodiv div {
+				width: 52%;
+				height: 80px;
+				float: left;
+			}
+			
+			.person-photodiv div button {
+				width: 100%;
+				height: 36px;
+			}
+			
+			.margin_bottom7px {
+				margin-bottom: 7px;
+			}
+			
+			.person-photodiv div button img {
+				height: 28px;
+				float: right;
+				position: relative;
+				right: -8px;
+				bottom: 4px;
+			}
+			
+			.person-photodiv button {
+				width: 24%;
+				height: 80px;
+			}
+			
+			.border-bottomstyle button {
+				height: 26px;
+				width: 18%;
+				position: relative;
+				margin-top: 3px;
+				margin-bottom: 2px;
+				background: #005a8d;
+				color: #ffffff;
+				
+			}
+			.mui-input-row >.status-label{
+				width: 22%;
+				float: right;
+			}
+			
+			.wcl{
+				color: red;
+			}
+			
+			.ss{
+				float: right;
+				margin-right: 15px;
+			}
+			
+			.ysx{
+				color: green;
+			}
+			
+			.yzf{
+				color: gray;
+			}
+			
+			.margin-left21pointer {
+				margin-left: 21%;
+			}
+			
+			.mui-table-view{
+				background-color: transparent;
+			}
+			
+			.mui-table-view:before{
+				height: 0;
+			}
+			
+			.mui-table-view:after{
+				height: 0;
+			}
+			
+			.mui-table-view-cell{
+				background-color: white;
+				margin: 10px;
+				border: solid 1px #ddd;
+				border-radius: 4px;
+				padding: 3px 0;
+			}
+			
+			.left{
+				display: inline-block;
+				width: 54%;
+			}
+			
+			.right{
+				display: inline-block;
+				width: 44%;
+			}
+			
+			/*.mui-scroll {
+				-webkit-transform: initial;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">报警中心</h1>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="person-photodiv padding-top10px">
+				<span>报警时间</span>
+				<div>
+					<button type="button" class="mui-btn margin_bottom7px" id="starttime">
+						<label id="label-starttime"></label>
+						<img src="../../image/detailimages/rili.png" /> 
+					</button>
+					<button type="button" class="mui-btn" id="endtime">
+						<label id="label-endtime"></label>
+						<img src="../../image/detailimages/rili.png"/>
+					</button>
+				</div>
+				<button type="button" class="mui-btn buttoncenter" id="search">查询</button>
+			</div>
+			<!--<div class="mui-scroll">-->
+				<ul class="mui-table-view" id="menuList">
+					<template v-for='(item,index) in items'>
+						<li class="mui-table-view-cell">
+							<div class="mui-input-row border-bottomstyle padding-top4px">
+								<label>{{item.time}}</label>
+								<template v-if='item.status == "未处理"'>
+									<button v-if='item.isallege==1' type="button" class="ss" >已申诉</button>
+									<button v-else type="button" class="ss" @tap='openView(item)'>申诉</button>
+									<label class="status-label wcl">未处理</label>
+								</template>
+								<template v-else-if='item.status == "已生效"' >
+									<label class="status-label ysx">已生效</label>
+								</template>
+								<template v-else-if='item.status == "已作废"' >
+									<label class="status-label yzf">已作废</label>
+								</template>
+							</div>
+							<div class="row-div">
+								<div class="left">
+									<label style="margin-left: 15px;">姓名：</label><label>{{item.name}}</label>
+								</div>
+								<div class="right">
+									<label>报警类型：</label><label>{{item.type}}</label>
+								</div>
+							</div>
+							<div class="row-div">
+								<div class="left">
+									<label style="margin-left: 15px;">开始时间：</label><label>{{item.startDate}}</label>
+								</div>
+								<div class="right">
+									<label>结束时间：</label><label>{{item.endDate}}</label>
+								</div>
+							</div>
+						</li>
+					</template>
+				</ul>
+			<!--</div>-->
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='bjindex.js'></script>
+
+</html>

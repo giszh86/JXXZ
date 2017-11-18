@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<title>领导督办详情 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.mui-card {
+				margin-top: 3px;
+			}
+			
+			.smalpadding {
+				padding: 5px 10px 5px 15px;
+			}
+			
+			li.mui-table-view-cell input[type='text'] {
+				float: right;
+				width: 75%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding: 10px;
+				border: none;
+				text-align: right;
+			}
+			
+			.userModel {
+				font-size: 11px!important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">领导督办</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell smalpadding">
+						督办意见
+						<textarea ctype id="supopinion" data-val-required='请输入督办意见' style="float: right;width: 75%;" rows="3"></textarea>
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						<span style="float: left;padding-top: 4px;">紧急程序</span>
+						<input id="UrgencyName" class="triangle" readonly type="text" placeholder="请选择">
+						<input ctype id="level" readonly type="hidden" data-val-required='请选择紧急程序等级'>
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						<div style="margin-left: 24%;">
+							<!--<input  onclick="getUserModel(userID)" id="checkboxID" style="float: left; width: 20px; height: 20px;" type="checkbox">-->
+							<input id="checkboxID" style="float: left; width: 20px; height: 20px;" type="checkbox">
+
+							<template>
+								<span class="userModel" style="margin-left: 5px;">短信提醒（{{!userModerName?''+phone:userModerName +':'+phone}}）</span>
+							</template>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<button id="submit" type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="lddbDetail.js"></script>
+
+</html>

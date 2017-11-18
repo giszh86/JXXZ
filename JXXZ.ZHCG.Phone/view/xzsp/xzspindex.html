@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>行政审核首页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<style type="text/css">
+			.img{
+				width: 50px;
+				float: left;
+			}
+			
+			.title{
+				float: left;
+				margin-top: 15px;
+				margin-left: 10px;
+				color: #666666;
+				font-family: '微软雅黑';
+			}
+			
+			.arrow{
+				float: right; 
+				margin-top: 15px; 
+				color: #999999; 
+				font-family: '微软雅黑';"
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<div class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back" style="color: #ffffff;" onclick='mui.back(true);'></div>
+			<h1 class="mui-title">行政审核管理</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="approval" >
+					<img class="img" src="../../image/wddb/dbsj.png" />
+					<font class="title">行政审批</font>
+					<font class="arrow">></font>
+				</li>
+				<li class="mui-table-view-cell" data-href='yibanshenpilist.html'>
+					<img class="img" src="../../image/wddb/dbaj.png" />
+					<font class="title">行政许可</font>
+					<font class="arrow">></font>
+				</li>
+				<li class="mui-table-view-cell" data-href='menqiansanbaolist.html'>
+					<img class="img" src="../../image/wddb/ajlb.png" />
+					<font class="title">门前三包</font>
+					<font class="arrow">></font>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='xzspindex.js'></script>
+</html>

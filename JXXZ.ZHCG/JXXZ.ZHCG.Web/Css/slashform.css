@@ -1,0 +1,34 @@
+﻿.slashtable {
+    border-collapse: collapse;
+    width: 90%;
+    height:87%;
+    margin: 2% 0px 0px 5%;
+    color:#727A84;
+}
+
+    .slashtable th {
+        border: 1px #7DACBB solid;
+        text-align: center;
+        font-size: 12px;
+    }
+
+        .slashtable td {
+            border: 1px #7DACBB solid;
+            text-align: center;
+            font-size: 12px;
+        }
+
+.t1 {
+    background: #F2F4F4;
+}
+
+.slash {
+    width: 140px;
+    height: 1px;
+    background-color: #74A6B7;
+    transform: rotate(16deg);
+    -ms-transform: rotate(16deg); /* IE 9 */
+    -moz-transform: rotate(16deg); /* Firefox */
+    -webkit-transform: rotate(16deg); /* Safari 和 Chrome */
+    -o-transform: rotate(16deg); /* Opera */
+}

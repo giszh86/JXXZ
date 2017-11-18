@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>地图浏览</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../js/ol/ol.css" />
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<!--<script type="text/javascript" src="../js/ol/ol.js" ></script>-->
+		<script type="text/javascript" src="../js/ol/ol-debug.js" ></script>
+		<style>
+			#map {
+				/*background-color: red;*/
+			}
+		</style>
+	</head>
+
+	<body >
+		<div id='map' style='width: 100%; height: 500px;'>
+		</div>
+	</body>
+	
+	
+	<script>
+        //不同地图层级对应的底图数据源
+        var tileLayerSource1;
+        var projection = ol.proj.get('EPSG:4326');
+        var projectionExtent = projection.getExtent();
+        var size = ol.extent.getWidth(projectionExtent) / 256;
+        var resolutions = new Array(20);
+        var matrixIds = new Array(20);
+        for (var z = 0; z <= 20; ++z) {
+            resolutions[z] = size / Math.pow(2, z);
+            matrixIds[z] = z;
+        }
+        
+        function getObject(mat){
+        	var obj = {};
+        	for (var i = 0; i < mat.length; i++) {
+        		var mt = mat[i];
+        		var name = mt.match(/\w+/)[0];
+        		var value = mt.match(/[^=]+$/)[0];
+        		obj[name] = value;
+        	}
+        	return obj;
+        }
+
+        tileLayerSource1 = new ol.source.WMTS({
+            //http://10.73.1.48:9070/JXPDServerCore/rest/services/JXEMAP/MapServer/WMTS
+            url:'http://10.73.1.48:9070/JXPDServerCore/rest/services/JXEMAP/MapServer/WMTS',
+//          url: 'http://220.191.220.90/JXEMAP/service/wmts',
+            layer: 'JXEMAP',
+            format: 'image/png',
+			tileLoadFunction:function(imageTile,src){
+				//debugger;
+				var mat = src.match(/(\?|&)(\w+)=([^&]+)/g);
+				var obj = getObject(mat);
+				var url = 'http://10.73.1.48:9070/JXPDServerCore/rest/services/JXEMAP/MapServer/WMTS/tile/1.0.0/JXEMAP/{style}/{tilematrixset}/{TileMatrix}/{TileRow}/{TileCol}.png';
+				for(var name in obj){
+					url = url.replace('{' + name + '}',obj[name]);
+				}
+				imageTile.getImage().src = url;
+			},
+            tileGrid: new ol.tilegrid.WMTS({
+                origin: ol.extent.getTopLeft(projectionExtent),
+                resolutions: resolutions,
+                matrixIds: matrixIds,
+            })
+            ,matrixSet: "TileMatrixSet0", style: 'default'
+        });
+        
+        //var tt = ol.proj.transform([120.671860664617, 30.7580903582995],'EPSG:4326','EPSG:900913');
+        //debugger;
+      
+        var map = new ol.Map({
+            logo: false,
+            layers: [
+                new ol.layer.Tile({
+                   
+                    source: tileLayerSource1
+                })
+            ],
+            target: 'map',
+            controls: ol.control.defaults({
+                attributionOptions: ({
+                    collapsible: true
+                })
+            }),
+            view: new ol.View({
+                center: [120.671860664617, 30.7580903582995],
+                //center:ol.proj.transform([120.671860664617, 30.7580903582995],'EPSG:4326','urn:ogc:def:crs:EPSG::4326'),
+               // projection: projection,
+                projection:new ol.proj.Projection({
+                	code:'EPSG:900913',
+                	units:'degrees'
+                }),
+                zoom: 10,
+                //minZoom: 1,
+                maxZoom: 20
+            })
+        });
+      //  map.getView().fit([120.671860664617, 30.7580903582995, 120.750367862576, 30.7865829791874], map.getSize(), { nearest: true });
+
+        map.addControl(new ol.control.Zoom());
+        //添加全屏控件
+        map.addControl(new ol.control.FullScreen());
+       
+        map.on('click', function (evt) {
+            var coord = evt.coordinate;
+            console.log(coord);
+            var feature = self.map.forEachFeatureAtPixel(evt.pixel,
+				function (feature) {
+				    return feature;
+				});
+            if (feature) {
+                var temp = feature.getProperties();
+                if (typeof temp.click == 'function') {
+                    temp.click(temp, evt.coordinate, feature);
+                }
+            }
+        });
+    </script>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>待审核市民事件 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.title{
+				margin: 10px 0 0 23px;
+				font-size: 15px;
+			}
+			
+			.mui-card{
+				margin-top: 3px;
+			}
+			
+			.miaoshu{
+				height: auto;
+				overflow: auto;
+				width: 80%;
+				word-wrap: break-word;
+				text-align: right;
+			}
+			
+			.image{
+				width: 24%;
+				margin-right: 7%;
+			}
+			
+			.smalpadding{
+				padding: 8px 10px 9px 15px;
+			}
+			
+			li.mui-table-view-cell input[type='text']{
+				float: right;
+				width: 75%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding: 10px;
+			}
+			
+			.radio-group{
+				width: 75%;
+				float: right;
+				padding: 0;
+			}
+			
+			.textarea{
+				float: right;
+				width: 75%;
+				color: #005a8d;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">待审核市民事件</h1>
+		</header>
+		<div class="mui-content">
+			<div class="title">基本信息</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						联系人<label class="r-float font-color" >张三</label>
+					</li>
+					<li class="mui-table-view-cell">
+						联系电话<label class="r-float font-color" >12345678901</label>
+					</li>
+					<li class="mui-table-view-cell">
+						事件标题<label class="r-float font-color" >秀洲大道1234号附近西侧垃圾堆放</label>
+					</li>
+					<li class="mui-table-view-cell">
+						事件大类<label class="r-float font-color" >规划建设、城市规划、垃圾处理类</label>
+					</li>
+					<li class="mui-table-view-cell">
+						事件小类<label class="r-float font-color miaoshu" >随意堆放、倾倒、抛撒城市生活垃圾的处罚</label>
+					</li>
+					<li class="mui-table-view-cell">
+						事件地址<label class="r-float font-color" >秀洲大道1234号附近</label>
+					</li>
+					<li class="mui-table-view-cell">
+						地点坐标<label class="r-float font-color" >12.44556677、23.55667788</label>
+					</li>
+					<li class="mui-table-view-cell">
+						事件内容<label class="r-float font-color miaoshu" >有市民举报在秀洲大道1234号附近有垃圾堆放</label>
+					</li>
+					<li class="mui-table-view-cell">
+						现场照片
+						<div class="r-float miaoshu" style="padding-right: 5px;">
+							<img class="image" src="../../image/smsj/xczp.png"/>
+							<img class="image" src="../../image/smsj/xczp.png"/>
+							<img class="image" src="../../image/smsj/xczp.png"/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						上报时间<label class="r-float font-color" >2017-02-22 09:00:00</label>
+					</li>
+					<li class="mui-table-view-cell">
+						上报人<label class="r-float font-color" >小钱</label>
+					</li>
+				</ul>
+			</div>
+			<div class="title">领导审核</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						是否同意
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="agree" value="yes" checked>
+							<span class="radio-name">同意</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="agree" value="no">
+							<span class="radio-name">不同意</span>
+						</div>
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						<span style="float: left;padding-top: 4px;">审核人</span>
+						<input type="text">
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						审核意见
+						<textarea class="textarea" rows="3"></textarea>
+					</li>
+				</ul>
+			</div>
+			
+			<button type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>		
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="dshsmsj.js"></script>
+
+</html>

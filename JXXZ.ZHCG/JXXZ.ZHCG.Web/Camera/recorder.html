@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>执法记录仪</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <script src="../Scripts/jquery-3.0.0.js"></script>
+    <script src="PlayViewDemo.js"></script>
+    <link href="jquery.treeview.css" rel="stylesheet" />
+    <script src="jquery.treeview.js"></script>
+    <style type="text/css">
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .CameraPanel {
+            width: 100%;
+            height: 100%;
+        }
+
+            .CameraPanel.bg {
+                background-color: #152D45;
+            }
+
+        .CameraContent {
+            width: 98%;
+            height: 98%;
+            margin: 5px 0px 0px 5px;
+        }
+
+
+        a:hover {
+            background-color: #00FFFF;
+            color: #0000CC;
+        }
+
+        a:link {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: gray;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: green;
+            text-decoration: none;
+        }
+
+        li a {
+            white-space: nowrap;
+        }
+    </style>
+
+
+</head>
+<body style="width: 100%; height: 100%;" onload="init();">
+    <div id="mainbg" class="CameraPanel bg">
+        <div style="width: 290px; height: 100%; float: left; overflow-x: auto">
+            <div id="cameraList" style="width: 100%; height: 100%; overflow-y: auto; overflow-x: auto">
+                <ul id="tree" class="tree" />
+            </div>
+        </div>
+
+        <div id="sp" style="float: right; width: 100%; margin-left: -300px; height: 100%">
+            <div style="margin-left: 300px; height: 100%">
+                <object classid="clsid:AC036352-03EB-4399-9DD0-602AB1D8B6B9" id="PreviewOcx" class="CameraContent" name="ocx">
+                </object>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="textCameraID" />
+
+</body>
+</html>

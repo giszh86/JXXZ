@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.add {
+	background-image: url(../uploadPanel/icons/add.gif) !important;
+}
+.delete {
+	background-image: url(../uploadPanel/icons/delete.gif) !important;
+}
+
+.up {
+	background-image: url(../uploadPanel/icons/up.gif) !important;
+}
+
+.trash {
+	background-image: url(../uploadPanel/icons/trash.gif) !important;
+}
+
+.cancel {
+	background-image: url(../uploadPanel/icons/cancel.gif) !important;
+}

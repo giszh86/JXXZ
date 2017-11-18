@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>办件处理 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.title {
+				margin: 10px 0 0 15px;
+				font-size: 15px;
+			}
+			
+			.mui-card {
+				margin-top: 3px;
+			}
+			
+			.miaoshu {
+				height: auto;
+				overflow: auto;
+				width: 75%;
+				word-wrap: break-word;
+				text-align: right;
+			}
+			
+			.location{
+				padding-top: 2px;
+				background: url(../../image/wddb/location-red.png) no-repeat 98%  center;
+				background-size:20px ;
+				padding-right: 25px !important;
+			}
+			
+			.textarea{
+				width: 75%;
+				float: right;
+			}
+			
+			.addphotos{
+				margin-top: 10px;
+				padding-left: 5%;
+			}
+			
+			.image{
+				width: 27%;
+				height: 79px;
+				margin: 0 5% 0 0;
+			}
+			
+			/*.mui-checkbox input[type='checkbox']{
+				position: relative;
+				height: 21px;
+				top: 0;
+				right: 0;
+			}
+			
+			.mui-checkbox{
+				display: inline-block;
+			}*/
+			
+			.checkbox-name{
+				float: left;
+			}
+			
+			.checkbox-img{
+				width: 16px;
+				float: left;
+				margin: 3px 10px 0 3px;
+			}
+			
+			/*.mui-checkbox input[type='checkbox']:before{
+				font-size: 21px;
+			}*/
+			
+			.duoxuan{
+				text-align: left;
+			}
+			
+			.duanxin{
+				float: left;
+				/*margin-top: 4px;*/
+				margin-right: 2px;
+			}
+			
+			.messages{
+				display: inline-block;
+				float: left;
+			}
+			
+			.mui-input-group{
+				background-color:white;
+				display: inline-block;
+				width: 75%;
+				float: right;
+				margin: -10px 0;
+			}
+			
+			.mui-input-row span {
+			    width: 34%;
+			    padding: 14px 5px 11px 11px;
+			    display: inline-block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<template>
+				<div class="title">行政许可科派遣</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							处理期限<label class="r-float font-color miaoshu">{{model.starttime}} 至 {{model.endtime}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							地点<label class="r-float font-color miaoshu">{{model.xzxkaddress}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							内容<label class="r-float font-color miaoshu">{{model.xzxkcontent}}</label>
+						</li>
+						<li id="xzxkk" class="mui-table-view-cell">
+							附件信息
+							<div class="addphotos">
+								<img class="image addphoto" src="../../image/nophoto.png"/>
+								<img class="image addphoto" src="../../image/nophoto.png"/>
+								<img class="image addphoto" src="../../image/nophoto.png"/>
+							</div>
+						</li>
+						<li class="mui-table-view-cell">
+							处理人<label class="r-float font-color">{{model.xzxkdealname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							处理时间<label class="r-float font-color">{{model.xzxkdealtime}}</label>
+						</li>
+					</ul>
+				</div>
+				<div v-if='model.currentstage=="1"'>
+					<div class="title">中队内勤派遣</div>
+					<div class="mui-card">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								选择班组
+								<!--<label class="r-float font-color miaoshu duoxuan">-->
+								<form class="mui-input-group">
+									<template v-for='(unit,index) in units'>
+										<div class="mui-input-row mui-checkbox">
+											<!--<span class="checkbox-name">{{unit.DisplayName}}</span>
+											<input readonly="readonly" name="checkbox" type="checkbox" v-model='unit.checked' >-->
+											<span>{{unit.DisplayName}}</span>
+											<input type="checkbox" v-model='unit.checked' @tap='liClick(unit)' >	
+										</div>
+									</template>
+								</form>	
+								<!--</label>-->
+							</li>
+							<li class="mui-table-view-cell">
+								派遣意见
+								<textarea class="textarea" rows="3" id="teamMenberContent"></textarea>
+							</li>
+							<li class="mui-table-view-cell">
+								<input id="checkboxID" type="checkbox" class="duanxin" />
+								<span style="float: left;">短信提醒：</span>
+								<div class="messages">
+									<template v-for='(checkedUnit,index) in checkedUnits'>
+										<div>
+											<span>{{checkedUnit.DisplayName}}</span>
+											<span>{{checkedUnit.phone}}</span>
+										</div>
+									</template>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<button type="button" class="mui-btn buttoncenter" @tap="teamMenbersSubmit">提&nbsp;&nbsp;交</button>
+				</div>
+			</template>
+			
+			<div id="duiyuanchuli" style="display: none;">
+				<div class="title">中队内勤派遣</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							派遣队员
+							<label class="r-float font-color miaoshu duoxuan">
+								<template v-for='(sendmember,index) in sendmembers'>
+									<div style="float: left;">
+										<span class="checkbox-name">{{sendmember.name}}</span>
+										<img class="checkbox-img" :src="sendmember.state==1?'../../image/yiyue.png':'../../image/weiyue.png'"/>
+									</div>
+								</template>
+							</label>
+						</li>
+						<li class="mui-table-view-cell">
+							派遣意见<label class="r-float font-color miaoshu">{{zdnqpq.nqadvice}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							处理人<label class="r-float font-color">{{zdnqpq.nqname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							处理时间<label class="r-float font-color">{{zdnqpq.nqdealtime}}</label>
+						</li>
+					</ul>
+				</div>
+				<div class="title">队员处理</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							处理内容
+							<textarea class="textarea" rows="4" :value='model.teamdealadvice' id="supervisionContent"></textarea>
+						</li>
+						<li class="mui-table-view-cell">
+							附件信息
+							<div class="addphotos">
+								<a class="navigateright">
+									<img class="image" id="head-img1" src="../../image/addphoto.png" />
+								</a>
+								<a class="navigateright">
+									<img class="image" id="head-img2" src="../../image/addphoto.png" />
+								</a>
+								<a class="navigateright">
+									<img class="image" id="head-img3" src="../../image/addphoto.png" />
+								</a>
+								<input id="head-img1Name" type="hidden" value="" />
+								<input id="head-img2Name" type="hidden" value="" />
+								<input id="head-img3Name" type="hidden" value="" />
+								<input id="img-head-img1Name" type="hidden" value="" />
+								<input id="img-head-img2Name" type="hidden" value="" />
+								<input id="img-head-img3Name" type="hidden" value="" />
+							</div>
+						</li>
+						<li class="mui-table-view-cell" @tap="showMap">
+							地理位置
+							<span class="r-float location zb">{{model.address}}</span>
+						</li>
+					</ul>
+				</div>
+				<button type="button" class="mui-btn buttoncenter" @tap="supervisionSubmit">提&nbsp;&nbsp;交</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="nsDeal.js"></script>
+
+</html>

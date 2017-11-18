@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>案件详情</title>
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/pro.details.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		
+		<link rel="stylesheet" href="caseDetail.css" />
+	</head>
+	<style>
+
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">案件详情</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">
+						基本信息
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						相关文书
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						流转日志
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div id='sliderLine'></div>
+				<div class="mui-slider-group">
+					<!--
+                    	作者：aoobao@foxmail.com
+                    	时间：2017-03-03
+                    	描述：第一个页面:基本信息
+                    -->
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" >
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-card">
+									<ul class="mui-table-view" id="basicInformation">
+										<li class="mui-table-view-cell">
+											立案编号<label ctype id='casebh' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											案件类型<label ctype id='casetypename' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											案由<label  ctype id='casereason' class="r-float font-color miaoshu"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											案件来源<label  ctype id='casesourcename' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											案发时间<label  ctype id='sitedatetime' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											案发地点<label  ctype id='caseaddress' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											当事人<label id='typename' class="r-float font-color"></label>
+										</li>
+										<div id="showHide" style="display: none; padding: 0;" class="mui-table-view-cell">
+											<li class="mui-table-view-cell">
+												单位名称<label id='f_name' class="r-float font-color"></label>
+											</li>
+											<li class="mui-table-view-cell">
+												法定代表人<label  ctype id='f_dbr' class="r-float font-color"></label>
+											</li>
+											<li class="mui-table-view-cell">
+												受委托人<label  ctype id='f_wtr' class="r-float font-color"></label>
+											</li>
+											<li class="mui-table-view-cell">
+												身份证号<label  ctype id='f_cardnum' class="r-float font-color"></label>
+											</li>
+										</div>
+										<li class="mui-table-view-cell">
+											证件类型<label ctype id='f_cardtypename' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											证件号<label  ctype id='f_card' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											联系电话<label  ctype id='contactphone' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											联系地址<label  ctype id='contactaddress' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											案情描述
+											<label ctype id='casecontent' class="r-float font-color miaoshu">
+												{{model.casecontent}}
+											</label>
+										</li>
+										<!--<li class="mui-table-view-cell">
+											承办中队<label class="r-float font-color">直属中队</label>
+										</li>
+										<li class="mui-table-view-cell">
+											承办人员<label class="r-float font-color">{{model.displayname}}</label>
+										</li>-->
+										<li class="mui-table-view-cell">
+											主办人员<label ctype id='zbusername' class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											协办人员<label ctype id='xbusername' class="r-float font-color"></label>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--
+                    	作者：aoobao@foxmail.com
+                    	时间：2017-03-03
+                    	描述：第2个页面:相关文书
+                    -->
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<!--<div class="title-ws">已有文书</div>-->
+								<div class="title-ws" id="wenshuDateil"></div>
+								<ul class="mui-table-view" style="margin: 10px;background-color: transparent;" id="wenshu">
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--
+                    	作者：aoobao@foxmail.com
+                    	时间：2017-03-03
+                    	描述：第3个页面流转日志
+                    -->
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div id='page4'></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="../../js/require.min.js" data-main='caseDetail.js'></script>
+	</body>
+	
+	<template id='logDetails'>
+		{{each list as item,index}}
+		<div>
+			<div class="mui-card card ">
+				<div class="row">
+					<div class="title">案件环节名称</div>
+					<div class="content">{{item.wfdname}}</div>
+				</div>
+				<div class="row">
+					<div class="title">处理人</div>
+					<div class="content">{{item.username}}</div>
+				</div>
+				<div class="row">
+					<div class="title">处理意见</div>
+					<div class="content">{{item.content}}</div>
+				</div>
+				<div class="row">
+					<div class="title">开始时间</div>
+					<div class="content">{{item.stime}}</div>
+				</div>
+				<div class="row">
+					<div class="title">结束时间</div>
+					<div class="content">{{item.etime}}</div>
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</template>
+	<template id="relatedDocuments">
+		{{each list as item,index}}
+			<li alt="{{item.lastpdfpath}}" class="mui-table-view-cell xgws">
+				<span alt="{{item.lastpdfpath}}">{{item.filename}}</span>
+				<span style="float: right;">></span>
+			</li>
+		{{/each}}
+	</template>
+
+</html>

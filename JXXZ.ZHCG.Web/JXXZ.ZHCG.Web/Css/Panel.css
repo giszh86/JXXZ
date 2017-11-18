@@ -1,0 +1,172 @@
+﻿/*全局样式*/
+.panelheadhr {
+    width: 1.5%;
+    background-color: #3684D6;
+    height: 100%;
+    float: left;
+}
+
+.panletitle {
+    width: 88.5%;
+    height: 100%;
+    float: left;
+    color: white;
+    margin-left: 1.5%;
+}
+
+    .panletitle span {
+        line-height: 25px;
+    }
+
+.searchline {
+    width: 100%;
+    height: 40px;
+    float: left;
+}
+
+    .searchline img {
+        width:19px;
+        height:20px;
+        float:left;
+        margin:8px 0px 0px 5px;
+    }
+        .searchline img:hover {
+            cursor:pointer;
+        }
+
+.searchtext {
+    width: 70%;
+    margin: 3% 0px 0px 2%;
+    height: 23px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #939BA1;
+    float:left;
+}
+
+    .searchtext:focus {
+        background-color: white;
+    }
+/*关闭样式*/
+.panelClose {
+    width: calc(100% - 88.5% - 1.5% - 1.5%);
+    height: 100%;
+    background-image: url(../Image/tools/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}
+
+    .panelClose:hover {
+        cursor: pointer;
+    }
+
+/*选项卡样式*/
+.tabswitch {
+    width: 100%;
+    height: 30px;
+    float: left;
+    background: -webkit-linear-gradient(#175074, #083A56); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#175074, #083A56); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#175074, #083A56); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#175074, #083A56); /* 标准的语法 */
+}
+
+    .tabswitch ul {
+        height: 30px;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .tabswitch ul li {
+            width: 50%;
+            height: 28px;
+            margin-top: 2px;
+            text-align: center;
+            float: left;
+        }
+
+            .tabswitch ul li span {
+                line-height: 30px;
+                color: white;
+            }
+
+            .tabswitch ul li:hover {
+                cursor: pointer;
+            }
+
+.tabswitch_select {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #BC9655;
+}
+
+/*列表面板样式*/
+.list {
+    top: 87px;
+    left: 50px;
+    background: #152D45;
+    position: absolute;
+}
+
+.listhead {
+    width: 100%;
+    height: 30px;
+    background: -webkit-linear-gradient(#2A587D, #10364D); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#2A587D, #10364D); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#2A587D, #10364D); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#2A587D, #10364D); /* 标准的语法 */
+}
+
+.listdatacontent {
+    width: 100%;
+    height: 63%;
+    float: left;
+}
+
+    .listdatacontent table {
+        width: 100%;
+        height:100%;
+        color:white;
+    }
+
+        .listdatacontent table thead tr {
+            background: -webkit-linear-gradient(#195075, #083B56); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#195075, #083B56); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#195075, #083B56); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#195075, #083B56); /* 标准的语法 */
+        }
+            .listdatacontent table thead tr td {
+                 padding-left: 10px;
+            }
+
+        .listdatacontent table tbody tr {
+            font-size:13px;
+        }
+            .listdatacontent table tbody tr:nth-child(2n+0) {
+                background-color:#293E54;
+            }
+            .listdatacontent table tbody tr:hover {
+                background-color:#F39944;
+                cursor:pointer;
+            }
+            .listdatacontent table tbody tr td {
+                padding-left: 10px;
+            }
+                .listdatacontent table tbody tr td img {
+                    width:16px;
+                    height:16px;
+                    vertical-align:sub;
+                }
+.listbottom {
+    width:100%;
+    height:10%;
+    float:left;
+}
+.page {
+    width:100%;
+    height:20px;
+    margin:5px 0px 0px 5px;
+    float:left;
+}

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<title>地图浏览</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/app.css" />
+		<link rel="stylesheet" href="../css/esri.css" />
+
+		<style>
+			#map {
+				/*background-color: red;*/
+			}
+			
+			#callPhone {
+				position: absolute;
+				left: 10%;
+				top: 85%;
+				z-index: 10000;
+				padding: 2px 5px 0 5px;
+				background-color: rgba(243, 243, 243, 0.8);
+				padding: 2px 5px 0 5px;
+				width: 80%;
+			}
+			
+			#topDiv {
+				position: absolute;
+				left: 2%;
+				top: 10%;
+				z-index: 10000;
+				width: 100%;
+			}
+			
+			.dialog{
+				position: absolute;
+				left: 2%;
+				top: 18%;
+				z-index: 10000;
+				width: 55%;
+				height: 30%;
+				background: transparent;
+				overflow: auto;
+			}
+			
+			.line{
+				width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				font-size: 12px;
+			}
+			
+			.inlineClass {
+				display: inline;
+			}
+			
+			.repostInput {
+				width: 50%!important;
+				height: 36px!important;
+				border: 1px solid #808080!important;
+			}
+			
+			.repostDiv,
+			.stopDiv {
+				position: relative;
+				top: 2px;
+				font-size: 20px;
+				background: #005a8d;
+				color: #fff;
+				padding: 6px 20px;
+				border-radius: 2px;
+			}
+			
+			.stopDiv {
+				background: #8b8b8b;
+				padding: 6px 20px;
+			}
+			
+			.detailTilte {
+				width: 245px;
+				height: 130px;
+				background: url(url(../image/map/title.png);
+				position: relative;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<!--<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">地图浏览</h1>
+			<button id='clickMarker' style="display: none;" class="mui-btn mui-btn-link mui-pull-right">完成</button>
+		</header>
+		<div class="mui-content">
+			<div id='map'>
+			</div>
+		</div>
+	</body>-->
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">地图浏览</h1>
+			<button id='clickMarker' style="display: none;" class="mui-btn mui-btn-link mui-pull-right">完成</button>
+		</header>
+		<div id="topDiv">
+			<div class="inlineClass">
+				<input type="text" class="inlineClass repostInput" id="messageContent" placeholder='' />
+				<div class="inlineClass repostDiv" id="repostMessage">发送</div>
+			</div>
+			<div class="inlineClass stopDiv" id="stopMessage">停止</div>
+		</div>
+		<div class="dialog" style="display: none;">
+			<div class="line">张三：你好！</div>
+			<div class="line">李四：妈卖批！</div>
+			<div class="line">张三：你好！</div>
+			<div class="line">李四：妈卖批！妈卖批！妈卖批！妈卖批！</div>
+			<div class="line">张三：你好！</div>
+			<div class="line">李四：妈卖批！妈卖批！妈卖批！妈卖批！妈卖批！妈卖批！妈卖批！妈卖批！</div>
+			<div class="line">张三：你好！</div>
+			<div class="line">李四：妈卖批！妈卖批！妈卖批！妈卖批！妈卖批！妈卖批！</div>
+			<div class="line">张三：你好！</div>
+			<div class="line">李四：妈卖批！妈卖批！</div>
+		</div>
+
+		<div id="callPhone" style="display: none">
+			<div style="float: left;width: 80%;">
+				<div>
+					<span>姓名：</span>
+					<span id="name"></span>
+				</div>
+				<div style="margin-top: 5px;">
+					<span>部门：</span>
+					<span id="unitName"></span>
+				</div>
+			</div>
+			<span id="phone" style="float: right;margin-top: 13px"></span>
+			<span id="phoneValue"></span>
+			<img id='callphone' src="../image/zbjl/telphone.png" width="10%" style="float:right;margin-right: 5px;margin-top: 8px;" />
+		</div>
+		<div class="mui-content mui-fullscreen">
+			<div id='map' style='width: 100%;height: 100%;'>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../js/mui.min.js"></script>
+
+	<script type="text/javascript" src="../js/init.js"></script>
+	<!--<script src="http://10.73.1.48/arcgis_js_api/library/3.17/3.17/init.js"></script>-->
+
+	<script type="text/javascript" src="../js/app.js"></script>
+	<script type="text/javascript" src="../js/position.js"></script>
+	<script type="text/javascript" src="../js/arcgis.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script>
+		mui.plusReady(function() {
+			document.getElementById("callphone").addEventListener('tap', function() {
+				var phone = document.getElementById("phoneValue").innerText;
+				if(phone) {
+					plus.device.dial(phone, true);
+				} else {
+					alert('该队员没有短号')
+				}
+			});
+		})
+		require(['esri/map', "esri/layers/ArcGISTiledMapServiceLayer",
+			"esri/geometry/Point", "esri/symbols/SimpleFillSymbol", "esri/symbols/SimpleLineSymbol",
+			"esri/symbols/PictureMarkerSymbol", "esri/geometry/Polygon", "esri/geometry/Polyline",
+			"esri/graphic", "esri/layers/GraphicsLayer", "esri/SpatialReference", "esri/geometry/Circle"
+		], function(
+			Map, ArcGISTiledMapServiceLayer, Point, SimpleFillSymbol, SimpleLineSymbol,
+			PictureMarkerSymbol, Polygon, Polyline,
+			Graphic, GraphicsLayer, SpatialReference) {
+
+			var aMap = new ArcgisMap();
+
+			var user = app.getUserInfo(); //人员对象
+			var pos = app.getObject('position'); //位置对象	//84
+			//var gcj = position.transpose(pos, 'gcj02');
+			var wsg84 = position.transpose(pos, 'wgs84');
+
+			//			
+
+			//发送报警信息
+			document.getElementById("repostMessage").addEventListener('tap', function() {
+				var content = document.getElementById("messageContent").value;
+				var param = mui.param({
+					userid: user.ID,
+					remarks: content
+				})
+				var url = app.webApi + 'api/phone/AddHelp?' + param
+				console.log(url)
+				mui.ajax({
+					url: url,
+					type: 'post',
+					success: function(data) {
+						if(data == 1) {
+							mui.alert("发送成功");
+							document.getElementById("messageContent").value = "";
+							document.getElementById("messageContent").placeholder = content;
+						} else {
+							mui.alert("发送失败");
+						}
+					},
+					error: function(x, t, e) {
+						console.log(x);
+					},
+					complete: function() {
+				
+					}
+				});
+			});
+
+			//停止报警信息
+			document.getElementById("stopMessage").addEventListener('tap', function() {
+				var param = mui.param({
+					userid: user.ID,
+				})
+				var url = app.webApi + 'api/phone/EditHelp?' + param
+				console.log(url)
+				mui.ajax({
+					url: url,
+					type: 'post',
+					success: function(data) {
+						if(data == 1) {
+							mui.alert("停止成功")
+						} else {
+							mui.alert("停止失败")
+						}
+					},
+					error: function(x, t, e) {
+						console.log(x);
+					},
+					complete: function() {
+
+					}
+				});
+			});
+
+			function getPeripheryPolice() {
+				var pos = app.getObject('position'); //位置对象	//84
+				var wsg84 = position.transpose(pos, 'wgs84');
+				var param = mui.param({
+					userId: user.ID,
+					latitude: wsg84.latitude,
+					longitude: wsg84.longitude
+				});
+				var url = app.webApi + 'api/phone/GetPeripheryPolice?' + param;
+				console.log(url);
+
+				mui.ajax({
+					url: url,
+					success: function(data) {
+						aMap.clearMarker();
+						aMap.clearCircle();
+						var d1 = new Date(data.date).dateAdd('n', -30);
+						var str = data.title || '消息内容';
+						document.getElementById("messageContent").placeholder = str;
+						if(data.list.length > 0) {
+							var obj = {},
+								pointCenter = {},
+								arr = [],
+								setImgPathHp = "../image/map/map_gr_blue1.png",
+								setImgPath = "../image/map/map_gr_blue.png";
+							for(var i = 0; i < data.list.length; i++) {
+								var d2 = new Date(data.list[i].helptime);
+								var flse = d1 < d2;
+								obj = {
+									x: data.list[i].longitude,
+									y: data.list[i].latitude,
+									isCenter: false,
+									imgPath: flse ? setImgPathHp : setImgPath,
+									imgPathHeight: 30,
+									imgPathWidth: 20,
+									shortnumber: data.list[i].shortnumber,
+									name: data.list[i].name,
+									unitName: data.list[i].unitName,
+									helptime: data.list[i].helptime,
+									//remarks1: data.list[i].remarks1,
+									title: data.list[i].remarks1,
+									ishelp: data.list[i].ishelp,
+									flag: flse,
+									click: function(clickData) {
+										document.getElementById("callPhone").style.display = ""
+										document.getElementById("name").innerHTML = clickData.name;
+										document.getElementById("unitName").innerHTML = clickData.unitName;
+										document.getElementById("phoneValue").innerText = clickData.shortnumber;
+										if(clickData.flag && clickData.ishelp) {
+											alert(clickData.title);
+										}
+									}
+								};
+								if(obj.flag && obj.ishelp) {
+									aMap.addTitleMarker(obj);
+								} else {
+									aMap.addMarker(obj);
+								}
+							}
+
+						}
+						showMyPoint();
+
+					},
+					error: function(x, t, e) {
+						console.log(x);
+					},
+					complete: function() {
+
+					}
+				});
+			}
+
+			function showMyPoint() {
+				var pos = app.getObject('position'); //位置对象	//84
+				//var gcj = position.transpose(pos, 'gcj02');
+				var wsg84 = position.transpose(pos, 'wgs84');
+				//自己的定位坐标
+				var myPoint = {
+					x: wsg84.longitude,
+					y: wsg84.latitude,
+					imgPath: "../image/map/map_gr.png",
+					imgPathHeight: 30,
+					imgPathWidth: 20,
+					isCenter: true,
+					title: '我的位置'
+				}
+				aMap.addMarker(myPoint);
+				//加圆
+				var myCircle = {
+					point: [parseFloat(localStorage.getItem("longitude")), parseFloat(localStorage.getItem("latitude"))],
+					isCenter: true,
+					radius: 1000
+				}
+				aMap.addCircle(myCircle);
+			}
+
+			updateMap();
+
+			function updateMap() {
+
+				getPeripheryPolice();
+				
+				window.setTimeout(function() {
+					updateMap();
+				}, 10000);
+			}
+
+		});
+	</script>
+
+</html>

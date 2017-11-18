@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>领导首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css" />
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			#sliderone img {
+				height: 138px;
+				border: 0px;
+			}
+			
+			.mui-grid-view.mui-grid-9 {
+				background-color: #FFFEFE;
+				padding: 8px 0 3px 0;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+				border-right: none;
+				border-bottom: none;
+				padding: 0 15px;
+			}
+			
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+				color: #666666;
+				margin-top: 5px;
+			}
+			
+			#myGrid li {
+				width: 25%;
+			}
+			
+			#myGrid li a {
+				padding-top: 0px;
+			}
+			
+			#myGrid img {
+				padding: 0px 0px;
+				height: 50px;
+			}
+			
+			#GView {
+				margin-top: 10px;
+			}
+			
+			#GView .mui-table-view-cell {
+				padding: 8px 10px;
+			}
+			
+			.left {
+				display: inline-block;
+				margin-left: 5px;
+				padding-top: 3px;
+			}
+			
+			.list-li-img {
+				float: left;
+				width: 70px;
+			}
+			
+			.dt {
+				font-size: 16px;
+				color: #333333;
+				width: 170px;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.address {
+				margin-top: 5px;
+				color: #005A8D;
+				font-size: 15px;
+			}
+			
+			.right {
+				float: right;
+				color: #A0A0A0;
+				font-size: 16px;
+				margin-top: 30px;
+				margin-right: 5px;
+			}
+			
+			.dshaj-row{
+				padding-left: 6px;
+			}
+			
+			.dshaj-title{
+				display: inline-block;
+				color: #666666;
+				width: 20%;
+				float: left;
+			}
+			
+			.dshaj-content{
+				display: inline-block;
+				color: #005a8d;
+				width: 260px;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.dshaj-overtime{
+				display: inline-block;
+				color: red;
+			}
+			
+			.dshaj-deal{
+				background-color: #005a8d;
+				color: white;
+				padding: 2px 25px;
+				border-radius: 3px;
+				position: absolute;
+				bottom: 8px;
+				right: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-pull-left"><img src="../../image/home/reflesh.png" width="18px"/></a>
+			<h1 class="mui-title">首页</h1>
+			<a id='header-right' class="mui-icon mui-icon-bars mui-pull-right"></a>
+		</header>
+		
+		<div class="mui-content">
+			<div id="sliderone" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a id="Firstdup-a" href="#">
+							<img id="Firstdup" src="../../image/scrollimage/yuantiao.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a id="loop0-a" href="#">
+							<img id="loop0" src="../../image/scrollimage/shuijiao.jpg">
+						</a>
+					</div>
+
+					<div class="mui-slider-item">
+						<a id="loop1-a" href="#">
+							<img id='loop1' src="../../image/scrollimage/muwu.jpg">
+						</a>
+					</div>
+
+					<div class="mui-slider-item">
+						<a id="loop2-a" href="#">
+							<img id='loop2' src="../../image/scrollimage/cbd.jpg">
+						</a>
+					</div>
+
+					<div class="mui-slider-item">
+						<a id="loop3-a" href="#">
+							<img id='loop3' src="../../image/scrollimage/yuantiao.jpg">
+						</a>
+					</div>
+
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a id="Lastdup-a" href="#">
+							<img id="Lastdup" src="../../image/scrollimage/shuijiao.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<ul id="myGrid" class="mui-table-view mui-grid-view mui-grid-9" >
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="javascript:;">
+						<span class="mui-badge mui-badge-danger" style="top: 12%; right: 0px;">7</span>
+						<img src="../../image/home/dsh.png">
+						<div class="mui-media-body">待审核</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="javascript:;">
+						<span class="mui-badge mui-badge-danger" style="top: 12%; right: 0px;display: none;">0</span>
+						<img src="../../image/home/kqgl.png">
+						<div class="mui-media-body">考勤管理</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="javascript:;">
+						<span class="mui-badge mui-badge-danger" style="top: 12%; right: 0px;display: none;">0</span>
+						<img src="../../image/home/jczc.png">
+						<div class="mui-media-body">决策支持</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="javascript:;">
+						<span class="mui-badge mui-badge-danger" style="top: 12%; right: 0px;display: none;">0</span>
+						<img src="../../image/home/ssjg.png">
+						<div class="mui-media-body">实时监控</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="javascript:;">
+						<span class="mui-badge mui-badge-danger" style="top: 12%; right: 0px;display: none;">0</span>
+						<img src="../../image/home/db.png">
+						<div class="mui-media-body">督办</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="javascript:;">
+						<span class="mui-badge mui-badge-danger" style="top: 12%; right: 0px;display: none;">0</span>
+						<img src="../../image/home/zbjl.png">
+						<div class="mui-media-body">周边警力</div>
+					</a>
+				</li>
+			</ul>
+			<div id="GView">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" style="padding: 4px 8px 8px 8px;" id="moreDTList">
+						<div style="float: left;background: #005a8d;width: 5px;height: 25px;margin-top: 4px;"></div>
+						<span style="float: left;padding-top: 6px;color: #000000;">&nbsp;待审核案件</span>
+						<span style="float: right;padding-top: 6px;padding-right: 5px;color: #A0A0A0;">更多></span>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="dshaj-row">
+							<span class="dshaj-title">案由</span>
+							<span class="dshaj-content">任何单位和个人随意倾倒、抛撒或者堆放建筑垃圾</span>
+						</div>
+						<div class="dshaj-row">
+							<span class="dshaj-title">当前环节</span>
+							<span class="dshaj-content">分管局领导审核立案申请</span>
+						</div>
+						<div class="dshaj-row">
+							<span class="dshaj-title">当事人</span>
+							<span class="dshaj-content">张图途</span>
+						</div>
+						<div class="dshaj-row">
+							<span class="dshaj-title">超期时间</span>
+							<span class="dshaj-overtime">2017-02-09 09 : 30</span>
+							<span class="dshaj-deal">处 理</span>
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="dshaj-row">
+							<span class="dshaj-title">案由</span>
+							<span class="dshaj-content">任何单位和个人随意倾倒、抛撒或者堆放建筑垃圾</span>
+						</div>
+						<div class="dshaj-row">
+							<span class="dshaj-title">当前环节</span>
+							<span class="dshaj-content">分管局领导审核立案申请</span>
+						</div>
+						<div class="dshaj-row">
+							<span class="dshaj-title">当事人</span>
+							<span class="dshaj-content">张图途</span>
+						</div>
+						<div class="dshaj-row">
+							<span class="dshaj-title">超期时间</span>
+							<span class="dshaj-overtime">2017-02-09 09 : 30</span>
+							<span class="dshaj-deal">处 理</span>
+						</div>
+					</li>
+				</ul>	
+				
+				<!--<ul class="mui-table-view">
+					<li class="mui-table-view-cell" style="padding: 4px 8px 8px 8px;" id="moreDTList">
+						<div style="float: left;background: #005a8d;width: 5px;height: 25px;margin-top: 4px;"></div>
+						<span style="float: left;padding-top: 6px;color: #000000;">&nbsp;待办事件</span>
+						<span style="float: right;padding-top: 6px;padding-right: 5px;color: #A0A0A0;">更多></span>
+					</li>
+					<li class="mui-table-view-cell">
+						<img class="list-li-img" src="../../image/home/dbsj.png" />
+						<div class="left">
+							<div class="dt">聚贤路15号炸鸡店油烟污染</div>
+							<div class="address">聚贤路15号炸鸡店</div>
+						</div>
+						<span class="right">2016-08-26</span>
+					</li>
+					<li class="mui-table-view-cell">
+						<img class="list-li-img" src="../../image/home/dbsj.png " />
+						<div class="left">
+							<div class="dt">聚贤路15号炸鸡店油烟污染</div>
+							<div class="address">聚贤路15号炸鸡店</div>
+						</div>
+						<span class="right">2016-08-26</span>
+					</li>
+					<li class="mui-table-view-cell">
+						<img class="list-li-img" src="../../image/home/dbsj.png " />
+						<div class="left">
+							<div class="dt">聚贤路15号炸鸡店油烟污染</div>
+							<div class="address">聚贤路15号炸鸡店</div>
+						</div>
+						<span class="right">2016-08-26</span>
+					</li>
+				</ul>-->
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript " src="js/require.min.js " data-main='ldsy.js'></script>
+
+</html>

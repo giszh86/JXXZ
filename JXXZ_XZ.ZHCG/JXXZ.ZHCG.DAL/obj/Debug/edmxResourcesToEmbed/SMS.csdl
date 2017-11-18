@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OpenMasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OpenMasEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="COM_MmsIn_2" EntityType="OpenMasModel.COM_MmsIn_2" />
+    <EntitySet Name="COM_MmsReport_2" EntityType="OpenMasModel.COM_MmsReport_2" />
+    <EntitySet Name="COM_MmsSent_2" EntityType="OpenMasModel.COM_MmsSent_2" />
+    <EntitySet Name="COM_SmsIn_2" EntityType="OpenMasModel.COM_SmsIn_2" />
+    <EntitySet Name="COM_SmsReport_2" EntityType="OpenMasModel.COM_SmsReport_2" />
+    <EntitySet Name="COM_SmsSent_2" EntityType="OpenMasModel.COM_SmsSent_2" />
+  </EntityContainer>
+  <EntityType Name="COM_MmsIn_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="Subject" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MessageContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ExtendCode" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="DestinationAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SendAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="COM_MmsReport_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="ExtendCode" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="DestinationAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SendStatus" Type="Int32" Nullable="false" />
+    <Property Name="GatawayStatus" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="COM_MmsSent_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Subject" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MessageContent" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ExtendCode" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="DestinationAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SendType" Type="Int32" Nullable="false" />
+    <Property Name="SendTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="COM_SmsIn_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="MessageContent" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="ExtendCode" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="DestinationAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SendAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="COM_SmsReport_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="ExtendCode" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="DestinationAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SendStatus" Type="Int32" Nullable="false" />
+    <Property Name="GatawayStatus" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="SMSCount" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="COM_SmsSent_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MessageContent" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="ExtendCode" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="DestinationAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SendType" Type="Int32" Nullable="false" />
+    <Property Name="SendTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsWapPush" Type="Int32" />
+    <Property Name="WapUrl" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

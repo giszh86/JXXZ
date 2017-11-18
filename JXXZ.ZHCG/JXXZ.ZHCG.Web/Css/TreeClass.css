@@ -1,0 +1,34 @@
+﻿.tree_arrows_down:before {
+    content: url("../Image/Tree/down.png");
+}
+
+.tree_arrows_right:before {
+    content: url("../Image/Tree/right.png");
+}
+
+.tree_arrows_camera:before {
+    content: url("../Image/Tree/camera.png");
+}
+
+.tree {
+    width: 96%;
+    height: calc(100% - 30px - 30px - 10px);
+    margin-left:2%;
+    float:left;
+    display: none;
+}
+
+    .tree ul {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .tree ul li {
+            width: 100%;
+            float: left;
+            white-space: nowrap;
+            color: white;
+        }

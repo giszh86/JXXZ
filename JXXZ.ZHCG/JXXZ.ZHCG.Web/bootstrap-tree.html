@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Scripts/Tree/css/bootstrap.css" rel="stylesheet" />
+    <link href="Scripts/Tree/css/bootstrap-treeview.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/Tree/bootstrap-treeview.js"></script>
+    <style type="text/css">
+        .tree_arrows_down:before {
+            content: url("../Image/Tree/down.png");
+        }
+
+        .tree_arrows_right:before {
+            content: url("../Image/Tree/right.png");
+        }
+        .tree_arrows_camera:before {
+            content: url("../Image/Tree/camera.png");
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="seachtext" />
+<input type="button" id="btn" value="查询" />
+    <div id="tree"></div>
+    <script type="text/javascript">
+        $(function () {
+            function getTree() {
+                //var data = [{ text: "p1-1", id: '00001', nodeId: '00001' }, { text: "p1-2", id: '00002' }, { text: "p1-3", id: '00003' }, { text: "p1-4", id: '00004', nodes: [{ text: 'p1-1-1', id: '00005' }] }]
+                var data = [
+    {
+        "id": "001005001",
+        "parentid": null,
+        "cameraid": null,
+        "text": "嘉禾城乡天眼",
+        "nodes": [
+            {
+                "id": "001005001008",
+                "parentid": "001005001",
+                "cameraid": null,
+                "text": "秀洲区行政执法局",
+                "nodes": [
+                    {
+                        "id": "1000238",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "中山大厦东北角",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000238",
+                                "cameraid": "1000238$1$0$0",
+                                "text": "中山大厦东北",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000237",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "置信公寓",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000237",
+                                "cameraid": "1000237$1$0$0",
+                                "text": "置信公寓",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000236",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "江南摩尔西北角",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000236",
+                                "cameraid": "1000236$1$0$0",
+                                "text": "江南摩尔西北角",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000235",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "江南摩尔东南角",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000235",
+                                "cameraid": "1000235$1$0$0",
+                                "text": "江南摩尔东南角",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000234",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "嘉兴嘉北公墓",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000234",
+                                "cameraid": "1000234$1$0$0",
+                                "text": "嘉兴嘉北公墓",
+                                "nodes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1000233",
+                        "parentid": "001005001008",
+                        "cameraid": null,
+                        "text": "高家桥",
+                        "nodes": [
+                            {
+                                "id": null,
+                                "parentid": "1000233",
+                                "cameraid": "1000233$1$0$0",
+                                "text": "高家桥",
+                                "nodes": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+                ]
+
+                return data;
+            }
+
+
+            $('#tree').treeview({
+                data: getTree(),
+                expandIcon: "tree_arrows_right",
+                collapseIcon: "tree_arrows_down",
+                emptyIcon: "tree_arrows_camera",
+                levels: 3,
+                onhoverColor: "#E8E8E8",
+                showBorder: false,
+                showTags: true,
+                highlightSelected: true,
+                highlightSearchResults: false,
+                selectedBackColor: "#8D9CAA",
+                onNodeSelected: function (event, data) {
+                    if (data.cameraid != null) {
+                        //处理显示监控
+                        alert(data.cameraid);
+                    }
+                }
+
+            });
+
+            //搜索
+            //var search = function (e) {
+            //    var searchtext = $('#seachtext').val();
+            //    var options = {
+            //        ignoreCase: $('#chk-ignore-case').is(':checked'),
+            //        exactMatch: $('#chk-exact-match').is(':checked'),
+            //        revealResults: $('#chk-reveal-results').is(':checked')
+            //    };
+            //    var results = $('#tree').treeview('search', [searchtext, options]);
+            //}
+
+            //$('#btn').on('click', search);
+
+            //双击事件用下面方法
+            //$("#btn").click(function (e) {
+
+            //    var arr = $('#tree').treeview('getSelected');
+
+            //    alert(JSON.stringify(arr));
+            //    for (var key in arr) {
+            //        alert(arr[key].id);
+            //    }
+
+            //})
+
+            ////最后一次触发节点Id
+            //var lastSelectedNodeId = null;
+            ////最后一次触发时间
+            //var lastSelectTime = null;
+
+            ////自定义业务方法
+            //function customBusiness(data) {
+            //    alert("双击获得节点名字： " + data.text);
+            //}
+
+            //function clickNode(event, data) {
+            //    if (lastSelectedNodeId && lastSelectTime) {
+            //        var time = new Date().getTime();
+            //        var t = time - lastSelectTime;
+            //        if (lastSelectedNodeId == data.nodeId && t < 300) {
+            //            customBusiness(data);
+            //        }
+            //    }
+            //    lastSelectedNodeId = data.nodeId;
+            //    lastSelectTime = new Date().getTime();
+            //}
+
+            ////自定义双击事件
+            //function customDblClickFun() {
+            //    //节点选中时触发
+            //    $('#tree').on('nodeSelected', function (event, data) {
+            //        clickNode(event, data)
+            //    });
+            //    //节点取消选中时触发
+            //    $('#tree').on('nodeUnselected', function (event, data) {
+            //        clickNode(event, data)
+            //    });
+            //}
+
+            //$(document).ready(function () {
+            //    customDblClickFun();
+            //});
+        });
+    </script>
+</body>
+</html>

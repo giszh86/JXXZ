@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<title>监管中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<style type="text/css">
+			.img{
+				width: 50px;
+				float: left;
+			}
+			
+			.title{
+				float: left;
+				margin-top: 15px;
+				margin-left: 10px;
+				color: #666666;
+				font-family: '微软雅黑';
+			}
+			
+			.arrow{
+				float: right; 
+				margin-top: 15px; 
+				color: #999999; 
+				font-family: '微软雅黑';"
+			}
+			
+			.count{
+				float: right;
+				margin-top: 15px;
+				margin-right: 10px;
+				color: #005A8D;
+				font-family: '微软雅黑';
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<div class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back" style="color: #ffffff;" onclick='mui.back(true);'></div>
+			<h1 class="mui-title">监管中心</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" data-href = "smajList.html">
+					<img class="img" src="../../image/ssjk/smaj.png" />
+					<font class="title">市民事件</font>
+					<font class="arrow"></font>
+					<font id='UpcomingEventQuantity' class="count"></font>
+				</li>
+				<li class="mui-table-view-cell" data-href = "ybajList.html">
+					<img class="img" src="../../image/ssjk/ybaj.png" />
+					<font class="title">一般案件</font>
+					<font class="arrow"></font>
+					<font id='UpcomingApprovalQuantity' class="count"></font>
+				</li>
+				<li class="mui-table-view-cell" data-href = "jyajList.html">
+					<img class="img" src="../../image/ssjk/jyaj.png" />
+					<font class="title">简易案件</font>
+					<font class="arrow"></font>
+					<font id='UpcomingCaseQuantity' class="count"></font>
+				</li>
+				<li class="mui-table-view-cell" data-href = "wtajList.html">
+					<img class="img" src="../../image/ssjk/wtaj.png" />
+					<font class="title">违停案件</font>
+					<font class="arrow"></font>
+					<font id='UpcomingTaskQuantity' class="count"></font>
+				</li>
+			</ul>	
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='jgzx.js'></script>
+</html>

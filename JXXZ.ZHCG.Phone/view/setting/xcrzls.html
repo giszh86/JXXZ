@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>巡查日志历史</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<style type="text/css">
+			.img{
+				height: 30px;
+				float: left;
+				margin-top: -5px;
+			}
+			
+			.name{
+				margin-left: 20px;
+			}
+			
+			.date{
+				margin-left: 40px;
+			}
+			
+			.week{
+				margin-left: 20px;
+			}
+			
+			.arrow{
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">巡查日志历史</h1>
+		</header>
+		<!--<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" data-href='pHDetail.html'>
+					<img class="img" src="../../image/wddb/xcrwls.png" />
+					<span class="name">张三</span>
+					<span class="date">2017-03-03</span>
+					<span class="week">星期一</span>
+					<span class="arrow">>></span>
+				</li>
+			</ul>
+		</div>-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view" id="menuList">
+					<template v-for='(item,index) in items'>
+						<li class="mui-table-view-cell" @tap='openView(item)'>
+							<img class="img" src="../../image/wddb/xcrwls.png" />
+							<span class="name">{{item.name}}</span>
+							<span class="date">{{item.date}}</span>
+							<span class="week">{{item.weekday}}</span>
+							<span class="arrow">></span>
+						</li>
+					</template>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='xcrzls.js'></script>
+</html>

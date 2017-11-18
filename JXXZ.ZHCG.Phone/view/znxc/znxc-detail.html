@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>智能巡查-查询结果详情 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.all.css"/>
+		<style type="text/css">
+			.zb{
+				width: 80%;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+				text-align: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">店家详情</h1>
+			<!--<span class="r-float margin-top14px">快速上报</span>-->
+		</header>
+		
+		<div class="mui-content">
+			
+			<div class="mui-card">
+				<template >
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						店家名称<label class="r-float font-color" >{{items.shopname}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						地址<label class="r-float font-color" >{{items.address}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						店家类型<label class="r-float font-color" >{{items.shoptypename}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						许可证号<label class="r-float font-color" >{{items.licencecard}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						许可证有效期<label class="r-float font-color" >{{items.s_licence}} 至  {{items.e_licence}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						经营有效期<label class="r-float font-color" >{{items.s_business}} 至  {{items.e_business}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						负责人<label class="r-float font-color" >{{items.person}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						证件号<label class="r-float font-color" >{{items.card}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						联系电话<label class="r-float font-color" >{{items.contactphone}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						营业面积<label class="r-float font-color" >{{items.businessarea}}</label>
+					</li>
+					<li class="mui-table-view-cell">
+						员工数<label class="r-float font-color" >{{items.staffsum}}</label>
+					</li>
+					<li class="mui-table-view-cell" id='mapaddress'>
+						地理位置
+						<label id="geography" class="r-float font-color geography zb" >{{items.grometry}}</label>
+					</li>
+				</ul>
+				</template>
+			</div>
+			
+		</div>
+	
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="znxc-detail.js"></script>
+
+</html>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <script type="text/javascript" src="Silverlight.js"></script>
+    <script type="text/javascript">
+        function dingwei() {
+            //mapinfo = document.getElementById("mapinfo");
+            //mapinfo.content.Location("119.968951999482|33.4430841850245|120.288059436602|33.3079032392211");
+
+            var slHost = document.getElementById("mapinfo");
+            var page = slHost.Content.MapInfo;
+
+
+
+            page.Location("120.11846507123676|33.4430841850245|120.288059436602|33.3079032392211");
+
+        }
+
+        function zb() {
+
+            var slHost = document.getElementById("mapinfo");
+            var page = slHost.Content.MapInfo;
+
+          
+
+             page.Round("119.905900224839","33.4571349076769",3,4);
+
+        }
+
+        function gjhf() {
+            var slHost = document.getElementById("mapinfo");
+            var page = slHost.Content.MapInfo;
+
+            page.TrackPlayback("http://192.168.0.254:8099//api/Track/GetPlayTrack?ID=3&startTime={0}&endTime={1}", "/JXXZ.ZHCG.Front;component/Images/leftImg_14.png");
+        }
+
+        function hy() {
+            var slHost = document.getElementById("mapinfo");
+            var page = slHost.Content.MapInfo;
+
+            page.DrowGraphical("http://192.168.0.209:8090/api/PlayTrack/GetGrid");
+        }
+
+
+        </script>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            overflow: auto;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #silverlightControlHost {
+            height: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server" style="height:100%">
+        <div id="c" onclick="dingwei()" >定位</div>
+        <div onclick="zb()">周边</div>
+        <div onclick="gjhf()">轨迹回放</div>
+        <div onclick="hy()">画圆</div>h
+        <div id="silverlightControlHost">
+            <!--<object data="data:application/x-silverlight-2," id="mapinfo" type="application/x-silverlight-2" width="100%" height="100%">
+                <param name="source" value="ClientBin/JXXZ.ZHCG.Front.xap" />
+                <param name="onError" value="onSilverlightError" />
+                <param name="background" value="white" />
+                <param name="minRuntimeVersion" value="5.0.61118.0" />
+                <param name="autoUpgrade" value="true" />
+                <param name="initParams" value="mapType=GoogleMap,mapUrl=http://218.92.231.163:6810/OneMapServer/rest/services/ycslL8_L16/MapServer,mapExtent=1315874.237967787|13275450.55949657|1423295.286143216|13340114.85549183,IsOursInfo=true" />
+                <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration:none">
+                    <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="获取 Microsoft Silverlight" style="border-style:none" />
+                </a>
+            </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe>-->
+            <object  data="data:application/x-silverlight-2," id="mapinfo" type="application/x-silverlight-2" width="100%" height="120%">
+                <param name="source" value="ClientBin/JXXZ.ZHCG.Front.xap" />
+                <param name="onError" value="onSilverlightError" />
+                <param name="background" value="white" />
+                <param name="minRuntimeVersion" value="5.0.61118.0" />
+                <param name="autoUpgrade" value="true" />
+                <param name="initParams" value="mapType=ArcGISTiledMap,mapUrl=http://www.hangzhoumap.gov.cn/Tile/ArcGISFlex/HZTDTVECTORBLEND.gis,mapExtent=114.378494750212|32.7721501775812|125.969209035926|27.6357216061526,IsOursInfo=false" />
+                <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration:none">
+                    <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="获取 Microsoft Silverlight" style="border-style:none" />
+                </a>
+            </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe>
+
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+<!--<object data="data:application/x-silverlight-2," id="mapinfo" type="application/x-silverlight-2" width="100%" height="100%">
+    <param name="source" value="ClientBin/Techzen.Silverlight.PlugIns.xap" />
+    <param name="onError" value="onSilverlightError" />
+    <param name="background" value="white" />
+    <param name="minRuntimeVersion" value="5.0.61118.0" />
+    <param name="autoUpgrade" value="true" />
+    <param name="initParams" value="mapType=GoogleMap,mapUrl=http://218.92.231.163:6810/OneMapServer/rest/services/ycslL8_L16/MapServer,mapExtent=315874.237967787|3275450.55949657|423295.286143216|3340114.85549183,IsOursInfo=true" />
+    <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration:none">
+        <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="获取 Microsoft Silverlight" style="border-style:none" />
+    </a>
+</object>
+
+<object data="data:application/x-silverlight-2," style="width:100%; height:100%; position:absolute; top:80px;" id="mapinfo" type="application/x-silverlight-2">
+    <param name="source" value="ClientBin/Techzen.Silverlight.PlugIns.xap" />
+    <param name="onError" value="onSilverlightError" />
+    <param name="background" value="white" />
+    <param name="minRuntimeVersion" value="5.0.61118.0" />
+    <param name="autoUpgrade" value="true" />
+    <param name="initParams" value="mapType=ArcGISTiledMap,IsOursInfo=flase,mapExtent=114.378494750212|32.7721501775812|125.969209035926|27.6357216061526,mapUrl=http://www.hangzhoumap.gov.cn/Tile/ArcGISFlex/HZTDTVECTORBLEND.gis" />
+    <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration:none">
+        <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="获取 Microsoft Silverlight" style="border-style:none" />
+    </a>
+</object>-->

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>openlayer_demo</title>
+		<link rel="stylesheet" href="../js/ol/ol.css" />
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<script type="text/javascript" src="../js/ol/ol.js" ></script>
+		
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<!--<script type="text/javascript" src="ol/ol-debug.js"></script>-->
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		#map {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		
+		#menu {
+			position: fixed;
+			right: 20px;
+			top: 20px;
+			list-style: none;
+		}
+		
+		#menu li {
+			float: left;
+			margin-right: 10px;
+		}
+		
+		#menu li button {
+			padding: 3px 5px;
+		}
+	</style>
+
+	<body>
+		<div id='map'>
+
+		</div>
+		<ul id='menu'>
+			<li>
+				<input type="text" style="width: 800px;" id='point' value='120.22521972656251,33.48545837402344;119.95880126953126,33.41542053222656;120.07827758789064,33.24650573730469;120.34744262695314,33.30006408691406;' />
+				<!--<input type="text" style="width: 800px;" id='point' value='13446666.83430714,3514388.729434101;13413646.038087945,3501853.056795332;13427251.829122705,3477698.9558572164;13477241.64562121,3498336.953494214;13505217.597973585,3460271.313408196;13439481.753648333,3450793.121900834;13356776.889043773,3484578.2884028824;13374510.279605934,3529064.638864855;' />-->
+			</li>
+			<li>
+				<button id='drawMarker'>画点</button>
+			</li>
+			<li>
+				<!--<button id='drawLine'>画线</button>-->
+				<button id='drawLine2'>画线2</button>
+			</li>
+			<li>
+				<!--<button id='drawArea'>画面</button>-->
+				<button id='drawArea2'>画面2</button>
+			</li>
+			<li>
+				<button id='drawCircle'>画圆</button>
+			</li>
+			<li>
+				<button onclick="drawBox()">画矩形</button>
+			</li>
+			<li>
+				<button id='addMarker'>加点</button>
+			</li>
+			<li>
+				<button id='addLine'>加线</button>
+			</li>
+			<li>
+				<button id='addArea'>加面</button>
+			</li>
+			<li>
+				<button onclick="addCircle()">加圆</button>
+			</li>
+			<li>
+				<button id='move'>轨迹回放</button>
+			</li>
+			<li>
+				<button onclick="tracktest()">轨迹回放2</button>
+			</li>
+
+			<li>
+				<button id='clear'>清除</button>
+			</li>
+		</ul>
+	</body>
+	<!--<script type="text/javascript" src="openlayerMap.js"></script>-->
+	<script type="text/javascript" src="openlayerMap_84.js"></script>
+	<!--<script type="text/javascript" src="openlayerMap_wmts_84.js" ></script>-->
+	<script>
+		function setValue(arr) {
+			var st = arr.toString();
+			st = st.replace(/(\d+(\.\d+)?,\d+(\.\d+)?)(,|$)/g, '$1;');
+			document.getElementById("point").value = st;
+		}
+
+		function getValue() {
+			var st = document.getElementById("point").value;
+			var arr = []
+			var mat = st.match(/\d+(\.\d+)?/g);
+			for(var i = 1; i < mat.length; i += 2) {
+				var x = parseFloat(mat[i - 1]);
+				var y = parseFloat(mat[i]);
+				arr.push([x, y]);
+			}
+			return arr;
+		}
+
+		var oMap = new OpenlayerMap({
+			containerId: 'map',
+			url: 'http://218.92.231.163:6810/OneMapServer/rest/services/ycslL8_L16/MapServer',
+			//url: 'http://www.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer',
+			//url: 'http://218.92.231.163:6810/OneMapServer/rest/services/ycslL8_L16/MapServer',
+			//			url: 'http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer',
+			//center: [120, 33],
+			//center: [13441163.36827061, 3502464.553021614],
+			zoom: 18
+		});
+
+		document.getElementById("clear").addEventListener('click', function() {
+			oMap.clearAll();
+		});
+
+		//轨迹回放
+		document.getElementById("move").addEventListener('click', function() {
+			var arr = getValue();
+			for (var i = 0; i < arr.length; i++) {
+				arr[i].push(new Date());
+			}
+			var track = oMap.trackBack(arr, {
+				speed: 5
+			});
+			track.init();
+			track.start(function() {
+				alert('结束了,过2秒销毁');
+				window.setTimeout(function() {
+					track.dispose(); //销毁
+				}, 2000);
+			});
+
+			//			window.setTimeout(function() {
+			//				track.pause(); //暂停
+			//				window.setTimeout(function() {
+			//					track.start(); //第2次调用start继续
+			//				}, 2000);
+			//
+			//			}, 2000);
+
+		});
+
+		function tracktest() {
+			var arr = getValue();
+
+			var track = oMap.trackBack(arr, {
+				speed: 10, //支持负值
+				pointShow: true,
+				filterDistance: 0.000001
+			});
+
+			track.init();
+			window.setTimeout(function() {
+
+				var _index = window.setInterval(function() {
+					var z = parseInt(Math.random() * 5);
+					track.speed += z;
+				}, 1000);
+
+				//1秒后启动
+				track.start(function() {
+					alert('两秒后销毁实例');
+					window.setTimeout(function() {
+						track.dispose(); //销毁.
+						window.clearInterval(_index);
+
+					}, 2000);
+				});
+
+				window.setTimeout(function() {
+					track.pause(); //2秒后暂停一下
+
+					window.setTimeout(function() {
+						track.start(); //2秒后继续运行.
+					}, 2000);
+
+				}, 2000);
+
+			}, 1000);
+		}
+
+		//加点
+		document.getElementById("drawMarker").addEventListener('click', function() {
+			var draw = new ol.interaction.Draw({ //创建画笔
+				features: [],
+				type: 'Point',
+				style: new ol.style.Style({ //样式
+					image: new ol.style.Icon({ //自定义图片
+						anchor: [0.5, 1],
+						src: 'point.png'
+					})
+				})
+			});
+
+			draw.on('drawend', function(evt) {
+				var lines = evt.feature.getGeometry().getCoordinates();
+				setValue(lines);
+				oMap.map.removeInteraction(draw); //移除画线
+				//debugger;
+				var arr = getValue();
+				var marker = oMap.addMarker({
+					x: arr[0][0],
+					y: arr[0][1]
+				});
+				oMap.moveMarker(marker, {
+					x: arr[0][0] + 0.1,
+					y: arr[0][1] + 0.1
+				});
+
+			});
+
+			oMap.map.addInteraction(draw);
+		});
+
+		document.getElementById("addMarker").addEventListener('click', function() {
+			var arr = getValue();
+			var ar = []
+			for(var i = 0; i < arr.length; i++) {
+				var obj = {
+					x: arr[i][0],
+					y: arr[i][1],
+					id: i,
+					type: 'bbb'
+				}
+				ar.push(obj);
+			}
+			oMap.addMarkers(ar, {
+				click: function(data) {
+					alert(data.id);
+				}
+			});
+		});
+
+		document.getElementById("addLine").addEventListener('click', function() {
+			var arr = getValue();
+			var line = oMap.addLine(arr);
+
+			var num = oMap.getLength(line);
+
+			alert(num);
+		});
+
+		document.getElementById("addArea").addEventListener('click', function() {
+			var arr = getValue();
+			var polygon = oMap.addPolygon(arr, {
+				click: function(data) {
+					debugger;
+				},
+				move: function(data, coor, fre) {
+					console.log(coor);
+				},
+				name: '自定义属性',
+				xxx: 'zjjia'
+			});
+
+			var area = oMap.getArea(polygon);
+
+			alert(area);
+
+		});
+
+		//画圆
+		document.getElementById("drawCircle").addEventListener('click', function() {
+			var draw = new ol.interaction.Draw({
+				features: [],
+				type: 'Circle',
+				style: new ol.style.Style({
+					stroke: new ol.style.Stroke({
+						color: '#ff0000',
+						width: 3
+					}),
+					fill: new ol.style.Fill({
+						color: 'rgba(255, 0, 0, 0.5)'
+					}),
+					image: new ol.style.Circle({
+						radius: 7,
+						fill: new ol.style.Fill({
+							color: '#ff0000'
+						})
+					})
+				})
+			});
+
+			draw.on('drawend', function(evt) {
+				var lines = evt.feature.getGeometry();
+				var cricle = evt.target;
+				var arr = cricle.P;
+				oMap.addCircle({
+					center: arr[0],
+					endPoint: arr[1],
+					click: function(data) {
+						alert(data.name);
+					},
+					name: 'aaa'
+				});
+				oMap.map.removeInteraction(draw); //移除画线
+			});
+
+			oMap.map.addInteraction(draw);
+
+		});
+
+		//画矩形
+		function drawBox() {
+			//创建画笔
+			var draw = new ol.interaction.Draw({
+				features: [],
+				type: 'Circle',
+				style: new ol.style.Style({
+					stroke: new ol.style.Stroke({
+						color: '#ff0000',
+						width: 3
+					}),
+					fill: new ol.style.Fill({
+						color: 'rgba(255, 0, 0, 0.5)'
+					}),
+					image: new ol.style.Circle({
+						radius: 7,
+						fill: new ol.style.Fill({
+							color: '#ff0000'
+						})
+					})
+				}),
+				geometryFunction: ol.interaction.Draw.createBox()
+			});
+
+			draw.on('drawend', function(evt) {
+				var minX, minY, maxX, maxY;
+				var lines = evt.feature.getGeometry().getCoordinates();
+				for(var i = 0; i < lines[0].length; i++) {
+					var arr = lines[0][i];
+					if(minX == null || minX > arr[0]) minX = arr[0];
+					if(minY == null || minY > arr[1]) minY = arr[1];
+					if(maxX == null || maxX < arr[0]) maxX = arr[0];
+					if(maxY == null || maxY < arr[1]) maxY = arr[1];
+
+				}
+				var ar = [
+					[minX, minY],
+					[maxX, maxY]
+				];
+				setValue(ar);
+				oMap.addLine(ar);
+				oMap.map.removeInteraction(draw); //移除画线
+			});
+
+			oMap.map.addInteraction(draw);
+
+		}
+
+		function addCircle() {
+			var arr = getValue();
+			oMap.addCircle({
+				center: arr[0],
+				endPoint: arr[1],
+				click: function(data) {
+					alert('圆');
+				}
+			});
+		}
+
+		//原生画线功能
+		document.getElementById("drawLine2").addEventListener('click', function() {
+			var draw = new ol.interaction.Draw({ //创建画笔
+				features: [],
+				type: 'LineString',
+				style: new ol.style.Style({ //样式
+
+					stroke: new ol.style.Stroke({
+						color: '#ff0000',
+						width: 3
+					}),
+					image: new ol.style.Icon({ //自定义图片
+						anchor: [0.5, 1],
+						src: 'point.png'
+					})
+				})
+			});
+
+			draw.on('drawend', function(evt) {
+				var lines = evt.feature.getGeometry().getCoordinates();
+				setValue(lines);
+				oMap.map.removeInteraction(draw); //移除画线
+				var arr = getValue();
+				oMap.addLine(arr);
+			});
+
+			oMap.map.addInteraction(draw);
+
+		});
+
+		//原生画面功能.
+		document.getElementById("drawArea2").addEventListener('click', function() {
+
+			var draw = new ol.interaction.Draw({ //创建画笔
+				features: [],
+				type: 'Polygon',
+				style: new ol.style.Style({ //画笔在绘制过程中的样式
+					fill: new ol.style.Fill({
+						color: 'rgba(255, 0, 0, 0.5)'
+					}),
+					stroke: new ol.style.Stroke({
+						color: '#ff0000',
+						width: 3
+					}),
+					image: new ol.style.Circle({
+						radius: 7,
+						fill: new ol.style.Fill({
+							color: '#ff0000'
+						})
+					})
+
+				})
+			});
+
+			draw.on('drawend', function(evt) {
+				var lines = evt.feature.getGeometry().getCoordinates();
+				setValue(lines);
+				var arr = getValue();
+				oMap.addPolygon(arr, {
+					click: function(data, coord, fream) {
+						alert(data.aaa);
+					},
+					aaa: 'ccc'
+				});
+				oMap.map.removeInteraction(draw); //移除画笔
+			});
+
+			oMap.map.addInteraction(draw);
+
+		});
+	</script>
+
+</html>

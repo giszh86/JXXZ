@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加沿街店家信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<style type="text/css">
+			.mui-table-view-cell{
+				padding: 8px 10px 9px 15px;
+			}
+			
+			li.mui-table-view-cell span{
+				float: left;
+				padding-top: 4px;
+			}
+			
+			li.mui-table-view-cell input[type='text']{
+				float: right;
+				width: 75%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">添加沿街店家信息</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>店家名称</span>
+						<input id="shopname" ctype="shopname" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>地址</span>
+						<input id="address" ctype="address" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>店家类型</span>
+						<input readonly="readonly" type="text" id='storename' class="triangle" value=''>
+						<input ctype='shoptype' type="hidden" id='storetype' />
+					</li>
+					<li class="mui-table-view-cell">
+						<span>许可证号</span>
+						<input id="licencecard" ctype="licencecard" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>许可有效期</span>
+					    <input readonly id="e_licence" ctype="e_licence" type="text" style="width: 32%;" placeholder="请选择">
+						<span style="float: right;margin: 0 10px;">至</span>
+						<input readonly placeholder="请选择" id="s_licence" ctype="s_licence" type="text" style="width: 32%;">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>经营有效期</span>
+						<input readonly placeholder="请选择" id="e_business" ctype="e_business" type="text" style="width: 32%;">
+						<span style="float: right;margin: 0 10px;">至</span>
+						<input readonly placeholder="请选择" id="s_business" ctype="s_business" type="text" style="width: 32%;">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>负责人</span>
+						<input id="person" ctype="person" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>证件号</span>
+						<input id="card" ctype="card" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>联系电话</span>
+						<input id="contactphone" ctype="contactphone" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>营业面积</span>
+						<input id="businesssarea" ctype="businessarea" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>员工数</span>
+						<input id="staffsum" ctype="staffsum" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>所属区域</span>
+						<input readonly="readonly" type="text" id='sourceareaname' class="triangle" value=''>
+						<input ctype='sourcearea' type="hidden" id='sourceareatype' />
+					</li>
+					<li class="mui-table-view-cell" id='choosemap'>
+						<span>地理位置</span>
+						<input readonly class="location-red" id='posaddress' ctype="grometry" type="text" value=''>
+						<input id='latitude' type='hidden' ctype='y84' />
+						<input id='longitude' type='hidden' ctype='x84' />
+					</li>
+				</ul>
+			</div>
+			
+			<button id="submit" type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>		
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="tjyjdj.js"></script>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>市民案件--统计分析</title>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<style>
+			.bluebtn {
+				background: #005A8D;
+				color: #ffffff;
+				border: none;
+			}
+			
+			.wordspanwidth {
+				width: 25%;
+			}
+			
+			.numberspanwidth {
+				width: 15%;
+			}
+			
+			.nyrstyle {
+				overflow: auto;
+				padding-bottom: 6px;
+			}
+			
+			.barstyle {
+				background: #007AFF;
+				height: 20px;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">统计分析--市民案件</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card" style="padding: 4px;">
+				<div class="border-bottomstyle nyrstyle">
+					<span class="r-float">
+						<button type="button" class="mui-btn bluebtn">日</button>
+						<button type="button" class="mui-btn bluebtn">月</button>
+						<button type="button" class="mui-btn bluebtn">年</button>
+					</span>
+				</div>
+				<div>
+					<div class="row-div">
+						<span class="l-float wordspanwidth">数字城管</span>
+						<div class="l-float barstyle" style="width:55%;"></div>
+						<span class="r-float font-color numberspanwidth">100000</span>
+					</div>
+					<div class="row-div">
+						<span class="l-float wordspanwidth">市长电话</span>
+						<div class="l-float barstyle" style="width: 6%;"></div>
+						<span class="r-float font-color">17000</span>
+					</div>
+					<div class="row-div">
+						<span class="l-float wordspanwidth">市局96130</span>
+						<div class="l-float barstyle" style="width: 46%;"></div>
+						<span class="r-float font-color">83000</span>
+					</div>
+					<div class="row-div">
+						<span class="l-float wordspanwidth">行风热线</span>
+						<div class="l-float barstyle" style="width: 15%;"></div>
+						<span class="r-float font-color">34000</span>
+					</div>
+					<div class="row-div">
+						<span class="l-float wordspanwidth">区创建办</span>
+						<div class="l-float barstyle" style="width: 25%;"></div>
+						<span class="r-float font-color">51000</span>
+					</div>
+					<div class="row-div">
+						<span class="l-float wordspanwidth">环境曝光台</span>
+						<div class="l-float barstyle" style="width: 35%;"></div>
+						<span class="r-float font-color">68000</span>
+					</div>
+					<div class="row-div">
+						<span class="l-float wordspanwidth">信访</span>
+						<div class="l-float barstyle" style="width: 45%;"></div>
+						<span class="r-float font-color">85000</span>
+					</div>
+				</div>
+			</div>
+			
+				<div class="mui-card">
+					<div class="row-div border-bottomstyle">
+						<span class="l-float margin-left5pointer">上报数</span>
+						<span class="r-float font-color margin-right20px">23</span>
+					</div>
+					<div class="row-div border-bottomstyle">
+						<span class="l-float margin-left5pointer">完成数</span>
+						<span class="r-float font-color margin-right20px">45</span>
+					</div>
+					<div class="row-div border-bottomstyle">
+						<span class="l-float margin-left5pointer">超期事件</span>
+						<span class="r-float font-color margin-right20px">24</span>
+					</div>
+					<div class="row-div border-bottomstyle">
+						<span class="l-float margin-left5pointer">超期率</span>
+						<span class="r-float font-color margin-right20px">30%</span>
+					</div>
+					<div class="row-div">
+						<span class="l-float margin-left5pointer">完结率</span>
+						<span class="r-float font-color margin-right20px">0%</span>
+					</div>
+				</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="shiminanjiantongjifenxi"></script>
+
+</html>

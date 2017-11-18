@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript">
+        var jsonponit = "[{X:120.761636118657,Y:30.7634032043437,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'}]";
+        //定位
+        function locationponit() {
+            var slHost = document.getElementById("mapinfo");
+            var page = slHost.Content.MapInfo;
+            page.Location(jsonponit);
+        }
+        //轨迹回放
+        function palytrack(id) {
+            var slHost = document.getElementById("mapinfo");
+            var page = slHost.Content.MapInfo;
+            page.TrackPlayback("http://localhost:14195/api/Track/GetPlayTrack?ID=" + id + "&startTime={0}&endTime={1}", "http://localhost:7041/Image/localtion/ry/peoplelocation.png");
+        }
+
+        //周边坐标数据
+        var peripheryjsonPonit = "[{X:120.761636118657,Y:30.7634032043437,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'},{X:120.761133886514,Y:30.7627251909509,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'},{X:120.760945549461,Y:30.7633027579151,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'},{X:120.761535672228,Y:30.7628256373794,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'},{X:120.761937457943,Y:30.762926083808,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'},{X:120.761108774907,Y:30.7634032043437,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'},{X:120.762364355264,Y:30.7635287623794,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'},{X:120.762088127586,Y:30.7640812177366,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'},{X:120.762238797228,Y:30.7631771998794,Icon:'http://localhost:7041/Image/localtion/ry/peoplelocation.png'}]"
+       
+        //周边
+        function periphery() {
+            var slHost = document.getElementById("mapinfo");
+            var page = slHost.Content.MapInfo;
+            page.Round(120.750790085224, 30.7750380587039, 0.02, peripheryjsonPonit)
+        }
+
+        function clickPonitsShow2DPanel(id, type) {
+            alert(id + "," + type);
+        }
+    </script>
+</head>
+<body>
+    <div style="width:100%; height:80px; ">
+        <input type="button" value="定位" onclick="locationponit()" />
+        <input type="button" value="轨迹回放" onclick="palytrack(3)" />
+        <input type="button" value="周边" onclick="periphery()" />
+    </div>
+    <object data="data:application/x-silverlight-2," style="width:100%; height:100%; position:absolute; top:80px;" id="mapinfo" type="application/x-silverlight-2">
+        <param name="source" value="ClientBin/Techzen.Silverlight.PlugIns.xap" />
+        <param name="onError" value="onSilverlightError" />
+        <param name="background" value="white" />
+        <param name="minRuntimeVersion" value="5.0.61118.0" />
+        <param name="autoUpgrade" value="true" />
+        <param name="initParams" value="mapType=ArcGISTiledMap,IsOursInfo=flase,mapExtent=114.378494750212|32.7721501775812|125.969209035926|27.6357216061526,mapUrl=http://www.hangzhoumap.gov.cn/Tile/ArcGISFlex/HZTDTVECTORBLEND.gis" />
+        <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration:none">
+            <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="获取 Microsoft Silverlight" style="border-style:none" />
+        </a>
+    </object>
+</body>
+</html>

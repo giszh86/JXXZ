@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #192F46;
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+        }
+        body,table{
+            margin-top:5px;
+            color:white;
+            font-size:12px;
+        }
+
+            body, table tr td:nth-of-type(2n+1) {
+                color: #F8A125;
+                text-align: right;
+            }
+            body, table tr td:nth-of-type(2n) {
+                text-align: left;
+            }
+    </style>
+    <script type="text/javascript">
+        function getData() {
+            var objcode = getQueryStringByName("objcode");
+            var types = getQueryStringByName("type");
+            if (objcode != 'undefined' && objcode != "" && objcode != null) {
+                var url = "http://localhost:14195/api/Part/GetPartDetailCode?objcode=" + objcode;
+                ajax(url);
+            }
+        }
+
+        function ajax(url) {
+            var xmlHttpReg = null;
+            //if (window.ActiveXObject) {
+            //    //如果是IE
+            //    xmlHttpReg = new ActiveXObject("Microsoft XMLHTTP");
+            //} else if (window.XMLHttpRequest) {
+            //    xmlHttpReg = new XMLHttpRequest();//实例化一个xmlHttpReg;
+            //}
+            xmlHttpReg = new XMLHttpRequest();//实例化一个xmlHttpReg;
+            xmlHttpReg.open("get", url, true);
+            xmlHttpReg.send();
+            xmlHttpReg.onreadystatechange = function () {
+                if (xmlHttpReg.readyState == 4) {//4代表执行完成
+                    if (xmlHttpReg.status == 200) {//200代表执行成功
+                        //var data = eval("(" + xmlHttpReg.responseText + ")");
+                        //var data = JSON.parse(xmlHttpReg.responseText);
+                        var data = eval('(' + xmlHttpReg.responseText + ')');
+                        if (data != null) {
+                            var html = "<table><tr><td>部件名称</td><td>" + data.objname + "</td></tr><tr><td>标识码</td><td>" + data.objcode + "</td></tr><tr><td>主管单位</td><td>" + data.cdepname + "</td></tr><tr><td>权属单位</td><td>" + data.owndepname + "</td></tr><tr><td>养护单位</td><td>" + data.matdepname + "</td></tr></table>";
+                            document.getElementById("bjdata").innerHTML = html;
+                        }
+                    }
+                }
+            }
+        }
+
+      
+        function getQueryStringByName(name) {
+            var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+            if (result == null || result.length < 1) {
+                return "";
+            }
+            return result[1];
+        }
+
+        function strToJson(str) {
+            var json = (new Function("return " + str))();
+            return json;
+        }
+    </script>
+</head>
+<body onload="getData()">
+    <div id="bjdata">
+    </div>
+</body>
+</html>

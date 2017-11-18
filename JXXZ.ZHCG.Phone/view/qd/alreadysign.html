@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>已签到-团队今日签到</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" href="../../css/report.all.css">
+		<!--<script type="text/javascript" src="../../js/common.js"></script>-->
+
+		<style>
+			.margin-right8px {
+				margin-right: 8px;
+			}
+			
+			.margin-left5px {
+				margin-left: 5px;
+			}
+			
+			.personimg {
+				height: 20px;
+				width: 20px;
+				float: left;
+			}
+			
+			.male{
+				color: #005a8d;
+				line-height: 18px;
+				margin-right: 5px;
+			}
+			
+			.female{
+				color: #F60688;
+				line-height: 18px;
+				margin-right: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div id='vueDiv'>
+				<div class="mui-input-group" id="Squadron_list">
+					<div class="mui-input-row">
+						<a class="mui-navigate-right">
+							<label>选择中队</label>
+							<span id="Squadron_Name"></span>
+						</a>
+						<input type="hidden" id='Squadron_ID' name='Squadron_ID' :value='sszd' ctype/>
+					</div>
+					<div class="mui-input-row">
+						<a class="mui-navigate-right">
+							<label>选择班组</label>
+							<span ID='Class_Name'></span>
+						</a>
+						<input type="hidden" id='Class_ID' :value='ssbc' />
+					</div>
+				</div>
+				
+				<div class="mui-scroll">
+					<ul class="mui-table-view ulimg">
+						<template v-for='(item,index) in items'>
+							<li class="mui-table-view-cell" @tap='list_click(item)'>
+								<a>
+									<span class="l-float mui-icon mui-icon-person-filled male"></span>
+									<span class="l-float">{{item.displayname}}</span>
+									<span class="l-float margin-left15pointer">
+									 	签到
+									 	<span class="font-color margin-left5px">{{item.stime}}</span>
+									</span>
+									<span class="r-float">签退
+										<span class="font-color margin-right8px margin-left5px">{{item.etime}}</span>>
+									</span>
+								</a>
+							</li>
+						</template>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='alreadysign'></script>
+
+</html>

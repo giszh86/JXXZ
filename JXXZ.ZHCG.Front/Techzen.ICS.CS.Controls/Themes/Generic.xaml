@@ -1,0 +1,632 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows" 
+                    xmlns:local="clr-namespace:Techzen.ICS.CS.Controls" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                    xmlns:Primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls">
+
+    <SolidColorBrush x:Key="ControlBackground" Color="Transparent" />
+    <SolidColorBrush x:Key="TextBlockForeground" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="TextBoxForeground" Color="#FFFFFFFF"/>
+    <Style x:Key="DefaultTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{StaticResource TextBoxForeground}" />
+        <Setter Property="TextOptions.TextHintingMode" Value="Animated" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Opacity="0.75" Direction="-90" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DefaultIconTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource TextBoxForeground}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="/Techzen.ICS.CS;component/Fonts/icomoon.ttf#icomoon" />
+    </Style>
+
+    <Style x:Key="DefaultRadioButtonStyle" TargetType="RadioButton">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{StaticResource TextBoxForeground}" />
+        <Setter Property="TextOptions.TextHintingMode" Value="Animated" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Opacity="0.75" Direction="-90" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZPanelItem">
+        <Setter Property="NameColor" Value="#CACBCD" />
+        <Setter Property="ValueColor" Value="{StaticResource TextBlockForeground}" />
+        <Setter Property="Background" Value="{StaticResource ControlBackground}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZPanelItem">
+                    <Border Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}" Padding="0 4 0 6">
+                        <!--<StackPanel Orientation="Horizontal" Height="{TemplateBinding Height}">
+                            <TextBlock x:Name="ItemNameTextBlock" Width="{TemplateBinding NameWidth}" Text="{TemplateBinding NameText}" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Foreground="{TemplateBinding NameColor}" Style="{StaticResource DefaultTextBlockStyle}" />
+                            <TextBlock x:Name="ItemValueTextBlock" Text="{TemplateBinding ValueText}" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Margin="5 0 0 0" Foreground="{TemplateBinding ValueColor}" Style="{StaticResource DefaultTextBlockStyle}" />
+                        </StackPanel>-->
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"></ColumnDefinition>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" x:Name="ItemNameTextBlock" Text="{TemplateBinding NameText}" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextWrapping="Wrap" Foreground="{TemplateBinding NameColor}" Style="{StaticResource DefaultTextBlockStyle}" />
+                            <TextBlock Grid.Column="1" x:Name="ItemValueTextBlock" Text="{TemplateBinding ValueText}" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextWrapping="Wrap" Margin="5 0 0 0" Foreground="{TemplateBinding ValueColor}" Style="{StaticResource DefaultTextBlockStyle}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZLogo">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZLogo">
+                    <Grid Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" Cursor="{TemplateBinding Cursor}">
+                        <Image Source="{TemplateBinding Source}" Stretch="None" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZClock">
+        <Setter Property="Height" Value="46" />
+        <Setter Property="Width" Value="120" />
+        <Setter Property="Foreground" Value="#FF28BB9E" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZClock">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <Grid>
+                            <TextBlock x:Name="message" Visibility="Collapsed" Canvas.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Arial" FontSize="12" />
+                            <TextBlock x:Name="time" Foreground="{TemplateBinding Foreground}" Text="00:00:00" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="32" FontFamily="/Techzen.ICS.CS.Controls;component/Fonts/yjsj.TTF#LcdD" TextAlignment="Center" />
+                            <TextBlock x:Name="date" Text="1900.01.01" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" FontFamily="Arial" FontSize="12" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZFilterGroup">
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <toolkit:WrapPanel ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZFilterGroup">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="32" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="#35566C" Grid.Row="0">
+                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <TextBlock Text="{TemplateBinding Title}" Margin="16,0,0,0" Style="{StaticResource DefaultTextBlockStyle}" FontSize="14" />
+                                </StackPanel>
+                            </Border>
+                            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}">
+                                <ItemsPresenter />
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZFilterGroupItem">
+        <Setter Property="Width" Value="160" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZFilterGroupItem">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}" Cursor="Hand">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <RadioButton x:Name="FilterRadioButton" FontSize="{TemplateBinding FontSize}" IsChecked="{TemplateBinding IsChecked}" GroupName="{TemplateBinding GroupName}" Content="{TemplateBinding Text}" VerticalAlignment="Center" Margin="0,0,5,0" Style="{StaticResource DefaultRadioButtonStyle}"></RadioButton>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <StackPanel x:Name="Value1StackPanel" Orientation="Horizontal">
+                                    <TextBlock Text="{TemplateBinding Value1}" FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Right" Margin="0,0,2,0" VerticalAlignment="Center" Foreground="#8bdb01" Style="{StaticResource DefaultTextBlockStyle}" />
+                                    <TextBlock Text="/" VerticalAlignment="Center" FontSize="{TemplateBinding FontSize}" />
+                                </StackPanel>
+                                <TextBlock Text="{TemplateBinding Value2}" FontSize="{TemplateBinding FontSize}" VerticalAlignment="Center" Margin="2,0,0,0" Foreground="#ffa200" Style="{StaticResource DefaultTextBlockStyle}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZMainKPI">
+        <Setter Property="Height" Value="55" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZMainKPI">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}">
+                        <ItemsPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZMainKPIItem">
+        <Setter Property="Height" Value="55" />
+        <Setter Property="Width" Value="140" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZMainKPIItem">
+                    <Border Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Image x:Name="Image" Margin="0 0 20 0" HorizontalAlignment="Right" VerticalAlignment="Center" Width="33" Source="{TemplateBinding ImageSource}" Stretch="Uniform" />
+                            <Grid Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="TitleTextBlock" Text="{TemplateBinding Title}" Style="{StaticResource DefaultTextBlockStyle}" />
+                                <TextBlock x:Name="ValueTextBlock" Margin="0 5 0 0" Text="{TemplateBinding Value}" Grid.Row="1" FontFamily="/Techzen.ICS.CS.Controls;component/Fonts/yjsj.TTF#LcdD" Foreground="#ff8003" FontSize="24" TextOptions.TextHintingMode="Animated">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect BlurRadius="1" ShadowDepth="1" Opacity="0.75" Direction="-90" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZNaviMenuItem">
+        <Setter Property="Height" Value="26" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="BorderThickness" Value="1,1,1,0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZNaviMenuItem">
+                    <Border x:Name="borderBtn" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" BorderThickness="{TemplateBinding BorderThickness}" Cursor="Hand">
+                        <Border.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="/Techzen.ICS.CS.Controls;component/Images/NaviMenuItem_false.png" />
+                        </Border.Background>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Background)" Storyboard.TargetName="borderBtn">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <ImageBrush Stretch="Fill" ImageSource="/Techzen.ICS.CS.Controls;component/Images/NaviMenuItem_true.png" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand">
+                            <Image x:Name="naviImage" Width="24" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                            <TextBlock x:Name="naviIcon" Foreground="White" Text="{TemplateBinding Icon}" FontFamily="/Techzen.ICS.CS.Controls;component/Fonts/icomoon.ttf#icomoon" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextOptions.TextHintingMode="Animated">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect BlurRadius="1" ShadowDepth="1" Opacity="0.75" Direction="270" />
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock x:Name="naviTextBlock" Text="{TemplateBinding Text}" Style="{StaticResource DefaultTextBlockStyle}" Margin="5,0,0,2" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZRadioInput">
+        <Setter Property="Width" Value="160" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZRadioInput">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}" Cursor="Hand">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*" />
+                                <ColumnDefinition Width="90" />
+                            </Grid.ColumnDefinitions>
+                            <RadioButton x:Name="iRadioButton" FontSize="{TemplateBinding FontSize}" IsChecked="{TemplateBinding IsChecked}" GroupName="{TemplateBinding GroupName}" Content="{TemplateBinding Text}" Style="{StaticResource DefaultRadioButtonStyle}" VerticalAlignment="Center" HorizontalAlignment="Left"></RadioButton>
+                            <TextBox Grid.Column="1" Width="90" Foreground="Black" Margin="4 0 0 0" x:Name="iRadioTextBox" Text="{TemplateBinding Value}" TextAlignment="Right" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZSideKPI">
+        <Setter Property="Width" Value="177" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZSideKPI">
+                    <Border x:Name="border" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Background="{TemplateBinding Background}" Margin="{TemplateBinding Margin}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="17" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <local:Arrows Height="17" Width="30" Margin="-6,12,-30,0" VerticalAlignment="Top" HorizontalAlignment="Left" Cursor="Hand" x:Name="arrowsImage" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                                <local:Arrows.RenderTransform>
+                                    <CompositeTransform Rotation="270" />
+                                </local:Arrows.RenderTransform>
+                            </local:Arrows>
+                            <ItemsPresenter Grid.Column="1" RenderTransformOrigin="0.5,0.5" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZSideKPIItem">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZSideKPIItem">
+                    <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{TemplateBinding Background}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="Image" Source="{TemplateBinding ImageSource}" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBlock Grid.Column="1" x:Name="TitleTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" Text="{TemplateBinding Title}" Style="{StaticResource DefaultTextBlockStyle}" />
+                        </StackPanel>
+                        <TextBlock x:Name="ValueTextBlock" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#8bdb01" Style="{StaticResource DefaultTextBlockStyle}" Text="{TemplateBinding Value}"  />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZSideKPINode">
+        <!--<Setter Property="Height" Value="115" />-->
+        <Setter Property="Width" Value="165" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZSideKPINode">
+                    <Border Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Border CornerRadius="5,0,0,5" Background="#1a8f7c">
+                            </Border>
+                            <Border Grid.Column="1" Background="#1c354d" Padding="4">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="45" />
+                                        <RowDefinition Height="16" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid x:Name="TopGrid">
+                                        <StackPanel Background="Transparent" Orientation="Horizontal" Margin="8,0,0,0">
+                                            <Image x:Name="Image" Source="{TemplateBinding ImageSource}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" />
+                                            <TextBlock x:Name="TitleTextBlock" Text="{TemplateBinding Title}" Margin="12 0 0 0" FontSize="14" Style="{StaticResource DefaultTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <TextBlock x:Name="ValueTextBlock" Text="{TemplateBinding Value}" Foreground="#ff8003" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 6 8 0" FontSize="24" FontFamily="/Techzen.ICS.CS.Controls;component/Fonts/yjsj.TTF#LcdD">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Opacity="0.75" Direction="-90" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </Grid>
+                                    <Border Grid.Row="1" Height="16" Margin="8,0,8,0" CornerRadius="0,0,16,16">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0,0" StartPoint="0,1">
+                                                <GradientStop Color="#22FFFFFF" Offset="1" />
+                                                <GradientStop Color="#05FFFFFF" Offset="0.5" />
+                                                <GradientStop Color="#00FFFFFF" Offset="0" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                    <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 0 0 2">
+                                        <ItemsPresenter />
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZTitlePanel">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZTitlePanel">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="32" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Border BorderThickness="0,0,0,1" BorderBrush="#35566C" Grid.Row="0">
+                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                                    <TextBlock Text="{TemplateBinding Title}" Margin="16,0,0,0" Style="{StaticResource DefaultTextBlockStyle}" FontSize="14" />
+                                </StackPanel>
+                            </Border>
+                            <ContentPresenter Grid.Row="1" x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZToastTip">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZToastTip" x:Name="toastTip">
+                    <Border x:Name="TemplateElement" Background="#ff0000" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" HorizontalAlignment="Center" Visibility="Collapsed" CornerRadius="3" Height="36">
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal">
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="IsOpened">
+                                    <Storyboard x:Name="OpenBoard">
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="TemplateElement">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TemplateElement">
+                                            <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                            <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1" KeySpline="0.26,0,1,1" />
+                                            <SplineDoubleKeyFrame KeyTime="0:0:3.3" Value="0.9999" />
+                                            <SplineDoubleKeyFrame KeyTime="0:0:3.7" Value="0" KeySpline="0,0.5,1,1" />
+                                        </DoubleAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <TextBlock Text="{TemplateBinding Text}" FontFamily="{TemplateBinding FontFamily}" Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}" Margin="15,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        </TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<Style TargetType="local:TZWelcome">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZWelcome">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.Resources>
+                            <Style TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlockStyle}" />
+                        </Border.Resources>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                            <TextBlock x:Name="UserNameTextBlock" Text="{TemplateBinding Username}" Visibility="{TemplateBinding UsernameVisibility}" />
+                            <StackPanel Orientation="Horizontal" Visibility="{TemplateBinding ChangePasswordVisibility}">
+                                <TextBlock Text="|" Margin="5,0,0,0" />
+                                <TextBlock x:Name="ChangePasswordTextBlock" Text="修改密码" Foreground="#4bc8b6" Margin="5,0,0,0" Cursor="Hand" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Visibility="{TemplateBinding LogoutVisibility}">
+                                <TextBlock Text="|" Margin="5,0,0,0" />
+                                <TextBlock x:Name="LogoutTextBlock" Text="注销" Margin="5,0,0,0" Foreground="#ff7e23" FontSize="12" Cursor="Hand" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <Style TargetType="local:TZListBox">
+        <Setter Property="NormalItemBackground" Value="#305b73" />
+        <Setter Property="AlternatingItemBackground" Value="#114260" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#FFFFFFFF" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="TabNavigation" Value="Once" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF617584" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZListBox">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="ValidationStates">
+                                <VisualState x:Name="Valid" />
+                                <VisualState x:Name="InvalidUnfocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ValidationErrorElement">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="InvalidFocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ValidationErrorElement">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="IsOpen" Storyboard.TargetName="validationTooltip">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <sys:Boolean>True</sys:Boolean>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ScrollViewer x:Name="ScrollViewer" BorderBrush="Transparent" BorderThickness="0" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" TabNavigation="{TemplateBinding TabNavigation}">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZInfoTab">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Background" Value="#114260" />
+        <Setter Property="BorderBrush" Value="#FF0A0A0A" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Height" Value="152" />
+        <Setter Property="Width" Value="500" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZInfoTab">
+                    <Grid x:Name="InfoTabGrid" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                        <Border x:Name="HiderBorder" Width="30" Height="17" Background="#FF3C597B" CornerRadius="4,4,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5 12 0 0">
+                            <Canvas HorizontalAlignment="Center" VerticalAlignment="Center" Width="21" Height="7">
+                                <Path x:Name="path" Visibility="Visible" Data="M65,145 L75,150 L85,145" Stretch="Fill" Stroke="White" StrokeThickness="2" Width="21" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <Path x:Name="path2" Visibility="Collapsed" Data="M65,145 L75,10 L85,145" Stretch="Fill" Stroke="White" StrokeThickness="2" Width="21" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Canvas>
+                        </Border>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid x:Name="TemplateTop" Visibility="Collapsed">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Primitives:TabPanel x:Name="TabPanelTop" Margin="40,2,2,-1" Canvas.ZIndex="1" />
+                                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="3,3,0,0" MinWidth="10" MinHeight="10" Grid.Row="1">
+                                    <ContentPresenter x:Name="ContentTop" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:TZInfoTabItem">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="#FF0A0A0A" />
+        <Setter Property="Padding" Value="6,2,6,2" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="MinWidth" Value="5" />
+        <Setter Property="MinHeight" Value="5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:TZInfoTabItem">
+                    <Grid x:Name="Root">
+                        <Grid x:Name="TemplateTopSelected" Visibility="Collapsed" Canvas.ZIndex="1">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1,1,1,0" CornerRadius="6,6,0,0" Margin="-2,-2,-2,0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                        <GradientStop Color="#637f9a" Offset="0" />
+                                        <GradientStop Color="#114260" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Grid Margin="0,2,0,0">
+                                    <ContentControl x:Name="HeaderTopSelected" Cursor="{TemplateBinding Cursor}" Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" IsTabStop="False" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                        <Grid x:Name="TemplateTopUnselected" Visibility="Collapsed" Opacity="0.8">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="6,6,0,0">
+                                <Border.Background>
+                                    <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                        <GradientStop Color="#637f9a" Offset="0" />
+                                        <GradientStop Color="#114260" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Grid Margin="0,2,0,0">
+                                    <ContentControl x:Name="HeaderTopUnselected" Cursor="{TemplateBinding Cursor}" Foreground="{TemplateBinding Foreground}" FontSize="{TemplateBinding FontSize}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" IsTabStop="False" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

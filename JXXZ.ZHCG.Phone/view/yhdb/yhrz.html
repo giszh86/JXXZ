@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>养护日志</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<style type="text/css">
+			.mui-table-view-cell {
+				padding: 8px 10px;
+			}
+			
+			.list-li-img {
+				float: left;
+				width: 70px;
+			}
+			
+			.wordrow{
+				white-space: nowrap;
+				overflow: hidden;
+				width: 100%;
+				text-overflow: ellipsis;
+			}
+			
+			.worddiv{
+				width: 75%;
+				margin-left: 8px;
+				float: left;
+			}
+			
+			.secondline{
+				margin-top: 5px;
+			}
+			
+			.time{
+				display: inline-block;
+				float: right;
+				color: #999;
+			}
+			
+			.address{
+				display: inline-block;
+				white-space: nowrap;
+				overflow: hidden;
+				width: 45%;
+				text-overflow: ellipsis;
+				color: #005a8d;
+			}
+			
+			.cxtj:before{
+				height: 0;
+			}
+			
+			.cxtj:after{
+				height: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">养护日志</h1>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div style="margin: 10px;">
+				<ul class="mui-table-view cxtj" style="display: inline-block; width: 70%; border: solid 1px #c8c7cc; border-radius: 3px;">
+					<li class="mui-table-view-cell" id="li-starttime">
+						起始时间<label class="r-float font-color" id="starttime"></label>
+					</li>
+					<li class="mui-table-view-cell" id="li-endtime">
+						结束时间<label class="r-float font-color" id="endtime"></label>
+					</li>
+				</ul>
+				<div id="search" style="display: inline-block;float: right; width: 27% ; height: 73px; line-height: 73px; background-color: #005a8d;color: white;margin-left: 1%; border-radius: 3px;" align="center">查询</div>
+			</div>
+			<div class="mui-scroll">
+				<ul id="menuList" class="mui-table-view" style="margin: 10px;">
+					<template v-for='(item,index) in items'>
+						<li class="mui-table-view-cell" @tap='openView(item)'>
+							<img class="list-li-img" src="../../image/home/yanghudaiban.png" />
+							<div class="l-float worddiv">
+								<div class="wordrow">{{item.title}}</div>
+								<div class="secondline">
+									<span class="address">{{item.address}}</span>
+									<span class="time">{{item.date}}</span>
+								</div>
+							</div>
+						</li>
+					</template>	
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='yhrz.js'></script>
+</html>

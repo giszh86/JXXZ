@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="JXXZ.ZHCG.Front.Window.TZFilterWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+             xmlns:c="clr-namespace:Techzen.ICS.CS.Controls;assembly=Techzen.ICS.CS.Controls"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/JXXZ.ZHCG.Front;component/Style/TZFitterStyle.xaml"/>
+                <ResourceDictionary Source="/JXXZ.ZHCG.Front;component/Style/Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot"  Background="#FF114260" >
+        <!--<telerik:RadWindow Header="筛选面板" x:Name="Radwin" CanClose="True" Style="{StaticResource RadWindowStyle}" PreviewClosed="Radwin_Closed">-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition  Height="30"/>
+                </Grid.RowDefinitions>
+            <ScrollViewer x:Name="sco">
+                <Grid Grid.Row="0" x:Name="filterGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                </Grid>
+            </ScrollViewer>
+            <StackPanel Grid.Row="1" Margin="0 0 8 0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Border Height="20" Width="60" Margin="4 0 0 0" CornerRadius="2,2,2,2" Background="#01AA8B">
+                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Text="查询全部" Style="{StaticResource DefaultTextBlockStyle}" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"></TextBlock>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        <!--</telerik:RadWindow>-->
+    </Grid>
+
+</UserControl>

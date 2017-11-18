@@ -1,0 +1,255 @@
+﻿.reportcenter {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    background-color: #D9DBE8;
+    z-index:9999;
+}
+
+.reporttopMenu {
+    width: 99%;
+    height: 40px;
+    margin: 0px 0px 0px 1%;
+    float: left;
+}
+
+    .reporttopMenu ul {
+        list-style: none;
+        width: calc(100% - 100px);
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .reporttopMenu ul li {
+            margin-top: 5px;
+            height: 30px;
+            text-align: center;
+            float: left;
+        }
+
+            .reporttopMenu ul li:hover {
+                cursor: pointer;
+                border: 1px solid #91abc7;
+                border-radius: 3px;
+            }
+
+.reporttopMenuSelect {
+    border: 1px solid #91abc7;
+    border-radius: 3px;
+}
+
+.tabdivChange {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    color: #434D5C;
+    margin-top: 6px;
+}
+
+    .tabdivChange img {
+        vertical-align: sub;
+    }
+
+.reporttopMenuTitle {
+    width: 100px;
+    height: 20px;
+    float: left;
+    margin-top: 8px;
+    color: #434D5C;
+    font-size: 16px;
+}
+
+.longwidth {
+    width: 60%;
+    float: left;
+    background-color: #FFFFFF;
+}
+
+.sortwidth {
+    width: 37%;
+    float: left;
+    background-color: #FFFFFF;
+}
+
+.longwidth.caseAnalysisHeight {
+    height: 38%;
+    margin: 0px 0px 0px 1%;
+}
+
+.longwidth.caseAnalysisHeightOverride {
+    height: 38%;
+    margin: 1% 0px 0px 1%;
+}
+
+.sortwidth.caseCountHeight {
+    height: 35.4%;
+    margin: 0px 0px 0px 1%;
+}
+
+.sortwidth.caseCountHeightOverride {
+    height: 40.1%;
+    margin: 0px 0px 0px 1%;
+}
+
+.blockPanleTitle {
+    width: 100%;
+    height: 40px;
+    float: left;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #D4D6DF;
+}
+
+    .blockPanleTitle h3 {
+        width: 200px;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        color: #59636F;
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+
+.statisticalAnalysis {
+    width: 100%;
+    height: calc(100% - 40px);
+    float: left;
+}
+
+    .statisticalAnalysis table {
+        width: 90%;
+        height: 90%;
+        margin: 2% 0px 0px 10%;
+        color: #636D7B;
+    }
+
+    .statisticalAnalysis ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+    }
+
+        .statisticalAnalysis ul li {
+            width: 100%;
+            height:16%;
+            border-bottom: 1px solid #BDCBDD;
+            color: #636D7B;
+        }
+
+            .statisticalAnalysis ul li span {
+                margin:2% 0px 0px 10px;
+                float: left;
+            }
+
+            .statisticalAnalysis ul li i {
+                margin:2% 10px 0px 0px;
+                float: right;
+            }
+
+.caselegend {
+    width: auto;
+    height: 100%;
+    float: right;
+    text-align: left;
+    margin-right: 40px;
+}
+
+    .caselegend label {
+        margin-top: 10px;
+        margin-left: 5px;
+        float: left;
+        font-size: 12px;
+        color: #626C76;
+    }
+
+.caseStatus {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 50px;
+    height: 15px;
+    float: left;
+}
+
+    .caseStatus.lightblue {
+        background-color: #2AB0E3;
+    }
+
+    .caseStatus.lightgreen {
+        background-color: #58CD79;
+    }
+
+    .caseStatus.lightred {
+        background-color: #EF6C55;
+    }
+
+.eventSort {
+    width:98%;
+    float:left;
+    background-color: #FFFFFF;
+}
+
+.eventSort.eventCountHight {
+    height:33%;
+    margin:0px 0px 0px 2%;
+}
+
+.eventSort.weekeventhight {
+    height:42%;
+    margin:3% 0px 0px 2%;
+}
+.eventLong {
+    width:96%;
+    float:left;
+    background-color: #FFFFFF;
+}
+    .eventLong.eventhight {
+         height:37.5%;
+         margin:0px 0px 0px 2%;
+    }
+     .eventLong.eventhightoverride {
+         height:37.5%;
+         margin:2% 0px 0px 2%;
+    }
+  .auto-style1 {
+            width: 90%;
+            margin-left:5%;
+            height:80%;
+            color:#6C7580;
+        }
+        .auto-style2 {
+            width: 37px;
+            height: 34px;
+        }
+        .auto-style3 {
+            width: 43px;
+            height: 25px;
+        }
+        .auto-style4 {
+            width: 30px;
+            height: 30px;
+        }
+        .auto-style5 {
+            width: 41px;
+            height: 30px;
+        }
+        .auto-style6 {
+            width: 28px;
+            height: 30px;
+        }
+        .auto-style7 {
+            width: 39px;
+            height: 30px;
+        }
+        .auto-style8 {
+            width: 29px;
+            height: 30px;
+        }
+.eventLongcontent {
+    width:100%;
+    height:calc(100% - 40px);
+    float:left;
+}

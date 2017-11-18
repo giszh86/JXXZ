@@ -1,0 +1,20 @@
+﻿Ext.define('TianZun.model.reportcenter.H7N7controlWorkModel', {
+    extend: 'Ext.data.Model',
+    idProperty: 'taskId',
+    fields: [
+               { name: 'projectId', type: 'int' },
+               { name: 'project', type: 'string' },
+               { name: 'taskId', type: 'int' },
+               { name: 'name', type: 'string' },
+               { name: 'reportdate', type: 'string' },
+               { name: 'xccs', type: 'int', convert: function (value) { return value == null ? 0 : value } },
+               { name: 'cdry', type: 'int', convert: function (value) { return value == null ? 0 : value } },
+               { name: 'cdcl', type: 'int', convert: function (value) { return value == null ? 0 : value } },
+               { name: 'ffxczl', type: 'int', convert: function (value) { return value == null ? 0 : value } },
+               { name: 'qlhqjy', type: 'int', convert: function (value) { return value == null ? 0 : value } },
+               { name: 'cchqjy', type: 'int', convert: function (value) { return value == null ? 0 : value } },
+               { name: 'czhqsl', type: 'int', convert: function (value) { return value == null ? 0 : value } },
+               { name: 'qt', type: 'string' },
+               { name: 'drgzzf', type: 'string' },
+    ],
+})

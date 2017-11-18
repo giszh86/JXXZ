@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>市民事件</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<script type="text/javascript" src="../../js/common.js" ></script>
+		<style type="text/css">
+			.mui-input-row label{
+				width: 24%;
+			}
+			
+			.mui-input-row label~input{
+				width: 73%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-card">
+					<div class="mui-input-row">
+						<label>联系人</label>
+						<input ctype='complainant'  type="text" >
+					</div>
+					<div class="mui-input-row">
+						<label>联系电话</label>
+						<input ctype='contactphone' type="number" >
+					</div>
+					<div class="mui-input-row">
+						<span class="redbiaoji">*</span>
+						<label>事件标题</label>
+						<input type="text" ctype='eventtitle' data-val-required='事件标题不可为空'>
+					</div>
+					<div class="mui-input-row" style="display: none;">
+						<label>问题来源</label>
+						<input readonly class="triangle" type="text" value='队员巡查发现'>
+						<input type="hidden" name='sourceid' ctype='sourceid' value='16'/>
+					</div>
+					<div class="mui-input-row" id="Class_list">
+						<span class="redbiaoji">*</span>
+						<label>事件大类</label>
+						<input id="Bclass_Name" readonly class="triangle" type="text" value='请选择'>
+						<input type="hidden" id='Bclass_ID' name='Bclass_ID' ctype='bigtypeid' data-val-required='事件大类不可为空'/>
+					</div>
+					<div class="mui-input-row" id="Sclass_list">
+						<span class="redbiaoji">*</span>
+						<label>事件小类</label>
+						<input id="Sclass_Name"  readonly class="triangle" type="text" value='请选择'>
+						<input type="hidden" id='Sclass_ID' name='Sclass_ID' ctype='smalltypeid' data-val-required='事件小类不可为空'/>
+					</div>
+					<div class="mui-input-row">
+						<label>事件地址</label>
+						<input id='eventaddress' ctype='eventaddress' type="text" value=''>
+					</div>
+					<div class="mui-input-row" @tap='showMap'>
+						<label>地点坐标</label>
+						<input readonly class="location-green" id='grometry' ctype='grometry' type="text" value=''>
+					</div>
+					<div class="mui-input-row" style="height: 60px;">
+						<span class="redbiaoji">*</span>
+						<label>事件内容</label>
+						<textarea ctype='eventcontent' rows="2" data-val-required='事件内容不可为空'></textarea>	
+					</div>
+					<div class="mui-input-row">
+						<label>专项整治</label>
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="zxzz" value="1" v-model='sfzxzz'>
+							<span class="radio-name">是</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="zxzz" value="0" v-model='sfzxzz'>
+							<span class="radio-name">否</span>
+						</div>
+					</div>
+					<div v-if='sfzxzz == 1' class="mui-input-row" @tap='sridTap'>
+						<label>专项任务</label>
+						<input id='SridText' readonly class="triangle" type="text" value='请选择'>
+						<input id='srid' ctype='srid' type="hidden"/>
+					</div>
+				</div>
+			</form>
+			<div style="margin-left: 20px;margin-top: 10px; font-size: 15px;">现场拍照</div>
+			<div class="card">
+				<div class="addphoto">
+					<img id="head-img1" src="../../image/addphoto.png" />
+				</div>
+				<div class="addphoto">
+					<img id="head-img2" src="../../image/addphoto.png" />
+				</div>
+				<div class="addphoto">
+					<img id="head-img3" src="../../image/addphoto.png" />
+				</div>
+				<input id="head-img1Name" type="hidden" value="" />
+				<input id="head-img2Name" type="hidden" value="" />
+				<input id="head-img3Name" type="hidden" value="" />
+				<input id="img-head-img1Name" type="hidden" value="" />
+				<input id="img-head-img2Name" type="hidden" value="" />
+				<input id="img-head-img3Name" type="hidden" value="" />
+			</div>
+			<form class="mui-input-group">
+				<div class="contentTopBlock">
+					<div class="mui-input-row" @tap="chooseDate('foundtime')">
+						<label>上报时间</label>
+						<input id='foundtime' ctype='foundtime' readonly="readonly" type="text" >
+					</div>
+					<div class="mui-input-row">
+						<div class="radio-group">
+							<input class="radio-input"style="margin-left: 15px;" type="radio" name="deal" value="1" checked="checked">
+							<span class="radio-name">直接处理</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="deal"  value="2">
+							<span class="radio-name">上报指挥中心</span>
+						</div>
+					</div>
+				</div>
+			</form>
+			<button id='submit' type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='zfsj.js'></script>
+
+</html>

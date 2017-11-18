@@ -1,0 +1,61 @@
+/*这里开始*/
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+	border-bottom: 0;
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	border-bottom: 2px solid #007aff;
+}
+
+.titles {
+	margin: 10px 0 0 15px;
+	font-size: 15px;
+}
+
+.mui-card {
+	margin-top: 3px;
+}
+
+.miaoshu {
+	height: auto;
+	overflow: auto;
+	width: 80%;
+	word-wrap: break-word;
+	text-align: right;
+}
+
+.addphoto {
+	width: 25%;
+	margin: 0 0 0 7%;
+}
+
+.card {
+	padding: 10px 15px;
+}
+
+.title {
+	display: inline-block;
+	width: 32%;
+	float: left;
+	line-height: 180%;
+}
+
+.content {
+	display: inline-block;
+	color: #005a8d;
+	line-height: 180%;
+}
+
+li.mui-table-view-cell input {
+	float: right;
+	width: 75%;
+	margin-bottom: 0;
+	height: 26px;
+	background: url(../../image/report/triangle.png) no-repeat 98% center;
+	font-size: 14px;
+	padding: 10px;
+	text-align: right;
+	padding-right: 18px;
+	border: none;
+}

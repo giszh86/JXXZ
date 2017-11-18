@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>签到首页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" href="../../css/esri.css" />
+
+		<style>
+			.padding-left20px img {
+				width: 80px;
+				height: 80px;
+				border-radius: 80px;
+			}
+			
+			.mapimg {
+				height: 165px;
+				width: 98%;
+				left: 1%;
+				position: absolute;
+				bottom: 125px;
+			}
+			
+			#signInbtn {
+				position: absolute;
+				bottom: 10px;
+				width: 100%;
+				height: 100px;
+			}
+			
+			.signimg {
+				width: 28%;
+				margin-left: 36%;
+			}
+			
+			.success {
+				position: absolute;
+				top: 45px;
+				right: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">签到首页</h1>
+			<!--<span id="signhistory" class="r-float margin-top14px" id="historybtn" data-href="signhistorylist.html">历史</span>-->
+			<span id="signhistory" class="r-float margin-top14px" id="historybtn">历史</span>
+
+		</header>
+		<div id='map' class="mapimg">
+		</div>
+		<div class="mui-content">
+			<template v-if='name'>
+				<div class="person-photodiv" data-href='mydata.html'>
+					<div class="padding-top10px padding-left20px l-float">
+						<img src="../../image/setting/photo.png" />
+					</div>
+					<div class="l-float">
+						<div class="margin-top20px margin-left20px">
+							<span class="font-bigsize16px">{{name}}</span>
+							<br />
+							<span class="font-bigsize16px">
+								今天需签到&nbsp;
+						<span class="font-color font-bigsize22px">{{needQD}}</span>&nbsp;次，已签到&nbsp;
+							<span id="check_Num" class="font-colorred font-bigsize22px">{{qdcount}}</span>&nbsp;次
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-card">
+					<ul class="mui-table-view ulimg">
+						<li class="mui-table-view-cell">
+							<a>
+								签到时间
+								<label class="r-float font-color">{{qdTime}}</label>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a>
+								签退时间
+								<label class="r-float font-color">{{qtTime}}</label>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a>
+								签到地址
+								<label id="areaname" class="r-float font-color">
+									{{qdAddress}}
+								</label>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<!--<div id='map' class="mapimg">
+				</div>-->
+				<div class="mui-clearfix"></div>
+				<div id='signInbtn'>
+					<img v-if='!issignin' @tap='alert' class="signimg" src="../../image/detailimages/signinbigbtn.png" />
+					<!--
+                    	描述：签到按钮
+                    -->
+					<img v-if='issignin' @tap='signIn' class="signimg" src="../../image/detailimages/qiandao.png" />
+				</div>
+				<div v-if='isClick' class="success" style="width: 128px;height: 128px;">
+					<img src="../../image/qd/signinsuccess.png" />
+				</div>
+			</template>
+
+		</div>
+
+	</body>
+
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/app.js"></script>
+	<script type="text/javascript" src="../../js/mui.picker.all.js"></script>
+
+	<script type="text/javascript" src="../../js/DataGet.js"></script>
+
+	<script type="text/javascript" src="../../js/vue/vue.min.js"></script>
+	<script type="text/javascript" src="../../js/position.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/position.js"></script>
+	<script type="text/javascript" src="../../js/arcgis.js"></script>
+	<script type="text/javascript" src="../../js/init.js"></script>
+	<script type="text/javascript" src="agqdindex.js"></script>
+
+</html>

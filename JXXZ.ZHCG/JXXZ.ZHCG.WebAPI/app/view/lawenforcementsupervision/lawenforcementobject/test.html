@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../../../../Scripts/echarts.js"></script>
+    <script src="../../../../Scripts/jquery-1.7.1.min.js"></script>
+    <title></title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            width: 30%;
+            line-height: 25px;
+            margin-top:60px;
+            margin-left:40px;
+            border: 1px;
+            float:left;
+            
+        }
+        thead {
+            font-size:18px;
+        }
+        tbody {
+            font-size:12px;
+        }
+        td {
+            border: solid 1px #A7BFD3;
+            height: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-top:10px;">
+        <table id="datatable">
+            <thead>
+                <tr>
+                    <td>所属区域</td>
+                    <td>沿街店家</td>
+                    <td>小摊小贩</td>
+                </tr>
+            </thead>
+            <tbody id="remarks">
+            </tbody>
+        </table>
+    </div>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px; height: 400px; float:right;margin-right:40px;margin-top:40px;"></div>
+    
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        var xdata;  //x轴类别
+        var count;  //x轴类别总数
+        var streetdata;
+        var hawker;
+        var maxnum;
+        GetChartData();
+        GetStoreData();
+        GetHwkerData();
+        GetMaxNum();
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['沿街店家', '小摊小贩']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    interval: 'auto',
+                },
+                boundaryGap: false,
+                min: 0,
+                max: maxnum,
+                splitNumber: 1,
+            },
+            xAxis: {
+                type: 'category',
+                data: xdata,
+            },
+            series: [
+                {
+                    name: '沿街店家',
+                    type: 'bar',
+                    data: streetdata,
+                    itemStyle: {
+                        normal: {
+                            color: '#74C3ED',
+                        }
+                    }
+                },
+                {
+                    name: '小摊小贩',
+                    type: 'bar',
+                    data: hawker,
+                    itemStyle: {
+                        normal: {
+                            color: '#98FB98',
+                        }
+                    }
+                }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        function GetChartData()
+        {
+            $.ajax({
+                type: "GET",
+                async: false, //同步执行
+                url: 'http://localhost:14195/api/Dictionary/GetZdList?zd_type=type_yjdj_ssqy',
+                dataType: "json", //返回数据形式为json
+                success: function (result)
+                {
+                    if (result)
+                    {
+                        count = result.length;
+                        var data = new Array();
+                        for (var i = 0; i < result.length; i++)
+                        {
+                            data.push(result[i].zd_name);
+                        }
+                        xdata = data;
+                    }
+                },
+                error: function (errorMsg)
+                {
+                    alert("图表请求数据失败!");
+                }
+            });
+        };
+
+        //获取沿街店铺数据
+        function GetStoreData()
+        {
+            $.ajax({
+                type: "GET",
+                async: false, //同步执行
+                url: 'http://localhost:14195/api/LawObject/GetDiffTypeCount?type=1',
+                dataType: "json", //返回数据形式为json
+                success: function (result)
+                {
+                    if (result)
+                    {
+                        streetdata = result;
+                    }
+                },
+                error: function (errorMsg)
+                {
+                    alert("图表请求数据失败!");
+                }
+            });
+        };
+
+        //获取小摊小贩数据
+        function GetHwkerData()
+        {
+            $.ajax({
+                type: "GET",
+                async: false, //同步执行
+                url: 'http://localhost:14195/api/LawObject/GetDiffTypeCount?type=2',
+                dataType: "json", //返回数据形式为json
+                success: function (result)
+                {
+                    if (result)
+                    {
+                        hawker = result;
+                    }
+                },
+                error: function (errorMsg)
+                {
+                    alert("图表请求数据失败!");
+                }
+            });
+        };
+
+        //获取小摊小贩数据
+        function GetMaxNum()
+        {
+            $.ajax({
+                type: "GET",
+                async: false, //同步执行
+                url: 'http://localhost:14195/api/LawObject/GetMaxNum',
+                dataType: "json", //返回数据形式为json
+                success: function (result)
+                {
+                    if (result)
+                    {
+                        maxnum = result;
+                    }
+                },
+                error: function (errorMsg)
+                {
+                    alert("图表请求数据失败!");
+                }
+            });
+        };
+
+        (function ()
+        {
+            var remarks = document.getElementById('remarks');
+            console.log(count); 
+            for (var i = 0; i <count; i++)
+            {
+                var tr = document.createElement("tr");
+                for(var j=0;j<3;j++)
+                {
+                    if (j ==0)
+                    {
+                        var td = document.createElement("td");
+                        var txt = document.createTextNode(xdata[i]);
+                        td.appendChild(txt);
+                    }
+                    if(j == 1)
+                    {
+                        var td = document.createElement("td");
+                        var txt = document.createTextNode(streetdata[i]);
+                        td.appendChild(txt);
+                    }
+                    if (j == 2)
+                    {
+                        var td = document.createElement("td");
+                        var txt = document.createTextNode(hawker[i]);
+                        td.appendChild(txt);
+                    }
+                    tr.appendChild(td);
+                }
+                remarks.append(tr);
+            }
+        })();
+
+    </script>
+</body>
+</html>

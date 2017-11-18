@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+	
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>违停案件详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<style type="text/css">
+			.mui-input-row label{
+				width: 24%;
+			}
+			
+			.mui-input-row label~input{
+				width: 73%;
+			}
+			.addphoto{
+				border: none;
+			}
+			
+			.last:after{
+				height: 0 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">违停案件详情</h1>
+		</header>
+		<div class="mui-content">
+			<!--<form class="mui-input-group">
+				<div class="contentTopBlock">
+					<div class="mui-input-row">
+						<label>号牌种类</label>
+						<input readonly type="text" id='car_typename'>
+					</div>
+					<div class="mui-input-row">
+						<label>违法时间</label>
+						<input readonly type="text" id='wt_time'>
+					</div>
+					<div class="mui-input-row">
+						<label>车辆号牌</label>
+						<input readonly type="text" style="color: #005a8d;" value='' id='car_num'>
+					</div>
+					<div class="mui-input-row">
+						<label>查询地点</label>
+						<input readonly type="text" value='' id='wt_address'>
+					</div>
+					<div class="mui-input-row last">
+						<label>地址描述</label>
+						<input readonly type="text" value='' id='xyAddress'>
+					</div>
+				</div>
+			</form>-->
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						号牌种类<label class="r-float font-color" id='car_typename'></label>
+					</li>
+					<li class="mui-table-view-cell">
+						违法时间<label class="r-float font-color" id='wt_time'></label>
+					</li>
+					<li class="mui-table-view-cell">
+						车辆号牌<label class="r-float font-color" id='car_num'></label>
+					</li>
+					<li class="mui-table-view-cell">
+						查询地点<label class="r-float font-color miaoshu" id='wt_address'></label>
+					</li>
+					<li class="mui-table-view-cell" id='addresschoose'>
+						地址描述<label class="r-float font-color location-red zb" id='xyAddress'></label>
+					</li>
+				</ul>
+			</div>
+			<div style="margin-left: 20px;margin-top: 10px; font-size: 15px;">现场拍照</div>
+			<div class="card" id="dowebok">
+				<div class="addphoto">
+					<img src="../../image/nophoto.png"/>
+				</div>
+				<div class="addphoto">
+					<img src="../../image/nophoto.png"/>
+				</div>
+				<div class="addphoto">
+					<img src="../../image/nophoto.png"/>
+				</div>
+			</div>
+			<button type="button" class="mui-btn buttoncenter mui-action-back">关&nbsp;&nbsp;闭</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='wtajxq.js'></script>
+</html>

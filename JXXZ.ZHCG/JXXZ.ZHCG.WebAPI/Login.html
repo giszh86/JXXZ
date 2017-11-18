@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>秀洲区智慧城管综合管理平台</title>
+    <link rel='icon' href='Images/faviconico.ico' type="image/x-icon" />
+    <link href="Css/login.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/jquery.cookie.js"></script>
+    <script src="Scripts/configs.js"></script>
+    <script src="Scripts/functions.js"></script>
+
+    <script type="text/javascript">
+        document.onkeydown = function (event_e) {
+            if (window.event) {
+                event_e = window.event;
+            }
+
+            var int_keycode = event_e.charCode || event_e.keyCode;
+            if (int_keycode == '13') {
+                login();
+                return false;
+            }
+        }
+
+        function login() {
+            var account = $("#account").val().trim();
+            var password = $("#password").val().trim();
+
+            PostAjax({
+                url: 'api/User/Login',
+                data: { "LoginName": account, "LoginPwd": password },
+                complete: function (jqXHR, textStatus, errorThrown) {
+                    if (textStatus == "success") {
+                        var result = jQuery.parseJSON(jqXHR.responseText);
+
+                        if (typeof (result) == "object") {  //登陆成功
+                            $.cookie("USER_ID", result.USER_ID);
+                            $.cookie("USER_NAME", result.USER_NAME);
+                            $.cookie("UNIT_ID", result.UNIT_ID);
+                            $.cookie("UNIT_NAME", result.UNIT_NAME);
+                            $.cookie("ROLE_IDS", result.ROLE_IDS);
+                            $.cookie("UNIT_TYPE", result.UNIT_TYPE);
+                            $.cookie("USER_CODE", result.USER_CODE);
+                            var type_radio = $('input:radio[name="type_login"]:checked').val();
+                            if (type_radio == 0) {
+                                location.href = "http://218.108.93.246:11563/";//跳转前台
+                            } else {
+                                location.href = "Index.html";
+                            }
+
+                        } else if (result == 2) {
+                            alert("帐号不存在！");
+                        } else if (result == 3) {
+                            alert("帐号或密码输入错误！");
+                        } else {
+                            alert("登陆失败！");
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body style="background-color: #1c77ac; background-size: 100%100%; background: url(Images/images/bj.png) no-repeat; overflow: hidden; background-size: 100% 100%; background-attachment: fixed;">
+
+    <div class="login_center">
+        <div class="title" style="background-image: url(Images/images/logomanage.png)"></div>
+        <p class="yhdl">用户登录</p>
+        <form>
+            <div class="login_p">
+                <p>
+                    <label>账 号：</label>
+                    <input type="text" id="account" class="login_text" />
+                </p>
+                <p>
+                    <label>密 码：</label>
+                    <input type="password" id="password" class="login_text" />
+                </p>
+            </div>
+            <div class="login_type">
+                <p>
+                    <input type="radio" name="type_login" id="type_login1" value="0" class="type_input" /><label for="type_login1">管控指挥平台</label>
+
+                    <input type="radio" name="type_login" id="type_login2" value="1" checked="checked" style="margin-left: 30px;" class="type_input" /><label for="type_login2">综合管理平台</label>
+                </p>
+            </div>
+            <!--<span class="login_span"><a href="javascript:void(0)">下载用户操作手册</a></span>-->
+            <div class="login_m">
+                <input type="button" value="登录" id="btnLogin" onclick="login()" class="login_submitok" />
+                <!--<input type="reset" value="重 置" class="login_submit" />-->
+            </div>
+            <div class="login_down">
+                <table style="width: 60%">
+                    <tr>
+                        <td><a href="#">
+                            <img src="Images/PCDown.png" title="客户端" /><br />
+                            <span style="height: 100%; display: inline-block; vertical-align: middle">客户端</span></a>
+
+                        </td>
+                        <td>
+                            <a href="#">
+                                <img src="Images/Down.png" title="用户手册" /><br />
+                                <span style="height: 100%; display: inline-block; vertical-align: middle">用户手册</span></a></td>
+                        <td>
+                            <a href="#">
+                                <img src="Images/APKDown.png" title="APP" /><br />
+                                <span style="height: 100%; display: inline-block; vertical-align: middle">APP</span></a></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+        <!-- <div class="login_footer">
+            <div>
+                <div>请使用IE10及以上或360极速浏览器</div>
+            </div>
+        </div>-->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>待处理市民事件 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.title {
+				margin: 10px 0 0 23px;
+				font-size: 15px;
+			}
+			
+			.mui-card {
+				margin-top: 3px;
+			}
+									
+			.image {
+				width: 24%;
+				height: 56px;
+				margin-right: 7%;
+			}
+			
+			li.mui-table-view-cell input[type='text'] {
+				float: right;
+				width: 70%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding: 10px;
+			}
+			
+			.textarea {
+				float: right;
+				width: 75%;
+				color: #005a8d;
+			}
+			
+			.userModel {
+				font-size: 11px!important;
+			}
+			
+			.addphoto{
+				height: 55px;
+			}
+			
+			.addphoto img{
+				height: 53px;
+			}
+			
+			.mui-input-row label{
+				width: 25%;
+			}
+			
+			.mui-input-row:after {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 15px;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				background-color: #c8c7cc;
+			}
+			.mui-input-row .extensionInput{
+				border: solid 1px #CCCCCC;
+				text-align: left;
+				margin: 11px 12px 10px 0;
+				height:10%;
+				width: 70%;
+				float: right;
+				padding: 0px;
+			}
+			.mui-input-row label~textarea{
+				border: solid 1px #CCCCCC;
+				width: 70%;
+				margin: 11px 12px 10px 0;
+				border-radius: 3px;
+				float: right;
+				color: #005A8D;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<template v-if='isReady'>
+				<div class="title">基本信息</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							联系人<label class="r-float font-color">{{model.complainant}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							联系电话<label class="r-float font-color">{{model.contactphone}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件标题<label class="r-float font-color miaoshu">{{model.eventtitle}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件大类<label class="r-float font-color">{{model.bigtypename}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件小类<label class="r-float font-color miaoshu">{{model.smalltypename}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件地址<label class="r-float font-color miaoshu">{{model.eventaddress}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							地点坐标<label class="r-float font-color zb" @tap="location">{{model.grometry}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件内容<label class="r-float font-color miaoshu">{{model.eventcontent}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							现场照片
+							<div class="imagediv">
+								<img class="image" @tap='openimage' data-preview-src="" :data-preview-group="beforeImage.length > 0 ? 1: false" :src="beforeImage.length > 0 ? beforeImage[0].FILEPATH : '../../image/nophoto.png'" />
+								<img class="image" @tap='openimage' data-preview-src="" :data-preview-group="beforeImage.length > 1 ? 1: false" :src="beforeImage.length > 1 ? beforeImage[1].FILEPATH : '../../image/nophoto.png'" />
+								<img class="image" @tap='openimage' data-preview-src="" :data-preview-group="beforeImage.length > 2 ? 1: false" :src="beforeImage.length > 2 ? beforeImage[2].FILEPATH : '../../image/nophoto.png'" />
+							</div>
+
+						</li>
+						<li class="mui-table-view-cell">
+							上报时间<label class="r-float font-color">{{model.foundtime}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							超期时间<label class="r-float font-color">{{model.limittime}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							上报人<label class="r-float font-color">{{model.username}}</label>
+						</li>
+
+					</ul>
+				</div>
+				
+				<template v-if='model.isextension==1'>
+					<div class="title">延期申请信息</div>
+					<div class="mui-card">
+						<ul class="mui-table-view">
+							<div class="mui-input-row">
+								<label>是否延期</label>
+								<div class="radio-group">
+									<input disabled="disabled" class="radio-input" type="radio" value="1" v-model='model.isextension'>
+									<span class="radio-name">是</span>
+									<input disabled="disabled" class="radio-input" style="margin-left: 20px;" type="radio" value="0" v-model='model.isextension'>
+									<span class="radio-name">否</span>
+								</div>
+							</div>
+							<div v-if='model.isextension==1' class="mui-input-row">
+								<label>延期时限</label>
+								<input readonly="readonly" :value="model.extensiontime" ctype id="extensioTtime" type="number">
+							</div>
+							<div v-if='model.isextension==1' class="mui-input-row">
+								<label>审核同意</label>
+								<input readonly="readonly" :value="model.reviewextension==null?'未审核':(model.reviewextension==1?'同意':'不同意')" ctype id="extensioTtime" type="text">
+							</div>
+							<div v-if='model.isextension==1' class="mui-input-row">
+								<label>延期意见</label>
+								<input readonly="readonly" :value="model.extensioncontent" ctype id="extensioTtime" type="text">
+							</div>
+						</ul>
+					</div>
+				</template>
+
+				<template v-if='false'>
+					<div class="title">事件派遣</div>
+					<div class="mui-card">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								指派队员<label class="r-float font-color">{{model.pq_username}}</label>
+							</li>
+							<li class="mui-table-view-cell">
+								派遣意见<label class="r-float font-color">{{model.pq_content}}</label>
+							</li>
+						</ul>
+					</div>
+					
+				</template>
+
+				<div class="title">事件处理</div>
+
+				<div class="mui-card">
+
+					<ul class="mui-table-view">
+						<div class="mui-input-row" v-if='!model.isextension'>
+							<label>是否延期</label>
+							<div class="radio-group">
+								<input class="radio-input" type="radio" value="1" v-model='extension'>
+								<span class="radio-name">是</span>
+								<input class="radio-input" style="margin-left: 20px;" type="radio" value="0" v-model='extension'>
+								<span class="radio-name">否</span>
+							</div>
+						</div>
+						<div v-if='extension==1' class="mui-input-row">
+							<label>延期时限</label>
+							<input ctype id="extensioTtime" class="extensionInput" type="text"  v-model='extensioTtime'>
+						</div>
+						<div v-if='extension==1' class="mui-input-row">
+							<label>延期意见</label>
+							<textarea ctype id='extensioncontent' class="textarea" rows="3"></textarea>
+						</div>
+						<li v-if='extension==0' class="mui-table-view-cell">
+							处理后照片
+							<div class="r-float" style="width: 75%; padding-right: 5px;">
+								<div class="addphoto" @tap='showPicture'>
+									<img id="head-img1" src="../../image/addphoto.png" />
+								</div>
+								<div class="addphoto" @tap='showPicture'>
+									<img id="head-img2" src="../../image/addphoto.png" />
+								</div>
+								<div class="addphoto" @tap='showPicture'>
+									<img id="head-img3" src="../../image/addphoto.png" />
+								</div>
+							</div>
+							<input id="head-img1Name" type="hidden" value="" />
+							<input id="head-img2Name" type="hidden" value="" />
+							<input id="head-img3Name" type="hidden" value="" />
+							<input id="img-head-img1Name" type="hidden" value="" />
+							<input id="img-head-img2Name" type="hidden" value="" />
+							<input id="img-head-img3Name" type="hidden" value="" />
+						</li>
+						<li v-if='extension==0' class="mui-table-view-cell">
+							处理意见
+							<textarea ctype='dealcontent' class="textarea" rows="3"></textarea>
+						</li>
+
+						<li class="mui-table-view-cell smalpadding">
+							<div style="margin-left: 24%;">
+								<input :disabled="phone == '无号码'" style="float: left; width: 20px; height: 20px;" type="checkbox" v-model:checked="phoneChecked">
+								<span class="userModel" style="margin-left: 5px;">短信提醒（{{!userModerName?''+phone:userModerName +':'+phone}}）</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<input ctype='wfdid' type="hidden" :value='model.wfdid' />
+				<input ctype='wfsaid' type="hidden" :value='model.wfsaid' />
+				<input ctype='wfsid' type="hidden" :value='model.wfsid' />
+				<button v-if='extension==1' @tap="submitExtension()" type="button" class="mui-btn buttoncenter">延&nbsp;&nbsp;期</button>
+				<button v-if='extension==0' @tap="submitEvent('2017021410240005',$event)" type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+				<button @tap="submitEvent('2017021410240001',$event,'回退成功')" type="button" class="mui-btn buttoncenter">回&nbsp;&nbsp;退</button>
+			</template>
+
+		</div>
+	</body>
+	<!--
+    	作者：aoobao@foxmail.com
+    	时间：2017-03-21
+    	描述：协同单位处理页面
+    -->
+	<script type="text/javascript" src="../../js/require.min.js" data-main="detail.js"></script>
+
+</html>

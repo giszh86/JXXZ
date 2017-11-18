@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model1.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Model1StoreContainer">
+          <EntitySet Name="AUDIT_PROJECT_W" EntityType="Model1.Store.AUDIT_PROJECT_W" store:Type="Tables" Schema="XZCF" />
+          <EntitySet Name="FDS_LAW" EntityType="Model1.Store.FDS_LAW" store:Type="Tables" Schema="XZCF" />
+          <EntitySet Name="FDS_LAW_EXECUTOR" EntityType="Model1.Store.FDS_LAW_EXECUTOR" store:Type="Tables" Schema="XZCF" />
+          <EntitySet Name="FDS_POWER" EntityType="Model1.Store.FDS_POWER" store:Type="Tables" Schema="XZCF" />
+          <EntitySet Name="FDS_STANDARD" EntityType="Model1.Store.FDS_STANDARD" store:Type="Tables" Schema="XZCF" />
+          <EntitySet Name="FDS_STANDARD_PUNISH" EntityType="Model1.Store.FDS_STANDARD_PUNISH" store:Type="Tables" Schema="XZCF" />
+          <EntitySet Name="WORKFLOW_WORKITEM_HISTORY_W" EntityType="Model1.Store.WORKFLOW_WORKITEM_HISTORY_W" store:Type="Tables" Schema="XZCF" />
+          <EntitySet Name="WORKFLOW_WORKITEM_W" EntityType="Model1.Store.WORKFLOW_WORKITEM_W" store:Type="Tables" Schema="XZCF" />
+        </EntityContainer>
+        <EntityType Name="AUDIT_PROJECT_W">
+          <Key>
+            <PropertyRef Name="SYNCROWGUID" />
+          </Key>
+          <Property Name="BELONGXIAQUCODE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATEUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATEDATE" Type="date" />
+          <Property Name="ROW_ID" Type="number" Nullable="false" />
+          <Property Name="YEARFLAG" Type="nvarchar2" MaxLength="4" />
+          <Property Name="ROWGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="HF_DATE" Type="date" />
+          <Property Name="WEBAPPLY_NOTE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="IS_SENDSMS" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROJECT_MYD" Type="nvarchar2" MaxLength="50" />
+          <Property Name="FWYZM" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SHOUFEISUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="RECEIVEUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="RECEIVEDATE" Type="date" />
+          <Property Name="ACCEPTUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="BANWANDATE" Type="date" />
+          <Property Name="ACCEPTUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ACCEPTUSERDATE" Type="date" />
+          <Property Name="PROMISEENDDATE" Type="date" />
+          <Property Name="TASKTYPE" Type="number" />
+          <Property Name="BANJIEUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="BANJIEUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="BANJIERESULT" Type="number" />
+          <Property Name="BANJIEDATE" Type="date" />
+          <Property Name="IS_CHARGE" Type="number" />
+          <Property Name="LEGAL" Type="nvarchar2" MaxLength="50" />
+          <Property Name="HEBINGSHOULISHULIANG" Type="number" />
+          <Property Name="FEEDATE" Type="date" />
+          <Property Name="CERTIFICATEUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CERTIFICATEUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CERTIFICATEDATE" Type="date" />
+          <Property Name="CERTAWARDEGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="GUIDANGUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="GUIDANGUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="GUIDANGDATE" Type="date" />
+          <Property Name="ORGWN" Type="nvarchar2" MaxLength="50" />
+          <Property Name="BILLNO" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SPENDTIME" Type="number" />
+          <Property Name="SPARETIME" Type="number" />
+          <Property Name="APPLYERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="APPLYWAY" Type="number" />
+          <Property Name="IS_PAUSE" Type="number" />
+          <Property Name="APPLYERTYPE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CHARGE_WHEN" Type="nvarchar2" MaxLength="50" />
+          <Property Name="IS_CHECK" Type="number" />
+          <Property Name="IS_FEE" Type="number" />
+          <Property Name="IS_GUIDANG" Type="number" />
+          <Property Name="IS_DELAY" Type="number" />
+          <Property Name="IS_GREEN" Type="number" />
+          <Property Name="ADDRESS" Type="nvarchar2" MaxLength="500" />
+          <Property Name="REMARK" Type="nvarchar2" MaxLength="200" />
+          <Property Name="INSERTDATE" Type="date" />
+          <Property Name="PROJECTNAME" Type="nvarchar2" MaxLength="120" />
+          <Property Name="TASKGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TASKCASEGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OUGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ORG_ID" Type="nvarchar2" MaxLength="10" />
+          <Property Name="WINDOWGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="WINDOWNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CERTTYPE" Type="number" />
+          <Property Name="FLOWSN" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PVIGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CONTACTPHONE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="XIANGMUBH" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CONTACTPERSON" Type="nvarchar2" MaxLength="50" />
+          <Property Name="APPLYERNAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="APPLYERUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CERTNUM" Type="nvarchar2" MaxLength="150" />
+          <Property Name="APPLYDATE" Type="date" />
+          <Property Name="CONTACTMOBILE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CONTACTPOSTCODE" Type="nvarchar2" MaxLength="6" />
+          <Property Name="CONTACTEMAIL" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CONTACTFAX" Type="nvarchar2" MaxLength="50" />
+          <Property Name="RECEIVEUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="IS_CERT" Type="number" />
+          <Property Name="CHECKUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROMISE_DAY" Type="number" />
+          <Property Name="STATUS" Type="number" />
+          <Property Name="CHECKDATE" Type="date" />
+          <Property Name="CHECKUSERNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ORGWORD" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ORGNUMBER" Type="number" />
+          <Property Name="TABLEID" Type="number" />
+          <Property Name="BUBANDATE" Type="date" />
+          <Property Name="YUSHENDATE" Type="date" />
+          <Property Name="ZIJIANXITONG_NUMBER" Type="nvarchar2" MaxLength="50" />
+          <Property Name="APPLY_ATTACH_SIGN" Type="nvarchar2" MaxLength="10" />
+          <Property Name="ATTACH_SIGN" Type="nvarchar2" MaxLength="10" />
+          <Property Name="XIANGMUGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="XMADDRESS" Type="nvarchar2" MaxLength="50" />
+          <Property Name="XMNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="IS_TEST" Type="number" />
+          <Property Name="ONLINEPAYORDERNO" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SUBAPPGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="WENSHUPDFGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OFFICALPDFGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CERTPDFGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OFFICALDOCGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="BIGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="BUSINESSGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="RELATIONWORKITEMGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PJ_OPNION" Type="nclob" />
+          <Property Name="PAYMENTNO" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ORDERNO" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROJPWD" Type="nvarchar2" MaxLength="6" />
+          <Property Name="PROJID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="DATA_TIMESTAMP" Type="date" />
+          <Property Name="ZJSYNC" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SYNCROWGUID" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="RESULT_CODE" Type="nvarchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FDS_LAW">
+          <Key>
+            <PropertyRef Name="LAWID" />
+            <PropertyRef Name="AREACODE" />
+            <PropertyRef Name="DATAVERVISON" />
+          </Key>
+          <Property Name="LAWID" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="POWERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="POWERVERVISON" Type="nvarchar2" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar2" />
+          <Property Name="CREATETIME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="DEPTKEY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="AREACODE" Type="nvarchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DATAVERVISON" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="EXTEND_1" Type="nvarchar2" />
+          <Property Name="EXTEND_2" Type="nvarchar2" />
+          <Property Name="CONTENT" Type="nclob" />
+        </EntityType>
+        <EntityType Name="FDS_LAW_EXECUTOR">
+          <Key>
+            <PropertyRef Name="SOURCEKEY" />
+          </Key>
+          <Property Name="SOURCEKEY" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="DEPTKEY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="DEPTNAME" Type="nvarchar2" MaxLength="1000" />
+          <Property Name="TELEPHONE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SEX" Type="nvarchar2" MaxLength="2" />
+          <Property Name="BIRTHDAY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="USEABLE" Type="nvarchar2" MaxLength="2" />
+          <Property Name="CREATETIME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="EXECUTORID" Type="nvarchar2" MaxLength="100" />
+          <Property Name="TYPE" Type="nvarchar2" MaxLength="100" />
+          <Property Name="AREA" Type="nvarchar2" MaxLength="100" />
+          <Property Name="CREDENTIAL" Type="nvarchar2" MaxLength="100" />
+          <Property Name="SDATE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="EDATE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SORTID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SYNCPAGENO" Type="nvarchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FDS_POWER">
+          <Key>
+            <PropertyRef Name="POWERID" />
+            <PropertyRef Name="AREACODE" />
+            <PropertyRef Name="DATAVERVISON" />
+          </Key>
+          <Property Name="POWERID" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="CODE" Type="nvarchar2" MaxLength="100" />
+          <Property Name="POWERVERVISON" Type="nvarchar2" MaxLength="50" />
+          <Property Name="POWERNAME" Type="nvarchar2" />
+          <Property Name="DEPTKEY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PUNISHTYPECODE" Type="nvarchar2" />
+          <Property Name="JOIN_MODE" Type="nvarchar2" MaxLength="1" />
+          <Property Name="OFFICEADDR" Type="nvarchar2" MaxLength="1000" />
+          <Property Name="PROMISE_DAY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LAWLIMIT_DAY" Type="nvarchar2" MaxLength="10" />
+          <Property Name="TELEPHONE" Type="nvarchar2" MaxLength="100" />
+          <Property Name="CONTACT" Type="nvarchar2" MaxLength="100" />
+          <Property Name="DUTYLEADER" Type="nvarchar2" MaxLength="1000" />
+          <Property Name="DUTYEOFFICE" Type="nvarchar2" MaxLength="1000" />
+          <Property Name="BODYIMPLEMENT" Type="nvarchar2" />
+          <Property Name="BODYADDR" Type="nvarchar2" />
+          <Property Name="REMARK" Type="nvarchar2" />
+          <Property Name="SENDTIME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="AREACODE" Type="nvarchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DATAVERVISON" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="EXTEND_1" Type="nvarchar2" />
+          <Property Name="EXTEND_2" Type="nvarchar2" />
+          <Property Name="GETTIME" Type="nvarchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="FDS_STANDARD">
+          <Key>
+            <PropertyRef Name="STANDARDID" />
+            <PropertyRef Name="AREACODE" />
+            <PropertyRef Name="DATAVERVISON" />
+          </Key>
+          <Property Name="STANDARDID" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="LAWID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="POWERID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="POWERVERSION" Type="nvarchar2" MaxLength="50" />
+          <Property Name="WFQX" Type="nvarchar2" />
+          <Property Name="BREACHDERGEE" Type="nvarchar2" />
+          <Property Name="BREACHGRADE" Type="nvarchar2" MaxLength="200" />
+          <Property Name="SORTID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATETIME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="DEPTKEY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="AREACODE" Type="nvarchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DATAVERVISON" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="EXTEND_1" Type="nvarchar2" />
+          <Property Name="EXTEND_2" Type="nvarchar2" />
+        </EntityType>
+        <EntityType Name="FDS_STANDARD_PUNISH">
+          <Key>
+            <PropertyRef Name="SOURCEKEY" />
+            <PropertyRef Name="AREACODE" />
+            <PropertyRef Name="DATAVERVISON" />
+          </Key>
+          <Property Name="SOURCEKEY" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="STANDARDID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="POWERVERSION" Type="nvarchar2" MaxLength="50" />
+          <Property Name="BCFDXTYPE" Type="nvarchar2" MaxLength="1" />
+          <Property Name="MINPUNISHTYPE" Type="nvarchar2" MaxLength="1" />
+          <Property Name="MAXPUNISHTYPE" Type="nvarchar2" MaxLength="1" />
+          <Property Name="RESULT" Type="nvarchar2" />
+          <Property Name="MAX" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MIN" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MAXFACTOR" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MINFACTOR" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MAXLIMIT" Type="nvarchar2" MaxLength="50" />
+          <Property Name="MINLIMIT" Type="nvarchar2" MaxLength="50" />
+          <Property Name="EXPRESS" Type="nvarchar2" />
+          <Property Name="CREATETIME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="FLAG" Type="nvarchar2" MaxLength="1" />
+          <Property Name="DEPTKEY" Type="nvarchar2" MaxLength="50" />
+          <Property Name="AREACODE" Type="nvarchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DATAVERVISON" Type="nvarchar2" Nullable="false" MaxLength="50" />
+          <Property Name="EXTEND_1" Type="nvarchar2" />
+          <Property Name="EXTEND_2" Type="nvarchar2" />
+        </EntityType>
+        <EntityType Name="WORKFLOW_WORKITEM_HISTORY_W">
+          <Key>
+            <PropertyRef Name="SYNCROWGUID" />
+          </Key>
+          <Property Name="ROWGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="DATA_TIMESTAMP" Type="date" />
+          <Property Name="AGENTFORWORKITEMGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TERMINATEDATE" Type="date" />
+          <Property Name="OPERATORFORDISPLAYGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATORFORDISPLAYNAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="NOTE" Type="nclob" />
+          <Property Name="SYNC" Type="nvarchar2" MaxLength="2" />
+          <Property Name="WORKITEMGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ACTIVITYGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="250" />
+          <Property Name="ACTIVITYINSTANCEGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="WORKITEMNAME" Type="nvarchar2" MaxLength="500" />
+          <Property Name="WORKITEMTYPE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="WORKITEMMODENAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="HANDLEURL" Type="nvarchar2" MaxLength="500" />
+          <Property Name="STATUS" Type="number" />
+          <Property Name="PRIORITY" Type="number" />
+          <Property Name="SENDERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="SENDERNAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="TRANSACTOR" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TRANSACTORNAME" Type="nvarchar2" MaxLength="200" />
+          <Property Name="JOBGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATIONGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="READDATE" Type="date" />
+          <Property Name="OPERATIONDATE" Type="date" />
+          <Property Name="OPERATORGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATORNAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="OPINION" Type="nclob" />
+          <Property Name="WAITHANDLEGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="TERMINATEDATA" Type="date" />
+          <Property Name="STATUSBEFORETERMINATE" Type="number" />
+          <Property Name="LIMITMINUTES" Type="number" />
+          <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROCESSVERSIONGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROCESSVERSIONNAME" Type="nvarchar2" MaxLength="250" />
+          <Property Name="PROCESSVERSIONINSTANCEGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROCESSVERSIONINSTANCENAME" Type="nvarchar2" MaxLength="250" />
+          <Property Name="GROUPGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="IS_LOCKED" Type="number" />
+          <Property Name="LOCKERUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LOCKERDISPNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LOCKDATE" Type="date" />
+          <Property Name="AGENTFORUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATIONTYPE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LOCKERWINDOWGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ABAUDITOPINION" Type="nvarchar2" MaxLength="200" />
+          <Property Name="TIMELIMIT" Type="number" Precision="5" Scale="1" />
+          <Property Name="TIMELIMITUNIT" Type="number" />
+          <Property Name="OVERTIMEPOINT" Type="date" />
+          <Property Name="EARLYWARNINGPOINT" Type="date" />
+          <Property Name="IS_NEEDSENDEARLYWARNING" Type="number" />
+          <Property Name="IS_NEEDSENDOVERTIMENOTIFY" Type="number" />
+          <Property Name="SYNCROWGUID" Type="nvarchar2" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WORKFLOW_WORKITEM_W">
+          <Key>
+            <PropertyRef Name="SYNCROWGUID" />
+          </Key>
+          <Property Name="DATA_TIMESTAMP" Type="date" />
+          <Property Name="ROWGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="NOTE" Type="nclob" />
+          <Property Name="TERMINATEDATA" Type="date" />
+          <Property Name="STATUSBEFORETERMINATE" Type="number" />
+          <Property Name="WORKITEMGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ACTIVITYGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ACTIVITYNAME" Type="nvarchar2" MaxLength="250" />
+          <Property Name="ACTIVITYINSTANCEGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="WORKITEMNAME" Type="nvarchar2" MaxLength="500" />
+          <Property Name="WORKITEMTYPE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="WORKITEMMODENAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="HANDLEURL" Type="nvarchar2" MaxLength="500" />
+          <Property Name="STATUS" Type="number" />
+          <Property Name="PRIORITY" Type="number" />
+          <Property Name="SENDERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TRANSACTOR" Type="nvarchar2" MaxLength="50" />
+          <Property Name="JOBGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATIONGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="READDATE" Type="date" />
+          <Property Name="OPERATIONDATE" Type="date" />
+          <Property Name="OPINION" Type="nclob" />
+          <Property Name="WAITHANDLEGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="date" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="TERMINATEDATE" Type="date" />
+          <Property Name="LIMITMINUTES" Type="number" />
+          <Property Name="PROCESSGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROCESSVERSIONGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROCESSVERSIONNAME" Type="nvarchar2" MaxLength="250" />
+          <Property Name="PROCESSVERSIONINSTANCEGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PROCESSVERSIONINSTANCENAME" Type="nvarchar2" MaxLength="250" />
+          <Property Name="GROUPGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="IS_LOCKED" Type="number" />
+          <Property Name="LOCKERUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LOCKERDISPNAME" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LOCKDATE" Type="date" />
+          <Property Name="AGENTFORUSERGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATIONTYPE" Type="nvarchar2" MaxLength="50" />
+          <Property Name="LOCKERWINDOWGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="ABAUDITOPINION" Type="nvarchar2" MaxLength="200" />
+          <Property Name="TIMELIMIT" Type="number" Precision="5" Scale="1" />
+          <Property Name="TIMELIMITUNIT" Type="number" />
+          <Property Name="OVERTIMEPOINT" Type="date" />
+          <Property Name="EARLYWARNINGPOINT" Type="date" />
+          <Property Name="IS_NEEDSENDEARLYWARNING" Type="number" />
+          <Property Name="IS_NEEDSENDOVERTIMENOTIFY" Type="number" />
+          <Property Name="AGENTFORWORKITEMGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="TRANSACTORNAME" Type="nvarchar2" MaxLength="200" />
+          <Property Name="OPERATORGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATORNAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="OPERATORFORDISPLAYGUID" Type="nvarchar2" MaxLength="50" />
+          <Property Name="OPERATORFORDISPLAYNAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="SENDERNAME" Type="nvarchar2" MaxLength="100" />
+          <Property Name="SYNCROWGUID" Type="nvarchar2" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EntitiesORCL" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AUDIT_PROJECT_W" EntityType="Model1.AUDIT_PROJECT_W" />
+          <EntitySet Name="FDS_LAW" EntityType="Model1.FDS_LAW" />
+          <EntitySet Name="FDS_LAW_EXECUTOR" EntityType="Model1.FDS_LAW_EXECUTOR" />
+          <EntitySet Name="FDS_POWER" EntityType="Model1.FDS_POWER" />
+          <EntitySet Name="FDS_STANDARD" EntityType="Model1.FDS_STANDARD" />
+          <EntitySet Name="FDS_STANDARD_PUNISH" EntityType="Model1.FDS_STANDARD_PUNISH" />
+          <EntitySet Name="WORKFLOW_WORKITEM_HISTORY_W" EntityType="Model1.WORKFLOW_WORKITEM_HISTORY_W" />
+          <EntitySet Name="WORKFLOW_WORKITEM_W" EntityType="Model1.WORKFLOW_WORKITEM_W" />
+        </EntityContainer>
+        <EntityType Name="AUDIT_PROJECT_W">
+          <Key>
+            <PropertyRef Name="SYNCROWGUID" />
+          </Key>
+          <Property Name="BELONGXIAQUCODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATEUSERNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="ROW_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="YEARFLAG" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="ROWGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HF_DATE" Type="DateTime" Precision="0" />
+          <Property Name="WEBAPPLY_NOTE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IS_SENDSMS" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROJECT_MYD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FWYZM" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SHOUFEISUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RECEIVEUSERNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RECEIVEDATE" Type="DateTime" Precision="0" />
+          <Property Name="ACCEPTUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BANWANDATE" Type="DateTime" Precision="0" />
+          <Property Name="ACCEPTUSERNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ACCEPTUSERDATE" Type="DateTime" Precision="0" />
+          <Property Name="PROMISEENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="TASKTYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BANJIEUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BANJIEUSERNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BANJIERESULT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BANJIEDATE" Type="DateTime" Precision="0" />
+          <Property Name="IS_CHARGE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LEGAL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HEBINGSHOULISHULIANG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FEEDATE" Type="DateTime" Precision="0" />
+          <Property Name="CERTIFICATEUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CERTIFICATEUSERNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CERTIFICATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="CERTAWARDEGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GUIDANGUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GUIDANGUSERNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GUIDANGDATE" Type="DateTime" Precision="0" />
+          <Property Name="ORGWN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BILLNO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SPENDTIME" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SPARETIME" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="APPLYERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="APPLYWAY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="IS_PAUSE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="APPLYERTYPE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CHARGE_WHEN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IS_CHECK" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="IS_FEE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="IS_GUIDANG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="IS_DELAY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="IS_GREEN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ADDRESS" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="REMARK" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="INSERTDATE" Type="DateTime" Precision="0" />
+          <Property Name="PROJECTNAME" Type="String" MaxLength="120" Unicode="true" FixedLength="false" />
+          <Property Name="TASKGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TASKCASEGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OUGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ORG_ID" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="WINDOWGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WINDOWNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CERTTYPE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FLOWSN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PVIGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CONTACTPHONE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="XIANGMUBH" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CONTACTPERSON" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="APPLYERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="APPLYERUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CERTNUM" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="APPLYDATE" Type="DateTime" Precision="0" />
+          <Property Name="CONTACTMOBILE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CONTACTPOSTCODE" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
+          <Property Name="CONTACTEMAIL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CONTACTFAX" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RECEIVEUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IS_CERT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CHECKUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROMISE_DAY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="STATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CHECKDATE" Type="DateTime" Precision="0" />
+          <Property Name="CHECKUSERNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ORGWORD" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ORGNUMBER" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TABLEID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BUBANDATE" Type="DateTime" Precision="0" />
+          <Property Name="YUSHENDATE" Type="DateTime" Precision="0" />
+          <Property Name="ZIJIANXITONG_NUMBER" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="APPLY_ATTACH_SIGN" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ATTACH_SIGN" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="XIANGMUGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="XMADDRESS" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="XMNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IS_TEST" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ONLINEPAYORDERNO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SUBAPPGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WENSHUPDFGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OFFICALPDFGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CERTPDFGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OFFICALDOCGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BIGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BUSINESSGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RELATIONWORKITEMGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PJ_OPNION" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PAYMENTNO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ORDERNO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROJPWD" Type="String" MaxLength="6" Unicode="true" FixedLength="false" />
+          <Property Name="PROJID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DATA_TIMESTAMP" Type="DateTime" Precision="0" />
+          <Property Name="ZJSYNC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SYNCROWGUID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RESULT_CODE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FDS_LAW">
+          <Key>
+            <PropertyRef Name="LAWID" />
+            <PropertyRef Name="AREACODE" />
+            <PropertyRef Name="DATAVERVISON" />
+          </Key>
+          <Property Name="LAWID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="POWERID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="POWERVERVISON" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NAME" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="CREATETIME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="DEPTKEY" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AREACODE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DATAVERVISON" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EXTEND_1" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="EXTEND_2" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FDS_LAW_EXECUTOR">
+          <Key>
+            <PropertyRef Name="SOURCEKEY" />
+          </Key>
+          <Property Name="SOURCEKEY" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DEPTKEY" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DEPTNAME" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="TELEPHONE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SEX" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="BIRTHDAY" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="USEABLE" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="CREATETIME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="EXECUTORID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TYPE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="AREA" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CREDENTIAL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SDATE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EDATE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SORTID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SYNCPAGENO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FDS_POWER">
+          <Key>
+            <PropertyRef Name="POWERID" />
+            <PropertyRef Name="AREACODE" />
+            <PropertyRef Name="DATAVERVISON" />
+          </Key>
+          <Property Name="POWERID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CODE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="POWERVERVISON" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="POWERNAME" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="DEPTKEY" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PUNISHTYPECODE" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="JOIN_MODE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="OFFICEADDR" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="PROMISE_DAY" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LAWLIMIT_DAY" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="TELEPHONE" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CONTACT" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DUTYLEADER" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="DUTYEOFFICE" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="BODYIMPLEMENT" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="BODYADDR" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="REMARK" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="SENDTIME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="AREACODE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DATAVERVISON" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EXTEND_1" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="EXTEND_2" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="GETTIME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FDS_STANDARD">
+          <Key>
+            <PropertyRef Name="STANDARDID" />
+            <PropertyRef Name="AREACODE" />
+            <PropertyRef Name="DATAVERVISON" />
+          </Key>
+          <Property Name="STANDARDID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LAWID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="POWERID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="POWERVERSION" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WFQX" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="BREACHDERGEE" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="BREACHGRADE" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SORTID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CREATETIME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="DEPTKEY" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AREACODE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DATAVERVISON" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EXTEND_1" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="EXTEND_2" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FDS_STANDARD_PUNISH">
+          <Key>
+            <PropertyRef Name="SOURCEKEY" />
+            <PropertyRef Name="AREACODE" />
+            <PropertyRef Name="DATAVERVISON" />
+          </Key>
+          <Property Name="SOURCEKEY" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="STANDARDID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="POWERVERSION" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BCFDXTYPE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="MINPUNISHTYPE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="MAXPUNISHTYPE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="RESULT" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="MAX" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MIN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MAXFACTOR" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MINFACTOR" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MAXLIMIT" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MINLIMIT" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EXPRESS" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="CREATETIME" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="FLAG" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="DEPTKEY" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AREACODE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DATAVERVISON" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EXTEND_1" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="EXTEND_2" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WORKFLOW_WORKITEM_HISTORY_W">
+          <Key>
+            <PropertyRef Name="SYNCROWGUID" />
+          </Key>
+          <Property Name="ROWGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DATA_TIMESTAMP" Type="DateTime" Precision="0" />
+          <Property Name="AGENTFORWORKITEMGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TERMINATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="OPERATORFORDISPLAYGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATORFORDISPLAYNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SYNC" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="WORKITEMGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ACTIVITYGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ACTIVITYNAME" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ACTIVITYINSTANCEGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WORKITEMNAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="WORKITEMTYPE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WORKITEMMODENAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HANDLEURL" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="STATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PRIORITY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SENDERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SENDERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TRANSACTOR" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TRANSACTORNAME" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="JOBGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATIONGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="READDATE" Type="DateTime" Precision="0" />
+          <Property Name="OPERATIONDATE" Type="DateTime" Precision="0" />
+          <Property Name="OPERATORGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATORNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="OPINION" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="WAITHANDLEGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="TERMINATEDATA" Type="DateTime" Precision="0" />
+          <Property Name="STATUSBEFORETERMINATE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LIMITMINUTES" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSVERSIONGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSVERSIONNAME" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSVERSIONINSTANCEGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSVERSIONINSTANCENAME" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="GROUPGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IS_LOCKED" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LOCKERUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LOCKERDISPNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LOCKDATE" Type="DateTime" Precision="0" />
+          <Property Name="AGENTFORUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATIONTYPE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LOCKERWINDOWGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ABAUDITOPINION" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="TIMELIMIT" Type="Decimal" Precision="5" Scale="1" />
+          <Property Name="TIMELIMITUNIT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OVERTIMEPOINT" Type="DateTime" Precision="0" />
+          <Property Name="EARLYWARNINGPOINT" Type="DateTime" Precision="0" />
+          <Property Name="IS_NEEDSENDEARLYWARNING" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="IS_NEEDSENDOVERTIMENOTIFY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SYNCROWGUID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WORKFLOW_WORKITEM_W">
+          <Key>
+            <PropertyRef Name="SYNCROWGUID" />
+          </Key>
+          <Property Name="DATA_TIMESTAMP" Type="DateTime" Precision="0" />
+          <Property Name="ROWGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="TERMINATEDATA" Type="DateTime" Precision="0" />
+          <Property Name="STATUSBEFORETERMINATE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="WORKITEMGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ACTIVITYGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ACTIVITYNAME" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ACTIVITYINSTANCEGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WORKITEMNAME" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="WORKITEMTYPE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WORKITEMMODENAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="HANDLEURL" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="STATUS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PRIORITY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SENDERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TRANSACTOR" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="JOBGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATIONGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="READDATE" Type="DateTime" Precision="0" />
+          <Property Name="OPERATIONDATE" Type="DateTime" Precision="0" />
+          <Property Name="OPINION" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="WAITHANDLEGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="0" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="0" />
+          <Property Name="TERMINATEDATE" Type="DateTime" Precision="0" />
+          <Property Name="LIMITMINUTES" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PROCESSGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSVERSIONGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSVERSIONNAME" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSVERSIONINSTANCEGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PROCESSVERSIONINSTANCENAME" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="GROUPGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IS_LOCKED" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LOCKERUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LOCKERDISPNAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LOCKDATE" Type="DateTime" Precision="0" />
+          <Property Name="AGENTFORUSERGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATIONTYPE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LOCKERWINDOWGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ABAUDITOPINION" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="TIMELIMIT" Type="Decimal" Precision="5" Scale="1" />
+          <Property Name="TIMELIMITUNIT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OVERTIMEPOINT" Type="DateTime" Precision="0" />
+          <Property Name="EARLYWARNINGPOINT" Type="DateTime" Precision="0" />
+          <Property Name="IS_NEEDSENDEARLYWARNING" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="IS_NEEDSENDOVERTIMENOTIFY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AGENTFORWORKITEMGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TRANSACTORNAME" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATORGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATORNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATORFORDISPLAYGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OPERATORFORDISPLAYNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SENDERNAME" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SYNCROWGUID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="EntitiesORCL">
+          <EntitySetMapping Name="AUDIT_PROJECT_W">
+            <EntityTypeMapping TypeName="Model1.AUDIT_PROJECT_W">
+              <MappingFragment StoreEntitySet="AUDIT_PROJECT_W">
+                <ScalarProperty Name="BELONGXIAQUCODE" ColumnName="BELONGXIAQUCODE" />
+                <ScalarProperty Name="OPERATEUSERNAME" ColumnName="OPERATEUSERNAME" />
+                <ScalarProperty Name="OPERATEDATE" ColumnName="OPERATEDATE" />
+                <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+                <ScalarProperty Name="YEARFLAG" ColumnName="YEARFLAG" />
+                <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+                <ScalarProperty Name="HF_DATE" ColumnName="HF_DATE" />
+                <ScalarProperty Name="WEBAPPLY_NOTE" ColumnName="WEBAPPLY_NOTE" />
+                <ScalarProperty Name="IS_SENDSMS" ColumnName="IS_SENDSMS" />
+                <ScalarProperty Name="PROJECT_MYD" ColumnName="PROJECT_MYD" />
+                <ScalarProperty Name="FWYZM" ColumnName="FWYZM" />
+                <ScalarProperty Name="SHOUFEISUM" ColumnName="SHOUFEISUM" />
+                <ScalarProperty Name="RECEIVEUSERNAME" ColumnName="RECEIVEUSERNAME" />
+                <ScalarProperty Name="RECEIVEDATE" ColumnName="RECEIVEDATE" />
+                <ScalarProperty Name="ACCEPTUSERGUID" ColumnName="ACCEPTUSERGUID" />
+                <ScalarProperty Name="BANWANDATE" ColumnName="BANWANDATE" />
+                <ScalarProperty Name="ACCEPTUSERNAME" ColumnName="ACCEPTUSERNAME" />
+                <ScalarProperty Name="ACCEPTUSERDATE" ColumnName="ACCEPTUSERDATE" />
+                <ScalarProperty Name="PROMISEENDDATE" ColumnName="PROMISEENDDATE" />
+                <ScalarProperty Name="TASKTYPE" ColumnName="TASKTYPE" />
+                <ScalarProperty Name="BANJIEUSERGUID" ColumnName="BANJIEUSERGUID" />
+                <ScalarProperty Name="BANJIEUSERNAME" ColumnName="BANJIEUSERNAME" />
+                <ScalarProperty Name="BANJIERESULT" ColumnName="BANJIERESULT" />
+                <ScalarProperty Name="BANJIEDATE" ColumnName="BANJIEDATE" />
+                <ScalarProperty Name="IS_CHARGE" ColumnName="IS_CHARGE" />
+                <ScalarProperty Name="LEGAL" ColumnName="LEGAL" />
+                <ScalarProperty Name="HEBINGSHOULISHULIANG" ColumnName="HEBINGSHOULISHULIANG" />
+                <ScalarProperty Name="FEEDATE" ColumnName="FEEDATE" />
+                <ScalarProperty Name="CERTIFICATEUSERGUID" ColumnName="CERTIFICATEUSERGUID" />
+                <ScalarProperty Name="CERTIFICATEUSERNAME" ColumnName="CERTIFICATEUSERNAME" />
+                <ScalarProperty Name="CERTIFICATEDATE" ColumnName="CERTIFICATEDATE" />
+                <ScalarProperty Name="CERTAWARDEGUID" ColumnName="CERTAWARDEGUID" />
+                <ScalarProperty Name="GUIDANGUSERGUID" ColumnName="GUIDANGUSERGUID" />
+                <ScalarProperty Name="GUIDANGUSERNAME" ColumnName="GUIDANGUSERNAME" />
+                <ScalarProperty Name="GUIDANGDATE" ColumnName="GUIDANGDATE" />
+                <ScalarProperty Name="ORGWN" ColumnName="ORGWN" />
+                <ScalarProperty Name="BILLNO" ColumnName="BILLNO" />
+                <ScalarProperty Name="SPENDTIME" ColumnName="SPENDTIME" />
+                <ScalarProperty Name="SPARETIME" ColumnName="SPARETIME" />
+                <ScalarProperty Name="APPLYERGUID" ColumnName="APPLYERGUID" />
+                <ScalarProperty Name="APPLYWAY" ColumnName="APPLYWAY" />
+                <ScalarProperty Name="IS_PAUSE" ColumnName="IS_PAUSE" />
+                <ScalarProperty Name="APPLYERTYPE" ColumnName="APPLYERTYPE" />
+                <ScalarProperty Name="CHARGE_WHEN" ColumnName="CHARGE_WHEN" />
+                <ScalarProperty Name="IS_CHECK" ColumnName="IS_CHECK" />
+                <ScalarProperty Name="IS_FEE" ColumnName="IS_FEE" />
+                <ScalarProperty Name="IS_GUIDANG" ColumnName="IS_GUIDANG" />
+                <ScalarProperty Name="IS_DELAY" ColumnName="IS_DELAY" />
+                <ScalarProperty Name="IS_GREEN" ColumnName="IS_GREEN" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="INSERTDATE" ColumnName="INSERTDATE" />
+                <ScalarProperty Name="PROJECTNAME" ColumnName="PROJECTNAME" />
+                <ScalarProperty Name="TASKGUID" ColumnName="TASKGUID" />
+                <ScalarProperty Name="TASKCASEGUID" ColumnName="TASKCASEGUID" />
+                <ScalarProperty Name="OUGUID" ColumnName="OUGUID" />
+                <ScalarProperty Name="ORG_ID" ColumnName="ORG_ID" />
+                <ScalarProperty Name="WINDOWGUID" ColumnName="WINDOWGUID" />
+                <ScalarProperty Name="WINDOWNAME" ColumnName="WINDOWNAME" />
+                <ScalarProperty Name="CERTTYPE" ColumnName="CERTTYPE" />
+                <ScalarProperty Name="FLOWSN" ColumnName="FLOWSN" />
+                <ScalarProperty Name="PVIGUID" ColumnName="PVIGUID" />
+                <ScalarProperty Name="CONTACTPHONE" ColumnName="CONTACTPHONE" />
+                <ScalarProperty Name="XIANGMUBH" ColumnName="XIANGMUBH" />
+                <ScalarProperty Name="CONTACTPERSON" ColumnName="CONTACTPERSON" />
+                <ScalarProperty Name="APPLYERNAME" ColumnName="APPLYERNAME" />
+                <ScalarProperty Name="APPLYERUSERGUID" ColumnName="APPLYERUSERGUID" />
+                <ScalarProperty Name="CERTNUM" ColumnName="CERTNUM" />
+                <ScalarProperty Name="APPLYDATE" ColumnName="APPLYDATE" />
+                <ScalarProperty Name="CONTACTMOBILE" ColumnName="CONTACTMOBILE" />
+                <ScalarProperty Name="CONTACTPOSTCODE" ColumnName="CONTACTPOSTCODE" />
+                <ScalarProperty Name="CONTACTEMAIL" ColumnName="CONTACTEMAIL" />
+                <ScalarProperty Name="CONTACTFAX" ColumnName="CONTACTFAX" />
+                <ScalarProperty Name="RECEIVEUSERGUID" ColumnName="RECEIVEUSERGUID" />
+                <ScalarProperty Name="IS_CERT" ColumnName="IS_CERT" />
+                <ScalarProperty Name="CHECKUSERGUID" ColumnName="CHECKUSERGUID" />
+                <ScalarProperty Name="PROMISE_DAY" ColumnName="PROMISE_DAY" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CHECKDATE" ColumnName="CHECKDATE" />
+                <ScalarProperty Name="CHECKUSERNAME" ColumnName="CHECKUSERNAME" />
+                <ScalarProperty Name="ORGWORD" ColumnName="ORGWORD" />
+                <ScalarProperty Name="ORGNUMBER" ColumnName="ORGNUMBER" />
+                <ScalarProperty Name="TABLEID" ColumnName="TABLEID" />
+                <ScalarProperty Name="BUBANDATE" ColumnName="BUBANDATE" />
+                <ScalarProperty Name="YUSHENDATE" ColumnName="YUSHENDATE" />
+                <ScalarProperty Name="ZIJIANXITONG_NUMBER" ColumnName="ZIJIANXITONG_NUMBER" />
+                <ScalarProperty Name="APPLY_ATTACH_SIGN" ColumnName="APPLY_ATTACH_SIGN" />
+                <ScalarProperty Name="ATTACH_SIGN" ColumnName="ATTACH_SIGN" />
+                <ScalarProperty Name="XIANGMUGUID" ColumnName="XIANGMUGUID" />
+                <ScalarProperty Name="XMADDRESS" ColumnName="XMADDRESS" />
+                <ScalarProperty Name="XMNAME" ColumnName="XMNAME" />
+                <ScalarProperty Name="IS_TEST" ColumnName="IS_TEST" />
+                <ScalarProperty Name="ONLINEPAYORDERNO" ColumnName="ONLINEPAYORDERNO" />
+                <ScalarProperty Name="SUBAPPGUID" ColumnName="SUBAPPGUID" />
+                <ScalarProperty Name="WENSHUPDFGUID" ColumnName="WENSHUPDFGUID" />
+                <ScalarProperty Name="OFFICALPDFGUID" ColumnName="OFFICALPDFGUID" />
+                <ScalarProperty Name="CERTPDFGUID" ColumnName="CERTPDFGUID" />
+                <ScalarProperty Name="OFFICALDOCGUID" ColumnName="OFFICALDOCGUID" />
+                <ScalarProperty Name="BIGUID" ColumnName="BIGUID" />
+                <ScalarProperty Name="BUSINESSGUID" ColumnName="BUSINESSGUID" />
+                <ScalarProperty Name="RELATIONWORKITEMGUID" ColumnName="RELATIONWORKITEMGUID" />
+                <ScalarProperty Name="PJ_OPNION" ColumnName="PJ_OPNION" />
+                <ScalarProperty Name="PAYMENTNO" ColumnName="PAYMENTNO" />
+                <ScalarProperty Name="ORDERNO" ColumnName="ORDERNO" />
+                <ScalarProperty Name="PROJPWD" ColumnName="PROJPWD" />
+                <ScalarProperty Name="PROJID" ColumnName="PROJID" />
+                <ScalarProperty Name="DATA_TIMESTAMP" ColumnName="DATA_TIMESTAMP" />
+                <ScalarProperty Name="ZJSYNC" ColumnName="ZJSYNC" />
+                <ScalarProperty Name="SYNCROWGUID" ColumnName="SYNCROWGUID" />
+                <ScalarProperty Name="RESULT_CODE" ColumnName="RESULT_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FDS_LAW">
+            <EntityTypeMapping TypeName="Model1.FDS_LAW">
+              <MappingFragment StoreEntitySet="FDS_LAW">
+                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+                <ScalarProperty Name="POWERID" ColumnName="POWERID" />
+                <ScalarProperty Name="POWERVERVISON" ColumnName="POWERVERVISON" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+                <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+                <ScalarProperty Name="DATAVERVISON" ColumnName="DATAVERVISON" />
+                <ScalarProperty Name="EXTEND_1" ColumnName="EXTEND_1" />
+                <ScalarProperty Name="EXTEND_2" ColumnName="EXTEND_2" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FDS_LAW_EXECUTOR">
+            <EntityTypeMapping TypeName="Model1.FDS_LAW_EXECUTOR">
+              <MappingFragment StoreEntitySet="FDS_LAW_EXECUTOR">
+                <ScalarProperty Name="SOURCEKEY" ColumnName="SOURCEKEY" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+                <ScalarProperty Name="DEPTNAME" ColumnName="DEPTNAME" />
+                <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+                <ScalarProperty Name="USEABLE" ColumnName="USEABLE" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="EXECUTORID" ColumnName="EXECUTORID" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+                <ScalarProperty Name="CREDENTIAL" ColumnName="CREDENTIAL" />
+                <ScalarProperty Name="SDATE" ColumnName="SDATE" />
+                <ScalarProperty Name="EDATE" ColumnName="EDATE" />
+                <ScalarProperty Name="SORTID" ColumnName="SORTID" />
+                <ScalarProperty Name="SYNCPAGENO" ColumnName="SYNCPAGENO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FDS_POWER">
+            <EntityTypeMapping TypeName="Model1.FDS_POWER">
+              <MappingFragment StoreEntitySet="FDS_POWER">
+                <ScalarProperty Name="POWERID" ColumnName="POWERID" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="POWERVERVISON" ColumnName="POWERVERVISON" />
+                <ScalarProperty Name="POWERNAME" ColumnName="POWERNAME" />
+                <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+                <ScalarProperty Name="PUNISHTYPECODE" ColumnName="PUNISHTYPECODE" />
+                <ScalarProperty Name="JOIN_MODE" ColumnName="JOIN_MODE" />
+                <ScalarProperty Name="OFFICEADDR" ColumnName="OFFICEADDR" />
+                <ScalarProperty Name="PROMISE_DAY" ColumnName="PROMISE_DAY" />
+                <ScalarProperty Name="LAWLIMIT_DAY" ColumnName="LAWLIMIT_DAY" />
+                <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+                <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+                <ScalarProperty Name="DUTYLEADER" ColumnName="DUTYLEADER" />
+                <ScalarProperty Name="DUTYEOFFICE" ColumnName="DUTYEOFFICE" />
+                <ScalarProperty Name="BODYIMPLEMENT" ColumnName="BODYIMPLEMENT" />
+                <ScalarProperty Name="BODYADDR" ColumnName="BODYADDR" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="SENDTIME" ColumnName="SENDTIME" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+                <ScalarProperty Name="DATAVERVISON" ColumnName="DATAVERVISON" />
+                <ScalarProperty Name="EXTEND_1" ColumnName="EXTEND_1" />
+                <ScalarProperty Name="EXTEND_2" ColumnName="EXTEND_2" />
+                <ScalarProperty Name="GETTIME" ColumnName="GETTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FDS_STANDARD">
+            <EntityTypeMapping TypeName="Model1.FDS_STANDARD">
+              <MappingFragment StoreEntitySet="FDS_STANDARD">
+                <ScalarProperty Name="STANDARDID" ColumnName="STANDARDID" />
+                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+                <ScalarProperty Name="POWERID" ColumnName="POWERID" />
+                <ScalarProperty Name="POWERVERSION" ColumnName="POWERVERSION" />
+                <ScalarProperty Name="WFQX" ColumnName="WFQX" />
+                <ScalarProperty Name="BREACHDERGEE" ColumnName="BREACHDERGEE" />
+                <ScalarProperty Name="BREACHGRADE" ColumnName="BREACHGRADE" />
+                <ScalarProperty Name="SORTID" ColumnName="SORTID" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+                <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+                <ScalarProperty Name="DATAVERVISON" ColumnName="DATAVERVISON" />
+                <ScalarProperty Name="EXTEND_1" ColumnName="EXTEND_1" />
+                <ScalarProperty Name="EXTEND_2" ColumnName="EXTEND_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FDS_STANDARD_PUNISH">
+            <EntityTypeMapping TypeName="Model1.FDS_STANDARD_PUNISH">
+              <MappingFragment StoreEntitySet="FDS_STANDARD_PUNISH">
+                <ScalarProperty Name="SOURCEKEY" ColumnName="SOURCEKEY" />
+                <ScalarProperty Name="STANDARDID" ColumnName="STANDARDID" />
+                <ScalarProperty Name="POWERVERSION" ColumnName="POWERVERSION" />
+                <ScalarProperty Name="BCFDXTYPE" ColumnName="BCFDXTYPE" />
+                <ScalarProperty Name="MINPUNISHTYPE" ColumnName="MINPUNISHTYPE" />
+                <ScalarProperty Name="MAXPUNISHTYPE" ColumnName="MAXPUNISHTYPE" />
+                <ScalarProperty Name="RESULT" ColumnName="RESULT" />
+                <ScalarProperty Name="MAX" ColumnName="MAX" />
+                <ScalarProperty Name="MIN" ColumnName="MIN" />
+                <ScalarProperty Name="MAXFACTOR" ColumnName="MAXFACTOR" />
+                <ScalarProperty Name="MINFACTOR" ColumnName="MINFACTOR" />
+                <ScalarProperty Name="MAXLIMIT" ColumnName="MAXLIMIT" />
+                <ScalarProperty Name="MINLIMIT" ColumnName="MINLIMIT" />
+                <ScalarProperty Name="EXPRESS" ColumnName="EXPRESS" />
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="DEPTKEY" ColumnName="DEPTKEY" />
+                <ScalarProperty Name="AREACODE" ColumnName="AREACODE" />
+                <ScalarProperty Name="DATAVERVISON" ColumnName="DATAVERVISON" />
+                <ScalarProperty Name="EXTEND_1" ColumnName="EXTEND_1" />
+                <ScalarProperty Name="EXTEND_2" ColumnName="EXTEND_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WORKFLOW_WORKITEM_HISTORY_W">
+            <EntityTypeMapping TypeName="Model1.WORKFLOW_WORKITEM_HISTORY_W">
+              <MappingFragment StoreEntitySet="WORKFLOW_WORKITEM_HISTORY_W">
+                <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+                <ScalarProperty Name="DATA_TIMESTAMP" ColumnName="DATA_TIMESTAMP" />
+                <ScalarProperty Name="AGENTFORWORKITEMGUID" ColumnName="AGENTFORWORKITEMGUID" />
+                <ScalarProperty Name="TERMINATEDATE" ColumnName="TERMINATEDATE" />
+                <ScalarProperty Name="OPERATORFORDISPLAYGUID" ColumnName="OPERATORFORDISPLAYGUID" />
+                <ScalarProperty Name="OPERATORFORDISPLAYNAME" ColumnName="OPERATORFORDISPLAYNAME" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="SYNC" ColumnName="SYNC" />
+                <ScalarProperty Name="WORKITEMGUID" ColumnName="WORKITEMGUID" />
+                <ScalarProperty Name="ACTIVITYGUID" ColumnName="ACTIVITYGUID" />
+                <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+                <ScalarProperty Name="ACTIVITYINSTANCEGUID" ColumnName="ACTIVITYINSTANCEGUID" />
+                <ScalarProperty Name="WORKITEMNAME" ColumnName="WORKITEMNAME" />
+                <ScalarProperty Name="WORKITEMTYPE" ColumnName="WORKITEMTYPE" />
+                <ScalarProperty Name="WORKITEMMODENAME" ColumnName="WORKITEMMODENAME" />
+                <ScalarProperty Name="HANDLEURL" ColumnName="HANDLEURL" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+                <ScalarProperty Name="SENDERGUID" ColumnName="SENDERGUID" />
+                <ScalarProperty Name="SENDERNAME" ColumnName="SENDERNAME" />
+                <ScalarProperty Name="TRANSACTOR" ColumnName="TRANSACTOR" />
+                <ScalarProperty Name="TRANSACTORNAME" ColumnName="TRANSACTORNAME" />
+                <ScalarProperty Name="JOBGUID" ColumnName="JOBGUID" />
+                <ScalarProperty Name="OPERATIONGUID" ColumnName="OPERATIONGUID" />
+                <ScalarProperty Name="READDATE" ColumnName="READDATE" />
+                <ScalarProperty Name="OPERATIONDATE" ColumnName="OPERATIONDATE" />
+                <ScalarProperty Name="OPERATORGUID" ColumnName="OPERATORGUID" />
+                <ScalarProperty Name="OPERATORNAME" ColumnName="OPERATORNAME" />
+                <ScalarProperty Name="OPINION" ColumnName="OPINION" />
+                <ScalarProperty Name="WAITHANDLEGUID" ColumnName="WAITHANDLEGUID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="TERMINATEDATA" ColumnName="TERMINATEDATA" />
+                <ScalarProperty Name="STATUSBEFORETERMINATE" ColumnName="STATUSBEFORETERMINATE" />
+                <ScalarProperty Name="LIMITMINUTES" ColumnName="LIMITMINUTES" />
+                <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+                <ScalarProperty Name="PROCESSVERSIONGUID" ColumnName="PROCESSVERSIONGUID" />
+                <ScalarProperty Name="PROCESSVERSIONNAME" ColumnName="PROCESSVERSIONNAME" />
+                <ScalarProperty Name="PROCESSVERSIONINSTANCEGUID" ColumnName="PROCESSVERSIONINSTANCEGUID" />
+                <ScalarProperty Name="PROCESSVERSIONINSTANCENAME" ColumnName="PROCESSVERSIONINSTANCENAME" />
+                <ScalarProperty Name="GROUPGUID" ColumnName="GROUPGUID" />
+                <ScalarProperty Name="IS_LOCKED" ColumnName="IS_LOCKED" />
+                <ScalarProperty Name="LOCKERUSERGUID" ColumnName="LOCKERUSERGUID" />
+                <ScalarProperty Name="LOCKERDISPNAME" ColumnName="LOCKERDISPNAME" />
+                <ScalarProperty Name="LOCKDATE" ColumnName="LOCKDATE" />
+                <ScalarProperty Name="AGENTFORUSERGUID" ColumnName="AGENTFORUSERGUID" />
+                <ScalarProperty Name="OPERATIONTYPE" ColumnName="OPERATIONTYPE" />
+                <ScalarProperty Name="LOCKERWINDOWGUID" ColumnName="LOCKERWINDOWGUID" />
+                <ScalarProperty Name="ABAUDITOPINION" ColumnName="ABAUDITOPINION" />
+                <ScalarProperty Name="TIMELIMIT" ColumnName="TIMELIMIT" />
+                <ScalarProperty Name="TIMELIMITUNIT" ColumnName="TIMELIMITUNIT" />
+                <ScalarProperty Name="OVERTIMEPOINT" ColumnName="OVERTIMEPOINT" />
+                <ScalarProperty Name="EARLYWARNINGPOINT" ColumnName="EARLYWARNINGPOINT" />
+                <ScalarProperty Name="IS_NEEDSENDEARLYWARNING" ColumnName="IS_NEEDSENDEARLYWARNING" />
+                <ScalarProperty Name="IS_NEEDSENDOVERTIMENOTIFY" ColumnName="IS_NEEDSENDOVERTIMENOTIFY" />
+                <ScalarProperty Name="SYNCROWGUID" ColumnName="SYNCROWGUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WORKFLOW_WORKITEM_W">
+            <EntityTypeMapping TypeName="Model1.WORKFLOW_WORKITEM_W">
+              <MappingFragment StoreEntitySet="WORKFLOW_WORKITEM_W">
+                <ScalarProperty Name="DATA_TIMESTAMP" ColumnName="DATA_TIMESTAMP" />
+                <ScalarProperty Name="ROWGUID" ColumnName="ROWGUID" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="TERMINATEDATA" ColumnName="TERMINATEDATA" />
+                <ScalarProperty Name="STATUSBEFORETERMINATE" ColumnName="STATUSBEFORETERMINATE" />
+                <ScalarProperty Name="WORKITEMGUID" ColumnName="WORKITEMGUID" />
+                <ScalarProperty Name="ACTIVITYGUID" ColumnName="ACTIVITYGUID" />
+                <ScalarProperty Name="ACTIVITYNAME" ColumnName="ACTIVITYNAME" />
+                <ScalarProperty Name="ACTIVITYINSTANCEGUID" ColumnName="ACTIVITYINSTANCEGUID" />
+                <ScalarProperty Name="WORKITEMNAME" ColumnName="WORKITEMNAME" />
+                <ScalarProperty Name="WORKITEMTYPE" ColumnName="WORKITEMTYPE" />
+                <ScalarProperty Name="WORKITEMMODENAME" ColumnName="WORKITEMMODENAME" />
+                <ScalarProperty Name="HANDLEURL" ColumnName="HANDLEURL" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+                <ScalarProperty Name="SENDERGUID" ColumnName="SENDERGUID" />
+                <ScalarProperty Name="TRANSACTOR" ColumnName="TRANSACTOR" />
+                <ScalarProperty Name="JOBGUID" ColumnName="JOBGUID" />
+                <ScalarProperty Name="OPERATIONGUID" ColumnName="OPERATIONGUID" />
+                <ScalarProperty Name="READDATE" ColumnName="READDATE" />
+                <ScalarProperty Name="OPERATIONDATE" ColumnName="OPERATIONDATE" />
+                <ScalarProperty Name="OPINION" ColumnName="OPINION" />
+                <ScalarProperty Name="WAITHANDLEGUID" ColumnName="WAITHANDLEGUID" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="TERMINATEDATE" ColumnName="TERMINATEDATE" />
+                <ScalarProperty Name="LIMITMINUTES" ColumnName="LIMITMINUTES" />
+                <ScalarProperty Name="PROCESSGUID" ColumnName="PROCESSGUID" />
+                <ScalarProperty Name="PROCESSVERSIONGUID" ColumnName="PROCESSVERSIONGUID" />
+                <ScalarProperty Name="PROCESSVERSIONNAME" ColumnName="PROCESSVERSIONNAME" />
+                <ScalarProperty Name="PROCESSVERSIONINSTANCEGUID" ColumnName="PROCESSVERSIONINSTANCEGUID" />
+                <ScalarProperty Name="PROCESSVERSIONINSTANCENAME" ColumnName="PROCESSVERSIONINSTANCENAME" />
+                <ScalarProperty Name="GROUPGUID" ColumnName="GROUPGUID" />
+                <ScalarProperty Name="IS_LOCKED" ColumnName="IS_LOCKED" />
+                <ScalarProperty Name="LOCKERUSERGUID" ColumnName="LOCKERUSERGUID" />
+                <ScalarProperty Name="LOCKERDISPNAME" ColumnName="LOCKERDISPNAME" />
+                <ScalarProperty Name="LOCKDATE" ColumnName="LOCKDATE" />
+                <ScalarProperty Name="AGENTFORUSERGUID" ColumnName="AGENTFORUSERGUID" />
+                <ScalarProperty Name="OPERATIONTYPE" ColumnName="OPERATIONTYPE" />
+                <ScalarProperty Name="LOCKERWINDOWGUID" ColumnName="LOCKERWINDOWGUID" />
+                <ScalarProperty Name="ABAUDITOPINION" ColumnName="ABAUDITOPINION" />
+                <ScalarProperty Name="TIMELIMIT" ColumnName="TIMELIMIT" />
+                <ScalarProperty Name="TIMELIMITUNIT" ColumnName="TIMELIMITUNIT" />
+                <ScalarProperty Name="OVERTIMEPOINT" ColumnName="OVERTIMEPOINT" />
+                <ScalarProperty Name="EARLYWARNINGPOINT" ColumnName="EARLYWARNINGPOINT" />
+                <ScalarProperty Name="IS_NEEDSENDEARLYWARNING" ColumnName="IS_NEEDSENDEARLYWARNING" />
+                <ScalarProperty Name="IS_NEEDSENDOVERTIMENOTIFY" ColumnName="IS_NEEDSENDOVERTIMENOTIFY" />
+                <ScalarProperty Name="AGENTFORWORKITEMGUID" ColumnName="AGENTFORWORKITEMGUID" />
+                <ScalarProperty Name="TRANSACTORNAME" ColumnName="TRANSACTORNAME" />
+                <ScalarProperty Name="OPERATORGUID" ColumnName="OPERATORGUID" />
+                <ScalarProperty Name="OPERATORNAME" ColumnName="OPERATORNAME" />
+                <ScalarProperty Name="OPERATORFORDISPLAYGUID" ColumnName="OPERATORFORDISPLAYGUID" />
+                <ScalarProperty Name="OPERATORFORDISPLAYNAME" ColumnName="OPERATORFORDISPLAYNAME" />
+                <ScalarProperty Name="SENDERNAME" ColumnName="SENDERNAME" />
+                <ScalarProperty Name="SYNCROWGUID" ColumnName="SYNCROWGUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

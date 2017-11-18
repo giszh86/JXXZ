@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4AB5832-ABE5-4795-8268-A0A47A92ABB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JXXZ.ZHCG.Model</RootNamespace>
+    <AssemblyName>JXXZ.ZHCG.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountModel\AccountImageModel.cs" />
+    <Compile Include="AccountModel\AccountRegisterModel.cs" />
+    <Compile Include="AccountModel\AccountRegisterTask.cs" />
+    <Compile Include="AccountModel\AccountRegisterTaskChild.cs" />
+    <Compile Include="AccountModel\AccountTaskModel.cs" />
+    <Compile Include="AccountModel\AccountUnitModel.cs" />
+    <Compile Include="AccountModel\TaskClassModel.cs" />
+    <Compile Include="administrativeapprovalModel\Audit_project_wModel.cs" />
+    <Compile Include="administrativeapprovalModel\LicenseModel.cs" />
+    <Compile Include="administrativeapprovalModel\TreeBagsModel.cs" />
+    <Compile Include="AlarmDetail\AlarmDetailModel.cs" />
+    <Compile Include="AlarmDetail\AlarmList.cs" />
+    <Compile Include="AlarmDetail\MapPoint.cs" />
+    <Compile Include="Base_ZdsModel.cs" />
+    <Compile Include="BulletinBoardModel\BulletinBoardModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\CaseLinkTreeModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\CaseSourceComparer.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_CasesModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_CaseSourcesModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_LeadersuperviseModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_PrescripTionsModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_SimpleCasesModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_WorkFlowClass.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_WorkFlowSpecificsModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_WtajsModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_WtfilesModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Case_ZdModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Casr_WorkFlowClass.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\ClassModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\DocumentForm.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Doc_DefinitionsModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Doc_WfdddrsModel.cs" />
+    <Compile Include="CaseWorkFlowManagerModel\Doc_WfsasModel.cs" />
+    <Compile Include="CitizenServiceModel\Attachment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CitizenServiceModel\ClassificationStatisticsModel.cs" />
+    <Compile Include="CitizenServiceModel\QuantityModel.cs" />
+    <Compile Include="CitizenServiceModel\EventModel.cs" />
+    <Compile Include="CitizenServiceModel\SM_CitizenServicesModel.cs" />
+    <Compile Include="CitizenServiceModel\SM_ClassesModel.cs" />
+    <Compile Include="CitizenServiceModel\SM_ConsulTationsModel.cs" />
+    <Compile Include="CitizenServiceModel\SM_SourcesModel.cs" />
+    <Compile Include="CitizenServiceModel\SM_VisitsModel.cs" />
+    <Compile Include="CitizenServiceModel\StatisticalReportModel.cs" />
+    <Compile Include="ConservationModel\SourcesModel.cs" />
+    <Compile Include="ConservationModel\YH_CompanyModel.cs" />
+    <Compile Include="ConservationModel\YH_ContractModel.cs" />
+    <Compile Include="ConservationModel\YH_FileModel.cs" />
+    <Compile Include="ConservationModel\YH_YhLogModel.cs" />
+    <Compile Include="ConservationModel\YH_YhtaskModel.cs" />
+    <Compile Include="CustomsModel\CustomsModel.cs" />
+    <Compile Include="DataDictionaryModel\DataDictionaryModel.cs" />
+    <Compile Include="echarts\spiderMap.cs" />
+    <Compile Include="Filter.cs" />
+    <Compile Include="FrontDeskModel\FrontDeskModel.cs" />
+    <Compile Include="IllegalConstructionModel\WJ_CqxmsModel.cs" />
+    <Compile Include="IllegalConstructionModel\WJ_FilesModel.cs" />
+    <Compile Include="IllegalConstructionModel\WJ_WzjzsModel.cs" />
+    <Compile Include="LawEnforcementSupervisionModel\Zfdx_DevicesModel.cs" />
+    <Compile Include="LawEnforcementSupervisionModel\Zfdx_InstocksModel.cs" />
+    <Compile Include="LawEnforcementSupervisionModel\Zfdx_OutstocksModel.cs" />
+    <Compile Include="LawEnforcementSupervisionModel\Zfdx_StocksModel.cs" />
+    <Compile Include="LawEnforcementSupervisionModel\Zfdx_LawStreetStoreModel.cs" />
+    <Compile Include="LawEnforcementSupervisionModel\Zxzz_TaskModel.cs" />
+    <Compile Include="LegalCaseModel\FreeDiscretionModel.cs" />
+    <Compile Include="LowLyingModel\LowLyingModel.cs" />
+    <Compile Include="MechanicalExamModel\kh_examinesModel.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="MonitorModel\FI_CamerasModel.cs" />
+    <Compile Include="MonitorModel\FI_CameraUnitsTreeModel.cs" />
+    <Compile Include="MonitorProjectModel\TreeMonitorModel.cs" />
+    <Compile Include="MonitorProjectModel\MonitorListModel.cs" />
+    <Compile Include="PageModel.cs" />
+    <Compile Include="Paging.cs" />
+    <Compile Include="PartModel\PartModel.cs" />
+    <Compile Include="PeripheryModel\PeripheryModel.cs" />
+    <Compile Include="Permission.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportModel\BureauCenterWorkReportModel.cs" />
+    <Compile Include="ReportModel\H7N7ReportModel.cs" />
+    <Compile Include="ReportModel\LandLawReportModel.cs" />
+    <Compile Include="ReportModel\LawInWaterModel.cs" />
+    <Compile Include="ReportModel\SafetifyinProductionReportModel.cs" />
+    <Compile Include="ReportModel\ScaleFarmsControlReportModel.cs" />
+    <Compile Include="ReportModel\SpecialPeriodReportModel.cs" />
+    <Compile Include="ReportModel\StrawAndWasteControlModel.cs" />
+    <Compile Include="ReportModel\ReportListModel.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="SelectItem.cs" />
+    <Compile Include="ServiceManagementModel\CarSynchronizeModel.cs" />
+    <Compile Include="ServiceManagementModel\GPSPoint.cs" />
+    <Compile Include="ServiceManagementModel\MapPoint.cs" />
+    <Compile Include="ServiceManagementModel\QW_CarHistoryPositionsModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_CarsModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_CarTasksModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_CheckinModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_PatrolAreasModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_PatrolLogModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_SigninAreasModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_UserHistoryPositionsModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_UserLastPositionsModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_UserSigninsModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_UserTasksModel.cs" />
+    <Compile Include="ServiceManagementModel\QW_ViewDuty.cs" />
+    <Compile Include="ServiceManagementModel\SignInAreaPartModel.cs" />
+    <Compile Include="SoketEntity\MessageInfo.cs" />
+    <Compile Include="TreeMenu.cs" />
+    <Compile Include="TreePermission.cs" />
+    <Compile Include="TreeUnit.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="UnitGridModel\UnitGridModel.cs" />
+    <Compile Include="UnitType.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserModel.cs" />
+    <Compile Include="UserType.cs" />
+    <Compile Include="uvasModel\basicinfoModel.cs" />
+    <Compile Include="uvasModel\FileInfoModel.cs" />
+    <Compile Include="WorkFlowManagerModel\FileClass.cs" />
+    <Compile Include="WorkFlowManagerModel\SelectListItemModel.cs" />
+    <Compile Include="WorkFlowManagerModel\WF_WorkFlowOldModel.cs" />
+    <Compile Include="WorkFlowManagerModel\WorkFlowClass.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,469 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    font-family: "Microsoft Yahei", "微软雅黑", "宋体", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-width: 1000px;
+    overflow: hidden;
+}
+
+* {
+    outline: none;
+}
+
+.dividingline {
+    width: 1px;
+    height: 110px;
+    background: -webkit-linear-gradient(#294460, #83D2FF, #467CA4); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#294460, #83D2FF, #467CA4); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#294460, #83D2FF, #467CA4); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#294460, #83D2FF, #467CA4); /* 标准的语法 */
+    margin-top: 10px;
+    margin-right: 3px;
+    float: right;
+}
+
+
+@font-face {
+    font-family: 'digitalTableFont';
+    font-style: normal;
+    src: url(../Css/font/longzhoufeng.ttf) format('truetype'), url(../Css/font/longzhoufeng.eot) format('embedded-opentype');
+}
+
+/*顶部样式*/
+.Mainhead {
+    width: 100%;
+    height: 80px;
+    background: no-repeat url(../Image/头部切图.png);
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0px;
+}
+
+.MainheadTitle {
+    width: 26%;
+    height: 65px;
+    float: left;
+}
+
+.MainheadFloat {
+    width: 100%;
+    height: 60px;
+    /*background-image: url(/Image/top.png);*/
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    opacity: 0.9;
+}
+
+
+.MainheadRight {
+    width: 170px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    color: white;
+    line-height: 80px;
+}
+
+    .MainheadRight a {
+        color: white;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+        .MainheadRight a:hover {
+            color: white;
+            font-size: 12px;
+            text-decoration: underline;
+        }
+
+.MainheadCenterTime {
+    width: 280px;
+    height: 40px;
+    position: absolute;
+    left: 40%;
+    margin-top: 20px;
+}
+
+.MainheadWeather {
+    float: left;
+    margin-left: 51%;
+}
+
+.topleftTitleImg {
+    width: auto;
+    height: 65px;
+    font-weight: bold;
+    color: white;
+    padding-top: 10px;
+}
+
+#time {
+    margin-top: 25px;
+    color: #B5F335;
+    font-size: 27px;
+    font-style: oblique;
+    float: left;
+    font-family: 'digitalTableFont';
+}
+
+.centerMenu {
+    width: 90%;
+    height: 25px;
+    opacity: 1;
+    position: absolute;
+    left: 5.5%;
+    bottom: 84%;
+    color: white;
+}
+
+    .centerMenu ul {
+        margin: 0 auto;
+        list-style: none;
+        padding: 0px;
+    }
+
+        .centerMenu ul li {
+            width: 9%;
+            height: 33px;
+            float: left;
+            text-align: center;
+        }
+
+            .centerMenu ul li div {
+                margin-top: 5px;
+            }
+
+.lable {
+    font-family: 'digitalTableFont';
+    font-size: 18px;
+    font-style: oblique;
+}
+
+    .lable.green {
+        color: #46DB89;
+    }
+
+    .lable.Paleblue {
+        color: #64CFF3;
+    }
+
+    .lable.Palered {
+        color: #E56655;
+    }
+
+.buttonControl {
+    margin-left: 25px;
+    text-align: center;
+    margin-top: 10px;
+    width: 145px;
+}
+
+.bottomImgUp {
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-position: center;
+    background-size: 100%;
+}
+
+    .bottomImgUp:hover {
+        background-image: url(../Image/人员选中_u1007.png);
+        height: 33px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+    }
+
+    .bottomImgUp div {
+        width:95px;
+        height:25px;
+        text-align:center;
+    }
+    .bottomImgUp img {
+        vertical-align:sub;
+    }
+
+/*选中样式*/
+.bottomImgUp_selected {
+    background-image: url(../Image/人员选中_u1007.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.bottom_footer {
+    position: fixed; /*or前面的是absolute就可以用*/
+    min-width: 1200px;
+    bottom: 0px;
+    width: 100%;
+    height: 165px;
+    bottom: 0px;
+    background-color: #0F3F57;
+    background-image: url(../Image/底部.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/*底部三分布局方式*/
+.bottom_three {
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    bottom: 0px;
+}
+
+/*布局配置项*/
+.bottom_Part {
+    height: 130px;
+    float: left;
+}
+
+    .bottom_Part.one {
+        width: 27.5%;
+    }
+
+    .bottom_Part.two {
+        width: 45%;
+    }
+
+    .bottom_Part.event {
+        width: 42%;
+    }
+
+    .bottom_Part.eventone {
+        width: 30.5%;
+    }
+
+    .bottom_Part.three {
+        width: 27.5%;
+    }
+
+    .bottom_Part.renyuanpie {
+        width: 40%;
+    }
+
+    .bottom_Part.linepersonnel {
+        width: 99%;
+    }
+
+    .bottom_Part.casewidth {
+        width: 98%;
+    }
+
+    .bottom_Part.four {
+        width: 55%;
+    }
+
+    .bottom_Part.content {
+        width: 65%;
+    }
+
+    .bottom_Part.contentone {
+        width: 34%;
+    }
+
+    .bottom_Part.five {
+        width: 22.5%;
+    }
+
+    .bottom_Part.six {
+        width: 200px;
+    }
+
+    .bottom_Part.seven {
+        width: calc(98% - 200px);
+    }
+
+    .bottom_Part.fourpoints {
+        width: 25%;
+    }
+    .bottom_Part.monitor {
+        width:30%;
+    }
+.monitor {
+    width:100%;
+    float:left;
+}
+.monitor.heightone {
+    height:95px;
+}
+    .monitor.heighttwo {
+        height:35px;
+        font-size:12px;
+        text-align:center;
+    }
+        .monitor.heighttwo i:nth-last-child(-n+2) {
+            color:#BAE1D1;
+        }
+        .monitor.heighttwo i:nth-last-of-type(n+2) {
+            font-family:'digitalTableFont';
+            color:#E86658;
+        }
+.renyuanstatus {
+    width:5px;
+    height:16px;
+    float:left;
+    margin-left:2px;
+}
+    .renyuanstatus.green {
+        background-color:#4D9847;
+    }
+    .renyuanstatus.defaultgreen {
+        background-color:#4B4657;
+    }
+    .renyuanstatus.yellow {
+        background-color:#B7AB57;
+    }
+    .renyuanstatus.defaultyellow {
+        background-color:#4D4932;
+    }
+    .renyuanstatus.blue {
+        background-color:#489EB1;
+    }
+    .renyuanstatus.defaultblue {
+        background-color:#283F42;
+    }
+.carstatus {
+    height:16px;
+    float:left;
+}
+    .carstatus.red {
+        background-color:#C25A4D;
+    }
+    .carstatus.defaultred {
+        width:80px;
+        background-color:#382B2E;
+    }
+    .carstatus.yellow {
+        background-color:#C1B154;
+    }
+    .carstatus.defaultyellow {
+        width:90px;
+        background-color:#3F4135;
+    }
+    .carstatus.blue {
+        background-color:#4DA2B2;
+    }
+    .carstatus.defaultblue {
+         width:70px;
+         background-color:#223942;
+    }
+
+    .bottom_Part.one table {
+        width: 58%;
+        height: 100px;
+        margin: 15px 0px 15px 0px;
+        float: left;
+    }
+
+        .bottom_Part.one table tr td:nth-child(2n+1) {
+            font-family: 'digitalTableFont';
+            font-size:13px;
+            color: #ACD1C3;
+        }
+
+    .bottom_Part.contentone table {
+        margin: 15px 0px 10px 10px;
+        color: #A1C6BC;
+        float: left;
+    }
+
+        .bottom_Part.contentone table tr td:nth-child(2n+0) {
+            font-family: 'digitalTableFont';
+            font-size: 17px;
+            color: #BD6045;
+        }
+
+    .bottom_Part.five table {
+        margin: 15px 0px 10px 10px;
+        color: #A1C6BC;
+        float: left;
+    }
+
+        .bottom_Part.five table tr td:nth-child(2n+0) {
+            font-family: 'digitalTableFont';
+            font-size: 17px;
+            color: #BD6045;
+        }
+
+        .bottom_Part.five table tr {
+            height: 30px;
+        }
+
+    .bottom_Part.seven table {
+        margin: 3px 0px 10px 10px;
+        height: 120px;
+        float: left;
+    }
+
+    .bottom_Part.fourpoints table {
+        width: 80%;
+        height: 120px;
+        float: left;
+        margin-left: 8%;
+    }
+
+        .bottom_Part.fourpoints table thead tr td {
+            color: white;
+            font-size: 15px;
+            border-bottom: 1px solid #06B082;
+        }
+
+        .bottom_Part.fourpoints table tbody tr td {
+            color: #86AAA6;
+            font-size: 13px;
+        }
+
+
+    .bottom_Part.seven table tr td:nth-child(2n+0) {
+        color: #A1C6BC;
+        font-size: 12px;
+    }
+
+    .bottom_Part.seven table tr td:nth-child(2n+1) {
+        font-family: 'digitalTableFont';
+        font-size: 13px;
+        color: #FF7C30;
+    }
+
+.circular {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+    .circular.red {
+        background-color: #FD473E;
+    }
+
+    .circular.orange {
+        background-color: #FF7C30;
+    }
+
+    .circular.Violet {
+        background-color: #A835C4;
+    }
+
+    .circular.Lilaccolour {
+        background-color: #6C88CE;
+    }
+
+    .circular.green {
+        background-color: #31CF00;
+    }
+
+    .circular.yellow {
+        background-color: #F8CE38;
+    }
+
+    .circular.blue {
+        background-color: #124EE8;
+    }
+
+    .circular.Paleblue {
+        background-color: #00CFCD;
+    }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>行政审批列表-待办/已办/全部</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">	
+		<style>
+			.title {
+				padding: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+				background-color: #fff;
+			}
+		</style>		
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">行政审批列表-待办/已办/全部</h1>
+		</header>	
+		<div class="mui-content">
+			
+		</div>
+	</body>
+	<template id='list-tmp'>
+		<div id="slider" class="mui-slider">
+			<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				{{each list as item,index}}{{if index==0}}
+				<a class="mui-control-item mui-active">
+					{{else}}
+					<a class="mui-control-item">
+						{{/if}}{{item.title}}
+					</a>
+					{{/each}}
+			</div>
+			<div class="mui-slider-group" style="height: 1px;">
+				<div class="mui-slider-item mui-control-content mui-active">
+				</div>
+			</div>
+		</div>
+	</template>	
+	<script type="text/javascript" src="../../js/require.min.js" data-main="xingzhengshenpilist" ></script>
+</html>

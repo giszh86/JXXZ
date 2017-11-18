@@ -1,0 +1,47 @@
+﻿<UserControl xmlns:ticc="clr-namespace:Techzen.ICS.CS.Controls;assembly=Techzen.ICS.CS.Controls" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             x:Class="JXXZ.ZHCG.Front.Window.RoundFilter" mc:Ignorable="d" d:DesignHeight="400" d:DesignWidth="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/JXXZ.ZHCG.Front;component/Style/TZFitterStyle.xaml"/>
+                <ResourceDictionary Source="/JXXZ.ZHCG.Front;component/Style/Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <telerik:RadBusyIndicator x:Name="rbiLoad" Grid.RowSpan="4" Canvas.ZIndex="1" BusyContent="加载中……">
+            <telerik:RadBusyIndicator.Background>
+                <SolidColorBrush Color="Black" Opacity="0.75" />
+            </telerik:RadBusyIndicator.Background>
+        </telerik:RadBusyIndicator>
+        
+        <ticc:TZTitlePanel Grid.Row="0" Title="半径(米)" Margin="0 6 0 0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}">
+                <telerik:RadWrapPanel x:Name="wpRadius" />
+            </ScrollViewer>
+        </ticc:TZTitlePanel>
+        <ticc:TZTitlePanel Grid.Row="1" Title="种类" Margin="0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" BorderBrush="{x:Null}">
+                <telerik:RadWrapPanel x:Name="wpZL" />
+            </ScrollViewer>
+        </ticc:TZTitlePanel>
+
+        <Border Height="20" Width="60" Cursor="Hand" Margin="0 5 10 0" Background="#249280" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Right" MouseLeftButtonUp="Border_MouseLeftButtonUp" CornerRadius="2">
+            <TextBlock Text="确定" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource DefaultTextBlockStyle14}" />
+        </Border>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,72 @@
+.mui-input-group .mui-input-row {
+	height: 40px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+.mui-input-group {
+	position: relative;
+	padding: 0;
+	border: 0;
+	background-color: #fff;
+	margin: 8px;
+}
+
+.mui-input-row label {
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	line-height: 1.1;
+	float: left;
+	width: 35%;
+	padding: 11px 15px;
+	font-size: 14px;
+}
+
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+	float: right;
+	width: 65%;
+	margin-bottom: 0;
+	padding-left: 0;
+	border: 0;
+	color: #005a8d;
+	text-align: right;
+	font-size: 14px;
+}
+
+.form-textereadiv {
+	width: 100%;
+	padding-top: 10px;
+	border: 1px solid #c8c7cc;
+	border-top: none;
+}
+
+.form-textereadiv label {
+	width: 22%;
+	float: left;
+	margin-left: 5%;
+}
+
+.form-textereadiv textarea {
+	width: 70%;
+	background: transparent;
+	border-radius: 6px;
+	color: #005a8d;
+	border: 1px solid #c8c7cc;
+}
+.mui-input-row a{
+	color: #333;
+}
+
+.mui-input-row a span{
+	float: right;
+	position: relative;
+	top: 10px;
+	right: 35px;
+	color: #005A8D;
+}
+
+.geography{
+	background: url(../image/detailimages/geography.png) no-repeat 98% center !important;
+	padding-right: 25px !important;
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>简易案件列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.mui-table-view-cell{
+				padding: 11px 10px;
+			}
+			.img{
+				width: 20%;
+				height: 50px;
+			}
+			.wordrow{	
+				white-space: nowrap;
+				overflow: hidden;
+				width: 100%;
+				text-overflow: ellipsis;
+			}
+			.worddiv{
+				width: 76%;
+				margin-left: 8px;
+			}
+			
+			.secondline{
+				margin-top: 5px;
+			}
+			
+			.time{
+				display: inline-block;
+				float: right;
+				color: #999;
+			}
+			
+			.liinputheight input{
+				text-align: left;
+			}
+			
+			.sj{
+				display: inline-block;
+				width: 64%;
+			}
+			
+			.buttoncenter{
+				width: 30%;
+				height: 90px;
+				position: absolute;
+				top: 53px;
+				right: 8px;
+			}
+			
+			.address{
+				display: inline-block;
+				white-space: nowrap;
+				overflow: hidden;
+				width: 45%;
+				text-overflow: ellipsis;
+				color: #005a8d;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-input-row mui-search serchinputdiv" style="background-color: white;">
+				<input id='search' type="search" class="mui-input-clear" placeholder="" style="background: #eaeaea;border: 1px solid #D7D7D7;margin: 0;" />
+			</div>
+			<div class="mui-scroll" id="menuList">
+				
+				<div class="mui-card" style="margin-top: 0;">
+					<ul class="mui-table-view" id="menuList">
+						<template v-for='(item,index) in items'>
+							<li class="mui-table-view-cell" @tap='openDetail(item)'>
+								<img class="img l-float" src="../../image/ssjk/dbaj.png" />
+								<div class="l-float worddiv">
+									<div class="wordrow">{{item.name}}</div>
+									<div class="secondline">
+										<span class="address">{{item.address}}</span>
+										<span class="time">{{item.date}}</span>
+									</div>
+								</div>
+							</li>
+						</template>
+					</ul>
+				</div>
+			</div>		
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='jyajlist.js'></script>
+</html>

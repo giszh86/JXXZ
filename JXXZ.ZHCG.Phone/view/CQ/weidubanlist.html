@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>未督办</title>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<style type="text/css">
+			.mui-icon-search:before {
+				content: '\e466';
+				position: absolute;
+				left: 10px;
+				top: 7px;
+			}
+			
+			.mui-search.mui-active:before {
+				font-size: 20px;
+				right: auto;
+				left: 5px;
+				display: block;
+				margin-right: 0;
+				margin-left: 15px;
+			}	
+			.row-div span{
+				width: 70%;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				float: right;
+				margin-right: 2%;
+			}
+			.bluebtn{
+				background: #005A8D;color: #ffffff;border: none;margin-left: 5%;
+			}
+			.greenbtn{
+				background: #2AC845;color: #ffffff;border: none;float: right;margin-right: 3%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">未督办</h1>
+		</header>
+		<div class="mui-content">
+			<div style="height: 15px;background: #ffffff;"></div>
+			<div class="mui-input-row mui-search" style="padding-left: 15px;padding-right: 15px;background: #ffffff;border-bottom: 1px solid #ccc;">
+				<input type="search" placeholder="" />
+			</div>	
+			<div class="mui-card">
+				<div class="row-div">
+					<label class="margin-left5pointer">案由：</label>
+					<span class="font-color">任何单位和个人随意倾倒，抛洒或者堆放建筑影响城市道路环境</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">当前环节：</label>
+					<span class="font-color">分管局领导审核立案申请</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">当事人：</label>
+					<span class="font-color">张图途</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">超期时间：</label>
+					<label class="font-colorred">2017-02-01 09:30</label>
+					<button type="button" class="mui-btn margin-left5pointer bluebtn">督办</button>
+					<button type="button" class="mui-btn greenbtn">查看</button>
+				</div>
+			</div>	
+			<div class="mui-card">
+				<div class="row-div">
+					<label class="margin-left5pointer">案由：</label>
+					<span class="font-color">任何单位和个人随意倾倒，抛洒或者堆放建筑影响城市道路环境</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">当前环节：</label>
+					<span class="font-color">分管局领导审核立案申请</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">当事人：</label>
+					<span class="font-color">张图途</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">超期时间：</label>
+					<label class="font-colorgreen">2017-02-01 09:30</label>
+					<button type="button" class="mui-btn margin-left5pointer bluebtn">督办</button>
+					<button type="button" class="mui-btn greenbtn">查看</button>
+				</div>
+			</div>	
+			<div class="mui-card">
+				<div class="row-div">
+					<label class="margin-left5pointer">案由：</label>
+					<span class="font-color">任何单位和个人随意倾倒，抛洒或者堆放建筑影响城市道路环境</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">当前环节：</label>
+					<span class="font-color">分管局领导审核立案申请</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">当事人：</label>
+					<span class="font-color">张图途</span>
+				</div>
+				<div class="row-div">
+					<label class="margin-left5pointer">超期时间：</label>
+					<label class="font-colorred">2017-02-01 09:30</label>
+					<button type="button" class="mui-btn margin-left5pointer bluebtn">督办</button>
+					<button type="button" class="mui-btn greenbtn">查看</button>
+				</div>
+			</div>				
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='weidubanlist.js'></script>
+
+</html>

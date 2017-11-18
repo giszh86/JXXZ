@@ -1,0 +1,21 @@
+﻿.btnController {
+    width: 90px;
+    height: 25px;
+    background-color: #2E6195;
+    float:right;
+}
+
+.btnadd {
+    background-color: #2E6195;
+    border: 0px;
+    color: white;
+}
+
+    .btnadd:hover {
+        cursor: pointer;
+    }
+
+.monthcenter {
+    color: white;
+    font-size: 12px;
+}

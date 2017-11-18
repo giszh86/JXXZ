@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>案件审核-案件处理 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.smalpadding{
+				padding: 8px 10px 9px 15px;
+			}
+			
+			li.mui-table-view-cell input[type='text']{
+				float: right;
+				width: 75%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding: 10px;
+			}
+			
+			.radio-group{
+				width: 75%;
+				float: right;
+				padding: 0;
+			}
+			
+			.textarea{
+				float: right;
+				width: 75%;
+				color: #005a8d;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell smalpadding">
+						处理意见
+						<textarea class="textarea" rows="3"></textarea>
+					</li>
+					<li class="mui-table-view-cell">
+						处理方式
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="method" value="提交下一环节" checked>
+							<span class="radio-name">提交下一环节</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="method" value="退回">
+							<span class="radio-name">退回</span>
+						</div>
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						<span style="float: left;padding-top: 4px;">处理人</span>
+						<input type="text">
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						<span style="float: left;padding-top: 4px;">处理期限</span>
+						<input type="text" style="width: 32%;">
+						<span style="float: right;padding-top: 4px;margin: 0 10px;">至</span>
+						<input type="text" style="width: 32%;">
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						<span style="float: left;padding-top: 4px;">处理时间</span>
+						<input type="text">
+					</li>
+				</ul>
+			</div>
+			
+			<button type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>		
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="ajsh-ajcl.js"></script>
+
+</html>

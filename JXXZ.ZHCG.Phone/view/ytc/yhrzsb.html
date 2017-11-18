@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>养护日志上报</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.mui-input-row label{
+				width: 24%;
+			}
+			
+			.mui-input-row label~input{
+				width: 73%;
+			}
+			
+			.addphoto{
+				width: 18%;
+				margin: 6px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="contentTopBlock">
+					<div class="mui-input-row">
+						<label>养护合同</label>
+						<input readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>巡查日期</label>
+						<input type="text" value=''>
+					</div>
+					<div class="mui-input-row" style="height: 80px;">
+						<label>巡查说明</label>
+						<textarea style="width: 73%;" rows="3"></textarea>
+					</div>
+					<div class="mui-input-row">
+						<label>附件上传</label>
+						<input style="width: 52%;" type="text" value=''>
+						<span style="background-color: #005a8d;color: white;padding: 4px 20px 5px 20px;border-radius: 3px;">上传</span>
+					</div>
+					<div class="mui-input-row">
+						<label>填报时间</label>
+						<input type="text" value=''>
+					</div>
+				</div>
+			</form>
+			
+			<button type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='yhrzsb.js'></script>
+
+</html>

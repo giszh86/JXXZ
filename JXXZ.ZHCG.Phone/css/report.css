@@ -1,0 +1,121 @@
+.mui-input-group{
+	background-color: #efeff4;
+}
+
+.mui-input-group:before{
+	height: 0;
+}
+
+.mui-input-group:after{
+	height: 0;
+}
+
+.mui-input-row label{
+	width: 34%;
+	padding: 14px 5px 11px 11px;
+}
+
+.mui-input-row label~input{
+	width: 64%;
+	color: #005A8D;
+	margin-top: 2px;
+	font-size: 14px;
+	text-align: right;
+}
+
+.mui-input-row label~textarea{
+	border: solid 1px #CCCCCC;
+	width: 73%;
+	border-radius: 3px;
+	float: left;
+	margin-top: 7px;
+	color: #005A8D;
+}
+
+.radio-group{
+	padding-top: 12px;
+}
+
+.radio-input{
+	float: left;
+	margin-top: 1px;
+	margin-left: 10px;
+}
+
+.radio-name{
+	float: left;
+	margin-left: 2px;
+}
+
+.card{
+	margin: 5px 10px 10px 10px;
+	background-color: white;
+	border: 1px solid #CCCCCC;
+	border-radius: 6px;
+	padding: 10px 30px;
+}
+
+.addphoto{
+	display: inline-block;
+	width: 24%;
+	height: 65px;
+	border-radius: 6px;
+	border: 1px dashed #cccccc;
+	margin: 0 4%;
+}
+
+.addphoto img{
+	width: 100%;
+	height: 63px;
+}
+
+.add{
+	background: url(../image/report/add.png) no-repeat 98% center !important;
+	padding-right: 25px !important;
+}
+
+.shuaxin{
+	background: url(../image/report/shuaxin.png) no-repeat 98% center !important;
+	padding-right: 25px !important;
+}
+
+.triangle{
+	background: url(../image/report/triangle.png) no-repeat 98% center !important;
+	padding-right: 20px !important;
+}
+
+.location-green{
+	background: url(../image/wddb/location-green.png) no-repeat 98% center !important;
+	padding-right: 25px !important;
+}
+
+.location-red{
+	background: url(../image/wddb/location-red.png) no-repeat 98% center !important;
+	padding-right: 25px !important;
+}
+
+input[type=number]{
+	padding: 0 15px;
+}
+
+.zb{
+	width: 80%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;
+	text-align: right;
+}
+
+.miaoshu {
+	height: auto;
+	overflow: auto;
+	width: 80%;
+	word-wrap: break-word;
+	text-align: right;
+}	
+
+.imagediv {
+	width: 75%;
+	float: right;
+}	

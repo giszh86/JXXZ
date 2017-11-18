@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>流转日志</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.card {
+				margin: 10px;
+				padding: 10px 15px;
+			}
+			
+			.title {
+				display: inline-block;
+				width: 32%;
+				float: left;
+				line-height: 180%;
+			}
+			
+			.content {
+				display: inline-block;
+				color: #005a8d;
+				line-height: 180%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content" id='list'>
+			
+		</div>
+	</body>
+	<template id='list-tmp'>
+		{{each list as item,index}}
+		<div class="card">
+			<!--<div>
+				<div class="title">序号</div>
+				<div class="content">{{item.row_id}}</div>
+			</div>-->
+			<div>
+				<div class="title">办理人</div>
+				<div class="content">{{item.acceptusername}}</div>
+			</div>
+			<div>
+				<div class="title">操作</div>
+				<div class="content">{{item.activityname}}</div>
+			</div>
+			<div>
+				<div class="title">接受人</div>
+				<div class="content">{{item.receiveusername}}</div>
+			</div>
+			<div>
+				<div class="title">时间</div>
+				<div class="content">{{item.receivedate}}</div>
+			</div>
+		</div>
+		{{/each}}
+	</template>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='nsLog.js'></script>
+
+</html>

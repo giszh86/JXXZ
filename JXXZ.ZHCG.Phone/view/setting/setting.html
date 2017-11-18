@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我的</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<style>
+			.padding-left20px img {
+				width: 80px;
+				height: 80px;
+				border-radius: 80px;
+			}
+			
+			.span_right {
+				float: right;
+				height: 100px;
+				line-height: 100px;
+				margin-right: 20px;
+			}
+			
+			.ulimg img {
+				width: 20px;
+				height: 20px;
+				float: left;
+				margin-right: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">设置</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content">
+				<div class="person-photodiv" data-href='mydata.html'>
+					<div class="padding-top10px padding-left20px l-float">
+						<img id="image" src="../../image/setting/photo.png" />
+					</div>
+					<div class="l-float">
+						<div class="margin-top20px margin-left20px">
+							<label><span id='DisplayName'></span></label>
+							<br />
+							<span class="font-color">职位 :&nbsp;&nbsp;<span id='UserTypeName'></span></label>
+							<br />
+							<label class="font-color">部门 :&nbsp;&nbsp;<span id='UnitName'></span></label>
+						</div>
+					</div>
+
+					<span class="span_right">></span>
+				</div>
+
+				<div class="mui-card">
+					<ul class="mui-table-view ulimg">
+						<li class="mui-table-view-cell">
+							<a>
+								<img src="../../image/setting/lxfs.png" />联系方式
+								<label class="r-float font-color" id='mobile' ></label>
+							</a>
+						</li>
+						<li class="mui-table-view-cell" data-href='changepassword.html'>
+							<a>
+								<img src="../../image/setting/xgmm.png" />修改密码
+								<label class="r-float">></label>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="mui-card">
+					<ul class="mui-table-view ulimg">
+						<li class="mui-table-view-cell" data-href='systemsetpage.html'>
+							<a>
+								<img src="../../image/setting/set.png" />设置
+								<label class="r-float">></label>
+							</a>
+						</li>
+					</ul>
+				</div>	
+				<div class="mui-card" id='xcrz' style="display: none;">
+					<ul class="mui-table-view ulimg">
+						<li class="mui-table-view-cell" data-href='xcrz.html'>
+							<a>
+								<img src="../../image/setting/set.png" />巡查日志
+								<label class="r-float">></label>
+							</a>
+						</li>
+					</ul>
+				</div>	
+				<!--<button id='wenshu' url='http://192.168.0.207:8099/pdf/aaa.pdf' class="mui-btn mui-btn-block">文书测试</button>-->
+				
+				<button style="display: none;" type="button" id="cqbtn" class="mui-btn mui-btn-block">CQ（静态页面）</button>
+				<button style="display: none;" type="button" id='ytcbtn' class="mui-btn mui-btn-block" data-href='../ytc/linshi.html'>ytc</button>
+			</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='setting.js'></script>
+
+</html>

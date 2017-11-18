@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<title>领导督办</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<style type="text/css">
+			.img{
+				width: 50px;
+				float: left;
+			}
+			
+			.title{
+				float: left;
+				margin-top: 15px;
+				margin-left: 10px;
+				color: #666666;
+				font-family: '微软雅黑';
+			}
+			
+			.arrow{
+				float: right; 
+				margin-top: 15px; 
+				color: #999999; 
+				font-family: '微软雅黑';"
+			}
+			
+			.count{
+				float: right;
+				margin-top: 15px;
+				margin-right: 10px;
+				color: #005A8D;
+				font-family: '微软雅黑';
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<div class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back" style="color: #ffffff;" onclick='mui.back(true);'></div>
+			<h1 class="mui-title">领导督办</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" data-type = "1">
+					<img class="img" src="../../image/db/wdb.png" />
+					<font class="title">未督办</font>
+					<font class="arrow">></font>
+					<font id='UpcomingEventQuantity' class="count"></font>
+				</li>
+				<li class="mui-table-view-cell" data-type = "2">
+					<img class="img" src="../../image/db/zjdb.png" />
+					<font class="title">自己督办</font>
+					<font class="arrow">></font>
+					<font id='UpcomingApprovalQuantity' class="count"></font>
+				</li>
+				<li class="mui-table-view-cell" data-type = "3">
+					<img class="img" src="../../image/db/trdb.png" />
+					<font class="title">他人督办</font>
+					<font class="arrow">></font>
+					<font id='UpcomingCaseQuantity' class="count"></font>
+				</li>
+			</ul>	
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='lddb.js'></script>
+</html>

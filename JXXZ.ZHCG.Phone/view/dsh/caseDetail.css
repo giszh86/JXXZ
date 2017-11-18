@@ -1,0 +1,89 @@
+.title-ws {
+	margin: 10px 0 0 23px;
+}
+
+.mui-table-view:before {
+	height: 0;
+}
+
+.mui-table-view:after {
+	height: 0;
+}
+
+.smalpadding {
+	padding: 8px 10px 9px 15px;
+}
+
+li.mui-table-view-cell input[type='text'] {
+	float: right;
+	width: 75%;
+	margin-bottom: 0;
+	height: 26px;
+	font-size: 14px;
+	padding: 10px;
+}
+
+.radio-group {
+	width: 75%;
+	float: right;
+	padding: 0;
+}
+
+.textarea {
+	float: right;
+	width: 75%;
+	color: #005a8d;
+}
+
+.miaoshu {
+	height: auto;
+	overflow: auto;
+	width: 80%;
+	word-wrap: break-word;
+	text-align: right;
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+	border-top: 0;
+	border-bottom: 0;
+}
+
+#sliderLine {
+	height: 1px;
+	width: 100%;
+	background-color: #C8C7CC;
+}
+
+.card {
+	padding: 10px 15px;
+}
+
+.title {
+	display: inline-block;
+	width: 32%;
+	line-height: 180%;
+	vertical-align: top;
+}
+
+.content {
+	display: inline-block;
+	width: 66%;
+	color: #005a8d;
+	line-height: 180%;
+}
+
+.xgws{
+	color: #005a8d;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.xgws:after {
+	height: 0;
+}
+
+.row{
+	height: 100%;
+}

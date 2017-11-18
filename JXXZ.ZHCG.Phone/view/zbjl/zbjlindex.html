@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>周边警力</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<style type="text/css">
+			#map {
+				width: 100%;
+				position: fixed;
+				top: 45px;
+				bottom: 0px;
+				line-height: 200px;
+				text-align: center;
+				background: #FFFFFF;
+			}
+			
+			.ipos {
+				background: no-repeat center center url('img/leftback.png');
+				background-size: 50px 44px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<div class="mui-icon mui-icon-left-nav mui-pull-left mui-action-back"></div>
+			<h1 class="mui-title">周边警力</h1>
+		</header>
+		<div class="mui-input-group">
+			<div>
+				<div id="map" style="height: 560px; position: absolute;z-index: 0;">地图加载中...
+
+				</div>
+			</div>
+		</div>
+		<div style="width: 94%; height: 55px;position: fixed;bottom: 10px;left: 3%; padding: 5px 10px;z-index: 1000;background:url(../../image/zbjl/jlbg.png) center no-repeat;">
+			<div style="float: left;width: 50%;">
+				<div>
+					<span>姓名：</span>
+					<span>张琪琪</span>
+				</div>
+				<div style="margin-top: 5px;">
+					<span>部门：</span>
+					<span>直属中队</span>
+				</div>
+			</div>
+			<span style="float: right;margin-top: 13px">13456780909</span>
+			<img src="../../image/zbjl/telphone.png" width="10%" style="float:right;margin-right: 5px;margin-top: 8px;" />
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='zbjlindex.js'></script>
+
+</html>

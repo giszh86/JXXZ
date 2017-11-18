@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>百度地图</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/app.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">地图浏览</h1>
+			<button id='clickMarker' style="display: none;" class="mui-btn mui-btn-link mui-pull-right">完成</button>
+		</header>
+		<div class="mui-content">
+			<div  id='map'>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Ec1ySBPlhhXrnOzny19VIfLTOV38nygB"></script>
+	<script type="text/javascript" src="../js/require.min.js" data-main='bd_map.js'></script>
+
+</html>

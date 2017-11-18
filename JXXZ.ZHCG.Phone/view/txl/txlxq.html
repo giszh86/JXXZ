@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>通讯录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<style>
+			.padding-left20px img {
+				width: 80px;
+				height: 80px;
+				border-radius: 80px;
+			}
+			
+			.span_right {
+				float: right;
+				height: 100px;
+				line-height: 100px;
+				margin-right: 20px;
+			}
+			
+			.ulimg img {
+				width: 20px;
+				height: 20px;
+				float: left;
+				margin-right: 8px;
+			}
+			
+			.phone{
+				margin: 0 20px;
+			}
+			
+			.name{
+				color: #005a8d;
+				margin-top: 13px;
+			}
+			
+			.number{
+				font-size: 17px;
+				border-bottom: solid 1px #D9E3ED;
+				padding: 5px 0 10px;
+				height: 38px;
+			}
+			
+			.phone-call{
+				width: 28px;
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">通讯录</h1>
+		</header>
+		<div class="mui-content" style="background: white;">
+			<div class="person-photodiv">
+				<div class="padding-top10px padding-left20px l-float">
+					<img id="image" src="../../image/setting/photo.png" />
+				</div>
+				<div id="name" style="float: left; margin: 40px 0 0 10px; font-size: 15px;"></div>
+				<div id="unitname" style="float: right; color: #005a8d; margin: 40px 10px;"></div>
+			</div>
+			<div class="phone">
+				<div class="name">手机号</div>
+				<div class="number">
+					<span id="mobile"></span>
+					<img id="call-mobile" class="phone-call" src="../../image/phone.png"/>
+				</div>
+				<div class="name">工作号</div>
+				<div class="number">
+					<span id="phone"></span>
+					<img id="call-phone" class="phone-call" src="../../image/phone.png"/>
+				</div>
+				<div class="name">短号</div>
+				<div class="number">
+					<span id="shortnumber"></span>
+					<img id="call-shortnumber" class="phone-call" src="../../image/phone.png"/>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='txlxq.js'></script>
+
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>事件详情</title>
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<link rel="stylesheet" href="eventDetail.css" />
+	</head>
+	<style>
+
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">事件详情</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						基本信息
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						材料列表
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						意见列表
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+						流转日志
+					</a>
+					<a class="mui-control-item" href="#item5mobile">
+						办结信息
+					</a>
+				</div>
+				<div id='sliderLine'></div>
+				<div class="mui-slider-group">
+
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<!--
+                                	作者：aoobao@foxmail.com
+                                	时间：2017-03-03
+                                	描述：基本信息
+                                -->
+								<div class="titles">办件基本信息</div>
+								<div class="mui-card">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											审批事项<label class="r-float font-color miaoshu">关于嘉兴市秀洲区供水分公司道路开挖审批</label>
+										</li>
+										<li class="mui-table-view-cell">
+											事件编码<label class="r-float font-color miaoshu">a1cb720e-b15b-4ed998a0-08f9f1993c1d</label>
+										</li>
+										<li class="mui-table-view-cell">
+											查询密码<label class="r-float font-color">123456</label>
+										</li>
+										<li class="mui-table-view-cell">
+											申报号<label class="r-float font-color">2017000551611</label>
+										</li>
+										<li class="mui-table-view-cell">
+											审批类型<label class="r-float font-color">道路开挖</label>
+										</li>
+										<li class="mui-table-view-cell">
+											事项描述<label class="r-float font-color">水表安装，41平方米</label>
+										</li>
+										<li class="mui-table-view-cell">
+											地址<label class="r-float font-color">嘉兴市秀洲区昌中路123号</label>
+										</li>
+									</ul>
+								</div>
+								<div class="titles">申请者/申请者对象信息</div>
+								<div class="mui-card">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											申请单位名称<label class="r-float font-color">嘉兴市秀洲区供水分公司</label>
+										</li>
+										<li class="mui-table-view-cell">
+											法定代表人<label class="r-float font-color">张三</label>
+										</li>
+										<li class="mui-table-view-cell">
+											证件类型<label class="r-float font-color">营业执照</label>
+										</li>
+										<li class="mui-table-view-cell">
+											证件号<label class="r-float font-color">3308090909090909</label>
+										</li>
+										<li class="mui-table-view-cell">
+											邮编<label class="r-float font-color">123456</label>
+										</li>
+										<li class="mui-table-view-cell">
+											联系地址<label class="r-float font-color">嘉兴市秀洲区昌中路123号</label>
+										</li>
+									</ul>
+								</div>
+								<div class="titles">联系人/代理人信息</div>
+								<div class="mui-card">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											姓名<label class="r-float font-color">张三</label>
+										</li>
+										<li class="mui-table-view-cell">
+											手机<label class="r-float font-color">12345678909</label>
+										</li>
+										<li class="mui-table-view-cell">
+											电话号码<label class="r-float font-color">1234567890</label>
+										</li>
+										<li class="mui-table-view-cell">
+											证件类型<label class="r-float font-color">身份证</label>
+										</li>
+										<li class="mui-table-view-cell">
+											证件号<label class="r-float font-color">330823199009091234</label>
+										</li>
+										<li class="mui-table-view-cell">
+											备注<label class="r-float font-color">有一份协议</label>
+										</li>
+									</ul>
+								</div>
+								<div class="titles">项目办理信息</div>
+								<div class="mui-card">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											办理部门<label class="r-float font-color">秀洲区执法局</label>
+										</li>
+										<li class="mui-table-view-cell">
+											收件人<label class="r-float font-color">张琪琪</label>
+										</li>
+										<li class="mui-table-view-cell">
+											办件申请时间<label class="r-float font-color">2017-01-09 09 : 30</label>
+										</li>
+										<li class="mui-table-view-cell">
+											处理时间<label class="r-float font-color">2017-01-09 10 : 30</label>
+										</li>
+										<li class="mui-table-view-cell">
+											办件承诺期限<label class="r-float font-color">3小时</label>
+										</li>
+										<li class="mui-table-view-cell">
+											承诺办结时间<label class="r-float font-color">2017-01-09</label>
+										</li>
+										<li class="mui-table-view-cell">
+											承诺期限单位<label class="r-float font-color">秀洲区执法局</label>
+										</li>
+										<li class="mui-table-view-cell">
+											实际办结时间<label class="r-float font-color">2017-01-09 17 : 20</label>
+										</li>
+									</ul>
+								</div>
+								<div class="titles">处理流程</div>
+								<div class="mui-card">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											指派队员<label class="r-float font-color"></label>
+										</li>
+										<li class="mui-table-view-cell">
+											派遣意见<label class="r-float font-color">处理过程进行监督</label>
+										</li>
+										<li class="mui-table-view-cell">
+											派遣人<label class="r-float font-color">张琪</label>
+										</li>
+										<li class="mui-table-view-cell">
+											派遣时间<label class="r-float font-color">2017-01-10 09 : 30</label>
+										</li>
+									</ul>
+								</div>
+								<div class="mui-card">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											<label class="font-color">监管信息上报</label>
+										</li>
+										<li class="mui-table-view-cell">
+											图片信息
+											<div class="r-float miaoshu" style="padding-right: 5px;">
+												<div class="addphoto">
+													<img src="../../image/addphoto.png" />
+												</div>
+												<div class="addphoto">
+													<img src="../../image/addphoto.png" />
+												</div>
+												<div class="addphoto">
+													<img src="../../image/addphoto.png" />
+												</div>
+											</div>
+										</li>
+										<li class="mui-table-view-cell">
+											监管意见
+											<div class="r-float miaoshu" style="padding-left: 10px;">
+												<textarea rows="4"></textarea>
+											</div>
+										</li>
+										<li class="mui-table-view-cell">
+											地理位置
+											<span class="r-float mui-icon mui-icon-location-filled" style="color:red;font-size: 24px;"></span>
+										</li>
+									</ul>
+								</div>
+								<button type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<!--
+                                	作者：aoobao@foxmail.com
+                                	时间：2017-03-03
+                                	描述：第2个页面:材料列表
+                                -->
+								<div>
+									<div class="titles">材料列表</div>
+									<div class="mui-card">
+										<ul class="mui-table-view">
+											<li class="mui-table-view-cell">
+												序号<label class="r-float font-color">1</label>
+											</li>
+											<li class="mui-table-view-cell">
+												材料名称<label class="r-float font-color">工程渣土准运证核准表</label>
+											</li>
+											<li class="mui-table-view-cell">
+												备注<label class="r-float font-color">暂无</label>
+											</li>
+											<li class="mui-table-view-cell">
+												接受方式<label class="r-float font-color">附件上传</label>
+											</li>
+											<li class="mui-table-view-cell">
+												状态<label class="r-float font-color">以收取</label>
+											</li>
+											<li class="mui-table-view-cell">
+												文件<label class="r-float font-color">工程渣土准运证核准表.jpg</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div>
+									<div class="titles">材料列表</div>
+									<div class="mui-card">
+										<ul class="mui-table-view">
+											<li class="mui-table-view-cell">
+												序号<label class="r-float font-color">2</label>
+											</li>
+											<li class="mui-table-view-cell">
+												材料名称<label class="r-float font-color">工程渣土准运证核准表</label>
+											</li>
+											<li class="mui-table-view-cell">
+												备注<label class="r-float font-color">暂无</label>
+											</li>
+											<li class="mui-table-view-cell">
+												接受方式<label class="r-float font-color">附件上传</label>
+											</li>
+											<li class="mui-table-view-cell">
+												状态<label class="r-float font-color">以收取</label>
+											</li>
+											<li class="mui-table-view-cell">
+												文件<label class="r-float font-color">工程渣土准运证核准表.jpg</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<!--
+                                	作者：aoobao@foxmail.com
+                                	时间：2017-03-03
+                                	描述：第3个页面:意见列表
+                                -->
+								<div>
+									<div class="titles">意见列表</div>
+									<div class="mui-card">
+										<ul class="mui-table-view">
+											<li class="mui-table-view-cell">
+												序号<label class="r-float font-color">1</label>
+											</li>
+											<li class="mui-table-view-cell">
+												环节<label class="r-float font-color">领导批准</label>
+											</li>
+											<li class="mui-table-view-cell">
+												意见类型<label class="r-float font-color">同意</label>
+											</li>
+											<li class="mui-table-view-cell">
+												意见发表者<label class="r-float font-color">任晓君(市行政执法局)</label>
+											</li>
+											<li class="mui-table-view-cell">
+												环节处理时间<label class="r-float font-color">2016-11-04 20:23:19</label>
+											</li>
+											<li class="mui-table-view-cell">
+												环节附件<label class="r-float font-color"></label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div>
+									<div class="titles">意见列表</div>
+									<div class="mui-card">
+										<ul class="mui-table-view">
+											<li class="mui-table-view-cell">
+												序号<label class="r-float font-color">2</label>
+											</li>
+											<li class="mui-table-view-cell">
+												环节<label class="r-float font-color">办结</label>
+											</li>
+											<li class="mui-table-view-cell">
+												意见类型<label class="r-float font-color">批准</label>
+											</li>
+											<li class="mui-table-view-cell">
+												意见发表者<label class="r-float font-color">倪雪琴(市行政执法局)</label>
+											</li>
+											<li class="mui-table-view-cell">
+												环节处理时间<label class="r-float font-color">2016-11-07 08:52:59</label>
+											</li>
+											<li class="mui-table-view-cell">
+												环节附件<label class="r-float font-color"></label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<!--
+			                    	作者：aoobao@foxmail.com
+			                    	时间：2017-03-03
+			                    	描述：第4个页面流转日志
+			                    -->
+								<div class="mui-card card">
+									<div>
+										<div class="title">案件环节名称</div>
+										<div class="content">法制科审核立案申请</div>
+									</div>
+									<div>
+										<div class="title">处理人</div>
+										<div class="content">刘科长</div>
+									</div>
+									<div>
+										<div class="title">处理意见</div>
+										<div class="content">同意立案，妥否，请领导批准</div>
+									</div>
+									<div>
+										<div class="title">开始时间</div>
+										<div class="content">2017-02-08 09 : 30 : 30</div>
+									</div>
+									<div>
+										<div class="title">结束时间</div>
+										<div class="content">2017-02-08 09 : 30 : 30</div>
+									</div>
+								</div>
+								<div class="mui-card card">
+									<div>
+										<div class="title">案件环节名称</div>
+										<div class="content">法制科审核立案申请</div>
+									</div>
+									<div>
+										<div class="title">处理人</div>
+										<div class="content">刘科长</div>
+									</div>
+									<div>
+										<div class="title">处理意见</div>
+										<div class="content">同意立案，妥否，请领导批准</div>
+									</div>
+									<div>
+										<div class="title">开始时间</div>
+										<div class="content">2017-02-08 09 : 30 : 30</div>
+									</div>
+									<div>
+										<div class="title">结束时间</div>
+										<div class="content">2017-02-08 09 : 30 : 30</div>
+									</div>
+								</div>
+								<div class="mui-card card">
+									<div>
+										<div class="title">案件环节名称</div>
+										<div class="content">法制科审核立案申请</div>
+									</div>
+									<div>
+										<div class="title">处理人</div>
+										<div class="content">刘科长</div>
+									</div>
+									<div>
+										<div class="title">处理意见</div>
+										<div class="content">同意立案，妥否，请领导批准</div>
+									</div>
+									<div>
+										<div class="title">开始时间</div>
+										<div class="content">2017-02-08 09 : 30 : 30</div>
+									</div>
+									<div>
+										<div class="title">结束时间</div>
+										<div class="content">2017-02-08 09 : 30 : 30</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div id="item5mobile" class="mui-slider-item mui-control-content">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<!--
+			                    	作者：aoobao@foxmail.com
+			                    	时间：2017-03-03
+			                    	描述：第5个页面:办结信息
+			                    -->
+								<div class="titles">办结信息</div>
+								<div class="mui-card">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											审批结果<label class="r-float font-color">办结</label>
+										</li>
+										<li class="mui-table-view-cell">
+											编号<label class="r-float font-color">551611040002</label>
+										</li>
+										<li class="mui-table-view-cell">
+											办结批文<label class="r-float font-color">准予许可</label>
+										</li>
+									</ul>
+								</div>
+								<div class="titles">执法中队派遣</div>
+								<div class="mui-card">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">
+											大队中队<input readonly type="text" placeholder="请选择大队中队">
+										</li>
+										<li class="mui-table-view-cell">
+											派遣意见
+											<textarea style="float: right;width: 75%;" rows="3" placeholder="请输入派遣意见"></textarea>
+										</li>
+									</ul>
+								</div>
+
+								<button type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="../../js/require.min.js" data-main='eventDetail.js'></script>
+	</body>
+
+</html>

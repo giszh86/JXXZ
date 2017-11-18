@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>未签到-团队今日签到</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" href="../../css/report.all.css">
+		<script type="text/javascript" src="../../js/common.js"></script>
+		<style>
+			.mui-input-row>.status-label {
+				width: 44%;
+				float: right;
+			}
+			
+			.margin-left3pointer {
+				margin-left: 3%;
+			}
+			
+			.margin-left6pointer {
+				margin-left: 6%;
+			}
+			
+			.personimg {
+				height: 20px;
+				width: 20px;
+				float: left;
+				margin-left: 4%;
+				margin-top: 8px;
+				margin-right: -8px;
+			}
+			
+			.male {
+				color: #005a8d;
+				float: left;
+				margin-left: 4%;
+				margin-top: 6px;
+				margin-right: -8px;
+			}
+			.female{
+				color: #F60688;
+				float: left;
+				margin-left: 4%;
+				margin-top: 6px;
+				margin-right: -8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div id='vueDiv'>
+				<div class="mui-input-group" id="Squadron_list">
+					<div class="mui-input-row">
+						<a class="mui-navigate-right">
+							<label>选择中队</label>
+							<span id="Squadron_Name">{{sszdName}}</span>
+						</a>
+						<input type="hidden" id='Squadron_ID' name='Squadron_ID' :value='sszd' />
+					</div>
+					<div class="mui-input-row">
+						<a class="mui-navigate-right">
+							<label>选择班组</label>
+							<span ID='Class'>{{ssbcName}}</span>
+						</a>
+						<input type="hidden" id='Class_id' :value='ssbc' />
+					</div>
+				</div>
+				<div class="mui-scroll">
+
+					<template v-for='item in items'>
+						<div class="mui-card" @tap='listClick(item)'>
+							<div class="mui-input-row border-bottomstyle padding-top4px">
+								<span v-if='item.sex == "男"' class="mui-icon mui-icon-person-filled male"></span>
+								<span v-else class="mui-icon mui-icon-person-filled female"></span>
+								<label>{{item.name}}</label>
+								<label class="status-label">{{item.nowDate.Format('yyyy-MM-dd ') + item.weekDay}}</label>
+							</div>
+							<div class="row-div">
+								<label class="margin-left5pointer">计划签到：</label><label class="font-color">{{item.signin}}</label>
+								<label class="margin-left3pointer">计划签退：</label><label class="font-color">{{item.signout}}</label>
+							</div>
+						</div>
+					</template>
+				</div>
+				<div class="mui-card" data-href="qdxq.html">
+					<!--<div class="mui-input-row border-bottomstyle padding-top4px">
+						<span class="mui-icon mui-icon-person-filled icon">
+					</span><label>张三</label>
+						<label class="status-label">2017-02-02 星期二</label>
+					</div>
+					<div class="row-div">
+						<label class="margin-left5pointer">计划签到：</label><label class="font-color">08:30-09:00</label><label class="margin-left3pointer">计划签退：</label><label class="font-color">17:30:-18:00</label>
+					</div>
+				</div>-->
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="nosign"></script>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>简易案件详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.mui-input-row label~input{
+				text-align: center;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.xgws{
+				background-color: #3BAEDA;
+				color: white;
+				width: 100%;
+				padding: 8px 0;
+				border: none;
+				margin-bottom: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">简易案件详情</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="contentTopBlock">
+					<div class="mui-input-row">
+						<label>处罚决定书编号</label>
+						<input readonly type="text" value='秀综当罚字[2016]第4-010号'>
+					</div>
+					<div class="mui-input-row">
+						<label>案由</label>
+						<input readonly type="text" value='任何单位或个人随意倾倒、抛撒或者堆放建筑垃圾的处罚'>
+					</div>
+					<div class="mui-input-row">
+						<label>案发地址</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>案发时间</label>
+						<input readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>当事人类型</label>
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="person" value="naturalPerson" checked disabled>
+							<span class="radio-name">自然人</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="person" value="legalPerson" disabled>
+							<span class="radio-name">法人</span>
+						</div>
+					</div>
+					<div class="mui-input-row">
+						<label>姓名</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>证件类型</label>
+						<input readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>证件号</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>联系电话</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>联系地址</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>适用的违则</label>
+						<input readonly type="text" value='(内容会很多)'>
+					</div>
+					<div class="mui-input-row">
+						<label>适用的违则</label>
+						<input readonly type="text" value='(内容会很多)'>
+					</div>
+					<div class="mui-input-row">
+						<label>适用的处罚</label>
+						<input readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label></label>
+						<input readonly style="background: url(../../image/report/add.png) no-repeat 98% center;" type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>缴款方式</label>
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="payment" value="当场缴费" disabled>
+							<span class="radio-name">当场缴费</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="payment" value="银行代缴" checked disabled>
+							<span class="radio-name">银行代缴</span>
+						</div>
+					</div>
+					<div class="mui-input-row">
+						<label>罚款金额</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>缴款银行</label>
+						<input readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>银行账号</label>
+						<input readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>银行户名</label>
+						<input readonly style="background: url(../../image/report/triangle.png) no-repeat 98% center;" type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>执法人姓名</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>执法证号</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>执法时间</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>执法地点</label>
+						<input readonly type="text" value=''>
+					</div>
+					<div class="mui-input-row">
+						<label>地点坐标</label>
+						<input readonly style="background: url(../../image/wddb/location-red.png) no-repeat 99% center;" type="text" value=''>
+					</div>
+				</div>
+			</form>
+			<div style="margin-left: 20px;margin-top: 10px; font-size: 15px;">现场拍照</div>
+			<div class="card">
+				<div class="addphoto">
+					<img src="../../image/addphoto.png"/>
+				</div>
+				<div class="addphoto">
+					<img src="../../image/addphoto.png"/>
+				</div>
+				<div class="addphoto">
+					<img src="../../image/addphoto.png"/>
+				</div>
+			</div>
+			<div style="margin-left: 20px;margin-top: 10px; font-size: 15px;">相关文书</div>
+			<div class="card" style="padding: 10px 10px 2px 10px;">
+				<button type="button" class="xgws">现场照片证据.jpg</button>
+				<button type="button" class="xgws">当事人身份证明.jpg</button>
+				<button type="button" class="xgws">调查询问笔录.jpg</button>
+			</div>
+			<button type="button" class="mui-btn buttoncenter">关&nbsp;&nbsp;闭</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='jyajxq.js'></script>
+
+</html>

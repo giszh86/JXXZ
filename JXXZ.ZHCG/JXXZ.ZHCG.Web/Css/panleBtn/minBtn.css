@@ -1,0 +1,75 @@
+﻿.min-btn {
+    width: 15px;
+    height: 30px;
+    float: right;
+    margin-right: 4px;
+}
+
+    .min-btn:hover {
+        cursor: pointer;
+    }
+
+.min-arror-left {
+    width: 0;
+    height: 0;
+    border-bottom: 3px solid transparent; /* 下边框的高 */
+    border-top: 3px solid transparent; /* 上方边框的高 */
+    border-right: 3px solid white; /* 右边框的长度|宽度，以及背景色 */
+    font-size: 0;
+    line-height: 0;
+    float: left;
+    margin-top: 13px;
+}
+
+
+.min-arror-right {
+    width: 0;
+    height: 0;
+    border-bottom: 3px solid transparent; /* 下边框的高 */
+    border-top: 3px solid transparent; /* 上方边框的高 */
+    border-left: 3px solid white; /* 左边框的长度|宽度，以及背景色 */
+    font-size: 0;
+    line-height: 0;
+    float: left;
+    margin-top: 13px;
+}
+
+.min-center {
+    width: 9px;
+    height: 2px;
+    background-color: white;
+    margin-top: 15px;
+    float: left;
+}
+
+.min-arror-left-status {
+    width: 0;
+    height: 0;
+    border-bottom: 3px solid transparent; /* 下边框的高 */
+    border-top: 3px solid transparent; /* 上方边框的高 */
+    border-right: 3px solid #46DB89; /* 右边框的长度|宽度，以及背景色 */
+    font-size: 0;
+    line-height: 0;
+    float: left;
+    margin-top: 13px;
+}
+
+.min-arror-right-status {
+    width: 0;
+    height: 0;
+    border-bottom: 3px solid transparent; /* 下边框的高 */
+    border-top: 3px solid transparent; /* 上方边框的高 */
+    border-left: 3px solid #46DB89; /* 左边框的长度|宽度，以及背景色 */
+    font-size: 0;
+    line-height: 0;
+    float: left;
+    margin-top: 13px;
+}
+
+.min-center-status {
+    width: 9px;
+    height: 2px;
+    background-color: #46DB89;
+    margin-top: 15px;
+    float: left;
+}

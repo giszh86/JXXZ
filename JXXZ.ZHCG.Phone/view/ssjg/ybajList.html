@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<title>一般案件列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/app.css">
+		<style type="text/css">
+			.title{
+				display: inline-block;
+				width: 21%;
+				float: left;
+				line-height: 180%;
+			}
+			
+			.content{
+				display: inline-block;
+				width: 79%;
+				color: #005a8d;
+				line-height: 180%;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.liinputheight input{
+				text-align: left;
+			}
+			
+			.card{
+				background-color: transparent;
+			}
+			
+			.card:before{
+				height: 0;
+			}
+			
+			.card:after{
+				height: 0;
+			}
+			
+			.card-cell{
+				margin: 10px;
+				background: white;
+				border: 1px solid #CCCCCC;
+				border-radius: 6px;
+			}
+			
+			.sj{
+				display: inline-block;
+				width: 74%;
+			}
+			
+			.buttoncenter{
+				width: 20%;
+				position: absolute;
+				top: 73px;
+				right: 8px;
+			}
+			
+			.row{
+				height: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">一般案件列表</h1>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" id="Squadron_list">
+						<div class="liinputheight">
+							<span class="l-float">选择中队</span>
+							<input id='Squadron_Name' style="background: url(../../image/report/triangle-black.png) no-repeat right top;" readonly type="text" value=''/>
+							<input type="hidden" id='Squadron_ID' name='Squadron_ID' ctype/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell sj" id="li-starttime">
+						<div class="liinputheight">
+							<span class="l-float">起始时间</span>
+							<input readonly id="starttime" type="text" value=''/>
+						</div>
+					</li>
+					<li class="mui-table-view-cell sj" id="li-endtime">
+						<div class="liinputheight">
+							<span class="l-float">结束时间</span>
+							<input readonly id="endtime" type="text" value=''/>
+						</div>
+					</li>
+					<button type="button" class="mui-btn buttoncenter" id="search">查询</button>
+				</ul>
+			</div>
+			<div style="color: red;margin: 7px 10px 0 10px;">温馨提示：请至PC端处理一般案件信息</div>
+			<div class="mui-scroll">
+				<ul class="mui-table-view card" id="menuList" >
+					<template v-for='(item,index) in items'>
+						<li class="mui-table-view-cell card-cell" @tap='openView(item)'>
+							<div class="row">
+								<div class="title">案由</div>
+								<div class="content">{{item.title}}</div>
+							</div>
+							<div class="row">
+								<div class="title">当前环节</div>
+								<div class="content">{{item.segmentValue}}</div>
+							</div>
+							<div class="row">
+								<div class="title">当事人</div>
+								<div class="content">{{item.f_name==null?item.p_name:item.f_name}}</div>
+							</div>
+							<div class="row">
+								<div class="title">超期时间</div>
+								<div class="content" style="color: red;">{{item.extendedDate}}</div>
+							</div>
+						</li>
+					</template>
+				</ul>
+			</div>	
+			<!--<div class="card">
+				<div>
+					<div class="title">案由</div>
+					<div class="content">任何单位或个人随意倾倒、抛撒或者堆放建筑垃圾的</div>
+				</div>
+				<div>
+					<div class="title">当前环节</div>
+					<div class="content">执法队员提出案件调查终结报告</div>
+				</div>
+				<div>
+					<div class="title">当事人</div>
+					<div class="content">张一林</div>
+				</div>
+				<div>
+					<div class="title">超期时间</div>
+					<div class="content" style="color: red;">2017-02-09 09:20</div>
+				</div>
+			</div>
+			<div class="card">
+				<div>
+					<div class="title">案由</div>
+					<div class="content">任何单位或个人随意倾倒、抛撒或者堆放建筑垃圾的</div>
+				</div>
+				<div>
+					<div class="title">当前环节</div>
+					<div class="content">执法队员提出案件调查终结报告</div>
+				</div>
+				<div>
+					<div class="title">当事人</div>
+					<div class="content">张一林</div>
+				</div>
+				<div>
+					<div class="title">超期时间</div>
+					<div class="content" style="color: red;">2017-02-09 09:20</div>
+				</div>
+			</div>-->
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='ybajList.js'></script>
+</html>

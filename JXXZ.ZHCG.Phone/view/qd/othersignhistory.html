@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>他人签到历史</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" href="../../css/report.all.css">
+		<script type="text/javascript" src="../../js/common.js" ></script>
+		
+		<style>
+			.mui-input-row>.status-label {
+				width: 30%;
+			}
+			
+			.margin-left3pointer {
+				margin-left: 3%;
+			}
+			
+			.margin-left6pointer {
+				margin-left: 6%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">他人签到历史</h1>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div  id="mySh">
+				
+			
+			<form class="mui-input-group">
+				<div class="mui-input-row" id="Squadron_list">
+					<a class="mui-navigate-right">
+						<label>选择班组</label>
+						<span id="Class">请选择</span>
+					</a>
+					<input type="hidden" id='Squadron_ID' name='Squadron_ID' ctype/>
+					<input type="hidden" id='Squadron_Name' />
+					<input type="hidden" id='Class_id' />
+				</div>
+				<div class="mui-input-row" id="TeamManber_List">
+					<a class="mui-navigate-right">
+						<label>选择队员</label>
+						<span id='TeamManber_Name'>请选择</span>
+					</a>
+					<input type="hidden" id='TeamManber_ID' name='Squadron_ID' ctype/>
+				</div>
+			</form>
+			<div class="mui-scroll">
+				<template v-for='(item,index) in items'>
+					<div class="mui-card" @tap="checkinDetail(item)">
+						<div class="mui-input-row border-bottomstyle padding-top4px">
+							<label>{{item.taskTime.Format('yyyy-MM-dd')}}</label>
+							<label>{{item.weekday}}</label>
+							<label class="status-label" style="float: right;color:green;">{{item.title}}</label>
+						</div>
+						<div class="row-div">
+							<label class="margin-left5pointer">签到时间：</label>
+							<label class="font-color">{{item.qdsj}}</label>
+							<label class="margin-left3pointer">签退时间：</label>
+							<label class="font-color">{{item.qtsj}}</label>
+						</div>
+						<div class="row-div">
+							<label class="margin-left5pointer">实际签到时间：</label>
+							<label class="font-color">{{item.sjqd ? item.sjqd : '未签到'}}</label>
+							<label class="margin-left6pointer">实际签退时间：</label>
+							<label class="font-color">{{item.sjqt? item.sjqt : '未签退'}}</label>
+						</div>
+					</div>	
+				</template>
+			</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="othersignhistory"></script>
+
+</html>

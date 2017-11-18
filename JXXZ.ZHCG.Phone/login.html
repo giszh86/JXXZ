@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="login-background">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/app.css" rel="stylesheet" />
+		<style type="text/css">
+			.login-background {
+				background-image: url(image/login/login_bg.png);
+				width: 100%;
+				height: 100%;
+				background-size: 100% 100%;
+			}
+			
+			.logo {
+				width: 60%;
+				margin-top: 50px;
+			}
+			
+			.login-form {
+				width: 290px;
+				position: relative;
+			}
+			
+			.input-form {
+				width: 230px;
+				padding-top: 30px;
+				margin: 0px auto;
+			}
+			
+			.input-form input {
+				text-indent: 1.5em;
+			}
+			
+			.accountiocp {
+				position: absolute;
+				left: 32px;
+				top: 37px;
+			}
+			
+			.passwordiocp {
+				position: absolute;
+				left: 32px;
+				top: 92px;
+			}
+			
+			input[type=text],
+			input[type=password] {
+				border: none;
+				border-bottom: 1px solid #ccc;
+				border-radius: 0;
+				background-color: transparent;
+			}
+			
+			.mui-btn {
+				color: white;
+				font-size: 20px;
+				border-radius: 27px;
+				padding: 10px 95px;
+				background: rgba(100%, 100%, 100%, 0.3);
+				margin-top: 20px;
+			}
+			
+			.mui-content,
+			body {
+				background-color: transparent;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div align="center">
+				<img src="image/login/logo.png" class="logo" />
+			</div>
+
+			<div style="margin-top: 20px;" align="center">
+				<form class='login-form'>
+					<div class='input-form '>
+						<div class="accountiocp">
+							<img src="image/login/account.png" height='25px' />
+						</div>
+						<div class='passwordiocp'>
+							<img src="image/login/password.png" height="25px" />
+						</div>
+						<input id='user' type='text' placeholder="请输入账号" class="mui-input-clear" value='' />
+						<input id='password' type='password' class="mui-input-clear" placeholder="请输入密码" value='' />
+						<button id='loginbtn' type="button" class="mui-btn">登录</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</body>
+	<script type="text/javascript" src="js/require.min.js" data-main='login.js'></script>
+
+</html>

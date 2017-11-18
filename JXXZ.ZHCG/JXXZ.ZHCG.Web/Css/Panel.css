@@ -1,0 +1,567 @@
+﻿/*全局样式*/
+::-ms-clear, ::-ms-reveal {
+    display: none;
+}
+
+.panelheadhr {
+    width: 5px;
+    background-color: #3684D6;
+    height: 100%;
+    float: left;
+}
+
+.panletitle {
+    width: calc(100% - 5px - 5px);
+    height: 100%;
+    float: left;
+    color: white;
+    margin-left: 5px;
+}
+
+    .panletitle span {
+        line-height: 30px;
+    }
+
+.searchline {
+    width: 100%;
+    height: 40px;
+    float: left;
+}
+
+    .searchline img {
+        width: 19px;
+        height: 20px;
+        float: left;
+        margin: 8px 0px 0px 5px;
+    }
+
+        .searchline img:hover {
+            cursor: pointer;
+        }
+
+.searchtext {
+    width: 70%;
+    margin: 3% 0px 0px 2%;
+    height: 20px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #939BA1;
+    float: left;
+    color: #3684D6;
+}
+
+    .searchtext:focus {
+        background-color: white;
+    }
+/*关闭样式*/
+.panelClose {
+    width: 15px;
+    height: 100%;
+    margin-right: 10px;
+    background-image: url(../Image/tools/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+}
+
+    .panelClose:hover {
+        background-image: url(../Image/tools/closed.png);
+        cursor: pointer;
+    }
+
+.panelMin {
+    width: 15px;
+    height: 100%;
+    margin-right: 10px;
+    background-image: url(../Image/minMaxPicture/minwhilte.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+}
+
+    .panelMin:hover {
+        background-image: url(../Image/minMaxPicture/mingreen.png);
+        cursor: pointer;
+    }
+
+.panelMax {
+    width: 15px;
+    height: 100%;
+    margin-right: 10px;
+    background-image: url(../Image/minMaxPicture/maxwhilte.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+}
+
+    .panelMax:hover {
+        background-image: url(../Image/minMaxPicture/maxgreen.png);
+        cursor: pointer;
+    }
+
+/*选项卡样式*/
+.tabswitch {
+    width: 100%;
+    height: 30px;
+    float: left;
+    background: -webkit-linear-gradient(#175074, #083A56); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#175074, #083A56); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#175074, #083A56); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#175074, #083A56); /* 标准的语法 */
+}
+
+    .tabswitch ul {
+        height: 30px;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .tabswitch ul li {
+            width: 50%;
+            height: 28px;
+            margin-top: 2px;
+            text-align: center;
+            float: left;
+        }
+
+            .tabswitch ul li span {
+                line-height: 30px;
+                color: white;
+            }
+
+            .tabswitch ul li:hover {
+                cursor: pointer;
+            }
+
+.tabswitch_select {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #BC9655;
+}
+
+/*loding*加载样式*/
+.loading {
+    width: 100px;
+    height: 26px;
+    position: relative;
+    left: 30%;
+    top: 30%;
+    text-align: center;
+    display: none;
+}
+
+    .loading img {
+        width: 25px;
+        height: 26px;
+    }
+
+    .loading span {
+        font-size: 12px;
+        color: white;
+    }
+
+/*列表面板样式*/
+.list {
+    top: 87px;
+    left: 50px;
+    background: #152D45;
+    position: absolute;
+}
+
+.listhead {
+    width: 100%;
+    height: 30px;
+    background: -webkit-linear-gradient(#2A587D, #10364D); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#2A587D, #10364D); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#2A587D, #10364D); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#2A587D, #10364D); /* 标准的语法 */
+}
+
+
+.listdatacontent {
+    width: 100%;
+    height: calc(100% - 30px);
+    float: left;
+}
+
+.listdatacontent-seachbar {
+    width: 100%;
+    height: calc(100% - 30px - 40px - 30px);
+    float: left;
+}
+
+.listdatacontent-seachbarswich {
+    width: 100%;
+    height: calc(100% - 30px - 30px - 40px - 30px);
+    float: left;
+}
+
+
+.listtable {
+    width: 100%;
+    color: white;
+}
+
+    .listtable thead tr {
+        border: 0px;
+        height: 23px;
+        background: -webkit-linear-gradient(#195075, #083B56); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(#195075, #083B56); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(#195075, #083B56); /* Firefox 3.6 - 15 */
+        background: linear-gradient(#195075, #083B56); /* 标准的语法 */
+    }
+
+        .listtable thead tr td {
+            padding-left: 10px;
+        }
+
+    .listtable tbody tr {
+        font-size: 13px;
+        width: 100%;
+        height: 20px;
+    }
+
+        .listtable tbody tr:nth-child(2n+0) {
+            background-color: #293E54;
+        }
+
+        .listtable tbody tr:hover {
+            background-color: #F39944;
+            cursor: pointer;
+        }
+
+        .listtable tbody tr td {
+            padding-left: 10px;
+        }
+
+            .listtable tbody tr td img {
+                width: 16px;
+                height: 16px;
+                vertical-align: sub;
+            }
+
+.listbottom {
+    width: 100%;
+    height: 30px;
+    float: left;
+}
+
+.Page {
+    margin: 3px 0px 0px 5px;
+    width: calc(100% - 5px - 75px);
+    float: left;
+}
+/*概要面板样式*/
+.outline-panle {
+    top: 190px;
+    left: 350px;
+    position: absolute;
+    background-color: #192F46;
+}
+
+.outline-panle-title {
+    width: 100%;
+    height: 30px;
+    float: left;
+    background: -webkit-linear-gradient(#3C607A, #14374E); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#3C607A, #14374E); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#3C607A, #14374E); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#3C607A, #14374E); /* 标准的语法 */
+}
+
+.out-panle-content {
+    width: 100%;
+    height: calc(100% - 30px - 35px);
+    float: left;
+}
+
+    .out-panle-content table {
+        width: 100%;
+        float: left;
+    }
+
+        .out-panle-content table tr {
+            height: 25px;
+        }
+
+.out-panle-foot {
+    width: 100%;
+    height: 35px;
+    float: left;
+    background: -webkit-linear-gradient(#394B5E, #3A4C5F); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#394B5E, #3A4C5F); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#394B5E, #3A4C5F); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#394B5E, #3A4C5F); /* 标准的语法 */
+    font-size: 12px;
+    color: #5FCC6A;
+}
+
+    .out-panle-foot img {
+        vertical-align: sub;
+        margin: 8px 0px 0px 10px;
+    }
+
+        .out-panle-foot img:hover {
+            cursor: pointer;
+        }
+
+.out-panle-table {
+    width: 100%;
+    text-align: left;
+    color: white;
+    font-size: 13px;
+    margin: 0px 0px 0px 5px;
+}
+
+    .out-panle-table tr td img {
+        width: 90px;
+        height: 120px;
+    }
+
+        .out-panle-table tr td img:hover {
+            cursor: pointer;
+        }
+
+/*详情或者筛选面板*/
+.detail-panel {
+    top: 87px;
+    left: 670px;
+    position: absolute;
+    background-color: #192F46;
+}
+
+.detail-panel-title {
+    width: 100%;
+    height: 30px;
+    float: left;
+    background: -webkit-linear-gradient(#3C607A, #14374E); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#3C607A, #14374E); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#3C607A, #14374E); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#3C607A, #14374E); /* 标准的语法 */
+}
+
+.detail-panel-content {
+    width: 100%;
+    height: calc(100% - 30px - 30px);
+    float: left;
+}
+
+.detail-panel-content-title {
+    width: calc(100% - 20px);
+    margin: 10px 0px 0px 10px;
+    float: left;
+}
+
+.detail-panel-content-title-hr {
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    background-color: #6D7277;
+    margin: 10px 0px 0px 10px;
+    float: left;
+}
+
+.detail-panel-content-title-hrone {
+    width: calc(100% - 20px);
+    height: 3px;
+    border-radius: 5px;
+    background-color: #6D7277;
+    float: left;
+}
+
+.detail-panel-content-title tr:nth-child(2n+1) {
+    font-size: 30px;
+    color: #FF9456;
+}
+
+.detail-panel-content-title tr:nth-child(2n) {
+    font-size: 20px;
+    color: white;
+}
+
+.detail-panel-content-cqtitle {
+    width: calc(100% - 20px);
+    margin: 10px 0px 0px 10px;
+    float: left;
+}
+
+    .detail-panel-content-cqtitle tr:nth-child(2n+1) {
+        font-size: 30px;
+        color: #FF9456;
+    }
+
+.detail-panel-table {
+    width: calc(100% - 20px);
+    color: white;
+    font-size: 13px;
+    margin: 10px 0px 0px 10px;
+    float: left;
+}
+
+.detail-panel-table-link {
+    width: 100%;
+    color: white;
+    float: left;
+}
+
+    .detail-panel-table-link thead {
+        text-align: center;
+        height: 30px;
+        background: #22344E;
+    }
+
+    .detail-panel-table-link tbody {
+        font-size: 13px;
+        text-align: center;
+    }
+
+        .detail-panel-table-link tbody tr {
+            height: 25px;
+        }
+
+            .detail-panel-table-link tbody tr:nth-child(2n+1) {
+                background-color: #32445D;
+            }
+
+            .detail-panel-table-link tbody tr:hover {
+                cursor: pointer;
+            }
+
+.detail-panel-table tr td img {
+    width: 90px;
+    height: 120px;
+}
+
+.casewtdetails-table {
+    width: calc(100% - 20px);
+    height: 200px;
+    color: white;
+    font-size: 13px;
+    margin: 10px 0px 0px 10px;
+    float: left;
+}
+
+.datail-touch-bar {
+    width: 100%;
+    height: 30px;
+    background: -webkit-linear-gradient(#457BA9, #2A547D); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#457BA9, #2A547D); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#457BA9, #2A547D); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#457BA9, #2A547D); /* 标准的语法 */
+    float: left;
+}
+
+    .datail-touch-bar ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .datail-touch-bar ul li {
+            width: 150px;
+            height: 25px;
+            margin-top: 5px;
+            text-align: center;
+            float: left;
+        }
+
+            .datail-touch-bar ul li:hover {
+                cursor: pointer;
+            }
+
+            .datail-touch-bar ul li span {
+                line-height: 25px;
+                color: white;
+            }
+
+.datail-touch-bar-select {
+    background: -webkit-linear-gradient(#C7A163, #98763E); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#C7A163, #98763E); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#C7A163, #98763E); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#C7A163, #98763E); /* 标准的语法 */
+    height: 25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.allbtn-location {
+    width: 70px;
+    height: 25px;
+    background-color: #4084D4;
+    border-radius: 5px;
+    color: white;
+    float: left;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    background-image: url(../Image/localtion/Iconlocation.png);
+    background-repeat: no-repeat;
+    background-position: 3px 4px;
+    margin-top: 2px;
+}
+
+    .allbtn-location lable {
+        margin-left: 10px;
+    }
+
+    .allbtn-location:hover {
+        cursor: pointer;
+    }
+
+.treeloadingPanle {
+    width: 100%;
+    height: calc(100% - 30px - 30px);
+    float: left;
+}
+
+.treeloading {
+    width: 100px;
+    height: 26px;
+    text-align: center;
+    position: relative;
+    left: 30%;
+    top: 30%;
+}
+
+    .treeloading span {
+        color: white;
+        font-size: 12px;
+    }
+
+    .treeloading img {
+        width: 25px;
+        height: 26px;
+    }
+
+.frame-selection-panel {
+    width: 350px;
+    height: 150px;
+    background-color: #18365A;
+    position: absolute;
+    right: 60px;
+    top: 350px;
+    display: none;
+}
+
+.frame-selection-panel-content {
+    width: 100%;
+    height: calc(100% - 60px);
+    float: left;
+}
+
+    .frame-selection-panel-content table {
+        width: 100%;
+        height: 100%;
+        color: white;
+    }
+
+.frame-selection-panel-bottom {
+    width: 100%;
+    height: 30px;
+    float: left;
+}
+
+/*面板标题字体颜色*/
+.panel-title-fontColor {
+    color: #c2d8e7;
+}

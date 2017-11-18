@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加小摊小贩信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.mui-table-view-cell{
+				padding: 8px 10px 9px 15px;
+			}
+			
+			li.mui-table-view-cell span{
+				float: left;
+				padding-top: 4px;
+			}
+			
+			li.mui-table-view-cell input{
+				float: right;
+				width: 75%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding-left: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">修改小摊小贩信息</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<span>姓名</span>
+						<input id="person" ctype="person" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>联系电话</span>
+						<input class="mui-input-clear" id="contactphone" ctype="contactphone" type="number">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>证件号</span>
+						<input id="card" ctype="card" type="number">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>类型</span>
+						<input id="hawkertype" ctype="hawkertype" type="text">
+					</li>
+					<li class="mui-table-view-cell">
+						<span>活动区域</span>
+						<input id="remark" ctype="remark" type="text">
+					</li> 
+					<li class="mui-table-view-cell" id='arealist'>
+						<span>所属区域</span>
+						<input readonly="readonly" type="text" id='areaname' class="triangle" value=''>
+						<input ctype='sourcearea' type="hidden" id='sourcearea' />
+					</li>
+					<li class="mui-table-view-cell" id="pos">
+						<span>地理位置</span>
+						<!--<input type="text" class="location-red">-->
+						<input readonly class="location-red" id='posaddress' ctype="grometry" type="text" value=''>
+						<input id='latitude' type='hidden' ctype='y84' />
+						<input id='longitude' type='hidden' ctype='x84' />
+					</li>
+				</ul>
+			</div>
+			
+			<button id="submitit" type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>		
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="xtxf-modify.js"></script>
+
+</html>

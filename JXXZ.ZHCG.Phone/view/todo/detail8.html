@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>待审核市民事件内勤审核 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		
+		<style type="text/css">
+			.title {
+				margin: 10px 0 0 23px;
+				font-size: 15px;
+			}
+			
+			.mui-card {
+				margin-top: 3px;
+			}
+			
+			.miaoshu {
+				height: auto;
+				overflow: auto;
+				width: 80%;
+				word-wrap: break-word;
+				text-align: right;
+			}
+			
+			.image {
+				width: 24%;
+				height: 56px;
+				margin-right: 7%;
+			}
+			
+			.smalpadding {
+				padding: 5px 10px 5px 15px;
+			}
+			
+			li.mui-table-view-cell input[type='text'] {
+				float: right;
+				width: 75%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding: 10px;
+			}
+			
+			.radio-group {
+				width: 75%;
+				float: right;
+				padding: 0;
+			}
+			
+			.textarea {
+				float: right;
+				width: 75%;
+				color: #005a8d;
+			}
+			.userModel{
+				font-size: 11px!important;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<template v-if='isReady'>
+				<div class="title">基本信息</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							联系人<label class="r-float font-color">{{model.complainant}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							联系电话<label class="r-float font-color">{{model.contactphone}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件标题<label class="r-float font-color">{{model.eventtitle}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件大类<label class="r-float font-color">{{model.bigtypename}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件小类<label class="r-float font-color miaoshu">{{model.smalltypename}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件地址<label class="r-float font-color ">{{model.eventaddress}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							地点坐标<label class="r-float font-color zb" @tap="location">{{model.grometry}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件内容<label class="r-float font-color miaoshu">{{model.eventcontent}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							现场照片
+							<div class="imagediv">
+								<img id="head-img1" class="image"  @tap='openimage' data-preview-src="" :data-preview-group="beforeImage.length > 0 ? 1: false"  :src="beforeImage.length > 0 ? beforeImage[0].FILEPATH : '../../image/nophoto.png'" />
+								<img id="head-img2" class="image"  @tap='openimage' data-preview-src="" :data-preview-group="beforeImage.length > 1 ? 1: false"  :src="beforeImage.length > 1 ? beforeImage[1].FILEPATH : '../../image/nophoto.png'" />
+								<img id="head-img3" class="image"  @tap='openimage' data-preview-src="" :data-preview-group="beforeImage.length > 2 ? 1: false"  :src="beforeImage.length > 2 ? beforeImage[2].FILEPATH : '../../image/nophoto.png'" />
+							</div>
+							<input id="head-img1Name" type="hidden" value="" />
+							<input id="head-img2Name" type="hidden" value="" />
+							<input id="head-img3Name" type="hidden" value="" />
+							<input id="img-head-img1Name" type="hidden" value="" />
+							<input id="img-head-img2Name" type="hidden" value="" />
+							<input id="img-head-img3Name" type="hidden" value="" />
+						</li>
+						<li class="mui-table-view-cell">
+							上报时间<label class="r-float font-color">{{model.foundtime}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							限办时间<label class="r-float font-color">{{model.limittime}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							上报人<label class="r-float font-color">{{model.username}}</label>
+						</li>
+					</ul>
+				</div>
+				<div class="title">事件处理</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							处理后照片
+							<div class="imagediv">
+								<img class="image" @tap='openimage' data-preview-src="" :data-preview-group="endImage.length > 0 ? 2: false" :src="endImage.length > 0 ? endImage[0].FILEPATH : '../../image/nophoto.png'" />
+								<img class="image" @tap='openimage' data-preview-src="" :data-preview-group="endImage.length > 1 ? 2: false" :src="endImage.length > 1 ? endImage[1].FILEPATH : '../../image/nophoto.png'" />
+								<img class="image" @tap='openimage' data-preview-src="" :data-preview-group="endImage.length > 2 ? 2: false" :src="endImage.length > 2 ? endImage[2].FILEPATH : '../../image/nophoto.png'" />
+							</div>
+
+						</li>
+						<li class="mui-table-view-cell">
+							处理方式<label class="r-float font-color">{{model.processmode}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							满意度<label class="r-float font-color">{{model.satisfaction}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							处理意见
+							<textarea readonly="readonly" class="textarea" style="width: 70%;border-color: white;" rows="3">{{model.cl_content}}</textarea>
+						</li>
+					</ul>
+				</div>
+				<div class="title">中队审核</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell smalpadding">
+							审核人
+							<label id='chooseXT' class="r-float font-color">{{model.nqname}}</label>
+						</li>
+						<li class="mui-table-view-cell smalpadding">
+							审核意见
+							<textarea ctype='dealcontent' class="textarea" rows="3"></textarea>
+						</li>
+						<input ctype='wfdid' type="hidden" :value='model.wfdid' />
+						<input ctype='wfsaid' type="hidden" :value='model.wfsaid' />
+						<input ctype='wfsid' type="hidden" :value='model.wfsid' />
+						<input ctype='nextwfuserids' type="hidden" :value='model.zz' />
+					</ul>
+				</div>
+				<button @tap="submitEvent('2017021410240005',$event)" type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+				<button @tap="submitEvent('2017021410240003',$event,'回退成功')" type="button" class="mui-btn buttoncenter">回&nbsp;&nbsp;退</button>
+			</template>
+
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="detail8.js"></script>
+
+</html>

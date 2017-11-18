@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<title>测试页面</title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/app.css" />
+		<!--<link rel="stylesheet" href="css/pro.details.css" />-->
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<template v-for='(item,index) in items'>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+
+						<li class="mui-table-view-cell">
+							<div class="liinputheight">
+								<span class="l-float">名称:</span>
+								<input ctype type="text" readonly="readonly" placeholder="请填写名称" :value='item.name' />
+							</div>
+						</li>
+						<template v-for='(model,rowIndex) in item.data'>
+							<li class="mui-table-view-cell">
+								<div class="liinputheight">
+									<span class="l-float">{{model.name}}</span>
+									<input ctype type="text" v-model='model.value' />
+								</div>
+							</li>
+						</template>
+					</ul>
+					<button type="button" :data-index='index' @tap='run' class="mui-btn buttoncenter">运 行</button>
+				</div>
+			</template>
+			<!--<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">名称:</span>
+							<input ctype type="text" placeholder="请填写名称" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">参数1:</span>
+							<input ctype type="text" placeholder="请填写参数1" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">参数2:</span>
+							<input ctype type="text" placeholder="请填写参数2" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="liinputheight">
+							<span class="l-float">参数3:</span>
+							<input ctype type="text" placeholder="请填写参数3" />
+						</div>
+					</li>
+				</ul>
+				<button  type="button" class="mui-btn buttoncenter">运 行</button>
+			</div>-->
+
+		</div>
+	</body>
+	<script type="text/javascript" src="js/require.min.js" data-main='test.js'></script>
+
+</html>

@@ -1,0 +1,33 @@
+﻿Ext.define('TianZun.model.reportcenter.SpecialPeriodEnvirProtModel', {
+    extend: 'Ext.data.Model',
+    idProperty: 'taskId',
+
+    fields: [
+               { name: 'projectId', type: 'float' },
+               { name: 'project', type: 'string' },
+               { name: 'taskId', type: 'float' },
+               { name: 'name', type: 'string' },
+               { name: 'dccs', type: 'float' },
+               { name: 'cdrs', type: 'float' },
+               { name: 'cdcc', type: 'float' },
+               { name: 'fxs', type: 'float' },
+               { name: 'zgwcs', type: 'float' },
+               { name: 'xzzf', type: 'float' },
+               { name: 'fkje', type: 'float' },
+               { name: 'ffxcgzs', type: 'float' },
+               { name: 'ghzmj', type: 'float' },
+               { name: 'zgzmj', type: 'float' },
+               { name: 'wzqyjzlj', type: 'float' },
+               { name: 'wagdsjqyjzlj', type: 'float' },
+               { name: 'syqdjzlj', type: 'float' },
+               { name: 'gdzbcsctfy', type: 'float' },
+               { name: 'fkjey', type: 'float' },
+               { name: 'zg', type: 'float' },
+               { name: 'qd', type: 'float' },
+
+               { name: 'preparer', type: 'string' },
+               { name: 'xzshuser', type: 'string' },
+               { name: 'preparerphone', type: 'string' },
+               { name: 'remark', type: 'string' },
+    ],
+})

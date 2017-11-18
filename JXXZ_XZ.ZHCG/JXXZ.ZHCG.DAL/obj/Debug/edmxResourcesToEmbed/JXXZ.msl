@@ -1,0 +1,2711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="base_articles">
+      <EntityTypeMapping TypeName="Model.base_articles">
+        <MappingFragment StoreEntitySet="base_articles">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_menus">
+      <EntityTypeMapping TypeName="Model.base_menus">
+        <MappingFragment StoreEntitySet="base_menus">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="seqno" ColumnName="seqno" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_permissionmenus">
+      <EntityTypeMapping TypeName="Model.base_permissionmenus">
+        <MappingFragment StoreEntitySet="base_permissionmenus">
+          <ScalarProperty Name="menuid" ColumnName="menuid" />
+          <ScalarProperty Name="permissioncode" ColumnName="permissioncode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_permissions">
+      <EntityTypeMapping TypeName="Model.base_permissions">
+        <MappingFragment StoreEntitySet="base_permissions">
+          <ScalarProperty Name="seqno" ColumnName="seqno" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="parentcode" ColumnName="parentcode" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_rolepermissions">
+      <EntityTypeMapping TypeName="Model.base_rolepermissions">
+        <MappingFragment StoreEntitySet="base_rolepermissions">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="permissioncode" ColumnName="permissioncode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_roles">
+      <EntityTypeMapping TypeName="Model.base_roles">
+        <MappingFragment StoreEntitySet="base_roles">
+          <ScalarProperty Name="updatedtime" ColumnName="updatedtime" />
+          <ScalarProperty Name="createdtime" ColumnName="createdtime" />
+          <ScalarProperty Name="seqno" ColumnName="seqno" />
+          <ScalarProperty Name="issystem" ColumnName="issystem" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_systemlogs">
+      <EntityTypeMapping TypeName="Model.base_systemlogs">
+        <MappingFragment StoreEntitySet="base_systemlogs">
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_units">
+      <EntityTypeMapping TypeName="Model.base_units">
+        <MappingFragment StoreEntitySet="base_units">
+          <ScalarProperty Name="updatedtime" ColumnName="updatedtime" />
+          <ScalarProperty Name="createdtime" ColumnName="createdtime" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="unittypeid" ColumnName="unittypeid" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_unittypes">
+      <EntityTypeMapping TypeName="Model.base_unittypes">
+        <MappingFragment StoreEntitySet="base_unittypes">
+          <ScalarProperty Name="seqno" ColumnName="seqno" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_userroles">
+      <EntityTypeMapping TypeName="Model.base_userroles">
+        <MappingFragment StoreEntitySet="base_userroles">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_users">
+      <EntityTypeMapping TypeName="Model.base_users">
+        <MappingFragment StoreEntitySet="base_users">
+          <ScalarProperty Name="remarks10" ColumnName="remarks10" />
+          <ScalarProperty Name="remarks9" ColumnName="remarks9" />
+          <ScalarProperty Name="remarks8" ColumnName="remarks8" />
+          <ScalarProperty Name="remarks7" ColumnName="remarks7" />
+          <ScalarProperty Name="remarks6" ColumnName="remarks6" />
+          <ScalarProperty Name="remarks5" ColumnName="remarks5" />
+          <ScalarProperty Name="remarks4" ColumnName="remarks4" />
+          <ScalarProperty Name="remarks3" ColumnName="remarks3" />
+          <ScalarProperty Name="remarks2" ColumnName="remarks2" />
+          <ScalarProperty Name="remarks1" ColumnName="remarks1" />
+          <ScalarProperty Name="shortnumber" ColumnName="shortnumber" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="updatedtime" ColumnName="updatedtime" />
+          <ScalarProperty Name="createdtime" ColumnName="createdtime" />
+          <ScalarProperty Name="sepon" ColumnName="sepon" />
+          <ScalarProperty Name="isonline" ColumnName="isonline" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="mapelementdevicetype" ColumnName="mapelementdevicetype" />
+          <ScalarProperty Name="mapelementbiztype" ColumnName="mapelementbiztype" />
+          <ScalarProperty Name="regionid" ColumnName="regionid" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="loginpwd" ColumnName="loginpwd" />
+          <ScalarProperty Name="loginname" ColumnName="loginname" />
+          <ScalarProperty Name="usertypeid" ColumnName="usertypeid" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="displayname" ColumnName="displayname" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_usertypes">
+      <EntityTypeMapping TypeName="Model.base_usertypes">
+        <MappingFragment StoreEntitySet="base_usertypes">
+          <ScalarProperty Name="seqno" ColumnName="seqno" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="base_zds">
+      <EntityTypeMapping TypeName="Model.base_zds">
+        <MappingFragment StoreEntitySet="base_zds">
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="zd_seq" ColumnName="zd_seq" />
+          <ScalarProperty Name="zd_name" ColumnName="zd_name" />
+          <ScalarProperty Name="zd_id" ColumnName="zd_id" />
+          <ScalarProperty Name="zd_type" ColumnName="zd_type" />
+          <ScalarProperty Name="zd_typename" ColumnName="zd_typename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bj_classes">
+      <EntityTypeMapping TypeName="Model.bj_classes">
+        <MappingFragment StoreEntitySet="bj_classes">
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bj_part">
+      <EntityTypeMapping TypeName="Model.bj_part">
+        <MappingFragment StoreEntitySet="bj_part">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="cdinatey" ColumnName="cdinatey" />
+          <ScalarProperty Name="cdinatex" ColumnName="cdinatex" />
+          <ScalarProperty Name="datasource" ColumnName="datasource" />
+          <ScalarProperty Name="chdate" ColumnName="chdate" />
+          <ScalarProperty Name="crdate" ColumnName="crdate" />
+          <ScalarProperty Name="usestate" ColumnName="usestate" />
+          <ScalarProperty Name="objstate" ColumnName="objstate" />
+          <ScalarProperty Name="objpos" ColumnName="objpos" />
+          <ScalarProperty Name="ownbgcode" ColumnName="ownbgcode" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="conperson" ColumnName="conperson" />
+          <ScalarProperty Name="material" ColumnName="material" />
+          <ScalarProperty Name="matdepname" ColumnName="matdepname" />
+          <ScalarProperty Name="matdepcode" ColumnName="matdepcode" />
+          <ScalarProperty Name="owndepname" ColumnName="owndepname" />
+          <ScalarProperty Name="owndepcode" ColumnName="owndepcode" />
+          <ScalarProperty Name="cdepname" ColumnName="cdepname" />
+          <ScalarProperty Name="cdepcode" ColumnName="cdepcode" />
+          <ScalarProperty Name="objname" ColumnName="objname" />
+          <ScalarProperty Name="objcode" ColumnName="objcode" />
+          <ScalarProperty Name="sbxl" ColumnName="sbxl" />
+          <ScalarProperty Name="sbmc" ColumnName="sbmc" />
+          <ScalarProperty Name="sbdl" ColumnName="sbdl" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bj_zds">
+      <EntityTypeMapping TypeName="Model.bj_zds">
+        <MappingFragment StoreEntitySet="bj_zds">
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="classid" ColumnName="classid" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_cases">
+      <EntityTypeMapping TypeName="Model.case_cases">
+        <MappingFragment StoreEntitySet="case_cases">
+          <ScalarProperty Name="issave" ColumnName="issave" />
+          <ScalarProperty Name="tzcsid" ColumnName="tzcsid" />
+          <ScalarProperty Name="xbuserid" ColumnName="xbuserid" />
+          <ScalarProperty Name="zbuserid" ColumnName="zbuserid" />
+          <ScalarProperty Name="ssxbzd" ColumnName="ssxbzd" />
+          <ScalarProperty Name="sszd" ColumnName="sszd" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="casecontent" ColumnName="casecontent" />
+          <ScalarProperty Name="ghjzmj" ColumnName="ghjzmj" />
+          <ScalarProperty Name="gtjzmj" ColumnName="gtjzmj" />
+          <ScalarProperty Name="gdmj" ColumnName="gdmj" />
+          <ScalarProperty Name="zdmj" ColumnName="zdmj" />
+          <ScalarProperty Name="cf" ColumnName="cf" />
+          <ScalarProperty Name="wfqx" ColumnName="wfqx" />
+          <ScalarProperty Name="clyj" ColumnName="clyj" />
+          <ScalarProperty Name="flfg" ColumnName="flfg" />
+          <ScalarProperty Name="contactaddress" ColumnName="contactaddress" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="f_cardnum" ColumnName="f_cardnum" />
+          <ScalarProperty Name="f_wtr" ColumnName="f_wtr" />
+          <ScalarProperty Name="f_card" ColumnName="f_card" />
+          <ScalarProperty Name="f_cardtype" ColumnName="f_cardtype" />
+          <ScalarProperty Name="f_dbr" ColumnName="f_dbr" />
+          <ScalarProperty Name="f_name" ColumnName="f_name" />
+          <ScalarProperty Name="p_cardnum" ColumnName="p_cardnum" />
+          <ScalarProperty Name="p_cardtype" ColumnName="p_cardtype" />
+          <ScalarProperty Name="p_sex" ColumnName="p_sex" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="geographical2000" ColumnName="geographical2000" />
+          <ScalarProperty Name="geographical84" ColumnName="geographical84" />
+          <ScalarProperty Name="sitedatetime" ColumnName="sitedatetime" />
+          <ScalarProperty Name="caseaddress" ColumnName="caseaddress" />
+          <ScalarProperty Name="fromcasesource" ColumnName="fromcasesource" />
+          <ScalarProperty Name="casereason" ColumnName="casereason" />
+          <ScalarProperty Name="qlsx" ColumnName="qlsx" />
+          <ScalarProperty Name="qlsxid" ColumnName="qlsxid" />
+          <ScalarProperty Name="casesourceid" ColumnName="casesourceid" />
+          <ScalarProperty Name="casename" ColumnName="casename" />
+          <ScalarProperty Name="casetypeid" ColumnName="casetypeid" />
+          <ScalarProperty Name="casebh" ColumnName="casebh" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_casesources">
+      <EntityTypeMapping TypeName="Model.case_casesources">
+        <MappingFragment StoreEntitySet="case_casesources">
+          <ScalarProperty Name="lastatus" ColumnName="lastatus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="casetypename" ColumnName="casetypename" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="yjdwid" ColumnName="yjdwid" />
+          <ScalarProperty Name="sfyj" ColumnName="sfyj" />
+          <ScalarProperty Name="sfzc" ColumnName="sfzc" />
+          <ScalarProperty Name="sfbyla" ColumnName="sfbyla" />
+          <ScalarProperty Name="casetype" ColumnName="casetype" />
+          <ScalarProperty Name="sfla" ColumnName="sfla" />
+          <ScalarProperty Name="notetime" ColumnName="notetime" />
+          <ScalarProperty Name="notetaker" ColumnName="notetaker" />
+          <ScalarProperty Name="processopinion" ColumnName="processopinion" />
+          <ScalarProperty Name="cluecontent" ColumnName="cluecontent" />
+          <ScalarProperty Name="wfxwfsdz" ColumnName="wfxwfsdz" />
+          <ScalarProperty Name="contactaddress" ColumnName="contactaddress" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_leadersupervises">
+      <EntityTypeMapping TypeName="Model.case_leadersupervises">
+        <MappingFragment StoreEntitySet="case_leadersupervises">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="suptime" ColumnName="suptime" />
+          <ScalarProperty Name="supopinion" ColumnName="supopinion" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="workflowid" ColumnName="workflowid" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+          <ScalarProperty Name="supid" ColumnName="supid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_phases">
+      <EntityTypeMapping TypeName="Model.case_phases">
+        <MappingFragment StoreEntitySet="case_phases">
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="wfid" ColumnName="wfid" />
+          <ScalarProperty Name="phasename" ColumnName="phasename" />
+          <ScalarProperty Name="phaseid" ColumnName="phaseid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_prescriptions">
+      <EntityTypeMapping TypeName="Model.case_prescriptions">
+        <MappingFragment StoreEntitySet="case_prescriptions">
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="workid" ColumnName="workid" />
+          <ScalarProperty Name="preid" ColumnName="preid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_simplecases">
+      <EntityTypeMapping TypeName="Model.case_simplecases">
+        <MappingFragment StoreEntitySet="case_simplecases">
+          <ScalarProperty Name="isphone" ColumnName="isphone" />
+          <ScalarProperty Name="tzcsid" ColumnName="tzcsid" />
+          <ScalarProperty Name="cswfsid" ColumnName="cswfsid" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="zf_address" ColumnName="zf_address" />
+          <ScalarProperty Name="zf_time" ColumnName="zf_time" />
+          <ScalarProperty Name="zf_card" ColumnName="zf_card" />
+          <ScalarProperty Name="zfr_name" ColumnName="zfr_name" />
+          <ScalarProperty Name="bank_accountname" ColumnName="bank_accountname" />
+          <ScalarProperty Name="bank_account" ColumnName="bank_account" />
+          <ScalarProperty Name="bank_name" ColumnName="bank_name" />
+          <ScalarProperty Name="fk_money" ColumnName="fk_money" />
+          <ScalarProperty Name="jktype" ColumnName="jktype" />
+          <ScalarProperty Name="casecontent" ColumnName="casecontent" />
+          <ScalarProperty Name="ghjzmj" ColumnName="ghjzmj" />
+          <ScalarProperty Name="gtjzmj" ColumnName="gtjzmj" />
+          <ScalarProperty Name="gdmj" ColumnName="gdmj" />
+          <ScalarProperty Name="zdmj" ColumnName="zdmj" />
+          <ScalarProperty Name="cf" ColumnName="cf" />
+          <ScalarProperty Name="wfqx" ColumnName="wfqx" />
+          <ScalarProperty Name="clyj" ColumnName="clyj" />
+          <ScalarProperty Name="flfg" ColumnName="flfg" />
+          <ScalarProperty Name="contactaddress" ColumnName="contactaddress" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="f_cardnum" ColumnName="f_cardnum" />
+          <ScalarProperty Name="f_wtr" ColumnName="f_wtr" />
+          <ScalarProperty Name="f_card" ColumnName="f_card" />
+          <ScalarProperty Name="f_cardtype" ColumnName="f_cardtype" />
+          <ScalarProperty Name="f_dbr" ColumnName="f_dbr" />
+          <ScalarProperty Name="f_name" ColumnName="f_name" />
+          <ScalarProperty Name="p_cardnum" ColumnName="p_cardnum" />
+          <ScalarProperty Name="p_cardtype" ColumnName="p_cardtype" />
+          <ScalarProperty Name="p_sex" ColumnName="p_sex" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="persontype" ColumnName="persontype" />
+          <ScalarProperty Name="geographical2000" ColumnName="geographical2000" />
+          <ScalarProperty Name="geographical84" ColumnName="geographical84" />
+          <ScalarProperty Name="sitedatetime" ColumnName="sitedatetime" />
+          <ScalarProperty Name="caseaddress" ColumnName="caseaddress" />
+          <ScalarProperty Name="fromcasesource" ColumnName="fromcasesource" />
+          <ScalarProperty Name="casereason" ColumnName="casereason" />
+          <ScalarProperty Name="qlsx" ColumnName="qlsx" />
+          <ScalarProperty Name="qlsxid" ColumnName="qlsxid" />
+          <ScalarProperty Name="casename" ColumnName="casename" />
+          <ScalarProperty Name="casetypeid" ColumnName="casetypeid" />
+          <ScalarProperty Name="cfjdsbh" ColumnName="cfjdsbh" />
+          <ScalarProperty Name="simpleid" ColumnName="simpleid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_sources">
+      <EntityTypeMapping TypeName="Model.case_sources">
+        <MappingFragment StoreEntitySet="case_sources">
+          <ScalarProperty Name="sourcename" ColumnName="sourcename" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_workflowdetails">
+      <EntityTypeMapping TypeName="Model.case_workflowdetails">
+        <MappingFragment StoreEntitySet="case_workflowdetails">
+          <ScalarProperty Name="nextroleid" ColumnName="nextroleid" />
+          <ScalarProperty Name="nextunitid" ColumnName="nextunitid" />
+          <ScalarProperty Name="seqnum" ColumnName="seqnum" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="nextid" ColumnName="nextid" />
+          <ScalarProperty Name="wfdname" ColumnName="wfdname" />
+          <ScalarProperty Name="phaseid" ColumnName="phaseid" />
+          <ScalarProperty Name="wfid" ColumnName="wfid" />
+          <ScalarProperty Name="wfdid" ColumnName="wfdid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_workflowspecificactivitys">
+      <EntityTypeMapping TypeName="Model.case_workflowspecificactivitys">
+        <MappingFragment StoreEntitySet="case_workflowspecificactivitys">
+          <ScalarProperty Name="etime" ColumnName="etime" />
+          <ScalarProperty Name="stime" ColumnName="stime" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="wfdid" ColumnName="wfdid" />
+          <ScalarProperty Name="dealtime" ColumnName="dealtime" />
+          <ScalarProperty Name="dealuserid" ColumnName="dealuserid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="wfsid" ColumnName="wfsid" />
+          <ScalarProperty Name="wfsaid" ColumnName="wfsaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_workflowspecifics">
+      <EntityTypeMapping TypeName="Model.case_workflowspecifics">
+        <MappingFragment StoreEntitySet="case_workflowspecifics">
+          <ScalarProperty Name="casestatus" ColumnName="casestatus" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+          <ScalarProperty Name="cswfsid" ColumnName="cswfsid" />
+          <ScalarProperty Name="casebh" ColumnName="casebh" />
+          <ScalarProperty Name="casetypeid" ColumnName="casetypeid" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="casemode" ColumnName="casemode" />
+          <ScalarProperty Name="casereason" ColumnName="casereason" />
+          <ScalarProperty Name="casesourceid" ColumnName="casesourceid" />
+          <ScalarProperty Name="casetype" ColumnName="casetype" />
+          <ScalarProperty Name="filestatus" ColumnName="filestatus" />
+          <ScalarProperty Name="currentwfsaid" ColumnName="currentwfsaid" />
+          <ScalarProperty Name="wfsname" ColumnName="wfsname" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="wfid" ColumnName="wfid" />
+          <ScalarProperty Name="wfsid" ColumnName="wfsid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_workflowspecificusers">
+      <EntityTypeMapping TypeName="Model.case_workflowspecificusers">
+        <MappingFragment StoreEntitySet="case_workflowspecificusers">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="ismainuser" ColumnName="ismainuser" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="wfsaid" ColumnName="wfsaid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dealtime" ColumnName="dealtime" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="wfsuid" ColumnName="wfsuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_wtajs">
+      <EntityTypeMapping TypeName="Model.case_wtajs">
+        <MappingFragment StoreEntitySet="case_wtajs">
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="y2000" ColumnName="y2000" />
+          <ScalarProperty Name="x2000" ColumnName="x2000" />
+          <ScalarProperty Name="y84" ColumnName="y84" />
+          <ScalarProperty Name="x84" ColumnName="x84" />
+          <ScalarProperty Name="reporttime" ColumnName="reporttime" />
+          <ScalarProperty Name="reportuserid" ColumnName="reportuserid" />
+          <ScalarProperty Name="isphone" ColumnName="isphone" />
+          <ScalarProperty Name="jssj" ColumnName="jssj" />
+          <ScalarProperty Name="jsr" ColumnName="jsr" />
+          <ScalarProperty Name="processtime" ColumnName="processtime" />
+          <ScalarProperty Name="processuser" ColumnName="processuser" />
+          <ScalarProperty Name="fphm" ColumnName="fphm" />
+          <ScalarProperty Name="fkje" ColumnName="fkje" />
+          <ScalarProperty Name="cldw" ColumnName="cldw" />
+          <ScalarProperty Name="datastatus" ColumnName="datastatus" />
+          <ScalarProperty Name="zfreason" ColumnName="zfreason" />
+          <ScalarProperty Name="shsj" ColumnName="shsj" />
+          <ScalarProperty Name="shr" ColumnName="shr" />
+          <ScalarProperty Name="jdsj" ColumnName="jdsj" />
+          <ScalarProperty Name="jdr" ColumnName="jdr" />
+          <ScalarProperty Name="dsr_address" ColumnName="dsr_address" />
+          <ScalarProperty Name="dsr_phone" ColumnName="dsr_phone" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="cjr" ColumnName="cjr" />
+          <ScalarProperty Name="cjdw" ColumnName="cjdw" />
+          <ScalarProperty Name="cfjdsh" ColumnName="cfjdsh" />
+          <ScalarProperty Name="wfxw" ColumnName="wfxw" />
+          <ScalarProperty Name="wt_address" ColumnName="wt_address" />
+          <ScalarProperty Name="wt_time" ColumnName="wt_time" />
+          <ScalarProperty Name="processstatus" ColumnName="processstatus" />
+          <ScalarProperty Name="car_type" ColumnName="car_type" />
+          <ScalarProperty Name="car_num" ColumnName="car_num" />
+          <ScalarProperty Name="wtid" ColumnName="wtid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_wtfiles">
+      <EntityTypeMapping TypeName="Model.case_wtfiles">
+        <MappingFragment StoreEntitySet="case_wtfiles">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="wtid" ColumnName="wtid" />
+          <ScalarProperty Name="wtfileid" ColumnName="wtfileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_yjdws">
+      <EntityTypeMapping TypeName="Model.case_yjdws">
+        <MappingFragment StoreEntitySet="case_yjdws">
+          <ScalarProperty Name="yjdwname" ColumnName="yjdwname" />
+          <ScalarProperty Name="yjdwid" ColumnName="yjdwid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_zds">
+      <EntityTypeMapping TypeName="Model.case_zds">
+        <MappingFragment StoreEntitySet="case_zds">
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="zd_seq" ColumnName="zd_seq" />
+          <ScalarProperty Name="zd_name" ColumnName="zd_name" />
+          <ScalarProperty Name="zd_id" ColumnName="zd_id" />
+          <ScalarProperty Name="zd_type" ColumnName="zd_type" />
+          <ScalarProperty Name="zd_typename" ColumnName="zd_typename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_definitions">
+      <EntityTypeMapping TypeName="Model.doc_definitions">
+        <MappingFragment StoreEntitySet="doc_definitions">
+          <ScalarProperty Name="doccode" ColumnName="doccode" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="ddpath" ColumnName="ddpath" />
+          <ScalarProperty Name="ddstate" ColumnName="ddstate" />
+          <ScalarProperty Name="isunique" ColumnName="isunique" />
+          <ScalarProperty Name="ddname" ColumnName="ddname" />
+          <ScalarProperty Name="ddid" ColumnName="ddid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_wfdddrs">
+      <EntityTypeMapping TypeName="Model.doc_wfdddrs">
+        <MappingFragment StoreEntitySet="doc_wfdddrs">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="isrequired" ColumnName="isrequired" />
+          <ScalarProperty Name="wfdid" ColumnName="wfdid" />
+          <ScalarProperty Name="ddid" ColumnName="ddid" />
+          <ScalarProperty Name="dwdid" ColumnName="dwdid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doc_wfsas">
+      <EntityTypeMapping TypeName="Model.doc_wfsas">
+        <MappingFragment StoreEntitySet="doc_wfsas">
+          <ScalarProperty Name="yjtime" ColumnName="yjtime" />
+          <ScalarProperty Name="yjdw" ColumnName="yjdw" />
+          <ScalarProperty Name="sfyj" ColumnName="sfyj" />
+          <ScalarProperty Name="dsrzxfs" ColumnName="dsrzxfs" />
+          <ScalarProperty Name="sdremark" ColumnName="sdremark" />
+          <ScalarProperty Name="xzcfbgcltime" ColumnName="xzcfbgcltime" />
+          <ScalarProperty Name="xzcfbgclr" ColumnName="xzcfbgclr" />
+          <ScalarProperty Name="xzcfbgbz" ColumnName="xzcfbgbz" />
+          <ScalarProperty Name="tzcltime" ColumnName="tzcltime" />
+          <ScalarProperty Name="tzclr" ColumnName="tzclr" />
+          <ScalarProperty Name="tzjgsm" ColumnName="tzjgsm" />
+          <ScalarProperty Name="cssbtime" ColumnName="cssbtime" />
+          <ScalarProperty Name="dsryj" ColumnName="dsryj" />
+          <ScalarProperty Name="dsrreplay" ColumnName="dsrreplay" />
+          <ScalarProperty Name="xzcffs" ColumnName="xzcffs" />
+          <ScalarProperty Name="xzcfnr" ColumnName="xzcfnr" />
+          <ScalarProperty Name="xzcfje" ColumnName="xzcfje" />
+          <ScalarProperty Name="xzcftype" ColumnName="xzcftype" />
+          <ScalarProperty Name="jyaq" ColumnName="jyaq" />
+          <ScalarProperty Name="ajdxremark" ColumnName="ajdxremark" />
+          <ScalarProperty Name="ajdx" ColumnName="ajdx" />
+          <ScalarProperty Name="wfss" ColumnName="wfss" />
+          <ScalarProperty Name="dcjg" ColumnName="dcjg" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="documentid" ColumnName="documentid" />
+          <ScalarProperty Name="ddtableid" ColumnName="ddtableid" />
+          <ScalarProperty Name="ddtablename" ColumnName="ddtablename" />
+          <ScalarProperty Name="lastdwfcode" ColumnName="lastdwfcode" />
+          <ScalarProperty Name="lastdwfname" ColumnName="lastdwfname" />
+          <ScalarProperty Name="lastpdfpath" ColumnName="lastpdfpath" />
+          <ScalarProperty Name="lastwordpath" ColumnName="lastwordpath" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filetyoe" ColumnName="filetyoe" />
+          <ScalarProperty Name="ddid" ColumnName="ddid" />
+          <ScalarProperty Name="wfsaid" ColumnName="wfsaid" />
+          <ScalarProperty Name="dwfsasid" ColumnName="dwfsasid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fi_camera_units">
+      <EntityTypeMapping TypeName="Model.fi_camera_units">
+        <MappingFragment StoreEntitySet="fi_camera_units">
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fi_cameras">
+      <EntityTypeMapping TypeName="Model.fi_cameras">
+        <MappingFragment StoreEntitySet="fi_cameras">
+          <ScalarProperty Name="logintype" ColumnName="logintype" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="y2000" ColumnName="y2000" />
+          <ScalarProperty Name="x2000" ColumnName="x2000" />
+          <ScalarProperty Name="y84" ColumnName="y84" />
+          <ScalarProperty Name="x84" ColumnName="x84" />
+          <ScalarProperty Name="isonline" ColumnName="isonline" />
+          <ScalarProperty Name="parameter" ColumnName="parameter" />
+          <ScalarProperty Name="cameraname" ColumnName="cameraname" />
+          <ScalarProperty Name="cameratypeid" ColumnName="cameratypeid" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="cameraid" ColumnName="cameraid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fi_cameratypes">
+      <EntityTypeMapping TypeName="Model.fi_cameratypes">
+        <MappingFragment StoreEntitySet="fi_cameratypes">
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="cameratypename" ColumnName="cameratypename" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="cameratypeid" ColumnName="cameratypeid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fi_specialcameras">
+      <EntityTypeMapping TypeName="Model.fi_specialcameras">
+        <MappingFragment StoreEntitySet="fi_specialcameras">
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="cameraid" ColumnName="cameraid" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fi_specialunits">
+      <EntityTypeMapping TypeName="Model.fi_specialunits">
+        <MappingFragment StoreEntitySet="fi_specialunits">
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fi_uvafiles">
+      <EntityTypeMapping TypeName="Model.fi_uvafiles">
+        <MappingFragment StoreEntitySet="fi_uvafiles">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="ovaid" ColumnName="ovaid" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fi_uvas">
+      <EntityTypeMapping TypeName="Model.fi_uvas">
+        <MappingFragment StoreEntitySet="fi_uvas">
+          <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="device" ColumnName="device" />
+          <ScalarProperty Name="ovaname" ColumnName="ovaname" />
+          <ScalarProperty Name="ovanum" ColumnName="ovanum" />
+          <ScalarProperty Name="ovaid" ColumnName="ovaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kh_examines">
+      <EntityTypeMapping TypeName="Model.kh_examines">
+        <MappingFragment StoreEntitySet="kh_examines">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="examinedate" ColumnName="examinedate" />
+          <ScalarProperty Name="contractid" ColumnName="contractid" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="examineid" ColumnName="examineid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kh_scores">
+      <EntityTypeMapping TypeName="Model.kh_scores">
+        <MappingFragment StoreEntitySet="kh_scores">
+          <ScalarProperty Name="examinetime" ColumnName="examinetime" />
+          <ScalarProperty Name="deductuserid" ColumnName="deductuserid" />
+          <ScalarProperty Name="deduct" ColumnName="deduct" />
+          <ScalarProperty Name="deail" ColumnName="deail" />
+          <ScalarProperty Name="examineid" ColumnName="examineid" />
+          <ScalarProperty Name="scoreid" ColumnName="scoreid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="low_newlying">
+      <EntityTypeMapping TypeName="Model.low_newlying">
+        <MappingFragment StoreEntitySet="low_newlying">
+          <ScalarProperty Name="clqk" ColumnName="clqk" />
+          <ScalarProperty Name="cjsj" ColumnName="cjsj" />
+          <ScalarProperty Name="sfbj" ColumnName="sfbj" />
+          <ScalarProperty Name="bjljz" ColumnName="bjljz" />
+          <ScalarProperty Name="bjz" ColumnName="bjz" />
+          <ScalarProperty Name="lowid" ColumnName="lowid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="low_oldlying">
+      <EntityTypeMapping TypeName="Model.low_oldlying">
+        <MappingFragment StoreEntitySet="low_oldlying">
+          <ScalarProperty Name="dz" ColumnName="dz" />
+          <ScalarProperty Name="bjljz" ColumnName="bjljz" />
+          <ScalarProperty Name="whry" ColumnName="whry" />
+          <ScalarProperty Name="whdw" ColumnName="whdw" />
+          <ScalarProperty Name="zt" ColumnName="zt" />
+          <ScalarProperty Name="jkdmc" ColumnName="jkdmc" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="map_customs">
+      <EntityTypeMapping TypeName="Model.map_customs">
+        <MappingFragment StoreEntitySet="map_customs">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mapelementcategories">
+      <EntityTypeMapping TypeName="Model.mapelementcategory">
+        <MappingFragment StoreEntitySet="mapelementcategories">
+          <ScalarProperty Name="statistictypeid" ColumnName="statistictypeid" />
+          <ScalarProperty Name="seqno" ColumnName="seqno" />
+          <ScalarProperty Name="staticpropertiesschema" ColumnName="staticpropertiesschema" />
+          <ScalarProperty Name="ismovable" ColumnName="ismovable" />
+          <ScalarProperty Name="shapetypeid" ColumnName="shapetypeid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phone_version">
+      <EntityTypeMapping TypeName="Model.phone_version">
+        <MappingFragment StoreEntitySet="phone_version">
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_alarmcarmemorylocationdatas">
+      <EntityTypeMapping TypeName="Model.qw_alarmcarmemorylocationdatas">
+        <MappingFragment StoreEntitySet="qw_alarmcarmemorylocationdatas">
+          <ScalarProperty Name="appeals" ColumnName="appeals" />
+          <ScalarProperty Name="allegetime" ColumnName="allegetime" />
+          <ScalarProperty Name="allegereason" ColumnName="allegereason" />
+          <ScalarProperty Name="isallege" ColumnName="isallege" />
+          <ScalarProperty Name="dealuserid" ColumnName="dealuserid" />
+          <ScalarProperty Name="dealtime" ColumnName="dealtime" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="carid" ColumnName="carid" />
+          <ScalarProperty Name="alarmtype" ColumnName="alarmtype" />
+          <ScalarProperty Name="alarmendtime" ColumnName="alarmendtime" />
+          <ScalarProperty Name="alarmstrattime" ColumnName="alarmstrattime" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="gpstime" ColumnName="gpstime" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_alarmmemorylocationdatas">
+      <EntityTypeMapping TypeName="Model.qw_alarmmemorylocationdatas">
+        <MappingFragment StoreEntitySet="qw_alarmmemorylocationdatas">
+          <ScalarProperty Name="appeals" ColumnName="appeals" />
+          <ScalarProperty Name="allegetime" ColumnName="allegetime" />
+          <ScalarProperty Name="allegereason" ColumnName="allegereason" />
+          <ScalarProperty Name="isallege" ColumnName="isallege" />
+          <ScalarProperty Name="dealuserid" ColumnName="dealuserid" />
+          <ScalarProperty Name="dealtime" ColumnName="dealtime" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="alarmtype" ColumnName="alarmtype" />
+          <ScalarProperty Name="alarmendtime" ColumnName="alarmendtime" />
+          <ScalarProperty Name="alarmstrattime" ColumnName="alarmstrattime" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="gpstime" ColumnName="gpstime" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_carhistorypositions">
+      <EntityTypeMapping TypeName="Model.qw_carhistorypositions">
+        <MappingFragment StoreEntitySet="qw_carhistorypositions">
+          <ScalarProperty Name="isanalyze" ColumnName="isanalyze" />
+          <ScalarProperty Name="pk" ColumnName="pk" />
+          <ScalarProperty Name="yl" ColumnName="yl" />
+          <ScalarProperty Name="lc" ColumnName="lc" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="cartel" ColumnName="cartel" />
+          <ScalarProperty Name="positiontime" ColumnName="positiontime" />
+          <ScalarProperty Name="y2000" ColumnName="y2000" />
+          <ScalarProperty Name="x2000" ColumnName="x2000" />
+          <ScalarProperty Name="y84" ColumnName="y84" />
+          <ScalarProperty Name="x84" ColumnName="x84" />
+          <ScalarProperty Name="carid" ColumnName="carid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_carlastpositions">
+      <EntityTypeMapping TypeName="Model.qw_carlastpositions">
+        <MappingFragment StoreEntitySet="qw_carlastpositions">
+          <ScalarProperty Name="pk" ColumnName="pk" />
+          <ScalarProperty Name="yl" ColumnName="yl" />
+          <ScalarProperty Name="lc" ColumnName="lc" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="cartel" ColumnName="cartel" />
+          <ScalarProperty Name="positiontime" ColumnName="positiontime" />
+          <ScalarProperty Name="y2000" ColumnName="y2000" />
+          <ScalarProperty Name="x2000" ColumnName="x2000" />
+          <ScalarProperty Name="y84" ColumnName="y84" />
+          <ScalarProperty Name="x84" ColumnName="x84" />
+          <ScalarProperty Name="carid" ColumnName="carid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_cars">
+      <EntityTypeMapping TypeName="Model.qw_cars">
+        <MappingFragment StoreEntitySet="qw_cars">
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="carstatus" ColumnName="carstatus" />
+          <ScalarProperty Name="ssbc" ColumnName="ssbc" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="isonline" ColumnName="isonline" />
+          <ScalarProperty Name="cartel" ColumnName="cartel" />
+          <ScalarProperty Name="carnumber" ColumnName="carnumber" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="cartypeid" ColumnName="cartypeid" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="carid" ColumnName="carid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_cartasks">
+      <EntityTypeMapping TypeName="Model.qw_cartasks">
+        <MappingFragment StoreEntitySet="qw_cartasks">
+          <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="taskexplain" ColumnName="taskexplain" />
+          <ScalarProperty Name="taskendtime" ColumnName="taskendtime" />
+          <ScalarProperty Name="taskstarttime" ColumnName="taskstarttime" />
+          <ScalarProperty Name="carnum" ColumnName="carnum" />
+          <ScalarProperty Name="carid" ColumnName="carid" />
+          <ScalarProperty Name="ssbc" ColumnName="ssbc" />
+          <ScalarProperty Name="sszd" ColumnName="sszd" />
+          <ScalarProperty Name="patrolid" ColumnName="patrolid" />
+          <ScalarProperty Name="cartaskid" ColumnName="cartaskid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_patrolareas">
+      <EntityTypeMapping TypeName="Model.qw_patrolareas">
+        <MappingFragment StoreEntitySet="qw_patrolareas">
+          <ScalarProperty Name="isnot" ColumnName="isnot" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="grometry" ColumnName="grometry" />
+          <ScalarProperty Name="explain" ColumnName="explain" />
+          <ScalarProperty Name="areatype" ColumnName="areatype" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ssbc" ColumnName="ssbc" />
+          <ScalarProperty Name="sszd" ColumnName="sszd" />
+          <ScalarProperty Name="patrolid" ColumnName="patrolid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_patrollogs">
+      <EntityTypeMapping TypeName="Model.qw_patrollogs">
+        <MappingFragment StoreEntitySet="qw_patrollogs">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="reporttime" ColumnName="reporttime" />
+          <ScalarProperty Name="isfound" ColumnName="isfound" />
+          <ScalarProperty Name="checkname" ColumnName="checkname" />
+          <ScalarProperty Name="checkid" ColumnName="checkid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="logid" ColumnName="logid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_signinareas">
+      <EntityTypeMapping TypeName="Model.qw_signinareas">
+        <MappingFragment StoreEntitySet="qw_signinareas">
+          <ScalarProperty Name="isnot" ColumnName="isnot" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="grometry" ColumnName="grometry" />
+          <ScalarProperty Name="end_etime" ColumnName="end_etime" />
+          <ScalarProperty Name="end_stime" ColumnName="end_stime" />
+          <ScalarProperty Name="start_etime" ColumnName="start_etime" />
+          <ScalarProperty Name="start_stime" ColumnName="start_stime" />
+          <ScalarProperty Name="explain" ColumnName="explain" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ssbc" ColumnName="ssbc" />
+          <ScalarProperty Name="sszd" ColumnName="sszd" />
+          <ScalarProperty Name="signinareaid" ColumnName="signinareaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_userhistorypositions">
+      <EntityTypeMapping TypeName="Model.qw_userhistorypositions">
+        <MappingFragment StoreEntitySet="qw_userhistorypositions">
+          <ScalarProperty Name="isanalyze" ColumnName="isanalyze" />
+          <ScalarProperty Name="addresses" ColumnName="addresses" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="imeicode" ColumnName="imeicode" />
+          <ScalarProperty Name="positiontime" ColumnName="positiontime" />
+          <ScalarProperty Name="y2000" ColumnName="y2000" />
+          <ScalarProperty Name="x2000" ColumnName="x2000" />
+          <ScalarProperty Name="y84" ColumnName="y84" />
+          <ScalarProperty Name="x84" ColumnName="x84" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_userlastpositions">
+      <EntityTypeMapping TypeName="Model.qw_userlastpositions">
+        <MappingFragment StoreEntitySet="qw_userlastpositions">
+          <ScalarProperty Name="remarks3" ColumnName="remarks3" />
+          <ScalarProperty Name="remarks2" ColumnName="remarks2" />
+          <ScalarProperty Name="remarks1" ColumnName="remarks1" />
+          <ScalarProperty Name="helptime" ColumnName="helptime" />
+          <ScalarProperty Name="ishelp" ColumnName="ishelp" />
+          <ScalarProperty Name="addresses" ColumnName="addresses" />
+          <ScalarProperty Name="imeicode" ColumnName="imeicode" />
+          <ScalarProperty Name="positiontime" ColumnName="positiontime" />
+          <ScalarProperty Name="y2000" ColumnName="y2000" />
+          <ScalarProperty Name="x2000" ColumnName="x2000" />
+          <ScalarProperty Name="y84" ColumnName="y84" />
+          <ScalarProperty Name="x84" ColumnName="x84" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_usersignins">
+      <EntityTypeMapping TypeName="Model.qw_usersignins">
+        <MappingFragment StoreEntitySet="qw_usersignins">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="Y2000" ColumnName="Y2000" />
+          <ScalarProperty Name="X2000" ColumnName="X2000" />
+          <ScalarProperty Name="Y84" ColumnName="Y84" />
+          <ScalarProperty Name="X84" ColumnName="X84" />
+          <ScalarProperty Name="signintime" ColumnName="signintime" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="ssbc" ColumnName="ssbc" />
+          <ScalarProperty Name="sszd" ColumnName="sszd" />
+          <ScalarProperty Name="usersigninid" ColumnName="usersigninid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_usertasks">
+      <EntityTypeMapping TypeName="Model.qw_usertasks">
+        <MappingFragment StoreEntitySet="qw_usertasks">
+          <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="taskexplain" ColumnName="taskexplain" />
+          <ScalarProperty Name="taskendtime" ColumnName="taskendtime" />
+          <ScalarProperty Name="taskstarttime" ColumnName="taskstarttime" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="ssbc" ColumnName="ssbc" />
+          <ScalarProperty Name="sszd" ColumnName="sszd" />
+          <ScalarProperty Name="signinareaid" ColumnName="signinareaid" />
+          <ScalarProperty Name="patrolid" ColumnName="patrolid" />
+          <ScalarProperty Name="usertaskid" ColumnName="usertaskid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qw_zds">
+      <EntityTypeMapping TypeName="Model.qw_zds">
+        <MappingFragment StoreEntitySet="qw_zds">
+          <ScalarProperty Name="seq" ColumnName="seq" />
+          <ScalarProperty Name="zd_name" ColumnName="zd_name" />
+          <ScalarProperty Name="zd_type" ColumnName="zd_type" />
+          <ScalarProperty Name="zdid" ColumnName="zdid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_bureaucenterworks">
+      <EntityTypeMapping TypeName="Model.report_bureaucenterworks">
+        <MappingFragment StoreEntitySet="report_bureaucenterworks">
+          <ScalarProperty Name="isstatistics" ColumnName="isstatistics" />
+          <ScalarProperty Name="isreport" ColumnName="isreport" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="xgdyjjy" ColumnName="xgdyjjy" />
+          <ScalarProperty Name="mldzykn" ColumnName="mldzykn" />
+          <ScalarProperty Name="czdzywt" ColumnName="czdzywt" />
+          <ScalarProperty Name="zygzld" ColumnName="zygzld" />
+          <ScalarProperty Name="ccyyczzwt" ColumnName="ccyyczzwt" />
+          <ScalarProperty Name="dlsjsjfmk" ColumnName="dlsjsjfmk" />
+          <ScalarProperty Name="dlla" ColumnName="dlla" />
+          <ScalarProperty Name="dlcztsjb" ColumnName="dlcztsjb" />
+          <ScalarProperty Name="dlczzwt" ColumnName="dlczzwt" />
+          <ScalarProperty Name="ccsjsjfmk" ColumnName="ccsjsjfmk" />
+          <ScalarProperty Name="ccyyla" ColumnName="ccyyla" />
+          <ScalarProperty Name="cccztsjb" ColumnName="cccztsjb" />
+          <ScalarProperty Name="jgcsljfs" ColumnName="jgcsljfs" />
+          <ScalarProperty Name="shzf" ColumnName="shzf" />
+          <ScalarProperty Name="gmczf" ColumnName="gmczf" />
+          <ScalarProperty Name="fxzghdwt" ColumnName="fxzghdwt" />
+          <ScalarProperty Name="xccs" ColumnName="xccs" />
+          <ScalarProperty Name="fzhdmc" ColumnName="fzhdmc" />
+          <ScalarProperty Name="qlczsl" ColumnName="qlczsl" />
+          <ScalarProperty Name="qlczmj" ColumnName="qlczmj" />
+          <ScalarProperty Name="zlxqzgtzs" ColumnName="zlxqzgtzs" />
+          <ScalarProperty Name="kzzfcs" ColumnName="kzzfcs" />
+          <ScalarProperty Name="czzsmj" ColumnName="czzsmj" />
+          <ScalarProperty Name="czxzccmj" ColumnName="czxzccmj" />
+          <ScalarProperty Name="czsjsjfmk" ColumnName="czsjsjfmk" />
+          <ScalarProperty Name="czja" ColumnName="czja" />
+          <ScalarProperty Name="czla" ColumnName="czla" />
+          <ScalarProperty Name="czccmj" ColumnName="czccmj" />
+          <ScalarProperty Name="czczmj" ColumnName="czczmj" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportdate" ColumnName="reportdate" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_h7n7s">
+      <EntityTypeMapping TypeName="Model.report_h7n7s">
+        <MappingFragment StoreEntitySet="report_h7n7s">
+          <ScalarProperty Name="isstatistics" ColumnName="isstatistics" />
+          <ScalarProperty Name="isreport" ColumnName="isreport" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="cdry" ColumnName="cdry" />
+          <ScalarProperty Name="xccs" ColumnName="xccs" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportdate" ColumnName="reportdate" />
+          <ScalarProperty Name="drgzzf" ColumnName="drgzzf" />
+          <ScalarProperty Name="qt" ColumnName="qt" />
+          <ScalarProperty Name="czhqsl" ColumnName="czhqsl" />
+          <ScalarProperty Name="cchqjy" ColumnName="cchqjy" />
+          <ScalarProperty Name="qlhqjy" ColumnName="qlhqjy" />
+          <ScalarProperty Name="ffxczl" ColumnName="ffxczl" />
+          <ScalarProperty Name="cdcl" ColumnName="cdcl" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_infos">
+      <EntityTypeMapping TypeName="Model.report_infos">
+        <MappingFragment StoreEntitySet="report_infos">
+          <ScalarProperty Name="whattime" ColumnName="whattime" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="isenable" ColumnName="isenable" />
+          <ScalarProperty Name="statistics" ColumnName="statistics" />
+          <ScalarProperty Name="reporttype" ColumnName="reporttype" />
+          <ScalarProperty Name="reportname" ColumnName="reportname" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_landlaws">
+      <EntityTypeMapping TypeName="Model.report_landlaws">
+        <MappingFragment StoreEntitySet="report_landlaws">
+          <ScalarProperty Name="isstatistics" ColumnName="isstatistics" />
+          <ScalarProperty Name="isreport" ColumnName="isreport" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="xgdyjjy" ColumnName="xgdyjjy" />
+          <ScalarProperty Name="mldzykn" ColumnName="mldzykn" />
+          <ScalarProperty Name="czdzywt" ColumnName="czdzywt" />
+          <ScalarProperty Name="zygzld" ColumnName="zygzld" />
+          <ScalarProperty Name="yysd" ColumnName="yysd" />
+          <ScalarProperty Name="nysd" ColumnName="nysd" />
+          <ScalarProperty Name="wjazjs" ColumnName="wjazjs" />
+          <ScalarProperty Name="yjajs" ColumnName="yjajs" />
+          <ScalarProperty Name="zjxszrqt" ColumnName="zjxszrqt" />
+          <ScalarProperty Name="zjxszr" ColumnName="zjxszr" />
+          <ScalarProperty Name="cqqzcs" ColumnName="cqqzcs" />
+          <ScalarProperty Name="ysgajg" ColumnName="ysgajg" />
+          <ScalarProperty Name="cfqt" ColumnName="cfqt" />
+          <ScalarProperty Name="sjcf" ColumnName="sjcf" />
+          <ScalarProperty Name="tccfjy" ColumnName="tccfjy" />
+          <ScalarProperty Name="mswfsd" ColumnName="mswfsd" />
+          <ScalarProperty Name="ccwfjzmj" ColumnName="ccwfjzmj" />
+          <ScalarProperty Name="msmj" ColumnName="msmj" />
+          <ScalarProperty Name="fkje" ColumnName="fkje" />
+          <ScalarProperty Name="qzgdmj" ColumnName="qzgdmj" />
+          <ScalarProperty Name="sazmj" ColumnName="sazmj" />
+          <ScalarProperty Name="lacczjs" ColumnName="lacczjs" />
+          <ScalarProperty Name="sqqzzxjs" ColumnName="sqqzzxjs" />
+          <ScalarProperty Name="xdcfjdsjs" ColumnName="xdcfjdsjs" />
+          <ScalarProperty Name="zhzfbmslyss" ColumnName="zhzfbmslyss" />
+          <ScalarProperty Name="gtbmyss" ColumnName="gtbmyss" />
+          <ScalarProperty Name="wfydajzjs" ColumnName="wfydajzjs" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportdate" ColumnName="reportdate" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_lawinwaters">
+      <EntityTypeMapping TypeName="Model.report_lawinwaters">
+        <MappingFragment StoreEntitySet="report_lawinwaters">
+          <ScalarProperty Name="shuser" ColumnName="shuser" />
+          <ScalarProperty Name="preparerphone" ColumnName="preparerphone" />
+          <ScalarProperty Name="preparer" ColumnName="preparer" />
+          <ScalarProperty Name="isstatistics" ColumnName="isstatistics" />
+          <ScalarProperty Name="isreport" ColumnName="isreport" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="xgdyjjy" ColumnName="xgdyjjy" />
+          <ScalarProperty Name="mldzykn" ColumnName="mldzykn" />
+          <ScalarProperty Name="czdzywt" ColumnName="czdzywt" />
+          <ScalarProperty Name="zygzld" ColumnName="zygzld" />
+          <ScalarProperty Name="sjsjfmk" ColumnName="sjsjfmk" />
+          <ScalarProperty Name="jas" ColumnName="jas" />
+          <ScalarProperty Name="psywscll" ColumnName="psywscll" />
+          <ScalarProperty Name="csgsl" ColumnName="csgsl" />
+          <ScalarProperty Name="ncgsl" ColumnName="ncgsl" />
+          <ScalarProperty Name="pslj" ColumnName="pslj" />
+          <ScalarProperty Name="hdfqw" ColumnName="hdfqw" />
+          <ScalarProperty Name="jsfaxhdjzw" ColumnName="jsfaxhdjzw" />
+          <ScalarProperty Name="zlas" ColumnName="zlas" />
+          <ScalarProperty Name="tsjb" ColumnName="tsjb" />
+          <ScalarProperty Name="jcfx" ColumnName="jcfx" />
+          <ScalarProperty Name="jsys" ColumnName="jsys" />
+          <ScalarProperty Name="wczgsswt" ColumnName="wczgsswt" />
+          <ScalarProperty Name="fxsswt" ColumnName="fxsswt" />
+          <ScalarProperty Name="zlxqzgtzs" ColumnName="zlxqzgtzs" />
+          <ScalarProperty Name="kzzfxccs" ColumnName="kzzfxccs" />
+          <ScalarProperty Name="cdzfcl" ColumnName="cdzfcl" />
+          <ScalarProperty Name="cdzfry" ColumnName="cdzfry" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportdate" ColumnName="reportdate" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_safetifyinproductions">
+      <EntityTypeMapping TypeName="Model.report_safetifyinproductions">
+        <MappingFragment StoreEntitySet="report_safetifyinproductions">
+          <ScalarProperty Name="preparerphone" ColumnName="preparerphone" />
+          <ScalarProperty Name="shuser" ColumnName="shuser" />
+          <ScalarProperty Name="preparer" ColumnName="preparer" />
+          <ScalarProperty Name="dwjjzajdgl" ColumnName="dwjjzajdgl" />
+          <ScalarProperty Name="yxkjzy" ColumnName="yxkjzy" />
+          <ScalarProperty Name="ldbhldhtgl" ColumnName="ldbhldhtgl" />
+          <ScalarProperty Name="sbglhjycsgd" ColumnName="sbglhjycsgd" />
+          <ScalarProperty Name="stsgd" ColumnName="stsgd" />
+          <ScalarProperty Name="sgyhpc" ColumnName="sgyhpc" />
+          <ScalarProperty Name="pxhczglgd" ColumnName="pxhczglgd" />
+          <ScalarProperty Name="aqsctj" ColumnName="aqsctj" />
+          <ScalarProperty Name="zyfzr" ColumnName="zyfzr" />
+          <ScalarProperty Name="jdfke" ColumnName="jdfke" />
+          <ScalarProperty Name="isstatistics" ColumnName="isstatistics" />
+          <ScalarProperty Name="isreport" ColumnName="isreport" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="xgdyjjy" ColumnName="xgdyjjy" />
+          <ScalarProperty Name="mldzykn" ColumnName="mldzykn" />
+          <ScalarProperty Name="czdzywt" ColumnName="czdzywt" />
+          <ScalarProperty Name="zygzld" ColumnName="zygzld" />
+          <ScalarProperty Name="tqgb" ColumnName="tqgb" />
+          <ScalarProperty Name="tctyzd" ColumnName="tctyzd" />
+          <ScalarProperty Name="sjsjfmk" ColumnName="sjsjfmk" />
+          <ScalarProperty Name="jg" ColumnName="jg" />
+          <ScalarProperty Name="ja" ColumnName="ja" />
+          <ScalarProperty Name="la" ColumnName="la" />
+          <ScalarProperty Name="xswy" ColumnName="xswy" />
+          <ScalarProperty Name="jcfx" ColumnName="jcfx" />
+          <ScalarProperty Name="jsys" ColumnName="jsys" />
+          <ScalarProperty Name="zgfcyjs" ColumnName="zgfcyjs" />
+          <ScalarProperty Name="xcclcsjds" ColumnName="xcclcsjds" />
+          <ScalarProperty Name="zlxqzgzls" ColumnName="zlxqzgzls" />
+          <ScalarProperty Name="xcjcjl" ColumnName="xcjcjl" />
+          <ScalarProperty Name="wczgaqyh" ColumnName="wczgaqyh" />
+          <ScalarProperty Name="fxaqyh" ColumnName="fxaqyh" />
+          <ScalarProperty Name="jcscjydw" ColumnName="jcscjydw" />
+          <ScalarProperty Name="cdzfry" ColumnName="cdzfry" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportdate" ColumnName="reportdate" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_scalefarmscontrols">
+      <EntityTypeMapping TypeName="Model.report_scalefarmscontrols">
+        <MappingFragment StoreEntitySet="report_scalefarmscontrols">
+          <ScalarProperty Name="isstatistics" ColumnName="isstatistics" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="isreport" ColumnName="isreport" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="xgdyjjy" ColumnName="xgdyjjy" />
+          <ScalarProperty Name="mldzykn" ColumnName="mldzykn" />
+          <ScalarProperty Name="czdzywt" ColumnName="czdzywt" />
+          <ScalarProperty Name="zygzld" ColumnName="zygzld" />
+          <ScalarProperty Name="qtccwjmj" ColumnName="qtccwjmj" />
+          <ScalarProperty Name="qtcc" ColumnName="qtcc" />
+          <ScalarProperty Name="tqgb" ColumnName="tqgb" />
+          <ScalarProperty Name="tqts" ColumnName="tqts" />
+          <ScalarProperty Name="qtsjsjfmk" ColumnName="qtsjsjfmk" />
+          <ScalarProperty Name="qtla" ColumnName="qtla" />
+          <ScalarProperty Name="qtkjxqzgtzs" ColumnName="qtkjxqzgtzs" />
+          <ScalarProperty Name="qtzfjcjl" ColumnName="qtzfjcjl" />
+          <ScalarProperty Name="qtzfjccs" ColumnName="qtzfjccs" />
+          <ScalarProperty Name="qtqt" ColumnName="qtqt" />
+          <ScalarProperty Name="qtry" ColumnName="qtry" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="qtj" ColumnName="qtj" />
+          <ScalarProperty Name="szyjsfjg" ColumnName="szyjsfjg" />
+          <ScalarProperty Name="szsjjffmk" ColumnName="szsjjffmk" />
+          <ScalarProperty Name="szja" ColumnName="szja" />
+          <ScalarProperty Name="szla" ColumnName="szla" />
+          <ScalarProperty Name="szzgyzwt" ColumnName="szzgyzwt" />
+          <ScalarProperty Name="szxqzgtzs" ColumnName="szxqzgtzs" />
+          <ScalarProperty Name="szzfjcjl" ColumnName="szzfjcjl" />
+          <ScalarProperty Name="szzfjccs" ColumnName="szzfjccs" />
+          <ScalarProperty Name="szcyl" ColumnName="szcyl" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportdate" ColumnName="reportdate" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_specialperiodenvirprots">
+      <EntityTypeMapping TypeName="Model.report_specialperiodenvirprots">
+        <MappingFragment StoreEntitySet="report_specialperiodenvirprots">
+          <ScalarProperty Name="isstatistics" ColumnName="isstatistics" />
+          <ScalarProperty Name="isreport" ColumnName="isreport" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="xysjcmxtjjsx" ColumnName="xysjcmxtjjsx" />
+          <ScalarProperty Name="drjxyrdgzap" ColumnName="drjxyrdgzap" />
+          <ScalarProperty Name="fxwtycljg" ColumnName="fxwtycljg" />
+          <ScalarProperty Name="bzcslshdcqk" ColumnName="bzcslshdcqk" />
+          <ScalarProperty Name="shuser" ColumnName="shuser" />
+          <ScalarProperty Name="statisticsuser" ColumnName="statisticsuser" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="qd" ColumnName="qd" />
+          <ScalarProperty Name="zg" ColumnName="zg" />
+          <ScalarProperty Name="fkjey" ColumnName="fkjey" />
+          <ScalarProperty Name="gdzbcsctfy" ColumnName="gdzbcsctfy" />
+          <ScalarProperty Name="syqdjzlj" ColumnName="syqdjzlj" />
+          <ScalarProperty Name="wagdsjqyjzlj" ColumnName="wagdsjqyjzlj" />
+          <ScalarProperty Name="wzqyjzlj" ColumnName="wzqyjzlj" />
+          <ScalarProperty Name="zgzmj" ColumnName="zgzmj" />
+          <ScalarProperty Name="ghzmj" ColumnName="ghzmj" />
+          <ScalarProperty Name="ffxcgzs" ColumnName="ffxcgzs" />
+          <ScalarProperty Name="fkje" ColumnName="fkje" />
+          <ScalarProperty Name="xzzf" ColumnName="xzzf" />
+          <ScalarProperty Name="zgwcs" ColumnName="zgwcs" />
+          <ScalarProperty Name="fxs" ColumnName="fxs" />
+          <ScalarProperty Name="cdcc" ColumnName="cdcc" />
+          <ScalarProperty Name="cdrs" ColumnName="cdrs" />
+          <ScalarProperty Name="dccs" ColumnName="dccs" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportdate" ColumnName="reportdate" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="report_strawandwastecontrols">
+      <EntityTypeMapping TypeName="Model.report_strawandwastecontrols">
+        <MappingFragment StoreEntitySet="report_strawandwastecontrols">
+          <ScalarProperty Name="isstatistics" ColumnName="isstatistics" />
+          <ScalarProperty Name="isreport" ColumnName="isreport" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="xgdyjjy" ColumnName="xgdyjjy" />
+          <ScalarProperty Name="mldzykn" ColumnName="mldzykn" />
+          <ScalarProperty Name="czdzywt" ColumnName="czdzywt" />
+          <ScalarProperty Name="zygzld" ColumnName="zygzld" />
+          <ScalarProperty Name="fscsljsjsjfmk" ColumnName="fscsljsjsjfmk" />
+          <ScalarProperty Name="fscsljja" ColumnName="fscsljja" />
+          <ScalarProperty Name="fscsljla" ColumnName="fscsljla" />
+          <ScalarProperty Name="nyjysjsjfmk" ColumnName="nyjysjsjfmk" />
+          <ScalarProperty Name="nyjyja" ColumnName="nyjyja" />
+          <ScalarProperty Name="nyjyla" ColumnName="nyjyla" />
+          <ScalarProperty Name="ltfsjgsjsjfk" ColumnName="ltfsjgsjsjfk" />
+          <ScalarProperty Name="ltfsjgja" ColumnName="ltfsjgja" />
+          <ScalarProperty Name="ltfsjgla" ColumnName="ltfsjgla" />
+          <ScalarProperty Name="fxczs" ColumnName="fxczs" />
+          <ScalarProperty Name="ghmj2" ColumnName="ghmj2" />
+          <ScalarProperty Name="fxysjtd" ColumnName="fxysjtd" />
+          <ScalarProperty Name="ghmj1" ColumnName="ghmj1" />
+          <ScalarProperty Name="fxczmhd" ColumnName="fxczmhd" />
+          <ScalarProperty Name="kzzfxccs2" ColumnName="kzzfxccs2" />
+          <ScalarProperty Name="kzzfdccs" ColumnName="kzzfdccs" />
+          <ScalarProperty Name="kzzfxccs1" ColumnName="kzzfxccs1" />
+          <ScalarProperty Name="cdzfcl" ColumnName="cdzfcl" />
+          <ScalarProperty Name="cdzfry" ColumnName="cdzfry" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportdate" ColumnName="reportdate" />
+          <ScalarProperty Name="reportid" ColumnName="reportid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sm_citizenservices">
+      <EntityTypeMapping TypeName="Model.sm_citizenservices">
+        <MappingFragment StoreEntitySet="sm_citizenservices">
+          <ScalarProperty Name="pqxzid" ColumnName="pqxzid" />
+          <ScalarProperty Name="xzid" ColumnName="xzid" />
+          <ScalarProperty Name="suggest" ColumnName="suggest" />
+          <ScalarProperty Name="workflowtype" ColumnName="workflowtype" />
+          <ScalarProperty Name="auditopinion" ColumnName="auditopinion" />
+          <ScalarProperty Name="istz" ColumnName="istz" />
+          <ScalarProperty Name="extensioncontent" ColumnName="extensioncontent" />
+          <ScalarProperty Name="extensiontime" ColumnName="extensiontime" />
+          <ScalarProperty Name="reviewextension" ColumnName="reviewextension" />
+          <ScalarProperty Name="isextension" ColumnName="isextension" />
+          <ScalarProperty Name="officeuserid" ColumnName="officeuserid" />
+          <ScalarProperty Name="processuserid" ColumnName="processuserid" />
+          <ScalarProperty Name="gdsj" ColumnName="gdsj" />
+          <ScalarProperty Name="satisfaction" ColumnName="satisfaction" />
+          <ScalarProperty Name="processmode" ColumnName="processmode" />
+          <ScalarProperty Name="srid" ColumnName="srid" />
+          <ScalarProperty Name="sfzxzz" ColumnName="sfzxzz" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="grometry" ColumnName="grometry" />
+          <ScalarProperty Name="recorduser" ColumnName="recorduser" />
+          <ScalarProperty Name="limittime" ColumnName="limittime" />
+          <ScalarProperty Name="smalltypeid" ColumnName="smalltypeid" />
+          <ScalarProperty Name="bigtypeid" ColumnName="bigtypeid" />
+          <ScalarProperty Name="eventcontent" ColumnName="eventcontent" />
+          <ScalarProperty Name="eventtitle" ColumnName="eventtitle" />
+          <ScalarProperty Name="eventaddress" ColumnName="eventaddress" />
+          <ScalarProperty Name="contactaddress" ColumnName="contactaddress" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="foundtime" ColumnName="foundtime" />
+          <ScalarProperty Name="cnumber" ColumnName="cnumber" />
+          <ScalarProperty Name="complainant" ColumnName="complainant" />
+          <ScalarProperty Name="eventid" ColumnName="eventid" />
+          <ScalarProperty Name="dutytime" ColumnName="dutytime" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="citizenid" ColumnName="citizenid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sm_classes">
+      <EntityTypeMapping TypeName="Model.sm_classes">
+        <MappingFragment StoreEntitySet="sm_classes">
+          <ScalarProperty Name="classtype" ColumnName="classtype" />
+          <ScalarProperty Name="classcode" ColumnName="classcode" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="classid" ColumnName="classid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sm_consultations">
+      <EntityTypeMapping TypeName="Model.sm_consultations">
+        <MappingFragment StoreEntitySet="sm_consultations">
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="consultcontent" ColumnName="consultcontent" />
+          <ScalarProperty Name="acceptancetime" ColumnName="acceptancetime" />
+          <ScalarProperty Name="smalltypeid" ColumnName="smalltypeid" />
+          <ScalarProperty Name="bigtypeid" ColumnName="bigtypeid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="consultuser" ColumnName="consultuser" />
+          <ScalarProperty Name="consultid" ColumnName="consultid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sm_sources">
+      <EntityTypeMapping TypeName="Model.sm_sources">
+        <MappingFragment StoreEntitySet="sm_sources">
+          <ScalarProperty Name="spath" ColumnName="spath" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sm_specialrectifications">
+      <EntityTypeMapping TypeName="Model.sm_specialrectifications">
+        <MappingFragment StoreEntitySet="sm_specialrectifications">
+          <ScalarProperty Name="srname" ColumnName="srname" />
+          <ScalarProperty Name="srid" ColumnName="srid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sm_visits">
+      <EntityTypeMapping TypeName="Model.sm_visits">
+        <MappingFragment StoreEntitySet="sm_visits">
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="processopinion" ColumnName="processopinion" />
+          <ScalarProperty Name="processmode" ColumnName="processmode" />
+          <ScalarProperty Name="satisfaction" ColumnName="satisfaction" />
+          <ScalarProperty Name="returnvisitcontent" ColumnName="returnvisitcontent" />
+          <ScalarProperty Name="returnvisit" ColumnName="returnvisit" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="respondents" ColumnName="respondents" />
+          <ScalarProperty Name="visittime" ColumnName="visittime" />
+          <ScalarProperty Name="citizenid" ColumnName="citizenid" />
+          <ScalarProperty Name="visitid" ColumnName="visitid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systemconfigs">
+      <EntityTypeMapping TypeName="Model.systemconfig">
+        <MappingFragment StoreEntitySet="systemconfigs">
+          <ScalarProperty Name="isfolder" ColumnName="isfolder" />
+          <ScalarProperty Name="seqno" ColumnName="seqno" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="parentcode" ColumnName="parentcode" />
+          <ScalarProperty Name="code" ColumnName="code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_ajysh">
+      <EntityTypeMapping TypeName="Model.temp_ajysh">
+        <MappingFragment StoreEntitySet="temp_ajysh">
+          <ScalarProperty Name="ysrq" ColumnName="ysrq" />
+          <ScalarProperty Name="ajxgzl" ColumnName="ajxgzl" />
+          <ScalarProperty Name="yjdflgd" ColumnName="yjdflgd" />
+          <ScalarProperty Name="ysly" ColumnName="ysly" />
+          <ScalarProperty Name="ay" ColumnName="ay" />
+          <ScalarProperty Name="lasj" ColumnName="lasj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_cgd">
+      <EntityTypeMapping TypeName="Model.temp_cgd">
+        <MappingFragment StoreEntitySet="temp_cgd">
+          <ScalarProperty Name="lxdz" ColumnName="lxdz" />
+          <ScalarProperty Name="lxdh" ColumnName="lxdh" />
+          <ScalarProperty Name="lxr" ColumnName="lxr" />
+          <ScalarProperty Name="cgnr" ColumnName="cgnr" />
+          <ScalarProperty Name="wfdgd" ColumnName="wfdgd" />
+          <ScalarProperty Name="wfxwms" ColumnName="wfxwms" />
+          <ScalarProperty Name="afdz" ColumnName="afdz" />
+          <ScalarProperty Name="lasj" ColumnName="lasj" />
+          <ScalarProperty Name="xdzgtzsj" ColumnName="xdzgtzsj" />
+          <ScalarProperty Name="wfsj" ColumnName="wfsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="cgdw" ColumnName="cgdw" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_cgs">
+      <EntityTypeMapping TypeName="Model.temp_cgs">
+        <MappingFragment StoreEntitySet="temp_cgs">
+          <ScalarProperty Name="cgnr" ColumnName="cgnr" />
+          <ScalarProperty Name="cgsj" ColumnName="cgsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_cssbbl">
+      <EntityTypeMapping TypeName="Model.temp_cssbbl">
+        <MappingFragment StoreEntitySet="temp_cssbbl">
+          <ScalarProperty Name="cssbnr" ColumnName="cssbnr" />
+          <ScalarProperty Name="sx" ColumnName="sx" />
+          <ScalarProperty Name="dsrjbqk" ColumnName="dsrjbqk" />
+          <ScalarProperty Name="sbdd" ColumnName="sbdd" />
+          <ScalarProperty Name="sbsj" ColumnName="sbsj" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_cyqztzs">
+      <EntityTypeMapping TypeName="Model.temp_cyqztzs">
+        <MappingFragment StoreEntitySet="temp_cyqztzs">
+          <ScalarProperty Name="sftjcwtzs" ColumnName="sftjcwtzs" />
+          <ScalarProperty Name="zfsj" ColumnName="zfsj" />
+          <ScalarProperty Name="zfry" ColumnName="zfry" />
+          <ScalarProperty Name="tztime" ColumnName="tztime" />
+          <ScalarProperty Name="bcyqzr" ColumnName="bcyqzr" />
+          <ScalarProperty Name="cydz" ColumnName="cydz" />
+          <ScalarProperty Name="wfdgd" ColumnName="wfdgd" />
+          <ScalarProperty Name="wfxw" ColumnName="wfxw" />
+          <ScalarProperty Name="tzsj" ColumnName="tzsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_cyqzwpcltzs">
+      <EntityTypeMapping TypeName="Model.temp_cyqzwpcltzs">
+        <MappingFragment StoreEntitySet="temp_cyqzwpcltzs">
+          <ScalarProperty Name="zfsj" ColumnName="zfsj" />
+          <ScalarProperty Name="zfry" ColumnName="zfry" />
+          <ScalarProperty Name="tzsj" ColumnName="tzsj" />
+          <ScalarProperty Name="bcyqzr" ColumnName="bcyqzr" />
+          <ScalarProperty Name="cljg" ColumnName="cljg" />
+          <ScalarProperty Name="cyqztzsbh" ColumnName="cyqztzsbh" />
+          <ScalarProperty Name="yjdflgd" ColumnName="yjdflgd" />
+          <ScalarProperty Name="qzwp" ColumnName="qzwp" />
+          <ScalarProperty Name="qztzsj" ColumnName="qztzsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_dcqzlxh">
+      <EntityTypeMapping TypeName="Model.temp_dcqzlxh">
+        <MappingFragment StoreEntitySet="temp_dcqzlxh">
+          <ScalarProperty Name="qhrq" ColumnName="qhrq" />
+          <ScalarProperty Name="ajjbqk" ColumnName="ajjbqk" />
+          <ScalarProperty Name="lxr" ColumnName="lxr" />
+          <ScalarProperty Name="lxdh" ColumnName="lxdh" />
+          <ScalarProperty Name="cbbm" ColumnName="cbbm" />
+          <ScalarProperty Name="qhbm" ColumnName="qhbm" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_dcxwbl">
+      <EntityTypeMapping TypeName="Model.temp_dcxwbl">
+        <MappingFragment StoreEntitySet="temp_dcxwbl">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sftq" ColumnName="sftq" />
+          <ScalarProperty Name="sfhb" ColumnName="sfhb" />
+          <ScalarProperty Name="sfqr" ColumnName="sfqr" />
+          <ScalarProperty Name="zcperson" ColumnName="zcperson" />
+          <ScalarProperty Name="jlperson" ColumnName="jlperson" />
+          <ScalarProperty Name="xzfzh" ColumnName="xzfzh" />
+          <ScalarProperty Name="xdcxwr" ColumnName="xdcxwr" />
+          <ScalarProperty Name="zzfzh" ColumnName="zzfzh" />
+          <ScalarProperty Name="zdcxwr" ColumnName="zdcxwr" />
+          <ScalarProperty Name="ybagx" ColumnName="ybagx" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="zwzy" ColumnName="zwzy" />
+          <ScalarProperty Name="gzdw" ColumnName="gzdw" />
+          <ScalarProperty Name="sfz" ColumnName="sfz" />
+          <ScalarProperty Name="mz" ColumnName="mz" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="bdcuser" ColumnName="bdcuser" />
+          <ScalarProperty Name="dcplace" ColumnName="dcplace" />
+          <ScalarProperty Name="edctime" ColumnName="edctime" />
+          <ScalarProperty Name="sdctime" ColumnName="sdctime" />
+          <ScalarProperty Name="dcdate" ColumnName="dcdate" />
+          <ScalarProperty Name="casereason" ColumnName="casereason" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_ffcwyjs">
+      <EntityTypeMapping TypeName="Model.temp_ffcwyjs">
+        <MappingFragment StoreEntitySet="temp_ffcwyjs">
+          <ScalarProperty Name="jdsbh" ColumnName="jdsbh" />
+          <ScalarProperty Name="jdskjrq" ColumnName="jdskjrq" />
+          <ScalarProperty Name="wfdfl" ColumnName="wfdfl" />
+          <ScalarProperty Name="rdwfssms" ColumnName="rdwfssms" />
+          <ScalarProperty Name="wfdd" ColumnName="wfdd" />
+          <ScalarProperty Name="wfsj" ColumnName="wfsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="yjdw" ColumnName="yjdw" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_files">
+      <EntityTypeMapping TypeName="Model.temp_files">
+        <MappingFragment StoreEntitySet="temp_files">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="documenttype" ColumnName="documenttype" />
+          <ScalarProperty Name="documentid" ColumnName="documentid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_fkcjtzs">
+      <EntityTypeMapping TypeName="Model.temp_fkcjtzs">
+        <MappingFragment StoreEntitySet="temp_fkcjtzs">
+          <ScalarProperty Name="yhzh" ColumnName="yhzh" />
+          <ScalarProperty Name="gdjkrq" ColumnName="gdjkrq" />
+          <ScalarProperty Name="xzcfjdsbh" ColumnName="xzcfjdsbh" />
+          <ScalarProperty Name="cfrq" ColumnName="cfrq" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_fksjpz">
+      <EntityTypeMapping TypeName="Model.temp_fksjpz">
+        <MappingFragment StoreEntitySet="temp_fksjpz">
+          <ScalarProperty Name="fkpjbh" ColumnName="fkpjbh" />
+          <ScalarProperty Name="bcfr" ColumnName="bcfr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_goods">
+      <EntityTypeMapping TypeName="Model.temp_goods">
+        <MappingFragment StoreEntitySet="temp_goods">
+          <ScalarProperty Name="goodsremark" ColumnName="goodsremark" />
+          <ScalarProperty Name="goodsxt" ColumnName="goodsxt" />
+          <ScalarProperty Name="goodsxh" ColumnName="goodsxh" />
+          <ScalarProperty Name="goodsgg" ColumnName="goodsgg" />
+          <ScalarProperty Name="goodspj" ColumnName="goodspj" />
+          <ScalarProperty Name="goodscount" ColumnName="goodscount" />
+          <ScalarProperty Name="goodsname" ColumnName="goodsname" />
+          <ScalarProperty Name="documentname" ColumnName="documentname" />
+          <ScalarProperty Name="documentid" ColumnName="documentid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_hgs">
+      <EntityTypeMapping TypeName="Model.temp_hgs">
+        <MappingFragment StoreEntitySet="temp_hgs">
+          <ScalarProperty Name="nrsm" ColumnName="nrsm" />
+          <ScalarProperty Name="lxdz" ColumnName="lxdz" />
+          <ScalarProperty Name="lxdh" ColumnName="lxdh" />
+          <ScalarProperty Name="lxr" ColumnName="lxr" />
+          <ScalarProperty Name="hgsj" ColumnName="hgsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_tzbg">
+      <EntityTypeMapping TypeName="Model.temp_tzbg">
+        <MappingFragment StoreEntitySet="temp_tzbg">
+          <ScalarProperty Name="tzy2" ColumnName="tzy2" />
+          <ScalarProperty Name="tzzcr2" ColumnName="tzzcr2" />
+          <ScalarProperty Name="clyjjjy" ColumnName="clyjjjy" />
+          <ScalarProperty Name="ajss" ColumnName="ajss" />
+          <ScalarProperty Name="tzhjbqk" ColumnName="tzhjbqk" />
+          <ScalarProperty Name="gzdw" ColumnName="gzdw" />
+          <ScalarProperty Name="ajdcr" ColumnName="ajdcr" />
+          <ScalarProperty Name="wtdlr" ColumnName="wtdlr" />
+          <ScalarProperty Name="fddbr" ColumnName="fddbr" />
+          <ScalarProperty Name="tzsqr" ColumnName="tzsqr" />
+          <ScalarProperty Name="jlr" ColumnName="jlr" />
+          <ScalarProperty Name="tzy1" ColumnName="tzy1" />
+          <ScalarProperty Name="tzzcr1" ColumnName="tzzcr1" />
+          <ScalarProperty Name="tzfs" ColumnName="tzfs" />
+          <ScalarProperty Name="tzdd" ColumnName="tzdd" />
+          <ScalarProperty Name="tzetime" ColumnName="tzetime" />
+          <ScalarProperty Name="tzstime" ColumnName="tzstime" />
+          <ScalarProperty Name="tzrq" ColumnName="tzrq" />
+          <ScalarProperty Name="ajbh" ColumnName="ajbh" />
+          <ScalarProperty Name="ajmc" ColumnName="ajmc" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_tzbl">
+      <EntityTypeMapping TypeName="Model.temp_tzbl">
+        <MappingFragment StoreEntitySet="temp_tzbl">
+          <ScalarProperty Name="tzbl" ColumnName="tzbl" />
+          <ScalarProperty Name="gzdw3" ColumnName="gzdw3" />
+          <ScalarProperty Name="jlr" ColumnName="jlr" />
+          <ScalarProperty Name="tzr" ColumnName="tzr" />
+          <ScalarProperty Name="tzzcr" ColumnName="tzzcr" />
+          <ScalarProperty Name="gzdwjzw2" ColumnName="gzdwjzw2" />
+          <ScalarProperty Name="ajdcr2" ColumnName="ajdcr2" />
+          <ScalarProperty Name="gzdwjzw1" ColumnName="gzdwjzw1" />
+          <ScalarProperty Name="ajdcr1" ColumnName="ajdcr1" />
+          <ScalarProperty Name="qtcjr" ColumnName="qtcjr" />
+          <ScalarProperty Name="dh2" ColumnName="dh2" />
+          <ScalarProperty Name="zw2" ColumnName="zw2" />
+          <ScalarProperty Name="gzdw2" ColumnName="gzdw2" />
+          <ScalarProperty Name="sfzh2" ColumnName="sfzh2" />
+          <ScalarProperty Name="xb2" ColumnName="xb2" />
+          <ScalarProperty Name="wtdlr2" ColumnName="wtdlr2" />
+          <ScalarProperty Name="dh1" ColumnName="dh1" />
+          <ScalarProperty Name="zw1" ColumnName="zw1" />
+          <ScalarProperty Name="gzdw1" ColumnName="gzdw1" />
+          <ScalarProperty Name="sfzh1" ColumnName="sfzh1" />
+          <ScalarProperty Name="xb1" ColumnName="xb1" />
+          <ScalarProperty Name="wtdlr1" ColumnName="wtdlr1" />
+          <ScalarProperty Name="dh" ColumnName="dh" />
+          <ScalarProperty Name="yb" ColumnName="yb" />
+          <ScalarProperty Name="zzhzs" ColumnName="zzhzs" />
+          <ScalarProperty Name="sfzh" ColumnName="sfzh" />
+          <ScalarProperty Name="zwhzy" ColumnName="zwhzy" />
+          <ScalarProperty Name="gzdw" ColumnName="gzdw" />
+          <ScalarProperty Name="xb" ColumnName="xb" />
+          <ScalarProperty Name="fzr" ColumnName="fzr" />
+          <ScalarProperty Name="tzsqr" ColumnName="tzsqr" />
+          <ScalarProperty Name="tzfs" ColumnName="tzfs" />
+          <ScalarProperty Name="tzdd" ColumnName="tzdd" />
+          <ScalarProperty Name="tzjssj" ColumnName="tzjssj" />
+          <ScalarProperty Name="tzkssj" ColumnName="tzkssj" />
+          <ScalarProperty Name="tzrq" ColumnName="tzrq" />
+          <ScalarProperty Name="ajbh" ColumnName="ajbh" />
+          <ScalarProperty Name="ajmc" ColumnName="ajmc" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_tztzs">
+      <EntityTypeMapping TypeName="Model.temp_tztzs">
+        <MappingFragment StoreEntitySet="temp_tztzs">
+          <ScalarProperty Name="yzbm" ColumnName="yzbm" />
+          <ScalarProperty Name="dz" ColumnName="dz" />
+          <ScalarProperty Name="lxdh" ColumnName="lxdh" />
+          <ScalarProperty Name="lxr" ColumnName="lxr" />
+          <ScalarProperty Name="xgsx" ColumnName="xgsx" />
+          <ScalarProperty Name="jlr" ColumnName="jlr" />
+          <ScalarProperty Name="tzy" ColumnName="tzy" />
+          <ScalarProperty Name="tzzcr" ColumnName="tzzcr" />
+          <ScalarProperty Name="tzdd" ColumnName="tzdd" />
+          <ScalarProperty Name="tzsj" ColumnName="tzsj" />
+          <ScalarProperty Name="ay" ColumnName="ay" />
+          <ScalarProperty Name="sqsj" ColumnName="sqsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_xcjckybl">
+      <EntityTypeMapping TypeName="Model.temp_xcjckybl">
+        <MappingFragment StoreEntitySet="temp_xcjckybl">
+          <ScalarProperty Name="jzr" ColumnName="jzr" />
+          <ScalarProperty Name="xcqk" ColumnName="xcqk" />
+          <ScalarProperty Name="xzjhm" ColumnName="xzjhm" />
+          <ScalarProperty Name="zzjhm" ColumnName="zzjhm" />
+          <ScalarProperty Name="xzfry" ColumnName="xzfry" />
+          <ScalarProperty Name="zzfry" ColumnName="zzfry" />
+          <ScalarProperty Name="jlrdwzw" ColumnName="jlrdwzw" />
+          <ScalarProperty Name="jlr" ColumnName="jlr" />
+          <ScalarProperty Name="byqdwzw" ColumnName="byqdwzw" />
+          <ScalarProperty Name="byqr" ColumnName="byqr" />
+          <ScalarProperty Name="xcdwzw" ColumnName="xcdwzw" />
+          <ScalarProperty Name="xcfzr" ColumnName="xcfzr" />
+          <ScalarProperty Name="dsrdwzw" ColumnName="dsrdwzw" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="xdwzw" ColumnName="xdwzw" />
+          <ScalarProperty Name="xkyr" ColumnName="xkyr" />
+          <ScalarProperty Name="zdwzw" ColumnName="zdwzw" />
+          <ScalarProperty Name="zkyr" ColumnName="zkyr" />
+          <ScalarProperty Name="jcplace" ColumnName="jcplace" />
+          <ScalarProperty Name="ejctime" ColumnName="ejctime" />
+          <ScalarProperty Name="sjctime" ColumnName="sjctime" />
+          <ScalarProperty Name="jcdate" ColumnName="jcdate" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_xwdctzs">
+      <EntityTypeMapping TypeName="Model.temp_xwdctzs">
+        <MappingFragment StoreEntitySet="temp_xwdctzs">
+          <ScalarProperty Name="fcrq" ColumnName="fcrq" />
+          <ScalarProperty Name="lxdz" ColumnName="lxdz" />
+          <ScalarProperty Name="lxdh" ColumnName="lxdh" />
+          <ScalarProperty Name="lxr" ColumnName="lxr" />
+          <ScalarProperty Name="clqtzm" ColumnName="clqtzm" />
+          <ScalarProperty Name="clsfzmhwts" ColumnName="clsfzmhwts" />
+          <ScalarProperty Name="clyyzz" ColumnName="clyyzz" />
+          <ScalarProperty Name="clsfz" ColumnName="clsfz" />
+          <ScalarProperty Name="wfgd" ColumnName="wfgd" />
+          <ScalarProperty Name="dcxwdd" ColumnName="dcxwdd" />
+          <ScalarProperty Name="dcxwsj" ColumnName="dcxwsj" />
+          <ScalarProperty Name="afdd" ColumnName="afdd" />
+          <ScalarProperty Name="afsj" ColumnName="afsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_xzcfjds">
+      <EntityTypeMapping TypeName="Model.temp_xzcfjds">
+        <MappingFragment StoreEntitySet="temp_xzcfjds">
+          <ScalarProperty Name="jdszw" ColumnName="jdszw" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="zjh" ColumnName="zjh" />
+          <ScalarProperty Name="zjlx" ColumnName="zjlx" />
+          <ScalarProperty Name="fddbr" ColumnName="fddbr" />
+          <ScalarProperty Name="dwmc" ColumnName="dwmc" />
+          <ScalarProperty Name="xb" ColumnName="xb" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_xzcfjttljl">
+      <EntityTypeMapping TypeName="Model.temp_xzcfjttljl">
+        <MappingFragment StoreEntitySet="temp_xzcfjttljl">
+          <ScalarProperty Name="zjxyj" ColumnName="zjxyj" />
+          <ScalarProperty Name="tljl" ColumnName="tljl" />
+          <ScalarProperty Name="tlnr" ColumnName="tlnr" />
+          <ScalarProperty Name="cxryxmjzw" ColumnName="cxryxmjzw" />
+          <ScalarProperty Name="jlr" ColumnName="jlr" />
+          <ScalarProperty Name="hbr" ColumnName="hbr" />
+          <ScalarProperty Name="zcr" ColumnName="zcr" />
+          <ScalarProperty Name="dd" ColumnName="dd" />
+          <ScalarProperty Name="jssj" ColumnName="jssj" />
+          <ScalarProperty Name="kssj" ColumnName="kssj" />
+          <ScalarProperty Name="ajmc" ColumnName="ajmc" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_xzcfsxgzs">
+      <EntityTypeMapping TypeName="Model.temp_xzcfsxgzs">
+        <MappingFragment StoreEntitySet="temp_xzcfsxgzs">
+          <ScalarProperty Name="lxdh" ColumnName="lxdh" />
+          <ScalarProperty Name="lxr" ColumnName="lxr" />
+          <ScalarProperty Name="yzbm" ColumnName="yzbm" />
+          <ScalarProperty Name="dwdz" ColumnName="dwdz" />
+          <ScalarProperty Name="gzszw" ColumnName="gzszw" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_ysajsawpqd">
+      <EntityTypeMapping TypeName="Model.temp_ysajsawpqd">
+        <MappingFragment StoreEntitySet="temp_ysajsawpqd">
+          <ScalarProperty Name="yssj" ColumnName="yssj" />
+          <ScalarProperty Name="ysajysr" ColumnName="ysajysr" />
+          <ScalarProperty Name="jssj" ColumnName="jssj" />
+          <ScalarProperty Name="ysajjsr" ColumnName="ysajjsr" />
+          <ScalarProperty Name="ysdw" ColumnName="ysdw" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_zfwssdhz">
+      <EntityTypeMapping TypeName="Model.temp_zfwssdhz">
+        <MappingFragment StoreEntitySet="temp_zfwssdhz">
+          <ScalarProperty Name="bz" ColumnName="bz" />
+          <ScalarProperty Name="sdfs" ColumnName="sdfs" />
+          <ScalarProperty Name="sddd" ColumnName="sddd" />
+          <ScalarProperty Name="sdrq" ColumnName="sdrq" />
+          <ScalarProperty Name="sdwsmcjwh" ColumnName="sdwsmcjwh" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="ssdrmchxm" ColumnName="ssdrmchxm" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_zltzwfxwtzs">
+      <EntityTypeMapping TypeName="Model.temp_zltzwfxwtzs">
+        <MappingFragment StoreEntitySet="temp_zltzwfxwtzs">
+          <ScalarProperty Name="lxdz" ColumnName="lxdz" />
+          <ScalarProperty Name="lxdh" ColumnName="lxdh" />
+          <ScalarProperty Name="zfzh2" ColumnName="zfzh2" />
+          <ScalarProperty Name="zfry2" ColumnName="zfry2" />
+          <ScalarProperty Name="zfzh1" ColumnName="zfzh1" />
+          <ScalarProperty Name="zfry1" ColumnName="zfry1" />
+          <ScalarProperty Name="wfgd" ColumnName="wfgd" />
+          <ScalarProperty Name="wfxw" ColumnName="wfxw" />
+          <ScalarProperty Name="afdz" ColumnName="afdz" />
+          <ScalarProperty Name="afsj" ColumnName="afsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_zlxqgztzs">
+      <EntityTypeMapping TypeName="Model.temp_zlxqgztzs">
+        <MappingFragment StoreEntitySet="temp_zlxqgztzs">
+          <ScalarProperty Name="lxdz" ColumnName="lxdz" />
+          <ScalarProperty Name="lxdh" ColumnName="lxdh" />
+          <ScalarProperty Name="zfzh2" ColumnName="zfzh2" />
+          <ScalarProperty Name="zfry2" ColumnName="zfry2" />
+          <ScalarProperty Name="zfzh1" ColumnName="zfzh1" />
+          <ScalarProperty Name="zfry1" ColumnName="zfry1" />
+          <ScalarProperty Name="tzsj" ColumnName="tzsj" />
+          <ScalarProperty Name="zlgzqx" ColumnName="zlgzqx" />
+          <ScalarProperty Name="gznr" ColumnName="gznr" />
+          <ScalarProperty Name="flyj" ColumnName="flyj" />
+          <ScalarProperty Name="wfxw" ColumnName="wfxw" />
+          <ScalarProperty Name="afdz" ColumnName="afdz" />
+          <ScalarProperty Name="afsj" ColumnName="afsj" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wsbh" ColumnName="wsbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_zlxqzgzls">
+      <EntityTypeMapping TypeName="Model.temp_zlxqzgzls">
+        <MappingFragment StoreEntitySet="temp_zlxqzgzls">
+          <ScalarProperty Name="zfzh2" ColumnName="zfzh2" />
+          <ScalarProperty Name="zfdy2" ColumnName="zfdy2" />
+          <ScalarProperty Name="zfzh1" ColumnName="zfzh1" />
+          <ScalarProperty Name="zfdy1" ColumnName="zfdy1" />
+          <ScalarProperty Name="wtms" ColumnName="wtms" />
+          <ScalarProperty Name="dsr" ColumnName="dsr" />
+          <ScalarProperty Name="wjbh" ColumnName="wjbh" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_zpzj">
+      <EntityTypeMapping TypeName="Model.temp_zpzj">
+        <MappingFragment StoreEntitySet="temp_zpzj">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="pssj" ColumnName="pssj" />
+          <ScalarProperty Name="zfzh2" ColumnName="zfzh2" />
+          <ScalarProperty Name="zfry2" ColumnName="zfry2" />
+          <ScalarProperty Name="zfzh1" ColumnName="zfzh1" />
+          <ScalarProperty Name="zfry1" ColumnName="zfry1" />
+          <ScalarProperty Name="dsrhjzr" ColumnName="dsrhjzr" />
+          <ScalarProperty Name="psr" ColumnName="psr" />
+          <ScalarProperty Name="psdd" ColumnName="psdd" />
+          <ScalarProperty Name="smfywt" ColumnName="smfywt" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tj_persononlines">
+      <EntityTypeMapping TypeName="Model.tj_persononlines">
+        <MappingFragment StoreEntitySet="tj_persononlines">
+          <ScalarProperty Name="unitpath" ColumnName="unitpath" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="onlinecount" ColumnName="onlinecount" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="stattime" ColumnName="stattime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tj_unitreportcounts">
+      <EntityTypeMapping TypeName="Model.tj_unitreportcounts">
+        <MappingFragment StoreEntitySet="tj_unitreportcounts">
+          <ScalarProperty Name="unitpath" ColumnName="unitpath" />
+          <ScalarProperty Name="unitname" ColumnName="unitname" />
+          <ScalarProperty Name="reportcount" ColumnName="reportcount" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="stattime" ColumnName="stattime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tz_files">
+      <EntityTypeMapping TypeName="Model.tz_files">
+        <MappingFragment StoreEntitySet="tz_files">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="filesource" ColumnName="filesource" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tz_registers">
+      <EntityTypeMapping TypeName="Model.tz_registers">
+        <MappingFragment StoreEntitySet="tz_registers">
+          <ScalarProperty Name="wordpath" ColumnName="wordpath" />
+          <ScalarProperty Name="wordname" ColumnName="wordname" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="eventid" ColumnName="eventid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="taskclassid" ColumnName="taskclassid" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="people" ColumnName="people" />
+          <ScalarProperty Name="registertime" ColumnName="registertime" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="registerid" ColumnName="registerid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tz_taskclasses">
+      <EntityTypeMapping TypeName="Model.tz_taskclasses">
+        <MappingFragment StoreEntitySet="tz_taskclasses">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="tasktime" ColumnName="tasktime" />
+          <ScalarProperty Name="sszd" ColumnName="sszd" />
+          <ScalarProperty Name="classid" ColumnName="classid" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+          <ScalarProperty Name="taskclassid" ColumnName="taskclassid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tz_tztasks">
+      <EntityTypeMapping TypeName="Model.tz_tztasks">
+        <MappingFragment StoreEntitySet="tz_tztasks">
+          <ScalarProperty Name="ssrw" ColumnName="ssrw" />
+          <ScalarProperty Name="sszd" ColumnName="sszd" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="tz_json" ColumnName="tz_json" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="tz_type" ColumnName="tz_type" />
+          <ScalarProperty Name="taskyear" ColumnName="taskyear" />
+          <ScalarProperty Name="taskname" ColumnName="taskname" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wf_workflowdetails">
+      <EntityTypeMapping TypeName="Model.wf_workflowdetails">
+        <MappingFragment StoreEntitySet="wf_workflowdetails">
+          <ScalarProperty Name="nextiddefaultrole" ColumnName="nextiddefaultrole" />
+          <ScalarProperty Name="nextiddefaultdept" ColumnName="nextiddefaultdept" />
+          <ScalarProperty Name="nextiddefaultuser" ColumnName="nextiddefaultuser" />
+          <ScalarProperty Name="nextiddefault" ColumnName="nextiddefault" />
+          <ScalarProperty Name="seqnum" ColumnName="seqnum" />
+          <ScalarProperty Name="rolevalue" ColumnName="rolevalue" />
+          <ScalarProperty Name="isrole" ColumnName="isrole" />
+          <ScalarProperty Name="deptvalue" ColumnName="deptvalue" />
+          <ScalarProperty Name="isdept" ColumnName="isdept" />
+          <ScalarProperty Name="uservalue" ColumnName="uservalue" />
+          <ScalarProperty Name="isuser" ColumnName="isuser" />
+          <ScalarProperty Name="iscurentuserdept" ColumnName="iscurentuserdept" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="nextid" ColumnName="nextid" />
+          <ScalarProperty Name="wfdname" ColumnName="wfdname" />
+          <ScalarProperty Name="wfid" ColumnName="wfid" />
+          <ScalarProperty Name="wfdid" ColumnName="wfdid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wf_workflows">
+      <EntityTypeMapping TypeName="Model.wf_workflows">
+        <MappingFragment StoreEntitySet="wf_workflows">
+          <ScalarProperty Name="wfpic" ColumnName="wfpic" />
+          <ScalarProperty Name="tablename" ColumnName="tablename" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="wftypeid" ColumnName="wftypeid" />
+          <ScalarProperty Name="wfname" ColumnName="wfname" />
+          <ScalarProperty Name="wfid" ColumnName="wfid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wf_workflowspecificactivitys">
+      <EntityTypeMapping TypeName="Model.wf_workflowspecificactivitys">
+        <MappingFragment StoreEntitySet="wf_workflowspecificactivitys">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="wfdid" ColumnName="wfdid" />
+          <ScalarProperty Name="dealtime" ColumnName="dealtime" />
+          <ScalarProperty Name="dealuserid" ColumnName="dealuserid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="wfsid" ColumnName="wfsid" />
+          <ScalarProperty Name="wfsaid" ColumnName="wfsaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wf_workflowspecifics">
+      <EntityTypeMapping TypeName="Model.wf_workflowspecifics">
+        <MappingFragment StoreEntitySet="wf_workflowspecifics">
+          <ScalarProperty Name="filestatus" ColumnName="filestatus" />
+          <ScalarProperty Name="currentwfsaid" ColumnName="currentwfsaid" />
+          <ScalarProperty Name="wfsname" ColumnName="wfsname" />
+          <ScalarProperty Name="tablenameid" ColumnName="tablenameid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="tablename" ColumnName="tablename" />
+          <ScalarProperty Name="wfid" ColumnName="wfid" />
+          <ScalarProperty Name="wfsid" ColumnName="wfsid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wf_workflowspecificuserfiles">
+      <EntityTypeMapping TypeName="Model.wf_workflowspecificuserfiles">
+        <MappingFragment StoreEntitySet="wf_workflowspecificuserfiles">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="fileremark" ColumnName="fileremark" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filesource" ColumnName="filesource" />
+          <ScalarProperty Name="wfsuid" ColumnName="wfsuid" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wf_workflowspecificusers">
+      <EntityTypeMapping TypeName="Model.wf_workflowspecificusers">
+        <MappingFragment StoreEntitySet="wf_workflowspecificusers">
+          <ScalarProperty Name="satisfaction" ColumnName="satisfaction" />
+          <ScalarProperty Name="processmode" ColumnName="processmode" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="ismainuser" ColumnName="ismainuser" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="wfsaid" ColumnName="wfsaid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dealtime" ColumnName="dealtime" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="wfsuid" ColumnName="wfsuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wg_type">
+      <EntityTypeMapping TypeName="Model.wg_type">
+        <MappingFragment StoreEntitySet="wg_type">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wg_unitgrid">
+      <EntityTypeMapping TypeName="Model.wg_unitgrid">
+        <MappingFragment StoreEntitySet="wg_unitgrid">
+          <ScalarProperty Name="remarks5" ColumnName="remarks5" />
+          <ScalarProperty Name="remarks4" ColumnName="remarks4" />
+          <ScalarProperty Name="remarks3" ColumnName="remarks3" />
+          <ScalarProperty Name="remarks2" ColumnName="remarks2" />
+          <ScalarProperty Name="remarks1" ColumnName="remarks1" />
+          <ScalarProperty Name="grometry" ColumnName="grometry" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wj_cqxms">
+      <EntityTypeMapping TypeName="Model.wj_cqxms">
+        <MappingFragment StoreEntitySet="wj_cqxms">
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="geography" ColumnName="geography" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="ssqy" ColumnName="ssqy" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="cqarea" ColumnName="cqarea" />
+          <ScalarProperty Name="contackphone" ColumnName="contackphone" />
+          <ScalarProperty Name="projectleader" ColumnName="projectleader" />
+          <ScalarProperty Name="projectname" ColumnName="projectname" />
+          <ScalarProperty Name="cqid" ColumnName="cqid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wj_files">
+      <EntityTypeMapping TypeName="Model.wj_files">
+        <MappingFragment StoreEntitySet="wj_files">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wj_wzjzs">
+      <EntityTypeMapping TypeName="Model.wj_wzjzs">
+        <MappingFragment StoreEntitySet="wj_wzjzs">
+          <ScalarProperty Name="limittime" ColumnName="limittime" />
+          <ScalarProperty Name="citizenid" ColumnName="citizenid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="foundtime" ColumnName="foundtime" />
+          <ScalarProperty Name="reporttime" ColumnName="reporttime" />
+          <ScalarProperty Name="reportuser" ColumnName="reportuser" />
+          <ScalarProperty Name="isgd" ColumnName="isgd" />
+          <ScalarProperty Name="process" ColumnName="process" />
+          <ScalarProperty Name="wj_layerdown" ColumnName="wj_layerdown" />
+          <ScalarProperty Name="wj_layerup" ColumnName="wj_layerup" />
+          <ScalarProperty Name="wj_buildstructure" ColumnName="wj_buildstructure" />
+          <ScalarProperty Name="wj_wjarea" ColumnName="wj_wjarea" />
+          <ScalarProperty Name="wj_landarea" ColumnName="wj_landarea" />
+          <ScalarProperty Name="wj_time" ColumnName="wj_time" />
+          <ScalarProperty Name="wj_land" ColumnName="wj_land" />
+          <ScalarProperty Name="wj_use" ColumnName="wj_use" />
+          <ScalarProperty Name="wj_wjtype" ColumnName="wj_wjtype" />
+          <ScalarProperty Name="geography" ColumnName="geography" />
+          <ScalarProperty Name="buildlayers_down" ColumnName="buildlayers_down" />
+          <ScalarProperty Name="buildlayers_up" ColumnName="buildlayers_up" />
+          <ScalarProperty Name="buildstructure" ColumnName="buildstructure" />
+          <ScalarProperty Name="builduse" ColumnName="builduse" />
+          <ScalarProperty Name="buildarea" ColumnName="buildarea" />
+          <ScalarProperty Name="coverarea" ColumnName="coverarea" />
+          <ScalarProperty Name="propertynum" ColumnName="propertynum" />
+          <ScalarProperty Name="landnum" ColumnName="landnum" />
+          <ScalarProperty Name="completiontime" ColumnName="completiontime" />
+          <ScalarProperty Name="landproperty" ColumnName="landproperty" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="householdnum" ColumnName="householdnum" />
+          <ScalarProperty Name="holderidentity" ColumnName="holderidentity" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="wjholder" ColumnName="wjholder" />
+          <ScalarProperty Name="wjid" ColumnName="wjid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xz_licensings">
+      <EntityTypeMapping TypeName="Model.xz_licensings">
+        <MappingFragment StoreEntitySet="xz_licensings">
+          <ScalarProperty Name="processtime_end" ColumnName="processtime_end" />
+          <ScalarProperty Name="shtime" ColumnName="shtime" />
+          <ScalarProperty Name="issh" ColumnName="issh" />
+          <ScalarProperty Name="shuser" ColumnName="shuser" />
+          <ScalarProperty Name="shopinion" ColumnName="shopinion" />
+          <ScalarProperty Name="shresult" ColumnName="shresult" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="geography" ColumnName="geography" />
+          <ScalarProperty Name="processaddress" ColumnName="processaddress" />
+          <ScalarProperty Name="processcontent" ColumnName="processcontent" />
+          <ScalarProperty Name="processtime_start" ColumnName="processtime_start" />
+          <ScalarProperty Name="s_address" ColumnName="s_address" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="card" ColumnName="card" />
+          <ScalarProperty Name="cardtype" ColumnName="cardtype" />
+          <ScalarProperty Name="sqr" ColumnName="sqr" />
+          <ScalarProperty Name="sxmx" ColumnName="sxmx" />
+          <ScalarProperty Name="b_address" ColumnName="b_address" />
+          <ScalarProperty Name="splx" ColumnName="splx" />
+          <ScalarProperty Name="sph" ColumnName="sph" />
+          <ScalarProperty Name="licensingnum" ColumnName="licensingnum" />
+          <ScalarProperty Name="xksx" ColumnName="xksx" />
+          <ScalarProperty Name="licensingid" ColumnName="licensingid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xz_threebags">
+      <EntityTypeMapping TypeName="Model.xz_threebags">
+        <MappingFragment StoreEntitySet="xz_threebags">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="geography" ColumnName="geography" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="card" ColumnName="card" />
+          <ScalarProperty Name="person" ColumnName="person" />
+          <ScalarProperty Name="storetype" ColumnName="storetype" />
+          <ScalarProperty Name="storename" ColumnName="storename" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xzj_files">
+      <EntityTypeMapping TypeName="Model.xzj_files">
+        <MappingFragment StoreEntitySet="xzj_files">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xzsp_disposes">
+      <EntityTypeMapping TypeName="Model.xzsp_disposes">
+        <MappingFragment StoreEntitySet="xzsp_disposes">
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="parentid" ColumnName="parentid" />
+          <ScalarProperty Name="disposetime" ColumnName="disposetime" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="disposestate" ColumnName="disposestate" />
+          <ScalarProperty Name="disposeuserid" ColumnName="disposeuserid" />
+          <ScalarProperty Name="stage" ColumnName="stage" />
+          <ScalarProperty Name="xzspid" ColumnName="xzspid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xzsp_files">
+      <EntityTypeMapping TypeName="Model.xzsp_files">
+        <MappingFragment StoreEntitySet="xzsp_files">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="xzsp_locate">
+      <EntityTypeMapping TypeName="Model.xzsp_locate">
+        <MappingFragment StoreEntitySet="xzsp_locate">
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="xzspid" ColumnName="xzspid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yh_companys">
+      <EntityTypeMapping TypeName="Model.yh_companys">
+        <MappingFragment StoreEntitySet="yh_companys">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="isenadle" ColumnName="isenadle" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="companytype" ColumnName="companytype" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="faxnumber" ColumnName="faxnumber" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="mobilephone" ColumnName="mobilephone" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="legal" ColumnName="legal" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yh_contracts">
+      <EntityTypeMapping TypeName="Model.yh_contracts">
+        <MappingFragment StoreEntitySet="yh_contracts">
+          <ScalarProperty Name="yhmoney" ColumnName="yhmoney" />
+          <ScalarProperty Name="patrolemoney" ColumnName="patrolemoney" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="contracttype" ColumnName="contracttype" />
+          <ScalarProperty Name="contacttype" ColumnName="contacttype" />
+          <ScalarProperty Name="contactendtime" ColumnName="contactendtime" />
+          <ScalarProperty Name="currentmoney" ColumnName="currentmoney" />
+          <ScalarProperty Name="htzxzt" ColumnName="htzxzt" />
+          <ScalarProperty Name="summoney" ColumnName="summoney" />
+          <ScalarProperty Name="signdate" ColumnName="signdate" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="jldw" ColumnName="jldw" />
+          <ScalarProperty Name="yfdb" ColumnName="yfdb" />
+          <ScalarProperty Name="yfdw" ColumnName="yfdw" />
+          <ScalarProperty Name="jfdb" ColumnName="jfdb" />
+          <ScalarProperty Name="jfdw" ColumnName="jfdw" />
+          <ScalarProperty Name="contractnum" ColumnName="contractnum" />
+          <ScalarProperty Name="patrolexplain" ColumnName="patrolexplain" />
+          <ScalarProperty Name="contractname" ColumnName="contractname" />
+          <ScalarProperty Name="contractid" ColumnName="contractid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yh_files">
+      <EntityTypeMapping TypeName="Model.yh_files">
+        <MappingFragment StoreEntitySet="yh_files">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="filesource" ColumnName="filesource" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yh_yhlogs">
+      <EntityTypeMapping TypeName="Model.yh_yhlogs">
+        <MappingFragment StoreEntitySet="yh_yhlogs">
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="patrolexplain" ColumnName="patrolexplain" />
+          <ScalarProperty Name="patroltime" ColumnName="patroltime" />
+          <ScalarProperty Name="yhcontract" ColumnName="yhcontract" />
+          <ScalarProperty Name="yhlogid" ColumnName="yhlogid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yh_yhtasks">
+      <EntityTypeMapping TypeName="Model.yh_yhtasks">
+        <MappingFragment StoreEntitySet="yh_yhtasks">
+          <ScalarProperty Name="pqrid" ColumnName="pqrid" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="sendopinion" ColumnName="sendopinion" />
+          <ScalarProperty Name="sendusername" ColumnName="sendusername" />
+          <ScalarProperty Name="debit" ColumnName="debit" />
+          <ScalarProperty Name="points" ColumnName="points" />
+          <ScalarProperty Name="wtnature" ColumnName="wtnature" />
+          <ScalarProperty Name="geography2000" ColumnName="geography2000" />
+          <ScalarProperty Name="geography84" ColumnName="geography84" />
+          <ScalarProperty Name="wtdescribe" ColumnName="wtdescribe" />
+          <ScalarProperty Name="wtaddress" ColumnName="wtaddress" />
+          <ScalarProperty Name="yhcontract" ColumnName="yhcontract" />
+          <ScalarProperty Name="workload" ColumnName="workload" />
+          <ScalarProperty Name="outlay" ColumnName="outlay" />
+          <ScalarProperty Name="duetime" ColumnName="duetime" />
+          <ScalarProperty Name="weather" ColumnName="weather" />
+          <ScalarProperty Name="yhobject" ColumnName="yhobject" />
+          <ScalarProperty Name="wtsmallclass" ColumnName="wtsmallclass" />
+          <ScalarProperty Name="wtbigclass" ColumnName="wtbigclass" />
+          <ScalarProperty Name="yhtype" ColumnName="yhtype" />
+          <ScalarProperty Name="wtsource" ColumnName="wtsource" />
+          <ScalarProperty Name="fileename" ColumnName="fileename" />
+          <ScalarProperty Name="foundtime" ColumnName="foundtime" />
+          <ScalarProperty Name="yhcompany" ColumnName="yhcompany" />
+          <ScalarProperty Name="yhtaskid" ColumnName="yhtaskid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zfdx_devices">
+      <EntityTypeMapping TypeName="Model.zfdx_devices">
+        <MappingFragment StoreEntitySet="zfdx_devices">
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="devicetype" ColumnName="devicetype" />
+          <ScalarProperty Name="jldw" ColumnName="jldw" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="devicename" ColumnName="devicename" />
+          <ScalarProperty Name="deviceid" ColumnName="deviceid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zfdx_instocks">
+      <EntityTypeMapping TypeName="Model.zfdx_instocks">
+        <MappingFragment StoreEntitySet="zfdx_instocks">
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="shuserid" ColumnName="shuserid" />
+          <ScalarProperty Name="processuserid" ColumnName="processuserid" />
+          <ScalarProperty Name="unitid" ColumnName="unitid" />
+          <ScalarProperty Name="producedate" ColumnName="producedate" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="deviceid" ColumnName="deviceid" />
+          <ScalarProperty Name="storagetype" ColumnName="storagetype" />
+          <ScalarProperty Name="intstockid" ColumnName="intstockid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zfdx_outstocks">
+      <EntityTypeMapping TypeName="Model.zfdx_outstocks">
+        <MappingFragment StoreEntitySet="zfdx_outstocks">
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="shuser" ColumnName="shuser" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="receiveunit" ColumnName="receiveunit" />
+          <ScalarProperty Name="applyuser" ColumnName="applyuser" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="process" ColumnName="process" />
+          <ScalarProperty Name="deviceid" ColumnName="deviceid" />
+          <ScalarProperty Name="outtype" ColumnName="outtype" />
+          <ScalarProperty Name="outstockid" ColumnName="outstockid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zfdx_shopblacks">
+      <EntityTypeMapping TypeName="Model.zfdx_shopblacks">
+        <MappingFragment StoreEntitySet="zfdx_shopblacks">
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="isblack" ColumnName="isblack" />
+          <ScalarProperty Name="shopid" ColumnName="shopid" />
+          <ScalarProperty Name="sbid" ColumnName="sbid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zfdx_stocks">
+      <EntityTypeMapping TypeName="Model.zfdx_stocks">
+        <MappingFragment StoreEntitySet="zfdx_stocks">
+          <ScalarProperty Name="devicesum" ColumnName="devicesum" />
+          <ScalarProperty Name="stocknum" ColumnName="stocknum" />
+          <ScalarProperty Name="deviceid" ColumnName="deviceid" />
+          <ScalarProperty Name="stockid" ColumnName="stockid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zfdx_streetshops">
+      <EntityTypeMapping TypeName="Model.zfdx_streetshops">
+        <MappingFragment StoreEntitySet="zfdx_streetshops">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="hawkertype" ColumnName="hawkertype" />
+          <ScalarProperty Name="sstype" ColumnName="sstype" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="grometry" ColumnName="grometry" />
+          <ScalarProperty Name="sourcearea" ColumnName="sourcearea" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="businessarea" ColumnName="businessarea" />
+          <ScalarProperty Name="e_business" ColumnName="e_business" />
+          <ScalarProperty Name="s_business" ColumnName="s_business" />
+          <ScalarProperty Name="licencecard" ColumnName="licencecard" />
+          <ScalarProperty Name="s_licence" ColumnName="s_licence" />
+          <ScalarProperty Name="e_licence" ColumnName="e_licence" />
+          <ScalarProperty Name="staffsum" ColumnName="staffsum" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="card" ColumnName="card" />
+          <ScalarProperty Name="person" ColumnName="person" />
+          <ScalarProperty Name="shoptype" ColumnName="shoptype" />
+          <ScalarProperty Name="shopname" ColumnName="shopname" />
+          <ScalarProperty Name="zfdx_shopid" ColumnName="zfdx_shopid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zxzz_files">
+      <EntityTypeMapping TypeName="Model.zxzz_files">
+        <MappingFragment StoreEntitySet="zxzz_files">
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="fileid" ColumnName="fileid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zxzz_tasks">
+      <EntityTypeMapping TypeName="Model.zxzz_tasks">
+        <MappingFragment StoreEntitySet="zxzz_tasks">
+          <ScalarProperty Name="experiences" ColumnName="experiences" />
+          <ScalarProperty Name="results" ColumnName="results" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="summaryuserid" ColumnName="summaryuserid" />
+          <ScalarProperty Name="summarytime" ColumnName="summarytime" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="createuserid" ColumnName="createuserid" />
+          <ScalarProperty Name="leader" ColumnName="leader" />
+          <ScalarProperty Name="xdzd" ColumnName="xdzd" />
+          <ScalarProperty Name="fqtime" ColumnName="fqtime" />
+          <ScalarProperty Name="fqr" ColumnName="fqr" />
+          <ScalarProperty Name="grometry" ColumnName="grometry" />
+          <ScalarProperty Name="taskexplain" ColumnName="taskexplain" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="tasktype" ColumnName="tasktype" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_casestatistical">
+      <EntityTypeMapping TypeName="Model.view_casestatistical">
+        <MappingFragment StoreEntitySet="view_casestatistical">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="zxsj" ColumnName="zxsj" />
+          <ScalarProperty Name="sqsj" ColumnName="sqsj" />
+          <ScalarProperty Name="ghjzmj" ColumnName="ghjzmj" />
+          <ScalarProperty Name="gtjzmj" ColumnName="gtjzmj" />
+          <ScalarProperty Name="gdmj" ColumnName="gdmj" />
+          <ScalarProperty Name="zdmj" ColumnName="zdmj" />
+          <ScalarProperty Name="ysh_hhsj" ColumnName="ysh_hhsj" />
+          <ScalarProperty Name="classname" ColumnName="classname" />
+          <ScalarProperty Name="dw_fy" ColumnName="dw_fy" />
+          <ScalarProperty Name="dw_jw" ColumnName="dw_jw" />
+          <ScalarProperty Name="dw_gz" ColumnName="dw_gz" />
+          <ScalarProperty Name="dw_ga" ColumnName="dw_ga" />
+          <ScalarProperty Name="cgsj" ColumnName="cgsj" />
+          <ScalarProperty Name="fkpjbh" ColumnName="fkpjbh" />
+          <ScalarProperty Name="fkjntime" ColumnName="fkjntime" />
+          <ScalarProperty Name="xzcfje" ColumnName="xzcfje" />
+          <ScalarProperty Name="xzcfnr" ColumnName="xzcfnr" />
+          <ScalarProperty Name="xzcfbgcltime" ColumnName="xzcfbgcltime" />
+          <ScalarProperty Name="tzcltime" ColumnName="tzcltime" />
+          <ScalarProperty Name="cssbtime" ColumnName="cssbtime" />
+          <ScalarProperty Name="ajja_createtime" ColumnName="ajja_createtime" />
+          <ScalarProperty Name="cfjd_createtime" ColumnName="cfjd_createtime" />
+          <ScalarProperty Name="sxgz_createtime" ColumnName="sxgz_createtime" />
+          <ScalarProperty Name="dczj_createtime" ColumnName="dczj_createtime" />
+          <ScalarProperty Name="ysh_ysrq" ColumnName="ysh_ysrq" />
+          <ScalarProperty Name="ay_createtime" ColumnName="ay_createtime" />
+          <ScalarProperty Name="xbusername" ColumnName="xbusername" />
+          <ScalarProperty Name="zbusername" ColumnName="zbusername" />
+          <ScalarProperty Name="caseaddress" ColumnName="caseaddress" />
+          <ScalarProperty Name="sitedatetime" ColumnName="sitedatetime" />
+          <ScalarProperty Name="f_name" ColumnName="f_name" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+          <ScalarProperty Name="rezbunitname" ColumnName="rezbunitname" />
+          <ScalarProperty Name="zbunitname" ColumnName="zbunitname" />
+          <ScalarProperty Name="zbunitid" ColumnName="zbunitid" />
+          <ScalarProperty Name="dealunitname" ColumnName="dealunitname" />
+          <ScalarProperty Name="dealusername" ColumnName="dealusername" />
+          <ScalarProperty Name="etime" ColumnName="etime" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="zd_name" ColumnName="zd_name" />
+          <ScalarProperty Name="dealtime" ColumnName="dealtime" />
+          <ScalarProperty Name="wfdid" ColumnName="wfdid" />
+          <ScalarProperty Name="sourcename" ColumnName="sourcename" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="casetypeid" ColumnName="casetypeid" />
+          <ScalarProperty Name="casebh" ColumnName="casebh" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="contactphone" ColumnName="contactphone" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="casereason" ColumnName="casereason" />
+          <ScalarProperty Name="casename" ColumnName="casename" />
+          <ScalarProperty Name="casesourceid" ColumnName="casesourceid" />
+          <ScalarProperty Name="casetype" ColumnName="casetype" />
+          <ScalarProperty Name="filestatus" ColumnName="filestatus" />
+          <ScalarProperty Name="currentwfsaid" ColumnName="currentwfsaid" />
+          <ScalarProperty Name="wfsname" ColumnName="wfsname" />
+          <ScalarProperty Name="wfsid2" ColumnName="wfsid2" />
+          <ScalarProperty Name="wfsid" ColumnName="wfsid" />
+          <ScalarProperty Name="wfsaid" ColumnName="wfsaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

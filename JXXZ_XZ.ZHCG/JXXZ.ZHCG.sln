@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.DAL", "JXXZ.ZHCG.DAL\JXXZ.ZHCG.DAL.csproj", "{D7D57133-1EC9-455E-862C-D3DB46784327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.Model", "JXXZ.ZHCG.Model\JXXZ.ZHCG.Model.csproj", "{D4AB5832-ABE5-4795-8268-A0A47A92ABB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.WebAPI", "JXXZ.ZHCG.WebAPI\JXXZ.ZHCG.WebAPI.csproj", "{6576E11D-1D94-4BD7-9B50-AE494BFEED51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.Utility", "JXXZ.ZHCG.Utility\JXXZ.ZHCG.Utility.csproj", "{299B6946-06F8-48B3-B65A-698C72E099DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.BLL", "JXXZ.ZHCG.BLL\JXXZ.ZHCG.BLL.csproj", "{42D02095-B2DD-4299-BD1D-395E9B620520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JXXZ.ZHCG.Web", "..\JXXZ.ZHCG.Web\JXXZ.ZHCG.Web\JXXZ.ZHCG.Web.csproj", "{118D6B1D-EF25-40E0-99F1-18C54224BFFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7D57133-1EC9-455E-862C-D3DB46784327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D57133-1EC9-455E-862C-D3DB46784327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D57133-1EC9-455E-862C-D3DB46784327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D57133-1EC9-455E-862C-D3DB46784327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4AB5832-ABE5-4795-8268-A0A47A92ABB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4AB5832-ABE5-4795-8268-A0A47A92ABB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4AB5832-ABE5-4795-8268-A0A47A92ABB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4AB5832-ABE5-4795-8268-A0A47A92ABB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6576E11D-1D94-4BD7-9B50-AE494BFEED51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6576E11D-1D94-4BD7-9B50-AE494BFEED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6576E11D-1D94-4BD7-9B50-AE494BFEED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6576E11D-1D94-4BD7-9B50-AE494BFEED51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{299B6946-06F8-48B3-B65A-698C72E099DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{299B6946-06F8-48B3-B65A-698C72E099DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{299B6946-06F8-48B3-B65A-698C72E099DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{299B6946-06F8-48B3-B65A-698C72E099DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D02095-B2DD-4299-BD1D-395E9B620520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D02095-B2DD-4299-BD1D-395E9B620520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D02095-B2DD-4299-BD1D-395E9B620520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D02095-B2DD-4299-BD1D-395E9B620520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{118D6B1D-EF25-40E0-99F1-18C54224BFFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{118D6B1D-EF25-40E0-99F1-18C54224BFFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{118D6B1D-EF25-40E0-99F1-18C54224BFFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{118D6B1D-EF25-40E0-99F1-18C54224BFFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7787E849-02B2-44FB-8B30-9B372EAB3EA5}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://218.108.93.243:8080/tfs/year2017
+		SccProjectUniqueName0 = JXXZ.ZHCG.DAL\\JXXZ.ZHCG.DAL.csproj
+		SccProjectName0 = JXXZ.ZHCG.DAL
+		SccAuxPath0 = http://218.108.93.243:8080/tfs/year2017
+		SccLocalPath0 = JXXZ.ZHCG.DAL
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = JXXZ.ZHCG.Model\\JXXZ.ZHCG.Model.csproj
+		SccProjectName1 = JXXZ.ZHCG.Model
+		SccAuxPath1 = http://218.108.93.243:8080/tfs/year2017
+		SccLocalPath1 = JXXZ.ZHCG.Model
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = JXXZ.ZHCG.WebAPI\\JXXZ.ZHCG.WebAPI.csproj
+		SccProjectName2 = JXXZ.ZHCG.WebAPI
+		SccAuxPath2 = http://218.108.93.243:8080/tfs/year2017
+		SccLocalPath2 = JXXZ.ZHCG.WebAPI
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = JXXZ.ZHCG.Utility\\JXXZ.ZHCG.Utility.csproj
+		SccProjectName3 = JXXZ.ZHCG.Utility
+		SccAuxPath3 = http://218.108.93.243:8080/tfs/year2017
+		SccLocalPath3 = JXXZ.ZHCG.Utility
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = JXXZ.ZHCG.BLL\\JXXZ.ZHCG.BLL.csproj
+		SccProjectName4 = JXXZ.ZHCG.BLL
+		SccAuxPath4 = http://218.108.93.243:8080/tfs/year2017
+		SccLocalPath4 = JXXZ.ZHCG.BLL
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = ..\\JXXZ.ZHCG.Web\\JXXZ.ZHCG.Web\\JXXZ.ZHCG.Web.csproj
+		SccProjectName5 = ../JXXZ.ZHCG.Web/JXXZ.ZHCG.Web
+		SccAuxPath5 = http://218.108.93.243:8080/tfs/year2017
+		SccLocalPath5 = ..\\JXXZ.ZHCG.Web\\JXXZ.ZHCG.Web
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>报警申诉</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" href="../../css/report.all.css">
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">报警申诉</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>申诉人</label>
+					<input type="text" readonly id="name">
+				</div>
+				<div class="mui-input-row">
+					<label>报警类型</label>
+					<input type="text" readonly id="type">
+				</div>
+				<div class="mui-input-row">
+					<label>处理状态</label>
+					<input type="text" readonly value="未处理">
+				</div>
+				<div class="mui-input-row">
+					<label>报警时间</label>
+					<input type="text" readonly id="time">
+				</div>
+				<div class="form-textereadiv">
+					<label>申诉理由</label>
+					<textarea rows="4" id="allegereason" placeholder="申诉理由"></textarea>
+				</div>
+			</form>
+			<button type="button" id="submit" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='bjreport.js'></script>
+
+</html>

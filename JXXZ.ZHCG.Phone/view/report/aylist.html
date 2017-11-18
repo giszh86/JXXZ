@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>案由列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.title{
+				display: inline-block;
+				width: 21%;
+				float: left;
+				line-height: 180%;
+			}
+			
+			.content{
+				display: inline-block;
+				width: 79%;
+				color: #005a8d;
+				line-height: 180%;
+				float: right;
+			}
+			
+			.mui-table-view{
+				background-color: transparent;
+			}
+			
+			.mui-table-view:before{
+				height: 0;
+			}
+			
+			.mui-table-view:after{
+				height: 0;
+			}
+			
+			.mui-table-view-cell{
+				margin: 10px;
+				background: white;
+				border: 1px solid #CCCCCC;
+				border-radius: 6px;
+			}
+			
+			.row{
+				float: left;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">案由列表</h1>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-input-row mui-search serchinputdiv" style="background-color: white;">
+				<input id='searchText' type="search" class="mui-input-clear" placeholder="名称查询" style="background: #eaeaea;border: 1px solid #D7D7D7;margin: 0;" />
+			</div>
+			<div class="mui-scroll">
+				<ul class="mui-table-view" id="menuList">
+					<template v-for='(item,index) in items'>
+						<li class="mui-table-view-cell" @tap='openView(item)'>
+							<div class="row">
+								<div class="title">权利编号</div>
+								<div class="content">{{item.code}}</div>
+							</div>
+							<div class="row"> 
+								<div class="title">权力事项</div>
+								<div class="content">{{item.powername}}</div>
+							</div>
+							<div class="row"> 
+								<div class="title">法律法规</div>
+								<div class="content">{{item.flfg}}</div>
+							</div>
+							<div class="row"> 
+								<div class="title">处理意见</div>
+								<div class="content">{{item.clyj}}</div>
+							</div>
+							<div class="row">
+								<div class="title">违法情形</div>
+								<div class="content">{{item.wfqx}}</div>
+							</div>
+							<div class="row">
+								<div class="title">处罚结果</div>
+								<div class="content">{{item.cf}}</div>
+							</div>
+						</li>
+					</template>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='aylist.js'></script>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>门前三包列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<style type="text/css">
+			.serchinputdiv {
+				margin: 0;
+				padding: 5px 20px 8px 20px;
+			}
+			
+			.mui-search .mui-placeholder {
+				margin-left: 25px;
+				margin-top: 5px;
+			}
+			
+			.mui-search.mui-active:before {
+				left: 25px;
+				top: 31px;
+			}
+			
+			.mui-input-row.mui-search .mui-icon-clear {
+				top: 12px;
+				right: 20px;
+			}
+			
+			.img{
+				width: 60px;
+				height: 50px;
+			}
+			.timerow-div{
+				margin-top: 30px;
+				color: #A0A0A0;
+			}
+			.wordrow-span{
+				height: 28px;
+				line-height: 28px;
+				white-space: nowrap;
+				overflow: hidden;
+				width: 100%;
+				text-overflow: ellipsis;
+			}
+			.worddiv{
+				width: 35%;
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">门前三包列表</h1>
+			<span class="r-float margin-top14px" id="historybtn" data-href="menqiansanbaoadd.html">添加</span>
+		</header>
+		<!--<div class="mui-content">
+			<div style="height: 15px;background: #ffffff;"></div>
+			<div class="mui-input-row mui-search" style="padding-left: 15px;padding-right: 15px;background: #ffffff;border-bottom: 1px solid #ccc;">
+				<input type="search" placeholder="" />
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" data-href='mQDetail.html'>
+						<img class="img l-float" src="../../image/wddb/ajlb.png" />
+						<div class="l-float worddiv">
+							<span class="l-float wordrow-span">沙县小吃</span>
+							<span class="l-float wordrow-span font-color">杭州市西湖区聚贤路245号</span>
+						</div>
+						<span class="r-float timerow-div">2016-08-26 10:34:29</span>
+					</li>	
+				</ul>
+			</div>
+		</div>-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-input-row mui-search serchinputdiv" style="background-color: white;">
+				<input id='searchText' type="search" class="mui-input-clear" placeholder="" style="background: #eaeaea;border: 1px solid #D7D7D7;margin: 0;" />
+			</div>
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view" id="menuList">
+					<template v-for='(item,index) in items'>
+						<li class="mui-table-view-cell" @tap='openView(item)'>
+							<img class="img l-float" src="../../image/wddb/ajlb.png" />
+							<div class="l-float worddiv">
+								<span class="l-float wordrow-span">{{item.name}}</span>
+								<span class="l-float wordrow-span font-color">{{item.address}}</span>
+							</div>
+							<span class="r-float timerow-div">{{item.date}}</span>
+						</li>
+					</template>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="menqiansaobaolist.js"></script>
+
+</html>

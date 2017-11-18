@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>简易案件</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/app.css">
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-card">
+					<div class="mui-input-row">
+						<span class="redbiaoji">*</span>
+						<label>处罚决定书编号</label>
+						<input ctype='cfjdsbh' id='cfjdsbh' type="text" v-model:value='model.cfjdsbh' data-val-required='处罚决定书编号不可为空'>
+					</div>
+					<div class="mui-input-row" @tap='chooseData("caseTypeName","casetypeid")'>
+						<span class="redbiaoji">*</span>
+						<label>案件类型</label>
+						<input readonly="readonly" class="triangle" type="text" v-model:value='model.caseTypeName'>
+						<input ctype='casetypeid' id='casetypeid' type="hidden" :value='model.casetypeid' data-val-required='案件类型不可为空' />
+					</div>
+					<div class="mui-input-row">
+						<span class="redbiaoji">*</span>
+						<label>案件名称</label>
+						<input ctype='casename' id='casename' type="text" v-model:value='model.casename' data-val-required='案件名称不可为空'>
+					</div>
+					<div class="mui-input-row" @tap='chooseqlsx'>
+						<span class="redbiaoji">*</span>
+						<label>权力事项</label>
+						<input ctype='qlsx' id='qlsx' readonly="readonly" class="add" type="text" v-model:value='model.qlsx' data-val-required='权力事项不可为空'>
+						<input ctype='qlsxid' id='qlsxid' type="hidden" v-model:value='model.qlsxid'>
+					</div>
+					<div class="mui-input-row">
+						<span class="redbiaoji">*</span>
+						<label>案由</label>
+						<input type="text" v-model:value='model.casereason'>
+						<input ctype='casereason' id='casereason' type="hidden" :value='model.casereason' data-val-required='案由不可为空' />
+					</div>
+					<div class="mui-input-row">
+						<span class="redbiaoji">*</span>
+						<label>案发地址</label>
+						<input ctype='caseaddress' id='caseaddress' type="text" v-model:value='model.caseaddress' data-val-required='案发地址不可为空'>
+						<div id='caseaddress-update' class="right-click"></div>
+					</div>
+					<div class="mui-input-row" @tap="chooseDate('sitedatetime')">
+						<span class="redbiaoji">*</span>
+						<label>案发时间</label>
+						<input ctype='sitedatetime' id='sitedatetime' readonly class="triangle" type="text" v-model:value='model.sitedatetime' data-val-required='案发时间不可为空'>
+					</div>
+					<div class="mui-input-row">
+						<label>当事人类型</label>
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="person" value="type_zrr" v-model="model.persontype">
+							<span class="radio-name">自然人</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="person" value="type_dw" v-model="model.persontype">
+							<span class="radio-name">法人</span>
+							<input type="hidden" ctype='persontype' id='persontype' :value='model.persontype' />
+						</div>
+					</div>
+					<template v-if='model.persontype=="type_zrr"'>
+						<div class="mui-input-row">
+							<span class="redbiaoji">*</span>
+							<label>姓名</label>
+							<input ctype='p_name' id='p_name' type="text" value='' v-model='model.p_name' data-val-required='姓名不可为空'>
+						</div>
+						<div class="mui-input-row">
+							<label>性别</label>
+							<div class="radio-group">
+								<input class="radio-input" type="radio" name="sex" value="男" v-model="model.p_sex">
+								<span class="radio-name">男</span>
+								<input class="radio-input" style="margin-left: 20px;" type="radio" name="sex" value="女" v-model="model.p_sex">
+								<span class="radio-name">女</span>
+							</div>
+							<input type="hidden" ctype='p_sex' id='p_sex' :value='model.p_sex' />
+						</div>
+						<div class="mui-input-row" @tap='chooseData("cardName","p_cardtype")'>
+							<label>证件类型</label>
+							<input readonly class="triangle" type="text" :value='model.cardName'>
+							<input ctype='p_cardtype' id='p_cardtype' type="hidden" :value='model.p_cardtype' />
+						</div>
+						<div class="mui-input-row">
+							<label>证件号</label>
+							<input ctype='p_cardnum' id='p_cardnum' type="text" v-model:value='model.p_cardnum'>
+						</div>
+
+					</template>
+					<template v-else='model.type=="type_dw"'>
+						<div class="mui-input-row">
+							<span class="redbiaoji">*</span>
+							<label>单位名称</label>
+							<input ctype='f_name' id='f_name' type="text" value='' v-model='model.f_name' data-val-required='单位名称不可为空'>
+						</div>
+						<div class="mui-input-row">
+							<label>法定代表人</label>
+							<input ctype='f_dbr' id='f_dbr' type="text" value='' v-model='model.f_dbr'>
+						</div>
+						<div class="mui-input-row" @tap='chooseData("fcardName","f_cardtype")'>
+							<label>证件类型</label>
+							<input readonly class="triangle" type="text" :value='model.fcardName'>
+							<input ctype='f_cardtype' id='f_cardtype' type="hidden" :value='model.f_cardtype' />
+						</div>
+						<div class="mui-input-row">
+							<label>证件号</label>
+							<input ctype='f_cardnum' id='f_cardnum' type="text" v-model:value='model.f_cardnum'>
+						</div>
+						<div class="mui-input-row">
+							<label>受委托人</label>
+							<input ctype='f_wtr' id='f_wtr' type="text" value='' v-model='model.f_wtr'>
+						</div>
+						<div class="mui-input-row">
+							<label>身份证号</label>
+							<input ctype='f_card' id='f_card' type="text" value='' v-model='model.f_card'>
+						</div>
+
+					</template>
+					<div class="mui-input-row">
+						<label>联系电话</label>
+						<input ctype='contactphone' id='contactphone' type="number" value='' v-model='model.contactphone'>
+					</div>
+					<div class="mui-input-row">
+						<label>联系地址</label>
+						<input ctype='contactaddress' id='contactaddress' type="text" v-model:value='model.contactaddress'>
+					</div>
+
+					<div class="mui-input-row">
+						<label>法律法规</label>
+						<input ctype='flfg' id='flfg' readonly type="text" v-model:value='model.flfg'>
+					</div>
+					<div class="mui-input-row">
+						<label>裁量依据</label>
+						<input ctype='clyj' id='clyj' readonly type="text" v-model:value='model.clyj'>
+					</div>
+					<div class="mui-input-row">
+						<label>违法情形</label>
+						<input ctype='wfqx' id='wfqx' readonly type="text" v-model:value='model.wfqx'>
+					</div>
+					<div class="mui-input-row">
+						<label>处罚结果</label>
+						<input ctype='cf' id='cf' readonly type="text" v-model:value='model.cf'>
+					</div>
+					<div class="mui-input-row">
+						<label>缴款方式</label>
+						<div class="radio-group">
+							<input class="radio-input" type="radio" name="payment" value="当场缴费" v-model='model.jktype'>
+							<span class="radio-name">当场缴费</span>
+							<input class="radio-input" style="margin-left: 20px;" type="radio" name="payment" value="银行代缴" v-model='model.jktype'>
+							<span class="radio-name">银行代缴</span>
+							<input ctype='jktype' id='jktype' type="hidden" :value='model.jktype' />
+						</div>
+					</div>
+					<template v-if='model.jktype=="银行代缴"'>
+						<div>
+							<div class="mui-input-row" @tap='chooseBank("bank_name")'>
+								<label>缴款银行</label>
+								<input readonly class="add" type="text" v-model:value='model.bank_name_value'>
+								<input type="hidden" ctype='bank_name' id='bank_name' :value='model.bank_name' />
+							</div>
+							<div class="mui-input-row" @tap='chooseBank("bank_account")'>
+								<label>银行户名</label>
+								<input readonly class="add" type="text" v-model:value='model.bank_account_value'>
+								<input type="hidden" ctype='bank_account' id='bank_account' :value='model.bank_account' />
+							</div>
+							<div class="mui-input-row" @tap='chooseBank("bank_accountname")'>
+								<label>银行账号</label>
+								<input readonly class="add" type="text" v-model:value='model.bank_accountname_value'>
+								<input type="hidden" ctype='bank_accountname' id='bank_accountname' :value='model.bank_accountname' />
+							</div>
+						</div>
+
+					</template>
+					<div class="mui-input-row">
+						<span class="redbiaoji">*</span>
+						<label>罚款金额</label>
+						<input ctype='fk_money' id='fk_money' type="number" v-model:value='model.fk_money' data-val-required='罚款金额不可为空'>
+					</div>
+
+					<div class="mui-input-row">
+						<label>执法人姓名</label>
+						<input readonly ctype='zfr_name' id='zfr_name' type="text" value='' v-model='model.zfr_name'>
+					</div>
+					<div class="mui-input-row">
+						<label>执法证号</label>
+						<input readonly ctype='zf_card' id='zf_card' type="text" value='' v-model='model.zf_card'>
+					</div>
+					<div class="mui-input-row" @tap='chooseDate("zf_time")'>
+						<label>执法时间</label>
+						<input ctype='zf_time' id='zf_time' readonly="readonly" type="text" :value='model.zf_time'>
+					</div>
+					<div class="mui-input-row">
+						<label>执法地点</label>
+						<input ctype='zf_address' id='zf_address' type="text" v-model:value='model.zf_address'>
+					</div>
+					<div class="mui-input-row" @tap='showMap'>
+						<label>地点坐标</label>
+						<input readonly class="location-green" id='geographical84' ctype='geographical84' type="text" :value='geographical84'>
+					</div>
+				</div>
+			</form>
+			<div style="margin-left: 20px;margin-top: 10px; font-size: 15px;">现场拍照</div>
+			<div class="card">
+				<div class="addphoto">
+					<img id="head-img1" src="../../image/addphoto.png" />
+				</div>
+				<div class="addphoto">
+					<img id="head-img2" src="../../image/addphoto.png" />
+				</div>
+				<div class="addphoto">
+					<img id="head-img3" src="../../image/addphoto.png" />
+				</div>
+				<input id="head-img1Name" type="hidden" value="" />
+				<input id="head-img2Name" type="hidden" value="" />
+				<input id="head-img3Name" type="hidden" value="" />
+				<input id="img-head-img1Name" type="hidden" value="" />
+				<input id="img-head-img2Name" type="hidden" value="" />
+				<input id="img-head-img3Name" type="hidden" value="" />
+			</div>
+			<div style="margin-left: 10px;margin-bottom: 8px; font-size: 13px;color: red;">(相关文书请在PC端上传)</div>
+			<button type="button" class="mui-btn buttoncenter" @tap='submitForm'>提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='jyaj.js'></script>
+
+</html>

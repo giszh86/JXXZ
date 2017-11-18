@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>市民事件</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.bluebtn {
+				background: #005A8D;
+				color: #ffffff;
+				border: none;
+			}
+			
+			.wordspanwidth {
+				width: 25%;
+				/*文字超出宽度显示省略号*/
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.numberspanwidth {
+				width: 15%;
+			}
+			
+			.nyrstyle {
+				overflow: auto;
+				padding-bottom: 6px;
+			}
+			
+			.bar-out {
+				float: left;
+				height: 20px;
+				margin-top: 10px;
+				width: 65%;
+			}
+			
+			.bar-inner {
+				background: #007AFF;
+				height: 100%;
+			}
+			
+			.number {
+				float: right;
+				color: #005a8d;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-card" style="padding: 4px;">
+				<div class="border-bottomstyle nyrstyle">
+					<span class="r-float">
+						<button type="button" class="mui-btn bluebtn" data-type='1'>日</button>
+						<button type="button" class="mui-btn bluebtn" data-type='2'>月</button>
+						<button type="button" class="mui-btn bluebtn" data-type='3'>年</button>
+					</span>
+				</div>
+				<div style="padding: 10px 10px 0 10px;">
+					<div v-for='(item,index) in items' class="row-div">
+						<span class="l-float wordspanwidth ">{{item.name}}</span>
+						<div class="bar-out">
+							<div class="bar-inner" :style="{width: item.zb}"></div>
+						</div>
+						<span class="number">{{item.nowNum}}</span>
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="mui-card">
+				<div class="row-div border-bottomstyle">
+					<span class="l-float margin-left5pointer">上报数</span>
+					<span class="r-float font-color margin-right15px">{{Total}}</span>
+				</div>
+				<div class="row-div border-bottomstyle">
+					<span class="l-float margin-left5pointer">完成数</span>
+					<span class="r-float font-color margin-right15px">{{Complete}}</span>
+				</div>
+				<div class="row-div border-bottomstyle">
+					<span class="l-float margin-left5pointer">超期事件</span>
+					<span class="r-float font-color margin-right15px">{{Kept}}</span>
+				</div>
+				<div class="row-div border-bottomstyle">
+					<span class="l-float margin-left5pointer">超期率</span>
+					<span class="r-float font-color margin-right15px">{{keptNumber}}</span>
+				</div>
+				<div class="row-div">
+					<span class="l-float margin-left5pointer">完结率</span>
+					<span class="r-float font-color margin-right15px">{{completeNumber}}</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='smsj.js'></script>
+
+</html>

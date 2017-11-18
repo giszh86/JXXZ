@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>签到历史</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/app.css">		
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">签到历史</h1>
+		</header>	
+		<div class="mui-content">
+			<p class="font-bigsize16px margin-topbottom10px">查看团队成员今日签到情况</p>
+			<div class="mui-card">
+				<ul class="mui-table-view ulimg">
+					<li class="mui-table-view-cell" id='team'>
+						<a>
+							团队今日最新签到
+							<label class="r-float">></label>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<p class="font-bigsize16px margin-topbottom10px">查看签到历史</p>
+			<div class="mui-card">
+				<ul class="mui-table-view ulimg">
+					<li class="mui-table-view-cell" data-href="othersignhistory.html">
+						<a>
+							查看他人
+							<label class="r-float">></label>
+						</a>
+					</li>
+					<li class="mui-table-view-cell" data-href="mysignhistory.html">
+						<a>
+							查看自己
+							<label class="r-float">></label>
+						</a>
+					</li>
+				</ul>
+			</div>			
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="signhistorylist"></script>
+</html>

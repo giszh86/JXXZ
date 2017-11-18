@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<!--<link rel="stylesheet" href="http://10.73.1.48/arcgis_js_api/library/3.17/3.17/esri/css/esri.css">-->
+		<!--<link rel="stylesheet" href="http://10.73.1.48/arcgis_js_api/library/3.17/3.17/dijit/themes/claro/claro.css" />-->
+		<link rel="stylesheet" href="../css/esri.css" />
+
+		<style type="text/css">
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+			}
+			
+			#map {
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+			#BasemapToggle {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				z-index: 50;
+			}
+			
+			#BasemapToggle .basemapImage {
+				width: 55px;
+				height: 55px;
+			}
+			
+			#BasemapToggle .basemapTitle {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map">
+			<div id="BasemapToggle"></div>
+		</div>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/init.js"></script>
+		<!--<script src="http://10.73.1.48/arcgis_js_api/library/3.17/3.17/init.js"></script>-->
+		<script type="text/javascript">
+			require(["esri/map", "esri/basemaps", "esri/dijit/BasemapToggle", "dojo/domReady!"], function(Map, esriBasemaps, BasemapToggle) {
+				esriBasemaps.tdtvec = {
+					baseMapLayers: [{
+							url: "http://10.73.1.48:9070/JXPDServerCore/rest/services/JXEMAP/MapServer"
+						},
+						{
+							url: "http://10.73.1.48:9070/JXPDServerCore/rest/services/JXEMAPAnno/MapServer"
+						},
+					],
+					thumbnailUrl: "../tdtdemo/image/vectormap.png",
+					title: "矢量"
+				};
+
+				esriBasemaps.tdtimg = {
+					baseMapLayers: [{
+							url: "http://10.73.1.48:9070/JXPDServerCore/rest/services/JXIMG/MapServer"
+						},
+						{
+							url: "http://10.73.1.48:9070/JXPDServerCore/rest/services/JXIMGAnno/MapServer"
+						}
+					],
+					thumbnailUrl: "../tdtdemo/image/imagemap.png",
+					title: "影像"
+				};
+
+				window.map = new Map("map", {
+					basemap: "tdtvec",
+					center: [120.756, 30.766],
+					zoom: 13,
+					logo: false
+				});
+
+				//底图切换
+				var toggle = new BasemapToggle({
+					map: window.map,
+					basemap: "tdtimg"
+				}, "BasemapToggle");
+				toggle.startup();
+
+				map.on('click', function(evt) {
+					console.log(evt.mapPoint);
+
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

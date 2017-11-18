@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../Css/video-js.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.0.0.js"></script>
+    <script src="../Scripts/video.min.js"></script>
+</head>
+<body>
+    <div style="height: 100%; width: 100%">
+        <video id="my-video" class="video-js" controls>
+            <source id="sourcepath" type="video/mp4" />
+        </video>
+        <script type="text/javascript">
+            function getQueryStringByName(name) {
+                var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+
+                if (result == null || result.length < 1) {
+                    return "";
+                }
+                return result[1];
+            }
+            $(document).ready(function () {
+                var path = getQueryStringByName("path");
+                path = decodeURI(path);
+
+                $("#my-video").attr("src", path);
+                $("#sourcepath").attr("src", path);
+            });
+
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>待办事件</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.serchinputdiv {
+				margin: 0;
+				padding: 5px 20px 8px 20px;
+			}
+			
+			.mui-search .mui-placeholder {
+				margin-left: 25px;
+				margin-top: 5px;
+			}
+			
+			.mui-search.mui-active:before {
+				left: 25px;
+				top: 31px;
+			}
+			
+			.mui-input-row.mui-search .mui-icon-clear {
+				top: 12px;
+				right: 20px;
+			}
+			
+			.mui-table-view-cell {
+				padding: 8px 10px;
+			}
+			
+			.list-li-img {
+				float: left;
+				width: 20%;
+				height: 66px;
+			}
+			
+			.firstline {
+				padding-top: 3px;
+			}
+			
+			.dt {
+				font-size: 15px;
+				color: #333333;
+				width: 90%;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.address {
+				display: inline-block;
+				float: left;
+				color: #005A8D;
+				width: 50%;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.secondline {
+				margin-top: 10px;
+				width: 100%;
+			}
+			
+			.image{
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				width: 20px;
+			}
+			
+			.content{
+				display: inline-block;
+				width: 78%;
+				float: right;
+			}
+			
+			.time{
+				color: #A0A0A0;
+				float: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">待办事件列表</h1>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-input-row mui-search serchinputdiv" style="background-color: white;">
+				<input id='searchText' type="search" class="mui-input-clear" placeholder="标题查询" style="background: #eaeaea;border: 1px solid #D7D7D7;margin: 0;" />
+			</div>
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view" id="menuList">
+					<template v-for='(item,index) in items'>
+						<li class="mui-table-view-cell" @tap='openView(item)'>
+							<img class="list-li-img" :src="item.imgSrc" />
+							<div class="content">
+								<div class="firstline">
+									<div class="dt">{{item.eventtitle}}</div>
+									<img class="image" :src="item.timeCalculationResult"/>
+								</div>
+								<div class="secondline">
+									<div class="address">{{item.eventaddress}}</div>
+									<div class="time">{{item.createtime}}</div>
+								</div>
+							</div>
+						</li>
+					</template>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='pendingEvent.js'></script>
+
+</html>

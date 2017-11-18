@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Techzen.ICS.CS.Controls.TZSaveAsBtn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="22"
+             d:DesignWidth="75">
+
+    <Grid MouseEnter="LayoutRoot_MouseEnter"
+          MouseLeave="LayoutRoot_MouseLeave"
+          MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown"
+          MouseLeftButtonUp="LayoutRoot_MouseLeftButtonUp">
+        <Border   CornerRadius="2"
+                  Margin="0,2,0,0"
+                  Background="#1a75d7" />
+        <Border x:Name="LayoutRoot"
+                CornerRadius="2"
+                Margin="0,0,0,2"
+                Background="#dddddd" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image Source="/Techzen.ICS.CS.Controls;component/Images/download.png"
+                   Width="14"
+                   Height="11"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+            <TextBlock Text="另存为..."
+                       Grid.Column="1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>领导督办详情 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css"/>
+		<style type="text/css">
+			.mui-card{
+				margin-top: 3px;
+			}
+			
+			.smalpadding{
+				padding: 5px 10px 5px 15px;
+			}
+			
+			li.mui-table-view-cell input[type='text']{
+				float: right;
+				width: 75%;
+				margin-bottom: 0;
+				height: 26px;
+				background: url(../../image/report/triangle.png) no-repeat 98% center;
+				font-size: 14px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">领导督办</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell smalpadding">
+						督办意见
+						<textarea style="float: right;width: 75%;" rows="3"></textarea>
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						<span style="float: left;padding-top: 4px;">紧急程序</span>
+						<input readonly type="text" placeholder="请选择">
+					</li>
+					<li class="mui-table-view-cell smalpadding">
+						<div style="float: right;">
+							<input style="float: left; width: 20px; height: 20px;" type="checkbox">
+							<span style="margin-left: 5px;">短信提醒（张三：12345654321）</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			<button type="button" class="mui-btn buttoncenter">提&nbsp;&nbsp;交</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="lddb-detail.js"></script>
+
+</html>

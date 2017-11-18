@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86a335c555ca4dc3bc2aacdbe747c36d" Name="关系图1" ZoomLevel="66">
+        <EntityTypeShape EntityType="Model.base_articles" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.base_menus" Width="1.5" PointX="7.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.base_permissionmenus" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.base_permissions" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.base_rolepermissions" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.base_roles" Width="1.5" PointX="9.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.base_systemlogs" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.base_units" Width="1.5" PointX="11.75" PointY="17.75" />
+        <EntityTypeShape EntityType="Model.base_unittypes" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.base_userroles" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.base_users" Width="1.5" PointX="13.75" PointY="20.75" />
+        <EntityTypeShape EntityType="Model.base_usertypes" Width="1.5" PointX="19.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.base_zds" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.bj_classes" Width="1.5" PointX="5.75" PointY="21.75" />
+        <EntityTypeShape EntityType="Model.bj_part" Width="1.5" PointX="7.75" PointY="21.75" />
+        <EntityTypeShape EntityType="Model.bj_zds" Width="1.5" PointX="9.75" PointY="21.75" />
+        <EntityTypeShape EntityType="Model.case_cases" Width="1.5" PointX="22.75" PointY="16.75" />
+        <EntityTypeShape EntityType="Model.case_casesources" Width="1.5" PointX="20" PointY="18.125" />
+        <EntityTypeShape EntityType="Model.case_leadersupervises" Width="1.5" PointX="22.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.case_phases" Width="1.5" PointX="0.75" PointY="8.5" />
+        <EntityTypeShape EntityType="Model.case_prescriptions" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.case_simplecases" Width="1.5" PointX="0.75" PointY="24.75" />
+        <EntityTypeShape EntityType="Model.case_sources" Width="1.5" PointX="17.75" PointY="19.875" />
+        <EntityTypeShape EntityType="Model.case_workflowdetails" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="Model.case_workflowspecificactivitys" Width="1.5" PointX="5.25" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.case_workflowspecifics" Width="1.5" PointX="3" PointY="2" />
+        <EntityTypeShape EntityType="Model.case_workflowspecificusers" Width="1.5" PointX="7.5" PointY="17.5" />
+        <EntityTypeShape EntityType="Model.case_wtajs" Width="1.5" PointX="2.75" PointY="24.75" />
+        <EntityTypeShape EntityType="Model.case_wtfiles" Width="1.5" PointX="23.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.case_yjdws" Width="1.5" PointX="17.75" PointY="22.875" />
+        <EntityTypeShape EntityType="Model.case_zds" Width="1.5" PointX="4.75" PointY="24.75" />
+        <EntityTypeShape EntityType="Model.doc_definitions" Width="1.5" PointX="6" PointY="4" />
+        <EntityTypeShape EntityType="Model.doc_wfdddrs" Width="1.5" PointX="8.25" PointY="8.25" />
+        <EntityTypeShape EntityType="Model.doc_wfsas" Width="1.5" PointX="10.5" PointY="5.125" />
+        <EntityTypeShape EntityType="Model.fi_camera_units" Width="1.5" PointX="24.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.fi_cameras" Width="1.5" PointX="24.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.fi_cameratypes" Width="1.5" PointX="24.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Model.fi_specialcameras" Width="1.5" PointX="24.75" PointY="16.75" />
+        <EntityTypeShape EntityType="Model.fi_specialunits" Width="1.5" PointX="24.75" PointY="19.75" />
+        <EntityTypeShape EntityType="Model.fi_uvafiles" Width="1.5" PointX="19.75" PointY="24.75" />
+        <EntityTypeShape EntityType="Model.fi_uvas" Width="1.5" PointX="24.75" PointY="22.75" />
+        <EntityTypeShape EntityType="Model.kh_examines" Width="1.5" PointX="19.75" PointY="13" />
+        <EntityTypeShape EntityType="Model.kh_scores" Width="1.5" PointX="22" PointY="13.125" />
+        <EntityTypeShape EntityType="Model.low_newlying" Width="1.5" PointX="25.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.low_oldlying" Width="1.5" PointX="9.75" PointY="25.75" />
+        <EntityTypeShape EntityType="Model.map_customs" Width="1.5" PointX="15.75" PointY="25.75" />
+        <EntityTypeShape EntityType="Model.mapelementcategory" Width="1.5" PointX="26.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.phone_version" Width="1.5" PointX="26.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.qw_alarmcarmemorylocationdatas" Width="1.5" PointX="26.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.qw_alarmmemorylocationdatas" Width="1.5" PointX="26.75" PointY="17.75" />
+        <EntityTypeShape EntityType="Model.qw_carhistorypositions" Width="1.5" PointX="21.75" PointY="26.75" />
+        <EntityTypeShape EntityType="Model.qw_carlastpositions" Width="1.5" PointX="26.75" PointY="23.75" />
+        <EntityTypeShape EntityType="Model.qw_cars" Width="1.5" PointX="23.75" PointY="26.75" />
+        <EntityTypeShape EntityType="Model.qw_cartasks" Width="1.5" PointX="3" PointY="19.75" />
+        <EntityTypeShape EntityType="Model.qw_patrolareas" Width="1.5" PointX="0.75" PointY="15.5" />
+        <EntityTypeShape EntityType="Model.qw_patrollogs" Width="1.5" PointX="27.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.qw_signinareas" Width="1.5" PointX="0.75" PointY="20.25" />
+        <EntityTypeShape EntityType="Model.qw_userhistorypositions" Width="1.5" PointX="25.75" PointY="27.75" />
+        <EntityTypeShape EntityType="Model.qw_userlastpositions" Width="1.5" PointX="27.75" PointY="27.75" />
+        <EntityTypeShape EntityType="Model.qw_usersignins" Width="1.5" PointX="28.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.qw_usertasks" Width="1.5" PointX="3" PointY="15.25" />
+        <EntityTypeShape EntityType="Model.qw_zds" Width="1.5" PointX="4.75" PointY="28.75" />
+        <EntityTypeShape EntityType="Model.report_bureaucenterworks" Width="1.5" PointX="6.75" PointY="28.75" />
+        <EntityTypeShape EntityType="Model.report_h7n7s" Width="1.5" PointX="28.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.report_infos" Width="1.5" PointX="11.75" PointY="28.75" />
+        <EntityTypeShape EntityType="Model.report_landlaws" Width="1.5" PointX="13.75" PointY="28.75" />
+        <EntityTypeShape EntityType="Model.report_lawinwaters" Width="1.5" PointX="28.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.report_safetifyinproductions" Width="1.5" PointX="15.75" PointY="28.75" />
+        <EntityTypeShape EntityType="Model.report_scalefarmscontrols" Width="1.5" PointX="17.75" PointY="28.75" />
+        <EntityTypeShape EntityType="Model.report_specialperiodenvirprots" Width="1.5" PointX="8.75" PointY="29.75" />
+        <EntityTypeShape EntityType="Model.report_strawandwastecontrols" Width="1.5" PointX="29.75" PointY="23.75" />
+        <EntityTypeShape EntityType="Model.sm_citizenservices" Width="1.5" PointX="15" PointY="11.25" />
+        <EntityTypeShape EntityType="Model.sm_classes" Width="1.5" PointX="29.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.sm_consultations" Width="1.5" PointX="30.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.sm_sources" Width="1.5" PointX="12.75" PointY="14.375" />
+        <EntityTypeShape EntityType="Model.sm_specialrectifications" Width="1.5" PointX="30.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.sm_visits" Width="1.5" PointX="17.25" PointY="13.5" />
+        <EntityTypeShape EntityType="Model.systemconfig" Width="1.5" PointX="30.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.temp_ajysh" Width="1.5" PointX="30.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.temp_cgd" Width="1.5" PointX="30.75" PointY="18.75" />
+        <EntityTypeShape EntityType="Model.temp_cgs" Width="1.5" PointX="19.75" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.temp_cssbbl" Width="1.5" PointX="31.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.temp_cyqztzs" Width="1.5" PointX="21.75" PointY="31.75" />
+        <EntityTypeShape EntityType="Model.temp_cyqzwpcltzs" Width="1.5" PointX="31.75" PointY="23.75" />
+        <EntityTypeShape EntityType="Model.temp_dcqzlxh" Width="1.5" PointX="23.75" PointY="31.75" />
+        <EntityTypeShape EntityType="Model.temp_dcxwbl" Width="1.5" PointX="31.75" PointY="27.75" />
+        <EntityTypeShape EntityType="Model.temp_ffcwyjs" Width="1.5" PointX="32.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.temp_files" Width="1.5" PointX="32.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.temp_fkcjtzs" Width="1.5" PointX="10.75" PointY="32.75" />
+        <EntityTypeShape EntityType="Model.temp_fksjpz" Width="1.5" PointX="32.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.temp_goods" Width="1.5" PointX="32.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.temp_hgs" Width="1.5" PointX="32.75" PointY="18.75" />
+        <EntityTypeShape EntityType="Model.temp_tzbg" Width="1.5" PointX="25.75" PointY="32.75" />
+        <EntityTypeShape EntityType="Model.temp_tzbl" Width="1.5" PointX="27.75" PointY="32.75" />
+        <EntityTypeShape EntityType="Model.temp_tztzs" Width="1.5" PointX="2.75" PointY="33.75" />
+        <EntityTypeShape EntityType="Model.temp_xcjckybl" Width="1.5" PointX="33.75" PointY="22.75" />
+        <EntityTypeShape EntityType="Model.temp_xwdctzs" Width="1.5" PointX="33.75" PointY="28.75" />
+        <EntityTypeShape EntityType="Model.temp_xzcfjds" Width="1.5" PointX="33.75" PointY="33.75" />
+        <EntityTypeShape EntityType="Model.temp_xzcfjttljl" Width="1.5" PointX="34.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.temp_xzcfsxgzs" Width="1.5" PointX="34.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.temp_ysajsawpqd" Width="1.5" PointX="34.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.temp_zfwssdhz" Width="1.5" PointX="34.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.temp_zltzwfxwtzs" Width="1.5" PointX="34.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Model.temp_zlxqgztzs" Width="1.5" PointX="29.75" PointY="34.75" />
+        <EntityTypeShape EntityType="Model.temp_zlxqzgzls" Width="1.5" PointX="19.75" PointY="35.75" />
+        <EntityTypeShape EntityType="Model.temp_zpzj" Width="1.5" PointX="35.75" PointY="20.75" />
+        <EntityTypeShape EntityType="Model.tj_persononlines" Width="1.5" PointX="21.75" PointY="35.75" />
+        <EntityTypeShape EntityType="Model.tj_unitreportcounts" Width="1.5" PointX="35.75" PointY="24.75" />
+        <EntityTypeShape EntityType="Model.tz_files" Width="1.5" PointX="35.75" PointY="27.75" />
+        <EntityTypeShape EntityType="Model.tz_registers" Width="1.5" PointX="35.75" PointY="31.75" />
+        <EntityTypeShape EntityType="Model.tz_taskclasses" Width="1.5" PointX="20" PointY="9.5" />
+        <EntityTypeShape EntityType="Model.tz_tztasks" Width="1.5" PointX="17.75" PointY="9" />
+        <EntityTypeShape EntityType="Model.wf_workflowdetails" Width="1.5" PointX="15" PointY="1.25" />
+        <EntityTypeShape EntityType="Model.wf_workflows" Width="1.5" PointX="12.75" PointY="4" />
+        <EntityTypeShape EntityType="Model.wf_workflowspecificactivitys" Width="1.5" PointX="17.25" PointY="4" />
+        <EntityTypeShape EntityType="Model.wf_workflowspecifics" Width="1.5" PointX="15" PointY="6.5" />
+        <EntityTypeShape EntityType="Model.wf_workflowspecificuserfiles" Width="1.5" PointX="21.75" PointY="4.125" />
+        <EntityTypeShape EntityType="Model.wf_workflowspecificusers" Width="1.5" PointX="19.5" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.wg_type" Width="1.5" PointX="36.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.wg_unitgrid" Width="1.5" PointX="36.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.wj_cqxms" Width="1.5" PointX="36.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.wj_files" Width="1.5" PointX="10.75" PointY="36.75" />
+        <EntityTypeShape EntityType="Model.wj_wzjzs" Width="1.5" PointX="35.75" PointY="36.75" />
+        <EntityTypeShape EntityType="Model.xz_licensings" Width="1.5" PointX="36.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.xz_threebags" Width="1.5" PointX="12.75" PointY="37.75" />
+        <EntityTypeShape EntityType="Model.xzj_files" Width="1.5" PointX="37.75" PointY="19.75" />
+        <EntityTypeShape EntityType="Model.xzsp_disposes" Width="1.5" PointX="37.75" PointY="23.75" />
+        <EntityTypeShape EntityType="Model.xzsp_files" Width="1.5" PointX="37.75" PointY="27.75" />
+        <EntityTypeShape EntityType="Model.xzsp_locate" Width="1.5" PointX="37.75" PointY="30.75" />
+        <EntityTypeShape EntityType="Model.yh_companys" Width="1.5" PointX="31.75" PointY="37.75" />
+        <EntityTypeShape EntityType="Model.yh_contracts" Width="1.5" PointX="37.75" PointY="33.75" />
+        <EntityTypeShape EntityType="Model.yh_files" Width="1.5" PointX="38.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.yh_yhlogs" Width="1.5" PointX="0.75" PointY="38.75" />
+        <EntityTypeShape EntityType="Model.yh_yhtasks" Width="1.5" PointX="2.75" PointY="38.75" />
+        <EntityTypeShape EntityType="Model.zfdx_devices" Width="1.5" PointX="38.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.zfdx_instocks" Width="1.5" PointX="4.75" PointY="38.75" />
+        <EntityTypeShape EntityType="Model.zfdx_outstocks" Width="1.5" PointX="6.75" PointY="38.75" />
+        <EntityTypeShape EntityType="Model.zfdx_shopblacks" Width="1.5" PointX="38.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.zfdx_stocks" Width="1.5" PointX="38.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.zfdx_streetshops" Width="1.5" PointX="21.75" PointY="38.75" />
+        <EntityTypeShape EntityType="Model.zxzz_files" Width="1.5" PointX="38.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.zxzz_tasks" Width="1.5" PointX="23.75" PointY="38.75" />
+        <EntityTypeShape EntityType="Model.view_casestatistical" Width="1.5" PointX="14.75" PointY="39.75" />
+        <AssociationConnector Association="Model.FK_Reference_22" />
+        <AssociationConnector Association="Model.FK_Reference_23" />
+        <AssociationConnector Association="Model.FK_Reference_27" />
+        <AssociationConnector Association="Model.FK_Reference_25" />
+        <AssociationConnector Association="Model.FK_Reference_fk_30" />
+        <AssociationConnector Association="Model.FK_Reference_24" />
+        <AssociationConnector Association="Model.FK_Reference_28" />
+        <AssociationConnector Association="Model.FK_Reference_29" />
+        <AssociationConnector Association="Model.FK_Reference_18" />
+        <AssociationConnector Association="Model.FK_Reference_26" />
+        <AssociationConnector Association="Model.FK_Reference_31" />
+        <AssociationConnector Association="Model.FK_Reference_11" />
+        <AssociationConnector Association="Model.FK_Reference_9" />
+        <AssociationConnector Association="Model.FK_Reference_10" />
+        <AssociationConnector Association="Model.FK_Reference_7" />
+        <AssociationConnector Association="Model.Reference_16" />
+        <AssociationConnector Association="Model.FK_Reference_30" />
+        <AssociationConnector Association="Model.FK_WFD_WF" />
+        <AssociationConnector Association="Model.FK_WFSA_WFD" />
+        <AssociationConnector Association="Model.FK_WFP_WF" />
+        <AssociationConnector Association="Model.FK_WFSA_WFP" />
+        <AssociationConnector Association="Model.FK_WFSF_WFSA" />
+        <AssociationConnector Association="Model.FK_WFSP_WFSF" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

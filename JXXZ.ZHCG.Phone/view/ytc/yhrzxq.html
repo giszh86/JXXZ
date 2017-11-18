@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>养护日志详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<style type="text/css">
+			.miaoshu{
+				height: auto;
+				overflow: auto;
+				width: 80%;
+				word-wrap: break-word;
+				text-align: right;
+			}
+			
+			.image{
+				width: 24%;
+			}
+			
+			li.mui-table-view-cell input[type='text']{
+				margin-left: 40px;
+				width: 54%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding: 10px;
+				color: #005a8d;
+				background-color: #efeff4;
+			}
+			
+			.zp{
+				float: right;
+				width: 75%;
+			}
+			
+			.title{
+				margin: 10px 0 0 23px;
+				font-size: 15px;
+			}
+			
+			.smalltitle{
+				display: inline-block;
+				width: 21%;
+				float: left;
+				line-height: 180%;
+			}
+			
+			.content{
+				display: inline-block;
+				width: 79%;
+				color: #005a8d;
+				line-height: 180%;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.mui-card-content-inner{
+				padding: 10px 15px 5px 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">养护日志详情</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						养护合同<label class="r-float font-color" >2017年秀洲区源公司满年合同</label>
+					</li>
+					<li class="mui-table-view-cell">
+						巡查日期<label class="r-float font-color" >2017-03-02</label>
+					</li>
+					<li class="mui-table-view-cell">
+						填报时间<label class="r-float font-color" >2017-03-02 09 ： 40</label>
+					</li>
+					<li class="mui-table-view-cell">
+						巡查说明<label class="r-float font-color miaoshu" >经巡查发现秀洲区洪兴路2323号附近的绿化带被破坏，请及时修复，请及时修复，请及时修复，请及时修复</label>
+					</li>
+					<li class="mui-table-view-cell">
+						<span style="float: left;padding-top: 4px;">附件</span>
+						<input readonly type="text" value="绿化带维修图.jpg">
+						<span style="background-color: #005a8d;color: white;padding: 3px 20px 5px 20px;border-radius: 3px;">查看</span>
+					</li>
+				</ul>
+			</div>
+			<button type="button" class="mui-btn buttoncenter">关&nbsp;&nbsp;闭</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="yhrzxq.js"></script>
+
+</html>

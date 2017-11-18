@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>基本信息详情 </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.title {
+				margin: 10px 0 0 15px;
+				font-size: 15px;
+			}
+			
+			.mui-card {
+				margin-top: 3px;
+			}
+			
+			.miaoshu {
+				height: auto;
+				overflow: auto;
+				width: 80%;
+				word-wrap: break-word;
+				text-align: right;
+			}
+			
+			.addphoto {
+				width: 25%;
+				margin: 0 0 0 7%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<template>
+				<div class="title">办件基本信息</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							审批事项<label class="r-float font-color miaoshu">{{model.projectname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事件编码<label class="r-float font-color miaoshu">{{model.row_id}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							申报号<label class="r-float font-color">{{model.flowsn}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							审批类型<label class="r-float font-color">{{model.tasktype | tasktypeName}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							事项描述<label class="r-float font-color">{{model.taskcaseguid}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							地址<label class="r-float font-color miaoshu">{{model.address}}</label>
+						</li>
+					</ul>
+				</div>
+				<div class="title">申请者/申请者对象信息</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							申请单位名称<label class="r-float font-color">{{model.applyername}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							法定代表人<label class="r-float font-color">{{model.legal}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							证件类型<label class="r-float font-color">{{model.certname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							证件号<label class="r-float font-color">{{model.certnum}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							邮编<label class="r-float font-color">{{model.contactpostcode}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							联系地址<label class="r-float font-color">{{model.address}}</label>
+						</li>
+					</ul>
+				</div>
+				<div class="title">联系人/代理人信息</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							姓名<label class="r-float font-color">{{model.contactperson}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							手机<label class="r-float font-color">{{model.contactmobile}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							电话号码<label class="r-float font-color">{{model.contactphone}}</label>
+						</li>
+						<!--<li class="mui-table-view-cell">
+						证件类型<label class="r-float font-color" >身份证</label>
+					</li>
+					<li class="mui-table-view-cell">
+						证件号<label class="r-float font-color" >330823199009091234</label>
+					</li>-->
+						<li class="mui-table-view-cell">
+							备注<label class="r-float font-color">{{model.remark}}</label>
+						</li>
+					</ul>
+				</div>
+				<div class="title">项目办理信息</div>
+				<div class="mui-card">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							办理部门<label class="r-float font-color">{{model.windowname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							收件人<label class="r-float font-color">{{model.receiveusername}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							办件申请时间<label class="r-float font-color">{{model.receivedate}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							处理时间<label class="r-float font-color">{{model.acceptuserdate}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							办件承诺期限<label class="r-float font-color">{{model.promiseenddate}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							承诺办结时间<label class="r-float font-color">{{model.banwandate}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							承诺期限单位<label class="r-float font-color">{{model.windowname}}</label>
+						</li>
+						<li class="mui-table-view-cell">
+							实际办结时间<label class="r-float font-color">{{model.banjiedate}}</label>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div class="title">处理流程</div>
+					<div class="mui-card">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								指派队员<label class="r-float font-color">{{wfmodel.teammembername}}</label>
+							</li>
+							<li class="mui-table-view-cell">
+								派遣意见<label class="r-float font-color">{{wfmodel.officeadvice}}</label>
+							</li>
+							<li class="mui-table-view-cell">
+								派遣人<label class="r-float font-color">{{wfmodel.unitofficename}}</label>
+							</li>
+							<li class="mui-table-view-cell">
+								派遣时间<label class="r-float font-color">{{wfmodel.createtime}}</label>
+							</li>
+						</ul>
+					</div>
+					<div class="mui-card">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<label class="font-color">监管信息上报</label>
+							</li>
+							<li class="mui-table-view-cell">
+								图片信息
+								<div class="r-float miaoshu" style="padding-right: 5px;">
+									<div class="addphoto">
+										<img id="head-img1" src="../../image/addphoto.png" />
+									</div>
+									<div class="addphoto">
+										<img id="head-img2" src="../../image/addphoto.png" />
+									</div>
+									<div class="addphoto">
+										<img id="head-img3" src="../../image/addphoto.png" />
+									</div>
+									<input id="head-img1Name" type="hidden" value="" />
+									<input id="head-img2Name" type="hidden" value="" />
+									<input id="head-img3Name" type="hidden" value="" />
+									<input id="img-head-img1Name" type="hidden" value="" />
+									<input id="img-head-img2Name" type="hidden" value="" />
+									<input id="img-head-img3Name" type="hidden" value="" />
+								</div>
+							</li>
+							<li class="mui-table-view-cell">
+								监管意见
+								<div class="r-float miaoshu" style="padding-left: 10px;">
+									<textarea class="font-color" readonly rows="4" :value='wfmodel.teamdealadvice' id="supervisionContent"></textarea>
+								</div>
+							</li>
+							<li class="mui-table-view-cell" @tap="showMap">
+								地理位置
+								<span class="r-float font-color ">{{wfmodel.address}}<span class="mui-icon mui-icon-location-filled" style="color:green;font-size: 24px;"></span></span>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+
+			</template>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="nsBasicDetail.js"></script>
+
+</html>

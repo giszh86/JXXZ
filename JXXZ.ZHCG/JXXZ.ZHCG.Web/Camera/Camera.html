@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title id="toptitle">监控</title>
+    <!-- <link rel="stylesheet" type="text/css" href="DSSPlay.css" />-->
+    <script src="dahuaCamera/ocxfun.js"></script>
+    <style type="text/css">
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .CameraPanel {
+            width: 100%;
+            height: 100%;
+        }
+
+            .CameraPanel.bg {
+                background-color: #152D45;
+            }
+
+        .CameraContent {
+            width: 98%;
+            height: 98%;
+            margin: 5px 0px 0px 5px;
+        }
+
+        .CameraPanelhead {
+            width: 100%;
+            height: 30px;
+            background: -webkit-linear-gradient(#2B5A7F, #1D3B4E); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#2B5A7F, #1D3B4E); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#2B5A7F, #1D3B4E); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#2B5A7F, #1D3B4E); /* 标准的语法 */
+            float: left;
+        }
+
+        .panelSplit {
+            width: 5px;
+            height: 100%;
+            background-color: #3684D6;
+            float: left;
+        }
+
+        .paneltitle {
+            width: 99%;
+            height: 100%;
+            float: left;
+        }
+
+        .paneltitlefont {
+            width: auto;
+            height: 80%;
+            font-family: "Microsoft Yahei", "微软雅黑", "宋体", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: white;
+            font-size: 16px;
+            margin: 5px 0px 0px 4px;
+        }
+
+        .close {
+            width: 4%;
+            height: 100%;
+            background-image: url(../Image/tools/close.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            float: left;
+        }
+
+            .close:hover {
+                cursor: pointer;
+            }
+    </style>
+    <script src="../Scripts/jquery-3.0.0.js"></script>
+    <script src="../Scripts/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript">
+        function getQueryStringByName(name) {
+            var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+
+            if (result == null || result.length < 1) {
+                return "";
+            }
+            return result[1];
+        }
+        $(document).ready(function () {
+            var title = getQueryStringByName("title");
+
+            var decodetitle = decodeURI(title);
+            $("#toptitle").text(decodetitle);
+
+            var Channel = getQueryStringByName("Channel");
+            $("#textCameraID").val(Channel);
+
+            $("img").mousedown(this, function () {
+                $(this).css("background-color", "#FFB90F");
+            });
+            $("img").mouseup(this, function () {
+                $(this).css("background-color", "");
+            });
+        });
+
+    </script>
+</head>
+<body onload="init()" onunload="ButtonLogout_onclick()" style="width: 100%; height: 100%;">
+    <div id="mainbg" class="CameraPanel bg">
+        <div style="width: 237px; height: 100%; float: left; margin-top: 15px">
+            <table style="width: 100%; text-align: center; vertical-align: middle">
+                <tr>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/左上.png" title="左上" onclick=" ButtonPtzDirection_onclick(5)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/向上.png" title="上" onclick=" ButtonPtzDirection_onclick(1)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/右上.png" title="右上" onclick=" ButtonPtzDirection_onclick(7)" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/向左.png" title="左" onclick=" ButtonPtzDirection_onclick(3)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/停止.png" title="停止" onclick=" ButtonPtzDirection_onclickStop(1)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/向右.png" title="右" onclick=" ButtonPtzDirection_onclick(4)" /></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/左下.png" title="左下" onclick=" ButtonPtzDirection_onclick(6)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/向下.png" title="下" onclick=" ButtonPtzDirection_onclick(2)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/右下.png" title="右下" onclick=" ButtonPtzDirection_onclick(8)" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/焦距调节.png" title="焦距调节" class="img" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/加号.png" title="加" onclick="ButtonPtzCameraOperation_onclick(0)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/减号.png" title="减" onclick="ButtonPtzCameraOperation_onclick(3)" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/焦点.png" title="焦点调节" class="img" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/加号.png" title="加" onclick="ButtonPtzCameraOperation_onclick(1)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/减号.png" title="减" onclick="ButtonPtzCameraOperation_onclick(4)" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/光圈.png" title="光圈调节" class="img" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/加号.png" title="加" onclick="ButtonPtzCameraOperation_onclick(2)" /></td>
+                    <td>
+                        <img src="../Image/cameraiconwhilte/减号.png" title="减" onclick="ButtonPtzCameraOperation_onclick(5)" /></td>
+                </tr>
+                <tr>
+                    <td style="color: white">开始时间</td>
+                    <td colspan="2">
+                        <input id="textStartTime" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',startDate:'%y-%M-%d 00:00:00',maxDate:'%y-%M-%d',minDate:'1970-01-01 10:00:00'})" class="select-text" readonly /></td>
+                </tr>
+                <tr>
+                    <td style="color: white">结束时间</td>
+                    <td colspan="2">
+                        <input id="textEndTime" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',startDate:'%y-%M-%d 00:00:00',maxDate:'%y-%M-%d',minDate:'1970-01-01 10:00:00'})" class="select-text" readonly /></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="button" value="历史播放" onclick="ButtonStartTimePlaybackByWndNo_onclick()" /></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="sp" style="float: right; width: 100%; margin-left: -240px; height: 100%">
+            <div style="margin-left: 240px; height: 100%">
+                <object id="DPSDK_OCX" classid="CLSID:D3E383B6-765D-448D-9476-DFD8B499926D" class="CameraContent" codebase="DpsdkOcx.cab#version=1.0.0.0"></object>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="textCameraID" />
+   
+</body>
+</html>

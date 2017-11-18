@@ -1,0 +1,126 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Techzen.ICS.CS.Controls" x:Class="Techzen.ICS.CS.Controls.TZPicViewer"
+    mc:Ignorable="d"
+    d:DesignHeight="450" d:DesignWidth="500">
+    <UserControl.Resources>
+        <Storyboard x:Name="showImageStory">
+            <DoubleAnimation Duration="0:0:0.2"
+        		From="20"
+        		To="0"
+        		Storyboard.TargetProperty="(UIElement.Effect).(BlurEffect.Radius)"
+        		Storyboard.TargetName="ShowImage"
+        		d:IsOptimized="True" />
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="29"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="89"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- 边框 -->
+        <Rectangle Fill="#1a75d7" Grid.Column="1" Grid.RowSpan="3" />
+        <Rectangle Fill="#1a75d7" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" />
+
+        <!--缩略图-->
+        <Grid Grid.Column="0" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="15"/>
+            </Grid.RowDefinitions>
+
+            <local:TZNextBtn x:Name="TopTZNextBtn" RenderTransformOrigin="0.5,0.5" MouseLeftButtonUp="TopTZNextBtn_MouseLeftButtonUp">
+                <local:TZNextBtn.Projection>
+                    <PlaneProjection GlobalOffsetY="-1" />
+                </local:TZNextBtn.Projection>
+                <local:TZNextBtn.RenderTransform>
+                    <CompositeTransform Rotation="180" />
+                </local:TZNextBtn.RenderTransform>
+            </local:TZNextBtn>
+
+            <Canvas Name="ImageListCanvas"
+                    Grid.Row="1"
+                    Margin="0,0,3,0"
+                    SizeChanged="ImageListCanvas_SizeChanged">
+                <Canvas Name="ImageListSubCanvas">
+
+                </Canvas>
+            </Canvas>
+            <local:TZNextBtn x:Name="BottomTZNextBtn" Grid.Row="2" MouseLeftButtonUp="BottomTZNextBtn_MouseLeftButtonUp">
+                <local:TZNextBtn.Projection>
+                    <PlaneProjection GlobalOffsetY="-1" />
+                </local:TZNextBtn.Projection>
+            </local:TZNextBtn>
+
+        </Grid>
+
+        <!--工具栏-->
+        <StackPanel Grid.Column="2" Grid.Row="2"  Orientation="Horizontal" VerticalAlignment="Center" Margin="5 0 5 0">
+            <local:TZPicToolBtn Height="22"
+                                Width="55"
+                                LeftImageSource="/Techzen.ICS.CS.Controls;component/Images/flip_left.png"
+                                RightImageSource="/Techzen.ICS.CS.Controls;component/Images/flip_right.png"
+                                x:Name="FlipPtb"
+                                LeftBtnClick="FlipPtb_LeftBtnClick"
+                                RightBtnClick="FlipPtb_RightBtnClick" />
+            <local:TZPicToolBtn Height="22"
+                                Width="55"
+                                LeftImageSource="/Techzen.ICS.CS.Controls;component/Images/zoom_in.png"
+                                RightImageSource="/Techzen.ICS.CS.Controls;component/Images/zoom_out.png"
+                                Margin="9,0,0,0"
+                                x:Name="ZoomPtb"
+                                LeftBtnClick="ZoomPtb_LeftBtnClick"
+                                RightBtnClick="ZoomPtb_RightBtnClick" />
+            <local:TZPicToolBtn Height="22"
+                                Width="55"
+                                LeftImageSource="/Techzen.ICS.CS.Controls;component/Images/rotate_left.png"
+                                RightImageSource="/Techzen.ICS.CS.Controls;component/Images/rotate_right.png"
+                                Margin="9,0,0,0"
+                                x:Name="RotatePtb"
+                                LeftBtnClick="RotatePtb_LeftBtnClick"
+                                RightBtnClick="RotatePtb_RightBtnClick" />
+
+        </StackPanel>
+        <!--图片显示-->
+        <ScrollViewer x:Name="ImageScrollViewer" Grid.Row="0" Grid.Column="2" BorderBrush="Transparent" SizeChanged="ImageScrollViewer_SizeChanged" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
+            <StackPanel x:Name="ImageStackPanel" SizeChanged="ImageStackPanel_SizeChanged">
+                <Grid x:Name="ImageGrid" SizeChanged="ImageGrid_SizeChanged">
+                    <Image x:Name="ShowImage"
+                        Stretch="Uniform"
+                        RenderTransformOrigin="0.5,0.5"
+                        Cursor="Hand"
+                        MouseWheel="ShowImage_MouseWheel"
+                        MouseLeftButtonUp="ShowImage_MouseLeftButtonUp">
+                        <Image.RenderTransform>
+                            <CompositeTransform Rotation="0"
+                                ScaleY="1"
+                                ScaleX="1"
+                                TranslateX="0"
+                                TranslateY="0" />
+                        </Image.RenderTransform>
+                        <Image.Projection>
+                            <PlaneProjection RotationY="0"
+                            RotationX="0"
+                            RotationZ="0" />
+                        </Image.Projection>
+                        <Image.Effect>
+                            <BlurEffect Radius="0" />
+                        </Image.Effect>
+                    </Image>
+                </Grid>
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+</UserControl>

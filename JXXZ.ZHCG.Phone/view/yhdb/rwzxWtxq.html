@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>问题详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link href="../../css/app.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/imageviewer.css" />
+		<style type="text/css">
+			.miaoshu{
+				height: auto;
+				overflow: auto;
+				width: 80%;
+				word-wrap: break-word;
+				text-align: right;
+			}
+			
+			.addimg{
+				width: 24%;
+				height: 56px;
+			}
+			.image {
+				width: 24%;
+				height: 56px;
+			}
+			
+			li.mui-table-view-cell input[type='text']{
+				margin-left: 15px;
+				width: 77%;
+				margin-bottom: 0;
+				height: 26px;
+				font-size: 14px;
+				padding: 10px;
+				color: #005a8d;
+				background-color: #efeff4;
+			}
+			
+			.zp{
+				float: right;
+				width: 75%;
+			}
+			
+			.title{
+				margin: 10px 0 0 23px;
+				font-size: 15px;
+			}
+			
+			.smalltitle{
+				display: inline-block;
+				width: 21%;
+				float: left;
+				line-height: 180%;
+			}
+			
+			.content{
+				display: inline-block;
+				width: 79%;
+				color: #005a8d;
+				line-height: 180%;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.mui-card-content-inner{
+				padding: 10px 15px 5px 15px;
+			}
+			
+			.zb{
+				width: 80%;
+				text-align: right;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			
+			.row{
+				height: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav headerTitle">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">问题详情</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						养护类型<label id='yhlxname' class="r-float font-color"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						问题大类<label id='wtdlname' class="r-float font-color"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						问题小类<label id='wtxlname' class="r-float font-color"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						养护对象<label id='yhdxname' class="r-float font-color"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						当日天气<label id='weather' class="r-float font-color"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						处理期限<label id='limittime' class="r-float font-color"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						维修经费(元)<label id='outlay' class="r-float font-color"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						工作量估算(人/天)<label id='workload' class="r-float font-color"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						养护合同<label id='contractname' class="r-float font-color miaoshu"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						问题地址<label id='wtaddress' class="r-float font-color miaoshu"></label>
+					</li>
+					<li class="mui-table-view-cell" id='choosemap'>
+						地理位置<label id='geography84' class="r-float font-color zb"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						问题描述<label id='wtdescribe' class="r-float font-color miaoshu"></label>
+					</li>
+					<li class="mui-table-view-cell">
+						照片说明
+						<div class="zp">
+							<img id='head-img1' class="image image-before" src="../../image/nophoto.png" />
+							<img id='head-img2' class="image image-before" style="margin: 0 12%;" src="../../image/nophoto.png" />
+							<img id='head-img3' class="image image-before" src="../../image/nophoto.png" />
+
+							<input id="head-img1Name" type="hidden" value="" />
+							<input id="head-img2Name" type="hidden" value="" />
+							<input id="head-img3Name" type="hidden" value="" />
+							<input id="img-head-img1Name" type="hidden" value="" />
+							<input id="img-head-img2Name" type="hidden" value="" />
+							<input id="img-head-img3Name" type="hidden" value="" />
+						</div>
+
+					</li>
+					<li class="mui-table-view-cell">
+						处理后照片
+						<div class="zp">
+							<img id='head-img4' class="addimg" src="../../image/nophoto.png" />
+							<img id='head-img5' class="addimg" style="margin: 0 12%;" src="../../image/nophoto.png" />
+							<img id='head-img6' class="addimg" src="../../image/nophoto.png" />
+						</div>
+						<input id="head-img4Name" type="hidden" value="" />
+						<input id="head-img5Name" type="hidden" value="" />
+						<input id="head-img6Name" type="hidden" value="" />
+						<input id="img-head-img4Name" type="hidden" value="" />
+						<input id="img-head-img5Name" type="hidden" value="" />
+						<input id="img-head-img6Name" type="hidden" value="" />
+					</li>
+				</ul>
+			</div>
+			
+			<div id="menuList">
+				<template v-for='(item,index) in items'>
+					<div class="title">{{item.wfdname}}</div>
+					<div class="mui-card">
+						<div class="mui-card-content-inner">
+							<div class="row">
+								<div class="smalltitle">处理意见</div>
+								<div class="content">{{item.content}}</div>
+							</div>
+							<div class="row">
+								<div class="smalltitle">处理时间</div>
+								<div class="content">{{item.dealtime}}</div>
+							</div>
+							<div class="row">
+								<div class="smalltitle">处理人</div>
+								<div class="content">{{item.username}}</div>
+							</div>
+						</div>
+					</div>
+				</template>	
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main="rwzxWtxq.js"></script>
+
+</html>

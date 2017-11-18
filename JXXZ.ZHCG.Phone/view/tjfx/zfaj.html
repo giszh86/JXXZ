@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>执法案件</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/report.css" />
+		<style type="text/css">
+			.chart {
+				height: 200px;
+				margin: 0px;
+				padding: 0px;
+				width: 300px
+			}
+			
+			h5 {
+				margin-top: 30px;
+				font-weight: bold;
+			}
+			
+			h5:first-child {
+				margin-top: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content card" style="padding: 10px 0 0 0;">
+			<div class="chart" id="barChart" style="margin-left: 30px;"></div>
+			<ul class="mui-table-view mui-table-view-chevron" >
+				<template v-for='item in items'>
+				<li class="mui-table-view-cell mui-collapse" >
+					<a class="mui-navigate-right" href="#" >
+						{{item.name}}
+					</a>
+					<ul class="mui-table-view mui-table-view-chevron" >
+						<li class="mui-table-view-cell cell">
+							<span v-if="item.name=='一般案件'" class="name">立案数</span>
+							<span v-else class="name">案件数</span>
+							<span id="gLNumberofCases" class="r-float font-color">{{item.count}}</span>
+						</li>
+						<template v-if="item.name=='一般案件'">
+							<li class="mui-table-view-cell cell">
+								<span class="name">结案数</span>
+								<span id="gJNumberofCases" class="r-float font-color">{{item.complete}}</span>
+							</li>
+							<li class="mui-table-view-cell cell">
+								<span class="name">超期案件</span>
+								<span id="gOverdueCase" class="r-float font-color">{{item.kept}}</span>
+							</li>
+							<li class="mui-table-view-cell cell">
+								<span class="name">超期率</span>
+								<span id='gOverdueRate' class="r-float font-color">{{item.kept==0?'0%':(item.kept/item.count*100).toFixed(0)+'%'}}</span>
+							</li>
+							<li class="mui-table-view-cell cell">
+								<span class="name">完结率</span>
+								<span id="gEndRate" class="r-float font-color">{{item.complete==0?'0%':(item.complete/item.count*100).toFixed(0)+'%'}}</span>
+							</li>
+						</template>
+					</ul>
+				</li>
+				</template>
+			</ul>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../../js/require.min.js" data-main='zfaj.js'></script>
+
+</html>
